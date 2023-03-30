@@ -12,54 +12,123 @@ header.homeHeader{
         z-index: 99;
 
         nav{
+
         }
     }
 }
 
-.mainContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
+section#cover{
+    position: relative;
+    display: block;
+    transition: opacity 0.5s ease-in-out 0s;
+    background: center center / cover no-repeat fixed url(./../img/landing.webp);;
+    background-repeat: no-repeat;
+    background-position: center center;
     height: 100vh;
-    background: no-repeat center url(./../img/landing.webp);
-    background-size: 6000px 4000px;
 
-}
-.title-container{
-    margin-left: 30px;
+    .catch{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-70%);
+        width: 400px;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+
+        h1{
+            color: white;
+            text-transform: uppercase;
+            font-size: 65px;
+        }
+        button{
+            padding: 0 30px 0 30px;
+            margin: 5px 0 25px 0;
+        }
+        span{
+            color: white;
+            font-size: 22px;
+        }
+    }
+    .moreArrow{
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        transform: translate(-50%);
+        a{
+            text-decoration: none;
+
+            img{
+                height: 30px;
+                width: 30px;
+            }
+        }
+        
+    }
+    .linkDiscord{
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+        a{
+            font-family: "BerlinTypeBold";
+            text-decoration: none;
+            color: white;
+            border-radius: 20px;
+            padding: 10px 15px 10px 15px;
+
+            transition: all .4s;
+        }
+        a:hover{
+            background-color: rgba(255, 255, 255, 0.35);
+        }
+    }
 }
 
-.catch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    width: 500px;
-    font-weight: bold;
-    color: white;
-}
-.catch2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    width: 500px;
-    font-weight: bold;
-    color: white;
-}
-.centerBtn{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-}
-.underText{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    color: white;
-}
+// .mainContainer{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+
+//     height: 100vh;
+//     background: no-repeat center url(./../img/landing.webp);
+//     background-size: 6000px 4000px;
+
+// }
+// .title-container{
+//     margin-left: 30px;
+// }
+
+// .catch{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 60px;
+//     width: 500px;
+//     font-weight: bold;
+//     color: white;
+// }
+// .catch2{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 60px;
+//     width: 500px;
+//     font-weight: bold;
+//     color: white;
+// }
+// .centerBtn{
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 5%;
+// }
+// .underText{
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 5%;
+//     color: white;
+// }
 .secondContainer{
     display: flex;
     height: auto;
@@ -184,7 +253,8 @@ header.homeHeader{
     color: white;
     font-size: 2rem;
     position: absolute;
-
+    text-transform: uppercase;
+    
     &.leftBottom {
         bottom: 15px;
         left: 15px;
@@ -201,57 +271,64 @@ header.homeHeader{
         bottom: 15px;
         right: 15px;
     }
+
+    &.dark{
+        color: #1D212F;
+    }
 }
 
 .item-1{
-    background: no-repeat center url(../img/categories/fitness.png);
-}
-.item-2{
-    background: no-repeat center url(../img/categories/body-weight.png);
-}
-.item-3{
-    background: no-repeat center url(../img/categories/elastic-bands.png);
-}
-.item-4{
-    background: no-repeat center url(../img/categories/dancing.png);
-}
-.item-5{
     background: no-repeat center url(../img/categories/yoga.png);
 }
-.item-6{
+.item-2{
     background: no-repeat center url(../img/categories/add-weights.png);
 }
-.item-7{
+.item-3{
+    background: no-repeat center url(../img/categories/dancing.png);
+}
+.item-4{
     background: no-repeat center url(../img/categories/aerobic.png);
 }
-.item-8{
+.item-5{
     background: no-repeat center url(../img/categories/balance.png);
 }
-.item-9{
+.item-6{
     background: no-repeat center url(../img/categories/stretching.png);
+}
+.item-7{
+    background: no-repeat center url(../img/categories/body-weight.png);
+}
+.item-8{
+    background: no-repeat center url(../img/categories/fitness.png);
+}
+.item-9{
+    background: no-repeat center url(../img/categories/elastic-bands.png);
 }
 
 .fourthContainer{
-    .grid-container2{
-        display: grid;
+    .subscribeWrapper{
+        width: calc(100% - 100px);
+        gap: 80px;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        grid-template-columns: 350px 350px 350px;
-        column-gap: 50px;
-        width: auto;
-        height: auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-left: 50px;
+        margin-right: 50px;
         
-        .card{
+        .subscribeCard{
             font-family: "BerlinTypeBold";
             color: #13739b;
             background-color: #E5F6F8;
             box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
-            border: solid 2.5px #E0E1E5;
+            border: solid 3px #E0E1E5;
             border-radius: 20px;
             padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 300px;
+            height: 460px;
             width: 320px;
 
             :nth-child(2){
@@ -272,82 +349,60 @@ header.homeHeader{
                     font-size: 55px;
                 }
             }
+
             p{
                 width: 70%;
                 margin-left: auto;
                 margin-right: auto;
                 display: block;
                 text-align: center;
-                &.paragraph{
-
-                }
             }
 
+            button{
+                width: 100%;
+                height: 55px;
+                font-family: "BerlinType";
+                font-size: 22px;
+            }
+        }
 
-            &:nth-child(2){
-                background-color: #FFF4EE;
-            }
+        .favorite{
+            background-color: #FF9966;
+            border-radius: 24px;
+            padding: 4px;
+            color: white;
+            text-transform: uppercase;
+            font-family: "BerlinTypeBold";
+            text-align: center;
 
-            .cardTitel{
-                font-family: "BerlinTypeBold";
-                text-transform: uppercase;
-                color: #05445E;
-                display: flex;
-                justify-content: center;
+            .subscribeFavorite{
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 20px;
             }
-            .access{
-                display: flex;
-                justify-content: center;
-                text-align-last: center;
-                color: #05445E;
-                height: 48px;
-            }
-            .priceCard{
-                display: flex;
-                justify-content: center;
-                margin-top: 50px;
-                font-size: 50px;
-                font-weight: bold;
-                color: #05445E;
-            }
-            .perMonth{
-                display: flex;
-                justify-content: center;
-                color: #05445E;
-            }
-            .descriptionText{
-                display: flex;
-                justify-content: center;
-                margin-top: 15%;
-                margin-bottom: 15%;
-                text-align-last: center;
-                color: #05445E;
-            }
-            .middleSubcscribe{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .subscribeCard{
+                border: none !important;
+                text-transform: none;
+                background-color: #FFF4EE !important;
             }
         }
     }
-
 }
 
-@media screen and (max-width: 1175px) {
-    div.grid-container2 {
-        flex-direction: column;
-        grid-template-columns: 400px !important;
 
+@media only screen and (max-width: 1299px){
+    .favorite {
+        order: +1;
     }
 }
 
-  @media screen and (max-width: 750px) {
-    div.grid-container2 {
-        flex-direction: column;
-
-
+@media only screen and (max-width: 871px){
+    .favorite {
+        order: -2;
     }
 }
+
+
 .fithcontainer{
     .middleMaker2{
         display: flex;
