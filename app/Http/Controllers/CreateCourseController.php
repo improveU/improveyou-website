@@ -26,7 +26,7 @@ class CreateCourseController extends Controller
         $course->introduction = $request->get('intro');
         $course->course_description = $request->get('description');
         $course->views = 0;
-        $course->creator_id = 1; //user()->id oder so
+        $course->creator_id = auth()->user()->id;
         $course->category_id = 1;//$request->get('category');
 
         $course->save();
