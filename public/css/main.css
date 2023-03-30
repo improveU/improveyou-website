@@ -705,100 +705,88 @@ section#cover .linkDiscord a:hover {
   background-color: rgba(255, 255, 255, 0.35);
 }
 
-.secondContainer {
-  display: flex;
-  height: auto;
-  margin-bottom: 100px;
+@media only screen and (max-width: 720px) {
+  .linkDiscord {
+    bottom: 120px !important;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+    width: 205px !important;
+  }
+  .linkDiscord a {
+    background-color: rgba(255, 255, 255, 0.35) !important;
+  }
+  .catch h1 {
+    font-size: 50px !important;
+  }
 }
-
-.leftContainer {
+section#phrases .phrasesWrapper {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+section#phrases .phrasesWrapper .phrasesContainer {
   width: 60%;
   background-color: #E5F6F8;
-  justify-content: center;
-  height: 40vh;
-  padding-bottom: auto;
-  padding-top: auto;
-}
-
-.rightContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+section#phrases .phrasesWrapper .phrasesContainer:nth-child(2) {
   background-color: #FFF4EE;
-  height: 40vh;
-  padding-bottom: auto;
-  padding-top: auto;
+  justify-content: flex-start;
+  width: 40%;
 }
-
-.smallText {
-  display: block;
+section#phrases .phrasesWrapper .phrasesContainer .phrase {
+  width: 600px;
+  padding: 40px 40px 40px 0px;
+  color: #005F60;
 }
-
-.content {
-  width: 70%;
+section#phrases .phrasesWrapper .phrasesContainer .phrase h2 {
+  color: #05445e;
+  font-family: "BerlinTypeBold";
+  text-transform: uppercase;
+  font-size: 32px;
+  margin-bottom: 15px;
 }
-
-.iconandtext {
+section#phrases .phrasesWrapper .phrasesContainer .phrase.second {
+  padding: 40px 0px 40px 40px;
+}
+section#phrases .phrasesWrapper .phrasesContainer .phrase.second div {
   display: flex;
-  height: 5vh;
-}
-
-.content2 {
-  width: 60%;
-}
-
-.icon {
-  width: 10px;
-  height: 10px;
-}
-
-.icon2 {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  gap: 15px;
+  margin-bottom: 14px;
+}
+section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
   background-color: #FF9966;
-  border-radius: 5px;
+  border-radius: 9px;
+  padding: 5px;
+  height: 16px;
+  width: 16px;
+  fill: #FFF4EE;
 }
 
-.text {
-  margin-left: 3%;
+@media only screen and (max-width: 1050px) {
+  .phrasesWrapper {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .phrasesWrapper .phrasesContainer {
+    width: 100% !important;
+  }
+  .phrasesWrapper .phrasesContainer:nth-child(2) {
+    width: 100% !important;
+  }
+  .phrasesWrapper .phrasesContainer .phrase {
+    width: 100% !important;
+    padding: 40px 40px 40px 40px !important;
+  }
 }
-
 .thirdContainer {
   height: 100vh;
 }
 
-@media screen and (max-width: 1300px) {
-  div.secondContainer {
-    flex-direction: column;
-  }
-  div.secondContainer div.leftContainer {
-    width: 100%;
-  }
-  div.secondContainer div.rightContainer {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 1080px) {
-  div.grid-container {
-    grid-template-columns: 300px 300px;
-  }
-}
-@media screen and (max-width: 750px) {
-  div.grid-container {
-    grid-template-columns: 300px;
-    -moz-column-gap: 0px;
-         column-gap: 0px;
-  }
-  div.grid-container .div {
-    width: auto;
-  }
-}
 .middleMaker {
   display: flex;
   justify-content: center;
