@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+.errorTitel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 300px;
+    font-weight: bold;
+}
+.underTitel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}

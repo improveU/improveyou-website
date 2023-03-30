@@ -1,0 +1,18 @@
+@use './abstracts/colors';
+@use './abstracts/fonts';
+@use './abstracts/mixin';
+
+@use './layout/default';
+@use './layout/splitTwo';
+
+@use './components/root';
+@use './components/scrollbar';
+@use './components/loader.scss';
+@use './components/register';
+@use './components/home';
+@use './components/contactUs';
+@use './components/faq';
+@use './components/error';
+@use './components/payment';
+@use './components/about';
+@use './components/profile';
