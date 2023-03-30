@@ -1,17 +1,7 @@
-// document.getElementById("signUpForm").onsubmit = function (evt) {
-//     var password = document.getElementById("pw");
-//     var passwordConfirm = document.getElementById("pwConfirm");
-
-//     if (passwordConfirm != null) {
-//         if (password.value !== passwordConfirm.value) {
-//             alert("Die eingegebenen passwörter müssen übereinstimmen");
-//             evt.preventDefault();
-//         }
-//     }
-// };
-
+document.getElementById("formSending").onsubmit = function (evt) {
+    document.getElementById("formTextarea").value = editor.getMarkdown();
+};
 
 function testing(){
-   console.log(editor.getMarkdown());
+    console.log(document.getElementById("formTextarea").value = editor.getMarkdown());
 }
-

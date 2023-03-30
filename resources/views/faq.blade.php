@@ -1,6 +1,5 @@
 @extends('layouts.default')
 @section('head')
-<script src="{{asset('js/faq.js')}}" type="text/javascript"></script>
 
 @endsection
 @section('title', 'FAQ')
@@ -84,4 +83,8 @@
   
     </div>
   </main>
+@endsection
+
+@section('scripts')
+    <script src="{{asset('js/faq.js')}}"></script>
 @endsection

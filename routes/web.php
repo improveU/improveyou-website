@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CreateCourseController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RegisterController;
@@ -34,6 +35,9 @@ Route::get('/form', function () {
     return view('form');
 })->middleware('iscreator');
 
+Route::get('create-course', [CreateCourseController::class, 'get']);
+Route::post('create-course', [CreateCourseController::class, 'createCourse']);
+
 Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
@@ -46,3 +50,4 @@ Route::get('/contact', [ContactController::class, 'show']);
 
 Route::get('/payment', [PaymentController::class, 'show']);
 Route::post('/payment/{id}', [PaymentController::class, 'selector']);
+
