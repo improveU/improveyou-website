@@ -9,7 +9,7 @@
    <div class="containerCards">
         <div class="cardOne">
             <div class="pictureBox">
-                <img src="{{ asset('img/people/Tim.png') }}" class="peopleImg">
+                <img src="{{ asset('img/people/Tim.webp') }}" class="peopleImg">
             </div>
             <div class="textBox">
                 <h3 class="name">Tim Bernhard</h3>
@@ -19,7 +19,7 @@
         </div>
         <div class="cardTwo">
             <div class="pictureBox">
-                <img src="{{ asset('img/people/yannic.png') }}" class="peopleImg">
+                <img src="{{ asset('img/people/yannic.webp') }}" class="peopleImg">
             </div>
             <div class="textBox">
                 <h3 class="name">Yannic Studer</h3>
@@ -29,7 +29,7 @@
         </div>
         <div class="cardThree">
             <div class="pictureBox">
-                <img src="{{ asset('img/people/demian.png') }}" class="peopleImg">
+                <img src="{{ asset('img/people/demian.webp') }}" class="peopleImg">
             </div>
             <div class="textBox">
                 <h3 class="name">Demian Flury</h3>
@@ -39,7 +39,7 @@
         </div>
         <div class="cardFour">
             <div class="pictureBox">
-                <img src="{{ asset('img/people/elija.png') }}" class="peopleImg">
+                <img src="{{ asset('img/people/elija.webp') }}" class="peopleImg">
             </div>
             <div class="textBox">
                 <h3 class="name">Elija Zürcher</h3>
@@ -49,7 +49,7 @@
         </div>
         <div class="cardFive">
             <div class="pictureBox">
-                <img src="{{ asset('img/people/xavier.png') }}" class="peopleImg">
+                <img src="{{ asset('img/people/xavier.webp') }}" class="peopleImg">
             </div>
             <div class="textBox">
                 <h3 class="name">Xavier Scherer</h3>
@@ -57,7 +57,5 @@
                 <p class="role">Backend Developer</p>
             </div>
         </div>
-
-
    </div>
 @endsection

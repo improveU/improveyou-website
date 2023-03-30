@@ -10,7 +10,7 @@
 
     <div>
         <h1>Contact Us</h1>
-        <img src="{{URL::asset('img/ContactUsMainPic.jpg')}}" alt="ContactUsMainPic" class="phoneImg">
+        <img src="{{URL::asset('img/ContactUsMainPic.webp')}}" alt="ContactUsMainPic" class="phoneImg">
     </div>
 
     <form method="POST" class="formWrapper create" action="{{ route('login') }}">
@@ -57,7 +57,7 @@
         <div class="c">
             <h2>Reason</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="email">Email</label>
+                <label class="inputLabel" for="email">Reason</label>
                 <input class="inputField @error('email') is-invalid @enderror"
                        type="email"
                        name="email"
