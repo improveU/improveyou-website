@@ -8,7 +8,7 @@
             <button>
                 <img src="{{ asset('svg/logoSearch.svg') }}">
             </button>
-            <a href="{{ url('/create') }}">
+            <a href="{{ url('/create-course') }}">
                 <img src="{{ asset('svg/logoCreate.svg') }}">
             </a>
             <a href="{{ url('/profile') }}">

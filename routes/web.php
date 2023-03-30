@@ -29,3 +29,5 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('create-course', [\App\Http\Controllers\CreateCourseController::class, 'get']);
+Route::post('create-course', [\App\Http\Controllers\CreateCourseController::class, 'createCourse']);
