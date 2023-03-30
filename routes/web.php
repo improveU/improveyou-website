@@ -32,7 +32,7 @@ Route::get('/faq', function () {
 
 Route::get('/form', function () {
     return view('form');
-});
+})->middleware('iscreator');
 
 Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
