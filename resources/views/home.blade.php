@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <section id="header">
         <header class="homeHeader">
             <x-header/>
@@ -50,29 +49,6 @@
     <section id="footer">
 
     </section>
-
- <!--
-     <div class="mainContainer">
-         <div class="unterContainer">
-             <div class="catch">
-                 GET BETTER
-             </div>
-             <div class="catch2">
-                 EVERY DAY
-             </div>
-             <div class="centerBtn">
-                 <button class="btn" id="button" onclick="window.location.href = '/register';">
-                     Join now
-                 </button>
-             </div>
- 
-             <div class="underText">
-                 improve your life now!
-             </div>
-         </div>
-     </div>
- -->
-
     <div class="secondContainer">
 
         <div class="leftContainer">
@@ -92,22 +68,22 @@
             <div class="content2">
                 <h2 style="margin-top: 0%">We provide you:</h2>
                 <div class="iconandtext">
-                    <div class="icon2"><img src="{{ asset('img/annehmen.png') }}" class="icon"></div>
+                    <div class="icon2"><img src="{{ asset('img/annehmen.webp') }}" class="icon"></div>
                     <div class="text">Access to all courses</div>
                 </div>
 
                 <div class="iconandtext">
-                    <div class="icon2"><img src="{{ asset('img/annehmen.png') }}" class="icon"></div>
+                    <div class="icon2"><img src="{{ asset('img/annehmen.webp') }}" class="icon"></div>
                     <div class="text">30 days money back guarantee</div>
                 </div>
 
                 <div class="iconandtext">
-                    <div class="icon2"><img src="{{ asset('img/annehmen.png') }} " class="icon"></div>
+                    <div class="icon2"><img src="{{ asset('img/annehmen.webp') }} " class="icon"></div>
                     <div class="text">Professional support</div>
                 </div>
 
                 <div class="iconandtext">
-                    <div class="icon2"><img src="{{ asset('img/annehmen.png') }}" class="icon"></div>
+                    <div class="icon2"><img src="{{ asset('img/annehmen.webp') }}" class="icon"></div>
                     <div class="text">Convenient payment</div>
                 </div>
                 <button class="btn" id="button" onclick="window.location.href = '/paymentOverview';">
@@ -187,7 +163,7 @@
                                     <button class="btn" id="button"
                                         onclick="window.location.href = '/courses{category_id}';">
                                         Courses
-                                        <img src="{{ asset('img/rightCorner1.png') }}" class="iconCorner">
+                                        <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner">
                                     </button>
                                 </div>
 
@@ -207,7 +183,7 @@
                                     <button class="btn" id="button"
                                         onclick="window.location.href = '/courses{category_id}';">
                                         Courses
-                                        <img src="{{ asset('img/rightCorner1.png') }}" class="iconCorner">
+                                        <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner">
                                     </button>
                                 </div>
                             </div>
@@ -225,7 +201,7 @@
                                     <button class="btn" id="button"
                                         onclick="window.location.href = '/courses{category_id}';">
                                         Courses
-                                        <img src="{{ asset('img/rightCorner1.png') }}" class="iconCorner">
+                                        <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner">
                                     </button>
                                 </div>
                             </div>
@@ -245,7 +221,7 @@
                                     <button class="btn" id="button"
                                         onclick="window.location.href = '/courses{category_id}';">
                                         Courses
-                                        <img src="{{ asset('img/rightCorner1.png') }}" class="iconCorner">
+                                        <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner">
                                     </button>
                                 </div>
                             </div>
