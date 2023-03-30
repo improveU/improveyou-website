@@ -1,5 +1,5 @@
 <section class="register">
-    <form method="POST" class="formWrapper" action="/register/store">
+    <form method="POST" class="formWrapper" action="/register">
         @csrf
         <div class="inputContainer">
             <label class="inputLabel" for="username">Username</label>

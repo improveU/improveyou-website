@@ -24,7 +24,7 @@ composer install
 cp .env.example .env
 ```
 
-4. Generate an Artisan Key
+4. Generate a Key
 
 ```
 php artisan key:generate
