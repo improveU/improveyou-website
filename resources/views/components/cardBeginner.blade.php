@@ -4,5 +4,8 @@
    <h1 class="price">$ 10</h1>
    <p>/month</p>
    <p>Monthly invoice with 30 days money back guarantee</p>
-   <button class="btn" id="button" onclick="window.location.href = '/payment{id}';">Subscribe now </button>
+    <form action="/payment/1" method="post">
+        @csrf
+        <button class="btn" id="button" type="submit">Subscribe now </button>
+    </form>
 </div>

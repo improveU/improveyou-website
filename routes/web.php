@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RegisterController;
 use \App\Http\Controllers\LoginController;
@@ -34,16 +35,14 @@ Route::get('/form', function () {
 });
 
 Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
-
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
 Route::get('login', [LoginController::class, 'show'])->middleware('guest');
-
 Route::post('login', [LoginController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('guest');
 
-
-
-
 Route::get('/contact', [ContactController::class, 'show']);
+
+Route::get('/payment', [PaymentController::class, 'show']);
+Route::post('/payment/{id}', [PaymentController::class, 'selector']);

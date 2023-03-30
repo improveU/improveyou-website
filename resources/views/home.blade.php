@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="linkDiscord">
-            <a href="">
+            <a href="https://discord.gg/aQqUmVmGRA">
                 Join our Discord Server
             </a>
         </div>
