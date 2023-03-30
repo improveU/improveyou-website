@@ -1,0 +1,422 @@
+@use "../abstracts" as *;
+
+
+header.homeHeader{
+    margin-bottom: 0 !important;
+    height: auto;
+    header{
+        background-color: #ffffff69;
+        height: auto;
+        position: absolute;
+        top: 0;
+        z-index: 99;
+
+        nav{
+        }
+    }
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    height: 100vh;
+    background: no-repeat center url(./../img/landing.webp);
+    background-size: 6000px 4000px;
+
+}
+.title-container{
+    margin-left: 30px;
+}
+
+.catch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    width: 500px;
+    font-weight: bold;
+    color: white;
+}
+.catch2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    width: 500px;
+    font-weight: bold;
+    color: white;
+}
+.centerBtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.underText{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    color: white;
+}
+.secondContainer{
+    display: flex;
+    height: auto;
+    margin-bottom: 100px;
+}
+.leftContainer{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: #E5F6F8;
+    justify-content: center;
+    height: 40vh;
+    padding-bottom: auto;
+    padding-top: auto ;
+}
+.rightContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: #FFF4EE;
+    height: 40vh;
+    padding-bottom: auto;
+    padding-top: auto ;
+}
+.smallText{
+    display: block;
+}
+.content{
+    width: 70%;
+}
+.iconandtext{
+
+    display: flex;
+    height: 5vh;
+}
+.content2{
+    width: 60%;
+
+
+}
+.icon{
+    width: 10px;
+    height: 10px;
+
+}
+.icon2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #FF9966;
+    border-radius: 5px;
+}
+.text{
+    margin-left: 3%;
+}
+.thirdContainer{
+    height: 100vh;
+
+}
+@media screen and (max-width: 1300px) {
+    div.secondContainer {
+        flex-direction: column;
+        div.leftContainer{
+            width: 100%;
+        }
+        div.rightContainer{
+            width: 100%;
+        }
+    }
+  }
+@media screen and (max-width: 1080px) {
+    div.grid-container {
+      grid-template-columns:  300px 300px;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    div.grid-container {
+        grid-template-columns: 300px;
+        column-gap: 0px;
+        .div{
+            width: auto;
+        }
+    }
+  }
+
+.middleMaker{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 0;
+
+    .grid-container{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 300px 300px 300px;
+        row-gap: 50px;
+        column-gap: 50px;
+
+        width: auto;
+        height: auto;
+
+        div{
+            height: 300px;
+            width: 300px;
+            position: relative;
+            background-size: 300px 300px;
+
+            div{
+                position: absolute;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}
+
+.category-text {
+    font-family: "BerlinTypeBold";
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+
+    &.leftBottom {
+        bottom: 15px;
+        left: 15px;
+    }
+    &.leftTop{
+        top: 15px;
+        left: 15px;
+    }
+    &.rightTop{
+        top: 15px;
+        right: 15px;
+    }
+    &.rightBottom{
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+.item-1{
+    background: no-repeat center url(../img/categories/fitness.png);
+}
+.item-2{
+    background: no-repeat center url(../img/categories/body-weight.png);
+}
+.item-3{
+    background: no-repeat center url(../img/categories/elastic-bands.png);
+}
+.item-4{
+    background: no-repeat center url(../img/categories/dancing.png);
+}
+.item-5{
+    background: no-repeat center url(../img/categories/yoga.png);
+}
+.item-6{
+    background: no-repeat center url(../img/categories/add-weights.png);
+}
+.item-7{
+    background: no-repeat center url(../img/categories/aerobic.png);
+}
+.item-8{
+    background: no-repeat center url(../img/categories/balance.png);
+}
+.item-9{
+    background: no-repeat center url(../img/categories/stretching.png);
+}
+
+.fourthContainer{
+    .grid-container2{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 350px 350px 350px;
+        column-gap: 50px;
+        width: auto;
+        height: auto;
+        
+        .card{
+            font-family: "BerlinTypeBold";
+            color: #13739b;
+            background-color: #E5F6F8;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
+            border: solid 2.5px #E0E1E5;
+            border-radius: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 300px;
+            width: 320px;
+
+            :nth-child(2){
+                margin-top: 15px;
+                margin-bottom: 35px;
+            }
+
+            :nth-child(5){
+                margin-top: 35px;
+                margin-bottom: 35px;
+            }
+
+            h1{
+                color: #05445E;
+                text-transform: uppercase;
+                font-size: 45px;
+                &.price{
+                    font-size: 55px;
+                }
+            }
+            p{
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                text-align: center;
+                &.paragraph{
+
+                }
+            }
+
+
+            &:nth-child(2){
+                background-color: #FFF4EE;
+            }
+
+            .cardTitel{
+                font-family: "BerlinTypeBold";
+                text-transform: uppercase;
+                color: #05445E;
+                display: flex;
+                justify-content: center;
+            }
+            .access{
+                display: flex;
+                justify-content: center;
+                text-align-last: center;
+                color: #05445E;
+                height: 48px;
+            }
+            .priceCard{
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                font-size: 50px;
+                font-weight: bold;
+                color: #05445E;
+            }
+            .perMonth{
+                display: flex;
+                justify-content: center;
+                color: #05445E;
+            }
+            .descriptionText{
+                display: flex;
+                justify-content: center;
+                margin-top: 15%;
+                margin-bottom: 15%;
+                text-align-last: center;
+                color: #05445E;
+            }
+            .middleSubcscribe{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 1175px) {
+    div.grid-container2 {
+        flex-direction: column;
+        grid-template-columns: 400px !important;
+
+    }
+}
+
+  @media screen and (max-width: 750px) {
+    div.grid-container2 {
+        flex-direction: column;
+
+
+    }
+}
+.fithcontainer{
+    .middleMaker2{
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 50px 0;
+        .grid-container3{
+            display: grid;
+            grid-template-columns: 600px 600px;
+            row-gap: 50px;
+            column-gap: 50px;
+            .category-box{
+                display: flex;
+                width: 600px;
+                height: 300px;
+
+                .pictureLeft{
+                    width: 240px;
+                    border-radius: 15px 0 0 15px;
+                    background: no-repeat center url(../img/ourservice/gymweights.png);
+                }
+                .pictureLeft.pic2{
+                    background: no-repeat center url(../img/ourservice/womanyoga.png);
+                }
+                .pictureLeft.pic3{
+                    background: no-repeat center url(../img/ourservice/vegetables.png);
+                }
+                .pictureLeft.pic4{
+                    background: no-repeat center url(../img/ourservice/supplements.png);
+                }
+                .DescriptionRight{
+                    width: 360px;
+                    background-color: #E5F6F8;
+                    position: relative;
+                    padding: 20px;
+                    border-radius: 0 15px 15px 0;
+                    .leadText{
+                        display: flex;
+                        padding-left: 5%;
+                    }
+                    .courseLink{
+                        position: absolute;
+                        right: 15px;
+                        bottom: 15px;
+
+                        .iconCorner{
+                            margin-left: 5px;
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+@media screen and (max-width: 1285px) {
+    div.grid-container3 {
+        flex-direction: column;
+        grid-template-columns: 600px !important;
+
+    }
+}
+
+  @media screen and (max-width: 800px) {
+    div.grid-container3 {
+        flex-direction: column;
+        grid-template-columns: 400px !important;
+
+    }
+}

@@ -1,0 +1,58 @@
+@use "../abstracts" as *;
+
+section.splitTwo{
+   display: flex;
+   height: calc(100vh - 10px);
+   width: 100vw;
+
+   div.form{
+      width: 400px;
+
+      div.splitTwoWrapper{
+         background-color: $background;
+         display: flex;
+         flex-direction: column;
+         padding: 25px;
+         width: calc(100% - 50px);
+         height: calc(100% - 50px);
+         overflow: overlay;
+
+         h2.splitOneTitle{
+            font-family: "BerlinTypeBold", sans-serif;
+            margin: 40px 0 10px 0;
+         }
+
+         section{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+         
+            form{
+               width: 100%;
+               padding: 0;
+            }
+         }
+
+         a{
+         text-decoration: none;
+         }
+
+      }
+   }
+   div.picture{
+      width: calc(100% - 400px);
+      background: url(https://source.unsplash.com/random) no-repeat fixed center/cover;
+   }
+}
+
+@media only screen and (max-width: 800px) {
+   section.splitTwo{
+      div.form{
+         width: 100%;
+      }
+      div.picture{
+         display: none;
+      }
+   }
+}
