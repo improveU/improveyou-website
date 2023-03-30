@@ -10,10 +10,10 @@
 
 @section('content')
 
-    <form method="POST" class="formWrapper create" action="{{ url('create') }}" enctype="multipart/form-data">
+    <form method="POST" class="formWrapper create" id="formSending" onsubmit="testing()" action="{{ url('create-course') }}" enctype="multipart/form-data">
         @csrf
 
-        <input type="hidden" name="description" value="">
+        <input type="hidden" name="description" id="formTextarea" value="">
 
         <div class="c">
             <h2>Title</h2>
@@ -80,17 +80,13 @@
         </div>
     </form>
 
-                <button class="btn" onclick="testing()" >Login</button>
-
 @endsection
 
 @section('scripts')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script>
-        const Editor = toastui.Editor;
-
-        const editor = new Editor({
+        const editor = new toastui.Editor({
             el: document.querySelector('#editor'),
             height: 'auto',
             initialValue: '',

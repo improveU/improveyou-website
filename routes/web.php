@@ -34,6 +34,9 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('create-course', [\App\Http\Controllers\CreateCourseController::class, 'get']);
+Route::post('create-course', [\App\Http\Controllers\CreateCourseController::class, 'createCourse']);
+
 Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
@@ -46,3 +49,4 @@ Route::get('/contact', [ContactController::class, 'show']);
 
 Route::get('/payment', [PaymentController::class, 'show']);
 Route::post('/payment/{id}', [PaymentController::class, 'selector']);
+
