@@ -13,18 +13,18 @@
         <img src="{{URL::asset('img/ContactUsMainPic.webp')}}" alt="ContactUsMainPic" class="phoneImg">
     </div>
 
-    <form method="POST" class="formWrapper create" action="{{ route('login') }}">
+    <form method="POST" class="formWrapper create" action="{{ url('contact') }}">
         @csrf
 
         <div class="c">
             <h2>Name</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="email">Email</label>
+                <label class="inputLabel" for="email">Name</label>
                 <input class="inputField @error('email') is-invalid @enderror"
-                       type="email"
-                       name="email"
+                       type="text"
+                       name="name"
                        value="{{ old('email') }}"
-                       autocomplete="email"
+                       autocomplete="name"
                        required
                        autofocus
                 >

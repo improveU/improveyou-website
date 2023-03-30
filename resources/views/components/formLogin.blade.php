@@ -1,5 +1,5 @@
 <section class="login">
-    <form method="POST" class="formWrapper" action="{{ route('login') }}">
+    <form method="POST" class="formWrapper" action="{{ url('login') }}">
         @csrf
         <div class="inputContainer">
             <label class="inputLabel" for="email">Email</label>
@@ -31,7 +31,7 @@
             </span>
             @enderror
             <div>
-                <a href="{{ route('password.request') }}"> <p>Forgot password?</p> </a>
+                <a href="{{ url('password.request') }}"> <p>Forgot password?</p> </a>
             </div>
         </div>
         <div class="inputWrapperFix"></div>
