@@ -80,8 +80,6 @@
         </div>
     </form>
 
-                <button class="btn" onclick="testing()" >Login</button>
-
 @endsection
 
 @section('scripts')
