@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\RegisterController;
+use \App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +31,17 @@ Route::get('/faq', function () {
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
+
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+
+Route::get('login', [LoginController::class, 'show'])->middleware('guest');
+
+Route::post('login', [LoginController::class, 'store'])->middleware('guest');
+
+Route::post('logout', [LoginController::class, 'destroy'])->middleware('guest');
+
+
+
 
