@@ -1165,10 +1165,10 @@ img.ProseMirror-separator {
     background-color: #ccc;
     border-radius: 50%;
     content: "";
-    height: 5px;
-    margin-left: -17px;
-    margin-top: 6px;
-    width: 5px
+    height: 8px;
+    margin-left: -16px;
+    margin-top: 10px;
+    width: 8px
 }
 
 .toastui-editor-contents ol>li:before {
@@ -1235,22 +1235,22 @@ img.ProseMirror-separator {
 .toastui-editor-contents .task-list-item:before {
     background-position: 50%;
     background-repeat: no-repeat;
-    background-size: 30px 30px !important;
-    background: transparent url(./../svg/toastui-editor-edit.svg);
-    border-radius: 12px;
+    background-size: 20px 30px !important;
+    background: transparent url(./../svg/toastui-editor-checkbox.svg);
+    border-radius: 0px;
     content: "";
     cursor: pointer;
-    height: 34px;
+    height: 32px;
     left: 0;
     margin-left: 0;
-    margin-top: 0;
+    margin-top: -2px;
     position: absolute;
     top: 1px;
-    width: 29px
+    width: 20px
 }
 
 .toastui-editor-contents .task-list-item.checked:before {
-    background-image: url(./../svg/toastui-editor-edit.svg)
+    background-image: url(./../svg/toastui-editor-checkbox-checked.svg)
 }
 
 .toastui-editor-custom-block .toastui-editor-custom-block-editor {

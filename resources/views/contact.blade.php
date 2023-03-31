@@ -19,16 +19,16 @@
         <div class="c">
             <h2>Name</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="email">Name</label>
-                <input class="inputField @error('email') is-invalid @enderror"
+                <label class="inputLabel" for="name">How shall we call you?</label>
+                <input class="inputField @error('name') is-invalid @enderror"
                        type="text"
                        name="name"
-                       value="{{ old('email') }}"
+                       value="{{ old('name') }}"
                        autocomplete="name"
                        required
                        autofocus
                 >
-                @error('email')
+                @error('name')
                 <span class="invalidFeedback" role="alert">
                     {{ $message }}
                 </span>
@@ -38,7 +38,7 @@
         <div class="c">
             <h2>Email</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="email">Email</label>
+                <label class="inputLabel" for="email">Use a valid email to which we can reply.</label>
                 <input class="inputField @error('email') is-invalid @enderror"
                        type="email"
                        name="email"
@@ -57,16 +57,16 @@
         <div class="c">
             <h2>Reason</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="email">Reason</label>
-                <input class="inputField @error('email') is-invalid @enderror"
-                       type="email"
-                       name="email"
-                       value="{{ old('email') }}"
-                       autocomplete="email"
+                <label class="inputLabel" for="reason">What is an overhand term for your problem?</label>
+                <input class="inputField @error('reason') is-invalid @enderror"
+                       type="text"
+                       name="reason"
+                       value="{{ old('reason') }}"
+                       autocomplete="reason"
                        required
                        autofocus
                 >
-                @error('email')
+                @error('reason')
                 <span class="invalidFeedback" role="alert">
                     {{ $message }}
                 </span>
@@ -75,9 +75,12 @@
         </div>
         <div class="c">
             <h2>Description</h2>
-            <div id="editor"></div>
-            <div>
-                <button class="btn" type="submit">Login</button>
+            <div class="inputContainer">
+                <label class="inputLabel" for="editor">Describe the problem and expand on what you put in the reason field. Minimum 200 words.</label>
+                <div id="editor"></div>
+            </div>
+            <div class="submitContainerRight">
+                <button class="btn" type="submit">Send</button>
             </div>
         </div>
     </form>
@@ -86,17 +89,12 @@
 @section('scripts')
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script>
-        const Editor = toastui.Editor;
-
-        const editor = new Editor({
+        const editor = new toastui.Editor({
             el: document.querySelector('#editor'),
-            height: 'auto',
+            height: '500px',
             initialValue: '',
             initialEditType: 'wysiwyg',
             previewStyle: 'vertical'
         });
-
-        editor.getMarkdown();
-
     </script>
 @endsection

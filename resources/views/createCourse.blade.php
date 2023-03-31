@@ -18,7 +18,7 @@
         <div class="c">
             <h2>Title</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="email">Email</label>
+                <label class="inputLabel" for="title">Try to presesnt your media in one sentence</label>
                 <input class="inputField @error('title') is-invalid @enderror"
                        type="text"
                        name="title"
@@ -36,7 +36,7 @@
         <div class="c">
             <h2>Thumbnail</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="file-input">Thumbnail</label>
+                <label class="inputLabel" for="thumbnail">An image that represents your media</label>
                 <div class="file-drop-area">
                     <div class="cover-svg">
                         <img src="{{ asset('svg/logoUploadFile.svg') }}">
@@ -55,7 +55,7 @@
         <div class="c">
             <h2>Introduction</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="textarea">Introduction</label>
+                <label class="inputLabel" for="intro">Introduce the media and expand on what you put in the title. Max 200 words.</label>
                 <input class="inputField @error('intro') is-invalid @enderror"
                        type="text"
                        name="intro"
@@ -72,10 +72,13 @@
         </div>
         <div class="c">
             <h2>Description</h2>
-            <div id="editor"></div>
-            <div>
-                <button class="btn" type="submit">Send</button>
+            <div class="inputContainer">
+                <label class="inputLabel" for="editor">Describe the media and expand on what you put in the title. Minimum 200 words.</label>
+                <div id="editor"></div>
+            </div>
+            <div class="submitContainerRight">
                 <button class="btn discard" type="submit">Discard</button>
+                <button class="btn" type="submit">Send</button>
             </div>
         </div>
     </form>
@@ -88,14 +91,11 @@
     <script>
         const editor = new toastui.Editor({
             el: document.querySelector('#editor'),
-            height: 'auto',
+            height: '500px',
             initialValue: '',
             initialEditType: 'wysiwyg',
             previewStyle: 'vertical'
         });
-
-        editor.getMarkdown();
-
     </script>
     <script src="{{ asset('js/upload.js') }}"></script>
 @endsection

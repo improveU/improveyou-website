@@ -517,6 +517,14 @@ form.formWrapper .submitContainer p {
 form.formWrapper .submitContainer p :active {
   color: #1D212F;
 }
+form.formWrapper .submitContainerRight {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 25px;
+}
+form.formWrapper .submitContainerRight button.btn {
+  margin-left: 10px;
+}
 
 .file-drop-area {
   position: relative;
@@ -642,6 +650,36 @@ header.homeHeader header {
   top: 0;
   z-index: 99;
 }
+.sectionTitle {
+  color: #005F60;
+  font-size: 35px;
+  padding: 100px 25px 80px 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  min-width: 1300px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .sectionTitle {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+    min-width: 0px !important;
+  }
+}
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
 section#cover {
   position: relative;
   display: block;
@@ -741,6 +779,9 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase {
   padding: 40px 40px 40px 0px;
   color: #005F60;
 }
+section#phrases .phrasesWrapper .phrasesContainer .phrase span {
+  color: #ff892e;
+}
 section#phrases .phrasesWrapper .phrasesContainer .phrase h2 {
   color: #05445e;
   font-family: "BerlinTypeBold";
@@ -783,16 +824,14 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
     padding: 40px 40px 40px 40px !important;
   }
 }
-.thirdContainer {
-  height: 100vh;
+section#categories {
+  position: relative;
 }
-
-.middleMaker {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0 50px 0;
+section#categories .categoryWrapper {
+  margin-right: auto;
+  margin-left: auto;
 }
-.middleMaker .grid-container {
+section#categories .categoryWrapper .categoryContainer {
   display: grid;
   justify-content: center;
   grid-template-columns: 300px 300px 300px;
@@ -802,82 +841,98 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
   width: auto;
   height: auto;
 }
-.middleMaker .grid-container div {
+section#categories .categoryWrapper .categoryContainer div {
   height: 300px;
   width: 300px;
   position: relative;
-  background-size: 300px 300px;
+  background-size: 300px 300px !important;
 }
-.middleMaker .grid-container div div {
+section#categories .categoryWrapper .categoryContainer div div {
+  background: none !important;
   position: absolute;
   width: auto;
   height: auto;
+  background: none;
 }
-
-.category-text {
+section#categories .categoryWrapper .categoryContainer div div.category-text {
   font-family: "BerlinTypeBold";
   color: white;
   font-size: 2rem;
   position: absolute;
   text-transform: uppercase;
 }
-.category-text.leftBottom {
+section#categories .categoryWrapper .categoryContainer div div.category-text.leftBottom {
   bottom: 15px;
   left: 15px;
 }
-.category-text.leftTop {
+section#categories .categoryWrapper .categoryContainer div div.category-text.leftTop {
   top: 15px;
   left: 15px;
 }
-.category-text.rightTop {
+section#categories .categoryWrapper .categoryContainer div div.category-text.rightTop {
   top: 15px;
   right: 15px;
 }
-.category-text.rightBottom {
+section#categories .categoryWrapper .categoryContainer div div.category-text.rightBottom {
   bottom: 15px;
   right: 15px;
 }
-.category-text.dark {
+section#categories .categoryWrapper .categoryContainer div div.category-text.dark {
   color: #1D212F;
 }
-
-.item-1 {
-  background: no-repeat center url(../img/categories/yoga.png);
+section#categories .categoryWrapper .categoryContainer :nth-child(1) {
+  background: no-repeat center url(../img/categories/yoga.webp);
+  transition-delay: 200ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(2) {
+  background: no-repeat center url(../img/categories/add-weights.webp);
+  transition-delay: 200ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(3) {
+  background: no-repeat center url(../img/categories/dancing.webp);
+  transition-delay: 200ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(4) {
+  background: no-repeat center url(../img/categories/aerobic.webp);
+  transition-delay: 400ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(5) {
+  background: no-repeat center url(../img/categories/balance.webp);
+  transition-delay: 400ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(6) {
+  background: no-repeat center url(../img/categories/stretching.webp);
+  transition-delay: 400ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(7) {
+  background: no-repeat center url(../img/categories/body-weight.webp);
+  transition-delay: 600ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(8) {
+  background: no-repeat center url(../img/categories/fitness.webp);
+  transition-delay: 600ms;
+}
+section#categories .categoryWrapper .categoryContainer :nth-child(9) {
+  background: no-repeat center url(../img/categories/elastic-bands.webp);
+  transition-delay: 600ms;
 }
 
-.item-2 {
-  background: no-repeat center url(../img/categories/add-weights.png);
+@media only screen and (max-width: 1079px) {
+  .categoryContainer {
+    grid-template-columns: 300px 300px !important;
+  }
 }
-
-.item-3 {
-  background: no-repeat center url(../img/categories/dancing.png);
+@media only screen and (max-width: 1079px) {
+  .categoryContainer {
+    grid-template-columns: 300px 300px !important;
+  }
 }
-
-.item-4 {
-  background: no-repeat center url(../img/categories/aerobic.png);
+@media only screen and (max-width: 779px) {
+  .categoryContainer {
+    grid-template-columns: 300px !important;
+  }
 }
-
-.item-5 {
-  background: no-repeat center url(../img/categories/balance.png);
-}
-
-.item-6 {
-  background: no-repeat center url(../img/categories/stretching.png);
-}
-
-.item-7 {
-  background: no-repeat center url(../img/categories/body-weight.png);
-}
-
-.item-8 {
-  background: no-repeat center url(../img/categories/fitness.png);
-}
-
-.item-9 {
-  background: no-repeat center url(../img/categories/elastic-bands.png);
-}
-
-.fourthContainer .subscribeWrapper {
+section#prices .subscribeWrapper {
   width: calc(100% - 100px);
   gap: 80px;
   display: flex;
@@ -888,7 +943,7 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
   margin-left: 50px;
   margin-right: 50px;
 }
-.fourthContainer .subscribeWrapper .subscribeCard {
+section#prices .subscribeWrapper .subscribeCard {
   font-family: "BerlinTypeBold";
   color: #13739b;
   background-color: #E5F6F8;
@@ -902,36 +957,45 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
   height: 460px;
   width: 320px;
 }
-.fourthContainer .subscribeWrapper .subscribeCard :nth-child(2) {
+section#prices .subscribeWrapper .subscribeCard :nth-child(2) {
   margin-top: 15px;
   margin-bottom: 35px;
 }
-.fourthContainer .subscribeWrapper .subscribeCard :nth-child(5) {
+section#prices .subscribeWrapper .subscribeCard :nth-child(5) {
   margin-top: 35px;
   margin-bottom: 35px;
 }
-.fourthContainer .subscribeWrapper .subscribeCard h1 {
+section#prices .subscribeWrapper .subscribeCard h1 {
   color: #05445E;
   text-transform: uppercase;
   font-size: 45px;
 }
-.fourthContainer .subscribeWrapper .subscribeCard h1.price {
+section#prices .subscribeWrapper .subscribeCard h1.price {
   font-size: 55px;
 }
-.fourthContainer .subscribeWrapper .subscribeCard p {
+section#prices .subscribeWrapper .subscribeCard p {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
   display: block;
   text-align: center;
 }
-.fourthContainer .subscribeWrapper .subscribeCard button {
+section#prices .subscribeWrapper .subscribeCard form {
+  width: 100%;
+}
+section#prices .subscribeWrapper .subscribeCard form input[type=hidden] {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+section#prices .subscribeWrapper .subscribeCard form button {
   width: 100%;
   height: 55px;
   font-family: "BerlinType";
   font-size: 22px;
+  margin: 0 !important;
 }
-.fourthContainer .subscribeWrapper .favorite {
+section#prices .subscribeWrapper .favorite {
   background-color: #FF9966;
   border-radius: 24px;
   padding: 4px;
@@ -940,12 +1004,12 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
   font-family: "BerlinTypeBold";
   text-align: center;
 }
-.fourthContainer .subscribeWrapper .favorite .subscribeFavorite {
+section#prices .subscribeWrapper .favorite .subscribeFavorite {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 20px;
 }
-.fourthContainer .subscribeWrapper .favorite .subscribeCard {
+section#prices .subscribeWrapper .favorite .subscribeCard {
   border: none !important;
   text-transform: none;
   background-color: #FFF4EE !important;
@@ -961,69 +1025,68 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
     order: -2;
   }
 }
-.fithcontainer .middleMaker2 {
+section#services .serviceWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 50px 100px 50px;
   display: flex;
+  gap: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 50px 0 50px 0;
+  max-width: 1400px;
 }
-.fithcontainer .middleMaker2 .grid-container3 {
-  display: grid;
-  grid-template-columns: 600px 600px;
-  row-gap: 50px;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
-}
-.fithcontainer .middleMaker2 .grid-container3 .category-box {
-  display: flex;
+section#services .serviceWrapper .serviceContainer {
+  height: 300px;
   width: 600px;
+  display: flex;
+  flex-direction: row;
+}
+section#services .serviceWrapper .serviceContainer .picture img {
+  border-radius: 15px 0 0 15px;
   height: 300px;
 }
-.fithcontainer .middleMaker2 .grid-container3 .category-box .pictureLeft {
-  width: 240px;
-  border-radius: 15px 0 0 15px;
-  background: no-repeat center url(../img/ourservice/gymweights.png);
-}
-.fithcontainer .middleMaker2 .grid-container3 .category-box .pictureLeft.pic2 {
-  background: no-repeat center url(../img/ourservice/womanyoga.png);
-}
-.fithcontainer .middleMaker2 .grid-container3 .category-box .pictureLeft.pic3 {
-  background: no-repeat center url(../img/ourservice/vegetables.png);
-}
-.fithcontainer .middleMaker2 .grid-container3 .category-box .pictureLeft.pic4 {
-  background: no-repeat center url(../img/ourservice/supplements.png);
-}
-.fithcontainer .middleMaker2 .grid-container3 .category-box .DescriptionRight {
-  width: 360px;
+section#services .serviceWrapper .serviceContainer .description {
+  padding: 30px;
+  border-radius: 0 15px 15px 0;
   background-color: #E5F6F8;
   position: relative;
-  padding: 20px;
-  border-radius: 0 15px 15px 0;
 }
-.fithcontainer .middleMaker2 .grid-container3 .category-box .DescriptionRight .leadText {
-  display: flex;
-  padding-left: 5%;
+section#services .serviceWrapper .serviceContainer .description h1 {
+  text-transform: uppercase;
+  font-family: "BerlinTypeBold";
+  color: #05445E;
+  font-size: 30px;
 }
-.fithcontainer .middleMaker2 .grid-container3 .category-box .DescriptionRight .courseLink {
+section#services .serviceWrapper .serviceContainer .description p {
+  color: #005F60;
+}
+section#services .serviceWrapper .serviceContainer .description button {
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  right: 25px;
+  bottom: 25px;
 }
-.fithcontainer .middleMaker2 .grid-container3 .category-box .DescriptionRight .courseLink .iconCorner {
+section#services .serviceWrapper .serviceContainer .description button .iconCorner {
   margin-left: 5px;
   width: 15px;
   height: 15px;
 }
 
-@media screen and (max-width: 1285px) {
-  div.grid-container3 {
-    flex-direction: column;
-    grid-template-columns: 600px !important;
+@media only screen and (max-width: 750px) {
+  .serviceContainer {
+    flex-direction: column !important;
+    height: auto !important;
+    width: 340px !important;
   }
-}
-@media screen and (max-width: 800px) {
-  div.grid-container3 {
-    flex-direction: column;
-    grid-template-columns: 400px !important;
+  .serviceContainer .picture img {
+    height: auto !important;
+    width: 340px !important;
+    border-radius: 15px 15px 0 0 !important;
+    transform: translateY(8px) !important;
+  }
+  .serviceContainer .description {
+    height: 250px !important;
+    border-radius: 0 0 15px 15px !important;
   }
 }
 .cardFAQ {

@@ -525,6 +525,17 @@ form {
             }
          }
       }
+
+      .submitContainerRight{
+         display: flex;
+         justify-content: flex-end;
+         padding-top: 25px;
+
+         button.btn{
+            margin-left: 10px;
+         }
+      }
+
    }
 }
 
