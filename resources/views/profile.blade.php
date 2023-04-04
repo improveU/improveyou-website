@@ -44,7 +44,7 @@
                     <li><p>Password: </p></li>
                 </ul>
             </div>
-            <form method="POST" action="/logout">
+            <form method="POST" action="{{ url('/logout') }}">
                 @csrf
 
                 <button type="submit">Log Out</button>
