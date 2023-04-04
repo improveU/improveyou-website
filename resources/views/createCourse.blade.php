@@ -87,9 +87,8 @@
 
 @section('scripts')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script>
-        const editor = new toastui.Editor({
+        const mdEditor = new toastui.Editor({
             el: document.querySelector('#editor'),
             height: '500px',
             initialValue: '',

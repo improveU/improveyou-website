@@ -13,7 +13,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body>
+<body id="body">
 <x-header/>
 
     @yield('content')
