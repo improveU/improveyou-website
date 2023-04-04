@@ -35,7 +35,7 @@ Route::get('/faq', function () {
 
 Route::get('/form', function () {
     return view('form');
-})->middleware('iscreator');
+});
 
 Route::get('create-course', [CreateCourseController::class, 'get']);
 Route::post('create-course', [CreateCourseController::class, 'createCourse']);
