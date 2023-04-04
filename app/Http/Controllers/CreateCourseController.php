@@ -26,11 +26,11 @@ class CreateCourseController extends Controller
         $course->introduction = $request->get('intro');
         $course->course_description = $request->get('description');
         $course->views = 0;
-        $course->creator_id = auth()->user()->id;
+        $course->creator_id = 1;//auth()->user()->id;
         $course->category_id = 1;//$request->get('category');
 
         $course->save();
-        return redirect('/')->with('status', 'Curse created (haha funi)');
+        return redirect('/')->with('status', 'Course was created!');
     }
 
     public function get()
