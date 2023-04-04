@@ -14,7 +14,7 @@
             <div class="textBox">
                 <h3 class="name">Tim Bernhard</h3>
                 <p class="email">tim_bernhard@sluz.ch</p>
-                <p class="role">Project Manager</p>
+                <p class="role">Head of 4K reciving Head</p>
             </div>
         </div>
         <div class="cardTwo">
