@@ -13,9 +13,16 @@
 
                 <img src="{{ asset('svg/logoCreate.svg') }}">
             </a>
+            @auth
             <a href="{{ url('/profile') }}">
                 <img src="{{ asset('svg/logoProfile.svg') }}">
             </a>
+            @endauth
+            @guest
+            <a href="{{ url('/login') }}">
+                <img src="{{ asset('svg/logoProfile.svg') }}">
+            </a>
+            @endguest
         </div>
     </nav>
 </header>

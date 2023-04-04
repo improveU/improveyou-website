@@ -6,6 +6,7 @@ use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RegisterController;
 use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\ProfileController;
 
 
 /*
@@ -47,6 +48,8 @@ Route::post('login', [LoginController::class, 'store'])->middleware('guest');
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 Route::get('/contact', [ContactController::class, 'show']);
+
+Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 
 Route::get('/payment', [PaymentController::class, 'show']);
 Route::post('/payment/{id}', [PaymentController::class, 'selector']);

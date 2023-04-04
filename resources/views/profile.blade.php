@@ -12,7 +12,7 @@
             <img src="" alt="ProfilePic">
         </div>
         <div class="content">
-            <H1>Hello, username</H1>
+            <H1>Hello, {{auth()->user()->username}}</H1>
         </div>
     </div>
     
