@@ -32,18 +32,23 @@
 
             <div class="profile-left">
                 <ul>
-                    <li><p>Username: </p></li>
-                    <li><p>Firstname: </p></li>
-                    <li><p>Lastname: </p></li>
+                    <li><p>Username: {{auth()->user()->username}}</p></li>
+                    <li><p>Firstname: {{auth()->user()->first_name}}</p></li>
+                    <li><p>Lastname: {{auth()->user()->last_name}}</p></li>
                 </ul>
             </div>
 
             <div class="profile-right">
                 <ul>
-                    <li><p>E-Mail: </p></li>
+                    <li><p>E-Mail: {{auth()->user()->email}}</p></li>
                     <li><p>Password: </p></li>
                 </ul>
             </div>
+            <form method="POST" action="/logout">
+                @csrf
+
+                <button type="submit">Log Out</button>
+            </form>
         </div>
     </div>
 @endsection
