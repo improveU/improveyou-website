@@ -35,8 +35,8 @@ Route::get('/form', function () {
     return view('form');
 })->middleware('iscreator');
 
-Route::get('create-course', [CreateCourseController::class, 'get']);
-Route::post('create-course', [CreateCourseController::class, 'createCourse']);
+Route::get('create-course', [CreateCourseController::class, 'get'])->middleware('iscreator');
+Route::post('create-course', [CreateCourseController::class, 'createCourse'])->middleware('iscreator');
 
 Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
