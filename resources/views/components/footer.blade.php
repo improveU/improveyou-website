@@ -41,8 +41,7 @@
         <div class="copyright">
             <hr>
             <div class="copyrightbar">
-                © Copyright 2023. All Rights Reserved.  
-                <a href="/">im-proveyou-inf20s.bbzwinf.ch</a>
+                © Copyright 2023. All Rights Reserved.
             </div>
         </div>
         <button class="toTop" >

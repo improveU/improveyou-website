@@ -1,18 +1,11 @@
-const btns = document.querySelectorAll(".acc-btn");
+const btns = document.querySelectorAll(".faqContainer");
 
-// fn
 function accordion() {
-  // this = the btn | icon & bg changed
-  this.classList.toggle("is-open");
-
-  // the acc-content
-  const content = this.nextElementSibling;
-
-  // IF open, close | else open
-  if (content.style.maxHeight) content.style.maxHeight = null;
-  else content.style.maxHeight = content.scrollHeight + "px";
+  if(this.matches(".faqContainer.hiddenAnswer")) this.classList.toggle("hiddenAnswer");
+  else{
+    if(document.querySelector(".hiddenAnswer") != null) document.querySelector(".hiddenAnswer").classList.toggle("hiddenAnswer");
+    if(!this.classList.contains("hiddenAnswer")) this.classList.toggle("hiddenAnswer");
+  }
 }
 
-// event
 btns.forEach((el) => el.addEventListener("click", accordion));
-

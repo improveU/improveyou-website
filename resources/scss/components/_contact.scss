@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+section#contact{
+   background: center center / cover no-repeat fixed url(./../img/ContactUsMainPic.webp);
+   background-repeat: no-repeat;
+   background-position: center center;
+   padding-top: 70vh;
+
+}
