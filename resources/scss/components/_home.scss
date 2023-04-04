@@ -12,7 +12,9 @@ header.homeHeader {
         top: 0;
         z-index: 99;
 
-        nav {}
+        nav {
+
+        }
     }
 }
 
@@ -34,14 +36,14 @@ header.homeHeader {
     }
 }
 
-.hidden{
+.hiddenAnimation{
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 2s;
 }
 
-.visible{
+.visibleAnimation{
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
@@ -409,6 +411,9 @@ section#prices {
             }
 
             form {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
                 width: 100%;
 
                 input[type="hidden"] {

@@ -40,7 +40,7 @@
 
 <section id="phrases">
     <div class="phrasesWrapper">
-        <div class="phrasesContainer hidden">
+        <div class="phrasesContainer hiddenAnimation">
             <div class="phrase">
                 <h2>Looking for a better you?</h2>
                 Then you've come to the right place! We at Improve.you offer
@@ -50,7 +50,7 @@
                 <span>make yourself your best.</span>
             </div>
         </div>
-        <div class="phrasesContainer hidden">
+        <div class="phrasesContainer hiddenAnimation">
             <div class="phrase second">
                 <h2>We provide you:</h2>
                 <div>
@@ -78,31 +78,31 @@
     <h1 class="sectionTitle">Our Categories</h1>
     <div class="categoryWrapper">
         <div class="categoryContainer">
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text rightBottom">Yoga</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text rightTop dark">Add. Weights</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text leftBottom">Dancing</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text leftTop dark">Aerobic</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text rightBottom">Balance</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text rightTop dark">Stretching</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text leftBottom">Body Weight</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text leftTop dark">Fitness</div>
             </div>
-            <div class="hidden">
+            <div class="hiddenAnimation">
                 <div class="category-text leftBottom">Elastic Bands</div>
             </div>
         </div>
@@ -111,7 +111,7 @@
 
 <section id="prices">
     <h1 class="sectionTitle">Prices</h1>
-    <div class="subscribeWrapper hidden">
+    <div class="subscribeWrapper hiddenAnimation">
         <x-cardBeginner/>
         <x-cardImprover/>
         <x-cardCreator/>
@@ -120,7 +120,7 @@
 
 <section id="services">
     <h1 class="sectionTitle">Services</h1>
-    <div class="serviceWrapper hidden">
+    <div class="serviceWrapper hiddenAnimation">
 
         <div class="serviceContainer">
             <div class="picture">

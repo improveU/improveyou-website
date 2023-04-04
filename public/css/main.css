@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "BerlinType";
   src: url(./../font/BerlinTypeWeb-Regular.woff2) format("woff2");
@@ -94,6 +93,14 @@ h1, h2 {
 
 p {
   margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 header {
@@ -667,14 +674,14 @@ header.homeHeader header {
     min-width: 0px !important;
   }
 }
-.hidden {
+.hiddenAnimation {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
   transition: all 2s;
 }
 
-.visible {
+.visibleAnimation {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
@@ -981,6 +988,9 @@ section#prices .subscribeWrapper .subscribeCard p {
   text-align: center;
 }
 section#prices .subscribeWrapper .subscribeCard form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
 }
 section#prices .subscribeWrapper .subscribeCard form input[type=hidden] {
@@ -1089,75 +1099,72 @@ section#services .serviceWrapper .serviceContainer .description button .iconCorn
     border-radius: 0 0 15px 15px !important;
   }
 }
-.cardFAQ {
-  background: #fff;
-  color: #333;
-  margin: 15rem auto;
-  width: 90%;
-  max-width: 50rem;
-  min-height: 30rem;
-  border-radius: 2rem;
+section#contact {
+  background: center center/cover no-repeat fixed url(./../img/ContactUsMainPic.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 70vh;
 }
 
-.hero .img {
-  filter: drop-shadow(0rem 1.5rem rgba(0, 0, 0, 0.1));
-  transition: 0.3s ease-out;
+section#faq .faqWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.card:hover .img {
-  filter: drop-shadow(0rem 2.5rem rgba(0, 0, 0, 0.1));
-}
-
-.title {
-  text-align: center;
-  font-size: 5rem;
-  padding: 1rem;
-  margin-top: 25px;
-}
-
-.acc-container {
-  padding: 4rem 2rem;
-}
-
-.acc-btn {
-  width: 100%;
-  padding: 1.6rem 2rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-  background: inherit;
-  border: none;
-  outline: none;
+section#faq .faqWrapper .faqContainer {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
+  background-color: #ffffff;
+  border: solid 2.5px #E0E1E5;
+  border-radius: 12px;
   text-align: left;
-  transition: all 0.5s linear;
+  width: calc(100% - 50px);
+  cursor: pointer;
+}
+section#faq .faqWrapper .faqContainer p.question {
+  font-family: "BerlinTypeBold";
+  font-size: 22px;
+  padding: 25px 75px 25px 25px;
+}
+section#faq .faqWrapper .faqContainer p.answer {
+  font-size: 17.6px;
+  padding: 0 25px 25px 25px;
+  display: none;
+  cursor: auto;
+}
+section#faq .faqWrapper .faqContainer::after {
+  content: url(./../svg/arrowFAQ.svg);
+  display: inline-block;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  height: 24px;
+  width: 24px;
+  transition: 0.2s;
+}
+section#faq .faqWrapper .faqContainer.hiddenAnswer p.answer {
+  display: block;
+}
+section#faq .faqWrapper .faqContainer.hiddenAnswer::after {
+  transform: rotateX(180deg);
 }
 
-.acc-btn:after {
-  content: "➤";
-  color: #fa8d0c;
-  float: right;
-  transition: all 0.3s linear;
+@media screen and (min-width: 1000px) {
+  .faqWrapper {
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+  .faqWrapper .faqContainer {
+    width: calc(50% - 50px) !important;
+  }
 }
-
-.acc-btn.is-open:after {
-  transform: rotate(90deg);
-}
-
-.acc-btn:hover, .acc-btn.is-open {
-  color: #000;
-  font-weight: bold;
-}
-
-.acc-content {
-  max-height: 0;
-  color: rgba(0, 0, 0, 0.75);
-  font-size: 1.5rem;
-  margin: 0 2rem;
-  padding-left: 1rem;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-  border-bottom: 1px solid #ccc;
-}
-
 .errorTitel {
   display: flex;
   justify-content: center;
