@@ -8,11 +8,8 @@ section#course {
       margin-right: auto;
       max-width: 1450px;
       min-width: 1450px;
-
       overflow: hidden;
       position: relative;
-
-
       height: 300px;
 
       img {
@@ -82,11 +79,30 @@ section#course {
 
       hr{
          width: 100%;
+         border: solid 0.5px #555 !important;
       }
 
       ul{
          padding-inline-start: 40px;
       }
+
+      blockquote{
+         color: #767882;
+         position: relative;
+
+         &::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 50px;
+            left: -20px;
+            top: -10px;
+            background: #e0e1e5;
+          
+        }
+      }
+
+   
 
       .courseInfo{
          position: relative;

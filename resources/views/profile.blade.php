@@ -34,7 +34,7 @@
         <div class="overview-right">
             <h1>Settings</h1>
 
-            <form action="{{ url('/updateProfile') }}" method="post" class="formWrapper">
+            <form action="{{ url('/<<') }}" method="post" class="formWrapper">
                 @csrf
                 <div class="inputContainer">
                     <label for="username" class="inputLabel">Username</label>
