@@ -25,24 +25,42 @@
                 <li><a href="">Courses</a></li>
                 <li><a href="">Subscriptions</a></li>
             </ul>
+            <form method="POST" action="{{ url('/logout') }}">
+                @csrf
+                <button type="submit" class="btn danger" >Log Out</button>
+            </form>
         </div>
 
         <div class="overview-right">
             <h1>Settings</h1>
 
-            <div class="profile-left">
-                <ul>
-                    <li><p>Username: {{auth()->user()->username}}</p></li>
-                    <li><p>Firstname: {{auth()->user()->first_name}}</p></li>
-                    <li><p>Lastname: {{auth()->user()->last_name}}</p></li>
-                    <li><p>E-Mail: {{auth()->user()->email}}</p></li>
-                </ul>
-            </div>
-
-            <form method="POST" action="{{ url('/logout') }}">
+            <form action="{{ url('/updateProfile') }}" method="post" class="formWrapper">
                 @csrf
+                <div class="inputContainer">
+                    <label for="username" class="inputLabel">Username</label>
+                    <input type="text" name="username" id="username" class="inputField" value="{{Auth::user()->username}}">
+                </div>
 
-                <button type="submit">Log Out</button>
+                <div class="inputContainer">
+                    <label for="first_name" class="inputLabel">Firstname</label>
+                    <input type="text" name="first_name" id="first_name" class="inputField" value="{{Auth::user()->first_name}}">
+                </div>
+
+                <div class="inputContainer">
+                    <label for="last_name" class="inputLabel">Lastname</label>
+                    <input type="text" name="last_name" id="last_name" class="inputField" value="{{Auth::user()->last_name}}">
+                </div>
+
+                <div class="inputContainer">
+                    <label for="email" class="inputLabel">E-mail</label>
+                    <input type="email" name="email" id="email" class="inputField" value="{{Auth::user()->email}}">
+                </div>
+
+                <div class="submitContainer">
+                    <button type="submit" class="btn full">
+                        Update Profile
+                    </button>
+                </div>
             </form>
         </div>
     </div>

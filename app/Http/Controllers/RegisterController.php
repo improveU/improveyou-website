@@ -25,7 +25,7 @@ class RegisterController extends Controller{
         if (auth()->attempt($attributes)) {
             session()->regenerate();
 
-            return redirect('/')->with('success', 'Your account has been created.');
+            return redirect('/')->with('status', 'Your account has been created.');
         }
     }
 }
