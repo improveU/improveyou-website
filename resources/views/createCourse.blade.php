@@ -52,6 +52,9 @@
                 @enderror
             </div>
         </div>
+
+        <input type="text" name="tags">
+
         <div class="c">
             <h2>Introduction</h2>
             <div class="inputContainer">
