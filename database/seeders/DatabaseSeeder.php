@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         //create the three subscriptions models
         Subscription::create([
-            'model' => 'Starter',
+            'model' => 'Beginner',
         ]);
         Subscription::create([
             'model' => 'Improver',
