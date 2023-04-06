@@ -53,6 +53,7 @@
             </div>
         </div>
 
+        <label for="tags">Tags are separated by comma (,)</label>
         <input type="text" name="tags">
 
         <div class="c">
