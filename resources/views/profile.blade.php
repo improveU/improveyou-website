@@ -15,7 +15,7 @@
             <H1>Hello, {{auth()->user()->username}}</H1>
         </div>
     </div>
-    
+
     <div class="overview-section">
         <div class="overview-left">
             <h1>Profile</h1>
@@ -26,7 +26,7 @@
                 <li><a href="">Subscriptions</a></li>
             </ul>
         </div>
-        
+
         <div class="overview-right">
             <h1>Settings</h1>
 
@@ -35,15 +35,10 @@
                     <li><p>Username: {{auth()->user()->username}}</p></li>
                     <li><p>Firstname: {{auth()->user()->first_name}}</p></li>
                     <li><p>Lastname: {{auth()->user()->last_name}}</p></li>
+                    <li><p>E-Mail: {{auth()->user()->email}}</p></li>
                 </ul>
             </div>
 
-            <div class="profile-right">
-                <ul>
-                    <li><p>E-Mail: {{auth()->user()->email}}</p></li>
-                    <li><p>Password: </p></li>
-                </ul>
-            </div>
             <form method="POST" action="{{ url('/logout') }}">
                 @csrf
 
