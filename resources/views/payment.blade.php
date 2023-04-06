@@ -15,13 +15,13 @@
     <div class="fourthContainer">
         <div class="subscribeWrapper">
             @if($id == 1)
-                <x-cardBeginner/>
+                <x-payment.cardBeginner/>
             @endif
             @if($id == 2)
-                <x-cardImprover/>
+                <x-payment.cardImprover/>
             @endif
                 @if($id == 3)
-                    <x-cardCreator/>
+                    <x-payment.cardCreator/>
                 @endif
         </div>
     </div>
