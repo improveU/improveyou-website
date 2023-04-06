@@ -1,7 +1,6 @@
 @use "../abstracts" as *;
 
 section#contact{
-
    padding-top: 70vh;
 }
 
@@ -9,8 +8,8 @@ section#contact{
 body{
    &.contactBackground{
       header{
+         background-color: white;
          nav{
-            background-color: white;
          }
       }
    }
