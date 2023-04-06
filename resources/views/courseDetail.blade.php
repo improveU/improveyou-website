@@ -24,7 +24,9 @@
                 <a href="">{!! $course->title !!}</a>
             </div>
             <div class="tags">
-                -- Tags here --
+                @foreach($course->tags as $tag)
+                    <div> {{$tag->name}} </div>
+                @endforeach
             </div>
             <p class="introduction">
                 {!! $course->introduction !!}
@@ -33,7 +35,7 @@
                 {!! $course->views !!} Views
             </div>
         </div>
-        
+
         {!! $description !!}
 
     </div>
