@@ -50,3 +50,7 @@ npm install
 ```
 npm run dev
 ```
+10. Create a link between the public and the storage folder
+```
+php artisan storage:link
+```
