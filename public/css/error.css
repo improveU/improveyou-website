@@ -11,7 +11,6 @@
 
 body {
     background-color: #008083;
-    font-family: 'Concert One', cursive;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -42,8 +41,6 @@ section.logo .logoTitle {
     color: #05445e;
 }
 
-/*/////////////////// rules */
-/*/////////////////// scene */
 .text {
     left: 50%;
     position: absolute;
@@ -73,7 +70,7 @@ section.logo .logoTitle {
     width: 350px;
     z-index: -1;
 }
-/*/////////////////// caveman */
+
 .caveman {
     height: 300px;
     position: absolute;
@@ -337,7 +334,6 @@ section.logo .logoTitle {
 .leg:nth-child(2) .foot {
     background-color: #D9766C;
 }
-/*/////////////////// animation */
 .caveman:nth-child(1) .arm-right {
     animation: arm-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
 }

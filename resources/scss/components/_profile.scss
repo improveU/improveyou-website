@@ -29,8 +29,7 @@
         border: solid 2.5px #e0e1e5;
         background-color: #e5f6f8;
         border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
-        width: 150px;
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
         height: 500px;
         p {
             margin-left: 10px;
@@ -46,7 +45,7 @@
         background-color: #e5f6f8;
         border: solid 2.5px #e0e1e5;
         border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
         padding-left: 50px;
         width: 100%;
         .profile-left {
@@ -55,5 +54,13 @@
         .profile-right {
             list-style-type: none;
         }
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .overview-section {
+        margin-left: 25px !important;
+        margin-right: 25px !important;
+        min-width: 0px !important;
     }
 }
