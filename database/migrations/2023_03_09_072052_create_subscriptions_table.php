@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('model');
+            $table->string('description');
+            $table->string('advertisement');
+            $table->string('costs');
+            $table->boolean('monthlyPayment');
         });
     }
 
