@@ -54,8 +54,8 @@ Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::post('/updateProfile', [ProfileController::class, 'updateUser'])->middleware('auth');
 Route::get('/profile/{param}', [ProfileController::class, 'sideMenu'])->middleware('auth');
 
-Route::get('/payment', [PaymentController::class, 'show']);
-Route::post('/payment/{id}', [PaymentController::class, 'selector']);
+Route::get('/payment', [PaymentController::class, 'show'])->middleware('auth');
+Route::post('/payment/{id}', [PaymentController::class, 'selector'])->middleware('auth');
 
 Route::get('/course/{id}', [CourseController::class, 'show']);
 
