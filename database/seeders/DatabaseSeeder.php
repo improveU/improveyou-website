@@ -85,7 +85,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //Seed the rest of the database using factories
-        Tag::factory(100)->create();
         User::factory(250)->create();
         Course::factory(50)->create();
 

@@ -8,6 +8,8 @@
 
 @section('content')
 {!! $description !!}
-
+@foreach($course->tags as $tag)
+    {{$tag->name}}
+@endforeach
 @endsection
 
