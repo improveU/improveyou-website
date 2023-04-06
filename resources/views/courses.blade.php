@@ -3,5 +3,7 @@
 @section('title', 'Courses')
 
 @section('content')
-    courses -here
+    @foreach($courses as $course)
+        {{$course->title}} <br>
+    @endforeach
 @endsection
