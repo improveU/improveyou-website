@@ -21,29 +21,26 @@
             <h1>Profile</h1>
             <p>Menu</p>
             <ul>
-                <li><a href="">Settings</a></li>
-                <li><a href="">Courses</a></li>
-                <li><a href="">Subscriptions</a></li>
+                <li><a href="/profile/settings">Settings</a></li>
+                <li><a href="/profile/courses">Courses</a></li>
+                <li><a href="/profile/subscriptions">Subscriptions</a></li>
             </ul>
-        </div>
-
-        <div class="overview-right">
-            <h1>Settings</h1>
-
-            <div class="profile-left">
-                <ul>
-                    <li><p>Username: {{auth()->user()->username}}</p></li>
-                    <li><p>Firstname: {{auth()->user()->first_name}}</p></li>
-                    <li><p>Lastname: {{auth()->user()->last_name}}</p></li>
-                    <li><p>E-Mail: {{auth()->user()->email}}</p></li>
-                </ul>
-            </div>
-
             <form method="POST" action="{{ url('/logout') }}">
                 @csrf
-
-                <button type="submit">Log Out</button>
+                <button type="submit" class="btn danger" >Log Out</button>
             </form>
         </div>
+
+        @if($param == 'settings')
+            <x-profile.profileSettings/>
+        @endif
+
+        @if($param == 'courses')
+            <x-profile.profileCourses/>
+        @endif
+
+        @if($param == 'subscriptions')
+            <x-profile.profileSubscriptions/>
+        @endif
     </div>
 @endsection

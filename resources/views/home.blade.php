@@ -112,9 +112,9 @@
 <section id="prices">
     <h1 class="sectionTitle">Prices</h1>
     <div class="subscribeWrapper hiddenAnimation">
-        <x-cardBeginner/>
-        <x-cardImprover/>
-        <x-cardCreator/>
+        <x-payment.cardBeginner/>
+        <x-payment.cardImprover/>
+        <x-payment.cardCreator/>
     </div>
 </section>
 
