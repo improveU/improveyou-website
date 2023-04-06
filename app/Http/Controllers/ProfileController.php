@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
     public function show(){
-        return view('profile');
+        return redirect('/profile/settings');
     }
 
     public function updateUser(){
@@ -31,4 +31,10 @@ class ProfileController extends Controller
 
         return redirect('/profile')->with('status', 'Profile updated');
     }
+
+    public function sideMenu($param){
+
+        return view('/profile', ['param' => $param]);
+    }
+
 }

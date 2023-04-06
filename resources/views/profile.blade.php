@@ -21,9 +21,9 @@
             <h1>Profile</h1>
             <p>Menu</p>
             <ul>
-                <li><a href="">Settings</a></li>
-                <li><a href="">Courses</a></li>
-                <li><a href="">Subscriptions</a></li>
+                <li><a href="/profile/settings">Settings</a></li>
+                <li><a href="/profile/courses">Courses</a></li>
+                <li><a href="/profile/subscriptions">Subscriptions</a></li>
             </ul>
             <form method="POST" action="{{ url('/logout') }}">
                 @csrf
@@ -31,49 +31,16 @@
             </form>
         </div>
 
-        <div class="overview-right">
-            <h1>Settings</h1>
+        @if($param == 'settings')
+            <x-profile.profileSettings/>
+        @endif
 
-            <form action="{{ url('/<<') }}" method="post" class="formWrapper">
-                @csrf
-                <div class="inputContainer">
-                    <label for="username" class="inputLabel">Username</label>
-                    <input type="text" name="username" id="username" class="inputField" value="{{Auth::user()->username}}">
-                    @error('username')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+        @if($param == 'courses')
+            <x-profile.profileCourses/>
+        @endif
 
-                <div class="inputContainer">
-                    <label for="first_name" class="inputLabel">Firstname</label>
-                    <input type="text" name="first_name" id="first_name" class="inputField" value="{{Auth::user()->first_name}}">
-                    @error('first_name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="inputContainer">
-                    <label for="last_name" class="inputLabel">Lastname</label>
-                    <input type="text" name="last_name" id="last_name" class="inputField" value="{{Auth::user()->last_name}}">
-                    @error('last_name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="inputContainer">
-                    <label for="email" class="inputLabel">E-mail</label>
-                    <input type="email" name="email" id="email" class="inputField" value="{{Auth::user()->email}}">
-                    @error('email')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="submitContainer">
-                    <button type="submit" class="btn full">
-                        Update Profile
-                    </button>
-                </div>
-            </form>
-        </div>
+        @if($param == 'subscriptions')
+            <x-profile.profileSubscriptions/>
+        @endif
     </div>
 @endsection

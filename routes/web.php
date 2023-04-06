@@ -52,6 +52,7 @@ Route::get('/contact', [ContactController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::post('/updateProfile', [ProfileController::class, 'updateUser'])->middleware('auth');
+Route::get('/profile/{param}', [ProfileController::class, 'sideMenu'])->middleware('auth');
 
 Route::get('/payment', [PaymentController::class, 'show']);
 Route::post('/payment/{id}', [PaymentController::class, 'selector']);
