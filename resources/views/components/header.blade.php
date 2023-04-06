@@ -10,7 +10,6 @@
             </button>
             @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 3)
             <a href="{{ url('/create-course') }}">
-
                 <img src="{{ asset('svg/logoCreate.svg') }}">
             </a>
             @endif
