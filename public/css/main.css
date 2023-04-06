@@ -1100,10 +1100,17 @@ section#services .serviceWrapper .serviceContainer .description button .iconCorn
   }
 }
 section#contact {
+  padding-top: 70vh;
+}
+
+body.contactBackground header nav {
+  background-color: white;
+}
+
+.contactBackground {
   background: center center/cover no-repeat fixed url(./../img/ContactUsMainPic.webp);
   background-repeat: no-repeat;
   background-position: center center;
-  padding-top: 70vh;
 }
 
 section#faq .faqWrapper {

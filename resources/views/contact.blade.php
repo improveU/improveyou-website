@@ -1,25 +1,25 @@
 @extends('layouts.default')
 
 @section('head')
+    <script src="{{ asset('js/toastui-improved.js') }}"></script>
+    <script src="{{ asset('js/formSend.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/toastui-editor-improved.css') }}"/>
+    <script>
+        window.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("body").classList.add("contactBackground")
+        });
+    </script>
 @endsection
 
 @section('title', 'Contact')
 
 @section('content')
-
-
     <section id="contact">
 
-        <!--
-        <div>
-            <h1>Contact Us</h1>
-            <img src="{{URL::asset('img/ContactUsMainPic.webp')}}" alt="ContactUsMainPic" class="phoneImg">
-        </div>
-        -->
-
-        <form method="POST" class="formWrapper create" action="{{ url('contact') }}">
+        <form method="POST" id="formSending" class="formWrapper create" action="{{ url('contact') }}">
             @csrf
+
+            <input type="hidden" name="description" id="formTextarea" value="">
 
             <div class="c">
                 <h2>Name</h2>
@@ -93,9 +93,8 @@
 @endsection
 
 @section('scripts')
-    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script>
-        const editor = new toastui.Editor({
+        const mdEditor = new toastui.Editor({
             el: document.querySelector('#editor'),
             height: '500px',
             initialValue: '',
