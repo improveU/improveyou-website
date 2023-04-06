@@ -73,6 +73,17 @@ class DatabaseSeeder extends Seeder
             'image_path' => ''
         ]);
 
+
+        //Create Admin user
+        User::create([
+            'first_name' => 'test',
+            'last_name' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@admin.admin',
+            'password' => 12345678,
+            'subscription_id' => '3'
+        ]);
+
         //Seed the rest of the database using factories
         Tag::factory(100)->create();
         User::factory(250)->create();
