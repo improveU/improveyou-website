@@ -1134,7 +1134,7 @@ section#course .cover img {
   z-index: -1;
 }
 section#course div.c {
-  color: #005F60;
+  color: #00617e;
 }
 section#course div.c h1,
 section#course div.c h2,
@@ -1219,6 +1219,17 @@ section#course div.c .courseInfo .linkTree a:hover {
 }
 section#course div.c .courseInfo .tags {
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: auto;
+}
+section#course div.c .courseInfo .tags div {
+  font-size: 15px;
+  background-color: #FFF4EE;
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 section#course div.c .courseInfo .introduction {
   font-family: "BerlinTypeBold";
@@ -1299,31 +1310,8 @@ section#faq .faqWrapper .faqContainer.hiddenAnswer::after {
     width: calc(50% - 50px) !important;
   }
 }
-.errorTitel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 300px;
-  font-weight: bold;
-}
-
-.underTitel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "BerlinType";
-  src: url(./../font/BerlinTypeWeb-Regular.woff2) format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "BerlinTypeBold";
-  src: url(./../font/BerlinTypeWeb-Bold.woff2) format("woff2");
-  font-display: swap;
+section#error .logoForError {
+  padding: 28px 20px;
 }
 @keyframes arm-anima {
   0% {
@@ -1383,38 +1371,12 @@ section#faq .faqWrapper .faqContainer.hiddenAnswer::after {
     left: 80px;
   }
 }
-/* body {
-    background-color: $background-color_1;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-} */
-section.logo {
-  display: flex;
-  height: auto;
-  align-items: center;
-}
-section.logo .logoWrapper {
-  height: 55px;
-  width: 70px;
-  background-image: url(./../svg/logo.svg);
-  background-size: 100%;
-  border-radius: 8px;
-  margin-left: 10px;
-}
-section.logo .logoTitle {
-  padding-top: 12px;
-  padding-left: 15px;
-}
-
-.logo-link {
+section#error .logo-link {
   text-decoration: none;
-  font-family: "BerlinTypeBold", sans-serif;
   font-size: 26px;
   color: #05445e;
 }
-
-.text {
+section#error .text {
   left: 50%;
   position: absolute;
   top: 50%;
@@ -1424,8 +1386,7 @@ section.logo .logoTitle {
   text-align: center;
   top: 40%;
 }
-
-.container {
+section#error .cavemanContainer {
   left: 50%;
   position: absolute;
   top: 50%;
@@ -1433,7 +1394,7 @@ section.logo .logoTitle {
   height: 300px;
   width: 500px;
 }
-.container:after {
+section#error .cavemanContainer:after {
   position: absolute;
   content: "";
   background-color: rgba(19, 36, 44, 0.1);
@@ -1446,73 +1407,71 @@ section.logo .logoTitle {
   animation: shadow-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
   animation-delay: 0.1s;
 }
-
-.caveman {
+section#error .caveman {
   height: 300px;
   position: absolute;
   width: 250px;
 }
-.caveman:nth-child(1) {
+section#error .caveman:nth-child(1) {
   right: 20px;
 }
-.caveman:nth-child(1) .shape {
+section#error .caveman:nth-child(1) .shape {
   background-color: #D13433;
 }
-.caveman:nth-child(1) .shape .circle {
+section#error .caveman:nth-child(1) .shape .circle {
   background-color: #932422;
 }
-.caveman:nth-child(1) .shape .circle:after {
+section#error .caveman:nth-child(1) .shape .circle:after {
   background-color: #932422;
 }
-.caveman:nth-child(1) .shape .circle:before {
+section#error .caveman:nth-child(1) .shape .circle:before {
   background-color: #932422;
 }
-.caveman:nth-child(1) .arm-right {
+section#error .caveman:nth-child(1) .arm-right {
   animation: arm-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
 }
-.caveman:nth-child(1) .head {
+section#error .caveman:nth-child(1) .head {
   animation: head-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
   animation-delay: 0.6s;
 }
-.caveman:nth-child(1) .eye:after {
+section#error .caveman:nth-child(1) .eye:after {
   animation: eye-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
   animation-delay: 0.6s;
 }
-.caveman:nth-child(1) .eye:before {
+section#error .caveman:nth-child(1) .eye:before {
   animation: eye-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
   animation-delay: 0.6s;
 }
-.caveman:nth-child(2) {
+section#error .caveman:nth-child(2) {
   left: 20px;
   transform: rotateY(180deg);
 }
-.caveman:nth-child(2) .shape {
+section#error .caveman:nth-child(2) .shape {
   background-color: #932422;
 }
-.caveman:nth-child(2) .shape .circle {
+section#error .caveman:nth-child(2) .shape .circle {
   background-color: #D13433;
 }
-.caveman:nth-child(2) .shape .circle:after {
+section#error .caveman:nth-child(2) .shape .circle:after {
   background-color: #D13433;
 }
-.caveman:nth-child(2) .shape .circle:before {
+section#error .caveman:nth-child(2) .shape .circle:before {
   background-color: #D13433;
 }
-.caveman:nth-child(2) .arm-right {
+section#error .caveman:nth-child(2) .arm-right {
   animation: arm-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
   animation-delay: 0.6s;
 }
-.caveman:nth-child(2) .head {
+section#error .caveman:nth-child(2) .head {
   animation: head-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
 }
-.caveman:nth-child(2) .eye:after {
+section#error .caveman:nth-child(2) .eye:after {
   animation: eye-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
 }
-.caveman:nth-child(2) .eye:before {
+section#error .caveman:nth-child(2) .eye:before {
   animation: eye-anima 1.2s infinite cubic-bezier(0.55, 0.01, 0.16, 1.34);
 }
-
-.head {
+section#error .head {
   position: absolute;
   background-color: #13242C;
   border-radius: 50px;
@@ -1521,7 +1480,7 @@ section.logo .logoTitle {
   top: 25px;
   width: 65px;
 }
-.head:after {
+section#error .head:after {
   content: "";
   position: absolute;
   background-color: #13242C;
@@ -1532,7 +1491,7 @@ section.logo .logoTitle {
   top: -8px;
   transform: rotate(20deg);
 }
-.head:before {
+section#error .head:before {
   content: "";
   position: absolute;
   background-color: #13242C;
@@ -1543,7 +1502,7 @@ section.logo .logoTitle {
   top: -8px;
   transform: rotate(-20deg);
 }
-.head .eye {
+section#error .head .eye {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
@@ -1554,7 +1513,7 @@ section.logo .logoTitle {
   top: 40px;
   width: 48px;
 }
-.head .eye:after {
+section#error .head .eye:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1565,7 +1524,7 @@ section.logo .logoTitle {
   width: 5px;
   left: 5px;
 }
-.head .eye:before {
+section#error .head .eye:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -1576,7 +1535,7 @@ section.logo .logoTitle {
   width: 5px;
   right: 9px;
 }
-.head .eye .nose {
+section#error .head .eye .nose {
   left: 50%;
   position: absolute;
   top: 50%;
@@ -1590,8 +1549,7 @@ section.logo .logoTitle {
   top: 12px;
   width: 15px;
 }
-
-.shape {
+section#error .shape {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
@@ -1601,13 +1559,13 @@ section.logo .logoTitle {
   top: 70px;
   width: 140px;
 }
-.shape .circle {
+section#error .shape .circle {
   position: absolute;
   border-radius: 50%;
   height: 60px;
   width: 60px;
 }
-.shape .circle:after {
+section#error .shape .circle:after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -1616,7 +1574,7 @@ section.logo .logoTitle {
   left: 50px;
   top: 10px;
 }
-.shape .circle:before {
+section#error .shape .circle:before {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -1625,24 +1583,23 @@ section.logo .logoTitle {
   left: 60px;
   top: 45px;
 }
-.shape .circle:nth-child(1) {
+section#error .shape .circle:nth-child(1) {
   left: -12px;
   top: 80px;
 }
-.shape .circle:nth-child(2) {
+section#error .shape .circle:nth-child(2) {
   right: 10px;
   top: 0px;
   transform: rotate(90deg);
 }
-.shape .circle:nth-child(2):after {
+section#error .shape .circle:nth-child(2):after {
   left: 65px;
   top: 10px;
 }
-.shape .circle:nth-child(2):before {
+section#error .shape .circle:nth-child(2):before {
   display: none;
 }
-
-.arm-right {
+section#error .arm-right {
   position: absolute;
   background-color: #EAB08C;
   border-left: 8px solid rgba(19, 36, 44, 0.1);
@@ -1655,7 +1612,7 @@ section.logo .logoTitle {
   width: 60px;
   z-index: 1;
 }
-.arm-right .club {
+section#error .arm-right .club {
   position: absolute;
   border-bottom: 110px solid #601513;
   border-left: 10px solid transparent;
@@ -1666,7 +1623,7 @@ section.logo .logoTitle {
   transform: rotate(70deg);
   width: 20px;
 }
-.arm-right .club:after {
+section#error .arm-right .club:after {
   position: absolute;
   content: "";
   background-color: #601513;
@@ -1676,7 +1633,7 @@ section.logo .logoTitle {
   width: 20px;
   top: -10px;
 }
-.arm-right .club:before {
+section#error .arm-right .club:before {
   position: absolute;
   content: "";
   background-color: #601513;
@@ -1687,15 +1644,14 @@ section.logo .logoTitle {
   left: -10px;
   top: 90px;
 }
-
-.leg {
+section#error .leg {
   position: absolute;
   border-radius: 10px;
   height: 55px;
   top: 200px;
   width: 10px;
 }
-.leg:after {
+section#error .leg:after {
   position: absolute;
   content: "";
   border-radius: 50%;
@@ -1704,7 +1660,7 @@ section.logo .logoTitle {
   top: 15px;
   width: 10px;
 }
-.leg .foot {
+section#error .leg .foot {
   position: absolute;
   border-radius: 25px 25px 0 0;
   height: 25px;
@@ -1712,7 +1668,7 @@ section.logo .logoTitle {
   top: 30px;
   width: 50px;
 }
-.leg .foot:after {
+section#error .leg .foot:after {
   position: absolute;
   background-color: #EAB08C;
   border-radius: 50%;
@@ -1723,7 +1679,7 @@ section.logo .logoTitle {
   left: -6px;
   content: "";
 }
-.leg .foot:before {
+section#error .leg .foot:before {
   position: absolute;
   background-color: #EAB08C;
   border-radius: 50%;
@@ -1735,7 +1691,7 @@ section.logo .logoTitle {
   transform: scale(0.6);
   content: "";
 }
-.leg .foot .fingers {
+section#error .leg .foot .fingers {
   position: absolute;
   background-color: #EAB08C;
   border-radius: 50%;
@@ -1746,7 +1702,7 @@ section.logo .logoTitle {
   left: 15px;
   transform: scale(0.6);
 }
-.leg .foot .fingers:after {
+section#error .leg .foot .fingers:after {
   position: absolute;
   background-color: #EAB08C;
   border-radius: 50%;
@@ -1757,55 +1713,78 @@ section.logo .logoTitle {
   left: 11px;
   content: "";
 }
-.leg:nth-child(1) {
+section#error .leg:nth-child(1) {
   background-color: #B2524D;
   left: 95px;
 }
-.leg:nth-child(1):after {
+section#error .leg:nth-child(1):after {
   background-color: #B2524D;
 }
-.leg:nth-child(1) .foot {
+section#error .leg:nth-child(1) .foot {
   background-color: #B2524D;
 }
-.leg:nth-child(1) .foot:after {
+section#error .leg:nth-child(1) .foot:after {
   background-color: #B2524D;
 }
-.leg:nth-child(1) .foot:before {
+section#error .leg:nth-child(1) .foot:before {
   display: none;
 }
-.leg:nth-child(2) {
+section#error .leg:nth-child(2) {
   background-color: #D9766C;
   left: 115px;
 }
-.leg:nth-child(2):after {
+section#error .leg:nth-child(2):after {
   background-color: #D9766C;
 }
-.leg:nth-child(2) .foot {
+section#error .leg:nth-child(2) .foot {
   background-color: #D9766C;
 }
-
-#link {
-  bottom: 20px;
+section#error .errorLink {
   color: #000;
-  opacity: 0.2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: absolute;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
-#link p {
+section#error .errorLink p {
+  opacity: 0.2;
   margin: 0;
-  margin-left: 5px;
+  padding-bottom: 50px;
+  font-size: 40px;
 }
-#link:hover {
-  opacity: 1;
+section#error .errorLink a {
+  color: #05445e;
+  transition: all 0.3s;
 }
-
-.footer-link {
+section#error .errorLink a:hover {
+  color: #FF892E;
+}
+section#error .footer-link {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 1000px) {
+  section#error .text {
+    font-size: 50vw !important;
+  }
+  section#error .cavemanContainer {
+    transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  section#error {
+    overflow: hidden;
+  }
+  section#error .text {
+    font-size: 50vw !important;
+  }
+  section#error .cavemanContainer {
+    transform: translate(-50%, -50%) scale(0.5) !important;
+  }
+}
 section.register {
   display: flex;
   flex-direction: column;

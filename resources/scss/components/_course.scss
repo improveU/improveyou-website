@@ -23,7 +23,7 @@ section#course {
    }
 
    div.c {
-      color: #005F60;
+      color: #00617e;
 
       h1,
       h2,
@@ -128,7 +128,18 @@ section#course {
          }
          .tags{
             padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            height: auto;
 
+            div{
+               font-size: 15px;
+               background-color: #FFF4EE;
+               border-radius: 10px;
+               padding:  5px 10px;
+            }
          }
          .introduction{
             font-family: "BerlinTypeBold";

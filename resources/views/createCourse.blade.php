@@ -39,11 +39,11 @@
                 <label class="inputLabel" for="thumbnail">An image that represents your media</label>
                 <div class="file-drop-area">
                     <div class="cover-svg">
-                        <img src="{{ asset('svg/logoUploadFile.svg') }}">
+                        <img src="{{ asset('svg/logoUploadFile.svg') }}" alt="">
                     </div>
                     <span class="fake-btn"> <strong> Upload files </strong> </span>
                     <span class="file-msg">or drag and drop files here</span>
-                    <input class="file-input" type="file" name="thumbnail" @error('thumbnail') is-invalid @enderror>
+                    <input type="file" name="thumbnail" class="file-input @error('thumbnail') is-invalid @enderror">
                 </div>
                 @error('thumbnail')
                 <span class="invalidFeedback" role="alert">
@@ -53,8 +53,23 @@
             </div>
         </div>
 
-        <label for="tags">Tags are separated by comma (,)</label>
-        <input type="text" name="tags">
+        <div class="c">
+            <h2>Tags</h2>
+            <div class="inputContainer">
+                <label class="inputLabel" for="tags">Tags are separated by comma (,)</label>
+                <input class="inputField @error('tags') is-invalid @enderror"
+                       type="text"
+                       name="tags"
+                       value="{{ old('tags') }}"
+                       required
+                >
+                @error('tags')
+                <span class="invalidFeedback" role="alert">
+                    {{ $message }}
+                </span>
+                @enderror
+            </div>
+        </div>
 
         <div class="c">
             <h2>Introduction</h2>
@@ -65,7 +80,6 @@
                        name="intro"
                        value="{{ old('intro') }}"
                        required
-                       autofocus
                 >
                 @error('intro')
                 <span class="invalidFeedback" role="alert">
@@ -74,6 +88,7 @@
                 @enderror
             </div>
         </div>
+
         <div class="c">
             <h2>Description</h2>
             <div class="inputContainer">
