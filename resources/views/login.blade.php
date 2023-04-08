@@ -11,5 +11,8 @@
 @endsection
 
 @section('splitTwo')
-    Picture here
+    <img src="{{ asset('img/cover/ctImprove.webp') }}" alt="">
+    <h1>
+        It's time To <br> Improve
+    </h1>
 @endsection

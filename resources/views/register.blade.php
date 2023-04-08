@@ -11,7 +11,10 @@
 @endsection
 
 @section('splitTwo')
-    Picture here
+    <img src="{{ asset('img/cover/ctRun.webp') }}" alt="">
+    <h1>
+        It's time To <br> move forward
+    </h1>
 @endsection
 
 

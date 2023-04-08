@@ -1,14 +1,14 @@
 @use "../abstracts" as *;
 
-section.splitTwo{
+section.splitTwo {
    display: flex;
    height: calc(100vh - 10px);
    width: 100vw;
 
-   div.form{
+   div.form {
       width: 400px;
 
-      div.splitTwoWrapper{
+      div.splitTwoWrapper {
          background-color: $background;
          display: flex;
          flex-direction: column;
@@ -17,41 +17,62 @@ section.splitTwo{
          height: calc(100% - 50px);
          overflow: overlay;
 
-         h2.splitOneTitle{
+         h2.splitOneTitle {
             font-family: "BerlinTypeBold", sans-serif;
             margin: 40px 0 10px 0;
          }
 
-         section{
+         section {
             display: flex;
             flex-direction: row;
             width: 100%;
             height: 100%;
-         
-            form{
+
+            form {
                width: 100%;
                padding: 0;
             }
          }
 
-         a{
-         text-decoration: none;
+         a {
+            text-decoration: none;
          }
 
       }
    }
-   div.picture{
+
+   div.picture {
       width: calc(100% - 400px);
-      background: url(https://source.unsplash.com/random) no-repeat fixed center/cover;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+      }
+
+      h1 {
+         position: absolute;
+         bottom: 25px;
+         right: 40px;
+         text-transform: uppercase;
+         font-family: "BerlinTypeBold", sans-serif;
+         color: #ffffffb0;
+         font-size: 70px;
+         width: calc(100% - 440px);
+         text-align: end;
+      }
    }
 }
 
-@media only screen and (max-width: 800px) {
-   section.splitTwo{
-      div.form{
+@media only screen and (max-width: 850px) {
+   section.splitTwo {
+      div.form {
          width: 100%;
       }
-      div.picture{
+
+      div.picture {
          display: none;
       }
    }
