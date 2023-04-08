@@ -21,7 +21,7 @@ class LoginController extends Controller
         if (auth()->attempt($attributes)) {
             session()->regenerate();
 
-            return redirect('/')->with('success', 'Welcome Back!');
+            return redirect('/')->with('status', 'Welcome Back!');
         }
 
         throw ValidationException::withMessages([
@@ -33,6 +33,6 @@ class LoginController extends Controller
     {
         auth()->logout();
 
-        return redirect('/')->with('success', 'Goodbye!');
+        return redirect('/')->with('status', 'Goodbye!');
     }
 }

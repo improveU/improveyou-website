@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <script defer src="{{ asset('js/animate.js') }}"></script>
+    <script src="{{ asset('js/statusMessage.js') }}"></script>
+
     <title>Home</title>
 </head>
 
 <body>
+
+<x-flash/>
 
 <section id="header">
     <header class="homeHeader">
