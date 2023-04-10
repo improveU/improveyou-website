@@ -6,12 +6,11 @@ Used Technologies:
 
 * Laragon
 * Laravel
-
 * MySQL Database
 
 Execute in Laragon-Console, step for step:
-1. Start Laragon services
 
+1. Start Laragon services
 2. Install Composer Packages
 
 ```
@@ -35,7 +34,9 @@ php artisan key:generate
 ```
 php artisan migrate
 ```
+
 7. Seed the database
+
 ```
 php artisan db:seed
 ```
@@ -47,10 +48,20 @@ npm install
 ```
 
 9. Run the node package manager server
+
 ```
 npm run dev
 ```
+
 10. Create a link between the public and the storage folder
+
 ```
 php artisan storage:link
 ```
+
+11. Install intervention
+
+    ````
+    ```
+    composer require intervention/image
+    ````
