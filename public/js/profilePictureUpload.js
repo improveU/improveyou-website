@@ -1,5 +1,13 @@
-const profilePictureEdit = document.getElementById("profilePictureEdit");
+const UploadSection = document.getElementById("profilePictureUpload");
+const UploadCloseBtn = document.getElementById("profilePictureUploadClose");
+const UploadOpenBtn = document.getElementById("profilePictureUploadOpen");
+const body = document.getElementById("body");
 
-backToTopButton.addEventListener("click", (event) => {
-   
-});
+function toggleUploadSection() {
+   scroll(0, 0);
+   UploadSection.classList.toggle("open");
+   body.classList.toggle("overflowHidden");
+}
+
+UploadCloseBtn.addEventListener("click", toggleUploadSection);
+UploadOpenBtn.addEventListener("click", toggleUploadSection);

@@ -7,17 +7,17 @@ section#profileCover {
         flex-direction: row;
         align-items: center;
 
-        .profilePictureWrapper{
+        .profilePictureWrapper {
             position: relative;
 
-            img{
+            img {
                 height: 160px;
                 width: 160px;
                 object-fit: cover;
                 border-radius: 100%;
             }
-            
-            .profilePictureEdit{
+
+            .profilePictureEdit {
                 position: absolute;
                 right: 0px;
                 bottom: 0px;
@@ -27,7 +27,7 @@ section#profileCover {
                 border-radius: 100%;
                 cursor: pointer;
 
-                img{
+                img {
                     height: 25px;
                     width: 25px;
                     border-radius: 0;
@@ -37,7 +37,7 @@ section#profileCover {
             }
         }
 
-        h1{
+        h1 {
             width: 100%;
             text-align: center;
             font-size: 46px;
@@ -97,7 +97,44 @@ section#profileCover {
     }
 }
 
-section#profilePictureUpload .open{
+section#profilePictureUpload {
+    display: none;
+}
+
+section#profilePictureUpload.open {
+    display: block;
     position: absolute;
-    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.329);
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    form {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        z-index: 9999;
+
+
+        .c,
+        .container {
+            margin-left: 25px;
+            margin-right: 25px;
+            min-width: 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    section#profilePictureUpload.open {
+        form {
+            width: 100% !important;
+        }
+    }
 }

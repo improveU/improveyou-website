@@ -96,6 +96,9 @@ body {
   background-color: #ffffff;
   color: #1D212F;
 }
+body.overflowHidden {
+  overflow: hidden;
+}
 
 .headloader {
   width: 100%;
@@ -582,6 +585,16 @@ form.formWrapper .submitContainerRight {
 }
 form.formWrapper .submitContainerRight button.btn {
   margin-left: 10px;
+}
+form.formWrapper .formClose {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  cursor: pointer;
+}
+form.formWrapper .formClose img {
+  height: 40px;
+  width: 40px;
 }
 
 .file-drop-area {
@@ -2128,7 +2141,39 @@ section#profileCover .container h1 {
     min-width: 0px !important;
   }
 }
-section#profilePictureUpload .open {
+section#profilePictureUpload {
+  display: none;
+}
+
+section#profilePictureUpload.open {
+  display: block;
   position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.329);
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+section#profilePictureUpload.open form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
   z-index: 9999;
+}
+section#profilePictureUpload.open form .c,
+section#profilePictureUpload.open form .container {
+  margin-left: 25px;
+  margin-right: 25px;
+  min-width: 0px;
+}
+
+@media only screen and (max-width: 500px) {
+  section#profilePictureUpload.open form {
+    width: 100% !important;
+  }
 }/*# sourceMappingURL=main.css.map */

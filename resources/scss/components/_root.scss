@@ -15,6 +15,10 @@ body {
    overflow: overlay;
    background-color: #ffffff;
    color: #1D212F;
+
+   &.overflowHidden{
+      overflow: hidden;
+   }
 }
 
 .headloader{
@@ -576,6 +580,17 @@ form {
          }
       }
 
+      .formClose{
+         position: absolute;
+         right: 40px;
+         top: 40px;
+         cursor: pointer;
+
+         img{
+            height: 40px;
+            width: 40px;
+         }
+      }
    }
 }
 

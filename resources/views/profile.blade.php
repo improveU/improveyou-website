@@ -3,7 +3,7 @@
 @section('title', 'Profile')
 
 @section('head')
-
+    <script src="{{ asset('js/profilePictureUpload.js') }}" defer></script>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
     <div class="c orange">
         <div class="profilePictureWrapper">
             <img src="{{ asset('storage/' . $user->profile_picture_path) }}" alt="ProfilePic">
-            <div class="profilePictureEdit" id="profilePictureEdit">
+            <div class="profilePictureEdit" id="profilePictureUploadOpen">
                 <img src="{{ asset('svg/logoEdit.svg') }}" alt="">
             </div>
         </div>
@@ -64,11 +64,12 @@
                 @enderror
             </div>
             <div class="submitContainerRight">
-                <button class="btn discard" type="discard">Discard</button>
                 <button class="btn" type="submit">Send</button>
             </div>
+            <div class="formClose" id="profilePictureUploadClose">
+                <img src="{{ asset('svg/logoClose.svg') }}" alt="">
+            </div>
         </div>
-
     </form>
 </section>
 @endsection
