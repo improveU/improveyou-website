@@ -10,5 +10,4 @@ class Course extends Model
     use HasFactory;
     use Taggable;
     protected $guarded= [];
-
 }

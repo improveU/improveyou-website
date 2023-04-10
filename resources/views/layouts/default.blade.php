@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <script src="{{ asset('js/statusMessage.js') }}"></script>
+    <script src="{{ asset('js/backToTop.js') }}" defer></script>
 
     @yield('head')
 

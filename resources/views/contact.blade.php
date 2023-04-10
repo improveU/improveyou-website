@@ -7,6 +7,7 @@
     <script>
         window.addEventListener("DOMContentLoaded", (event) => {
             document.getElementById("body").classList.add("contactBackground")
+            scroll(0,0)
         });
     </script>
 @endsection

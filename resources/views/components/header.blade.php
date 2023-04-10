@@ -15,7 +15,7 @@
             @endif
             @auth
             <a href="{{ url('/profile') }}">
-                <img src="{{ asset('svg/logoProfile.svg') }}">
+                <img src="{{ asset('storage/' . auth()->user()->profile_picture_path) }}">
             </a>
             @endauth
             @guest

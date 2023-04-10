@@ -51,8 +51,9 @@ Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
 Route::get('/contact', [ContactController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
-Route::post('/updateProfile', [ProfileController::class, 'updateUser'])->middleware('auth');
 Route::get('/profile/{param}', [ProfileController::class, 'sideMenu'])->middleware('auth');
+Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->middleware('auth');
+Route::post('/updateProfilePicture', [ProfileController::class, 'updateProfilePicture'])->middleware('auth');
 
 Route::get('/payment', [PaymentController::class, 'show'])->middleware('auth');
 Route::post('/payment/{id}', [PaymentController::class, 'selector'])->middleware('auth');

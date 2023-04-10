@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
     public function show(){
-        return redirect('/profile/settings');
+
+        $user = User::findOrFail(auth()->user()->id);
+
+        return view('/profile', [
+            'user' => $user
+        ]);
     }
 
-    public function updateUser(){
+    public function updateProfile(){
         $request = request();
         $request->validate([
             'username' => ['required', 'max:255'],
@@ -32,9 +38,35 @@ class ProfileController extends Controller
         return redirect('/profile')->with('status', 'Profile updated');
     }
 
+    public function updateProfilePicture(){
+
+        $request = request();
+        $request->validate([
+            'profilePicture' => 'required|image|max:4096',
+        ]);
+
+        $request['profilePicture'] = request()->file('profilePicture')->store('profiles');
+
+        $user = User::findOrFail(auth()->user()->id);
+
+        if ($user->profile_picture_path != '/profiles/defaultProfilePicture.svg'){
+            Storage::delete($user->profile_picture_path);
+        }
+
+        $user->profile_picture_path = $request->get('profilePicture');
+        $user->save();
+
+        return redirect('/profile')->with('status', 'Profile picture updated');
+    }
+
     public function sideMenu($param){
 
-        return view('/profile', ['param' => $param]);
+        $user = User::findOrFail(auth()->user()->id);
+
+        return view('/profile', [
+            'param' => $param,
+            'user' => $user
+        ]);
     }
 
 }

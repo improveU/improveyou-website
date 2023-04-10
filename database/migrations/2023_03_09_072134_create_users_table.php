@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('profile_picture_path')->default('');
+            $table->string('profile_picture_path')->default('/profiles/defaultProfilePicture.svg');
             $table->rememberToken();
             $table->timestamps();
             $table->bigInteger('subscription_id')->nullable(); //TODO
