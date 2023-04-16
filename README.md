@@ -61,7 +61,16 @@ php artisan storage:link
 
 11. Install intervention
 
-    ````
-    ```
-    composer require intervention/image
-    ````
+```
+composer require intervention/image
+```
+
+
+
+Debugg on handy:
+
+```
+php artisan serve --host=192.168.X.X
+````
+
+192.168.1.1 is mostly the router so you need to find your own ip via ipconfig
