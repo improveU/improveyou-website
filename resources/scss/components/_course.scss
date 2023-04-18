@@ -117,10 +117,13 @@ section#course {
          }
          .linkTree{
             padding-bottom: 10px;
+            overflow: auto;
+            white-space: nowrap;
             a{
                font-size: 20px;
                color: #767882;
                transition: all .5s;
+               text-overflow: ellipsis;
             }
             a:hover{
                color: #474747;

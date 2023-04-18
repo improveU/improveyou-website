@@ -33,6 +33,9 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
+Route::get('/contact', [ContactController::class, 'show']);
+//TODO POST?????
+
 Route::get('/form', function () {
     return view('form');
 });
@@ -48,7 +51,6 @@ Route::post('login', [LoginController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
 
-Route::get('/contact', [ContactController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::get('/profile/{param}', [ProfileController::class, 'sideMenu'])->middleware('auth');
@@ -64,3 +66,21 @@ Route::get('/courses', [CourseController::class, 'listAllCourses'])->middleware(
 Route::get('/storage/thumbnails/{img}', function (){
     redirect('/');
 });
+
+
+
+Route::get('/forgotPassword', function (){
+    return view('forgotPassword');
+    //TODO Xavi
+});
+
+Route::get('/resetPassword', function (){
+    return view('resetPassword');
+    //TODO Xavi
+});
+
+Route::get('/resetPassword/{token}', function (){
+    return view('');
+    //TODO Xavi
+});
+

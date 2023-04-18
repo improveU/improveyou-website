@@ -1,175 +1,90 @@
 @use "../abstracts" as *;
-.aboutus{
-    margin-left: 60px;
-}
-.breadCrumbs{
-    margin-left: 60px;
+
+section#about {
+    padding-top: 25px;
+    min-height: calc(100vh - 600px);
+
+    .aboutWrapper {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 50px 40px 50px;
+
+        display: flex;
+        gap: 50px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1600px;
+
+        .aboutContainer {
+            height: 300px;
+            width: 500px;
+            display: flex;
+            flex-direction: row;
+
+            .picture {
+                img {
+                    border-radius: 15px 0 0 15px;
+                    height: 300px;
+                    width: 240px;
+                    object-fit: cover;
+                }
+            }
+
+            .description {
+                padding: 30px;
+                border-radius: 0 15px 15px 0;
+                background-color: #E5F6F8;
+                position: relative;
+
+                h1 {
+                    font-family: "BerlinTypeBold";
+                    color: #05445E;
+                    font-size: 30px;
+                }
+
+                p {
+                    color: #005F60;
+
+                    span{
+                        font-family: "BerlinTypeBold";
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    right: 25px;
+                    bottom: 25px;
+
+                    .iconCorner {
+                        margin-left: 5px;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.containerCards{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    .cardOne{
-        display: flex;
-        width: 400px;
-        height: 200px;
-        border-radius: 15px;
-        margin-top: 50px; 
-        background-color: #E5F6F8;  
-        .pictureBox{
-            
-            width: 180px;
-            .peopleImg{
-                margin-top: 10px;
-                width: 180px;
-                height: 180px;
-                margin-left: 10px;
+@media only screen and (max-width: 750px) {
+    .aboutContainer {
+        flex-direction: column !important;
+        height: auto !important;
+        width: 340px !important;
+
+        .picture {
+            img {
+                height: auto !important;
+                width: 340px !important;
+                border-radius: 15px 15px 0 0 !important;
+                transform: translateY(8px) !important;
             }
         }
-        .textBox{
-            
-            width: 220px;
-            .name{
-                margin-top: 20px;
-                margin-left:25px;
-            }
-            .email{
-                margin-left:25px;
-            }
-            .role{
-                margin-left:25px;
-            }
-        }
-    }
-    .cardTwo{
-        display: flex;
-        width: 400px;
-        height: 200px;
-        background-color: #E5F6F8;
-        margin-top: 50px;
-        border-radius: 15px;
-        .pictureBox{
-            
-            width: 180px;
-            .peopleImg{
-                margin-top: 10px;
-                width: 180px;
-                height: 180px;
-                margin-left: 10px;
-            }
-        }
-        .textBox{
-           
-            width: 220px;
-            .name{
-                margin-top: 20px;
-                margin-left:25px;
-            }
-            .email{
-                margin-left:25px;
-            }
-            .role{
-                margin-left:25px;
-            }
-        }
-    }
-    .cardThree{
-        display: flex;
-        width: 400px;
-        height: 200px;
-        background-color: #E5F6F8;
-        margin-top: 50px;
-        border-radius: 15px;
-        .pictureBox{
-            
-            width: 180px;
-            .peopleImg{
-                margin-top: 10px;
-                width: 180px;
-                height: 180px;
-                margin-left: 10px;
-            }
-        }
-        .textBox{
-            
-            width: 220px;
-            .name{
-                margin-top: 20px;
-                margin-left:25px;
-            }
-            .email{
-                margin-left:25px;
-            }
-            .role{
-                margin-left:25px;
-            }
-        }
-    }
-    .cardFour{
-        display: flex;
-        width: 400px;
-        height: 200px;
-        background-color: #E5F6F8;
-        margin-top: 50px;
-        border-radius: 15px;
-        .pictureBox{
-            
-            width: 180px;
-            .peopleImg{
-                margin-top: 10px;
-                width: 180px;
-                height: 180px;
-                margin-left: 10px;
-            }
-        }
-        .textBox{
-            
-            width: 220px;
-            .name{
-                margin-top: 20px;
-                margin-left:25px;
-            }
-            .email{
-                margin-left:25px;
-            }
-            .role{
-                margin-left:25px;
-            }
-        }
-    }
-    .cardFive{
-        display: flex;
-        width: 400px;
-        height: 200px;
-        background-color: #E5F6F8;
-        margin-top: 50px;
-        border-radius: 15px;
-        .pictureBox{
-            
-            width: 180px;
-            .peopleImg{
-                margin-top: 10px;
-                width: 180px;
-                height: 180px;
-                margin-left: 10px;
-            }
-        }
-        .textBox{
-            
-            width: 220px;
-            .name{
-                margin-top: 20px;
-                margin-left:25px;
-            }
-            .email{
-                margin-left:25px;
-            }
-            .role{
-                margin-left:25px;
-            }
+
+        .description {
+            height: 250px !important;
+            border-radius: 0 0 15px 15px !important;
         }
     }
 }

@@ -6,14 +6,20 @@
 @use './layout/splitTwo';
 
 @use './components/root';
+@use './components/header';
+@use './components/footer';
 @use './components/scrollbar';
+
 @use './components/loader.scss';
-@use './components/register';
+
 @use './components/home';
 @use './components/contact';
 @use './components/course';
 @use './components/faq';
-@use './components/error';
-@use './components/payment';
 @use './components/about';
+@use './components/error';
 @use './components/profile';
+
+
+
+@use './components/payment';

@@ -10,6 +10,16 @@
 
 @section('content')
 
+    <section id="navLinkTree">
+        <nav>
+            <h1>Create</h1>
+            <div class="linkTree">
+                <a href="/">Home / </a>
+                <a href="">Create / </a>
+            </div>
+        </nav>
+    </section>
+
     <form method="POST" class="formWrapper create" id="formSending" onsubmit="testing()" action="{{ url('create-course') }}" enctype="multipart/form-data">
         @csrf
 

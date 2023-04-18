@@ -137,9 +137,8 @@
                 <p>Whatever goal you have set yourself: Muscle building, strengthening your back, a six-pack or powerful
                     legs - in our strength training section you'll find everything you need to successfully reach your
                     goal.</p>
-                <button class="btn" id="button" onclick="window.location.href = '/courses{category_id}';">
-                    Courses
-                    <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner" alt="">
+                <button class="btn" id="button" onclick="window.location.href = '/register';">
+                    Join now
                 </button>
             </div>
         </div>
@@ -152,9 +151,8 @@
                 <h1>Creators</h1>
                 <p>Challenge yourself with one of our courses. Our professional and motivated trainers will push you to
                     the max.</p>
-                <button class="btn" id="button" onclick="window.location.href = '/courses{category_id}';">
-                    Courses
-                    <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner" alt="">
+                <button class="btn" id="button" onclick="window.location.href = '/register';">
+                    Join now
                 </button>
             </div>
         </div>
@@ -165,12 +163,9 @@
             </div>
             <div class="description">
                 <h1>Food</h1>
-                <p>Whatever goal you have set yourself: Muscle building, strengthening your back, a six-pack or powerful
-                    legs - in our strength training section you'll find everything you need to successfully reach your
-                    goal.</p>
-                <button class="btn" id="button" onclick="window.location.href = '/courses{category_id}';">
-                    Courses
-                    <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner" alt="">
+                <p>Challenge yourself with one of our courses. Our professional and motivated trainers will push you to the max.</p>
+                <button class="btn" id="button" onclick="window.location.href = '/register';">
+                    Join now
                 </button>
             </div>
         </div>
@@ -183,9 +178,8 @@
                 <h1>Supplements</h1>
                 <p>Go all out with creatine during your short, explosive training sessions and high-intensity exercises.
                     It could be the perfect supplement for you!</p>
-                <button class="btn" id="button" onclick="window.location.href = '/courses{category_id}';">
-                    Courses
-                    <img src="{{ asset('img/rightCorner1.webp') }}" class="iconCorner" alt="">
+                <button class="btn" id="button" onclick="window.location.href = '/register';">
+                    Join now
                 </button>
             </div>
         </div>

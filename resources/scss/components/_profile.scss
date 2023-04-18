@@ -45,6 +45,19 @@ section#profileCover {
     }
 }
 
+@media only screen and (max-width: 1000px) {
+
+    .c,
+    .container {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        
+        h1{
+            font-size: clamp(1rem, 9vw, 3rem) !important;
+        }
+    }
+}
+
 .overview-section {
     display: flex;
     margin-left: auto;
@@ -76,7 +89,6 @@ section#profileCover {
         border: solid 2.5px #e0e1e5;
         border-radius: 12px;
         box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-        padding-left: 50px;
         width: 100%;
 
         .profile-left {

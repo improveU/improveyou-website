@@ -15,8 +15,18 @@
 @section('title', 'Contact')
 
 @section('content')
-    <section id="contact">
 
+    <section id="navLinkTree">
+        <nav>
+            <h1>Contact</h1>
+            <div class="linkTree">
+                <a href="/">Home / </a>
+                <a href="">Contact / </a>
+            </div>
+        </nav>
+    </section>
+
+    <section id="contact">
         <form method="POST" id="formSending" class="formWrapper create" action="{{ url('contact') }}">
             @csrf
 

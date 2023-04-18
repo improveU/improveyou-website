@@ -35,7 +35,7 @@ class ProfileController extends Controller
         $user->email = $request->get('email');
         $user->save();
 
-        return redirect('/profile')->with('status', 'Profile updated');
+        return view('/profile')->with('status', 'Profile updated');
     }
 
     public function updateProfilePicture(){
