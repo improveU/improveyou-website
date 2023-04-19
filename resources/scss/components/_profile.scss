@@ -51,12 +51,122 @@ section#profileCover {
     .container {
         justify-content: center !important;
         flex-wrap: wrap !important;
-        
-        h1{
+
+        h1 {
             font-size: clamp(1rem, 9vw, 3rem) !important;
         }
     }
 }
+
+section#profileContainer {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1450px;
+    min-width: 1450px;
+
+    h1 {
+        font-size: 35px;
+    }
+
+    section#profileNav {
+        padding: 25px;
+        border: solid 2.5px #e0e1e5;
+        background-color: #e5f6f8;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
+        height: 500px;
+
+        nav {}
+    }
+
+    section#profileTabs {
+        margin-left: 25px;
+        padding: 25px;
+        background-color: #e5f6f8;
+        border: solid 2.5px #e0e1e5;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
+        width: 100%;
+
+        section#profileOverview {
+            .overviewContainer {
+                position: relative;
+                display: flex;
+                padding: 5px 30px 0 30px;
+                p {
+                    color: #13739bab;
+                    font-family: "BerlinTypeBold";
+                }
+
+                span {
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+
+                .overviewPersonal {
+                    width: auto;
+                    max-width: 770px;
+                    min-width: 520px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    .overviewPerson,
+                    .overviewMail,
+                    .overviewPassword,
+                    .overviewMore {
+                        padding: 0px 0px 20px 60px;
+                        position: relative;
+                        margin-bottom: 20px;
+                        border-bottom: solid 2px #13739b;
+                        display: flex;
+                        gap: 20px;
+
+                        &::before {
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            position: absolute;
+                            left: 10px;
+                            top: 5px;
+                        }
+                    }
+
+                    .overviewPerson::before {
+                        content: url(../svg/logoPerson.svg);
+                    }
+
+                    .overviewMail::before {
+                        content: url(../svg/logoMail.svg);
+                    }
+
+                    .overviewPassword::before {
+                        content: url(../svg/logoPassword.svg);
+                    }
+
+                    .overviewMore::before {
+                        content: url(../svg/logoMore.svg);
+                    }
+                }
+
+                .overviewSubscription {
+                    position: absolute;
+                    top: -25px;
+                    right: 50px;
+                }
+                .profileBtn{
+                    width: 155px;
+                    height: 50px;
+                    font-family: "BerlinType";
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+}
+
+
 
 .overview-section {
     display: flex;
@@ -82,21 +192,26 @@ section#profileCover {
         }
     }
 
-    .overview-right {
-        margin-left: 25px;
-        padding: 25px;
-        background-color: #e5f6f8;
-        border: solid 2.5px #e0e1e5;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
+    section {
+        height: 100%;
         width: 100%;
 
-        .profile-left {
-            list-style-type: none;
-        }
+        .overview-right {
+            margin-left: 25px;
+            padding: 25px;
+            background-color: #e5f6f8;
+            border: solid 2.5px #e0e1e5;
+            border-radius: 12px;
+            box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
+            width: 100%;
 
-        .profile-right {
-            list-style-type: none;
+            .profile-left {
+                list-style-type: none;
+            }
+
+            .profile-right {
+                list-style-type: none;
+            }
         }
     }
 }

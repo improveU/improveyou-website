@@ -20,24 +20,48 @@
     </div>
 </section>
 
-<div class="overview-section">
-    <div class="overview-left">
+<section id="profileContainer">
+
+    <section id="profileNav">
         <h1>Profile</h1>
+        <nav>
+            Overview <br>
+            Edit <br>
+            Subscription <br>
+            Description <br>
+            Courses <br>
+            imges <br>
+            <form method="POST" action="{{ url('/logout') }}">
+                @csrf
+                <button type="submit" class="btn danger">Log Out</button>
+            </form>
+        </nav>
+    </section>
+
+    <section id="profileTabs">
+        <x-profile.profileOverview/>
+    </section>
+
+</section>
+<div class="overview-section hidden">
+    <div class="overview-left">
+
         <p>Menu</p>
         <ul>
             <li><a href="/profile/settings">Settings</a></li>
             <li><a href="/profile/courses">Courses</a></li>
             <li><a href="/profile/subscriptions">Subscriptions</a></li>
         </ul>
-        <form method="POST" action="{{ url('/logout') }}">
-            @csrf
-            <button type="submit" class="btn danger">Log Out</button>
-        </form>
+
     </div>
 
-    <x-profile.profileCourses/>
-    <x-profile.profileSettings/>
-    <x-profile.profileSubscriptions/>
+
+
+    <!--
+        <x-profile.profileCourses/>
+        <x-profile.profileSettings/>
+        <x-profile.profileSubscriptions/>
+    -->
 </div>
 <section id="profilePictureUpload">
     <form method="POST" class="formWrapper create" id="formSending" action="/updateProfilePicture"

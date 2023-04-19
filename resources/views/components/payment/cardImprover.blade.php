@@ -10,7 +10,7 @@
       <p>Save up to two monthly bills per year guarantee</p>
        <form action="{{ url('/payment/2') }}" method="post">
            @csrf
-            <button class="btn" id="button" type="submit">Subscribe now</button>
+            <button class="btn" id="button" type="submit">{{ $slot }}</button>
        </form>
    </div>
 </div>

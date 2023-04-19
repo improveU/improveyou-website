@@ -6,6 +6,6 @@
    <p>Offer for content creators to share there media</p>
     <form action="{{ url('/payment/3') }}" method="post">
         @csrf
-        <button class="btn" id="button" type="submit">Subscribe now</button>
+        <button class="btn" id="button" type="submit">{{ $slot }}</button>
     </form>
 </div>
