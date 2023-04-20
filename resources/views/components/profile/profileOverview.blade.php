@@ -44,29 +44,12 @@
                 </div>
             </div>
 
-            <button class=" btn profileBtn">
+            <button class=" btn profileBtn" id="editButton">
                 Edit Profile
             </button>
         </div>
 
-        <div class="overviewSubscription">
-            @if(auth()->user()->subscription_id == 1)
-                <x-payment.cardBeginner>
-                    Change subscription
-                </x-payment.cardBeginner>
-            @endif
+        <x-profile.profileOverviewSubscriptionCard/>
 
-            @if(auth()->user()->subscription_id == 2)
-                <x-payment.cardImprover>
-                    Change subscription
-                </x-payment.cardImprover>
-            @endif
-
-            @if(auth()->user()->subscription_id == 3)
-                <x-payment.cardCreator>
-                    Change subscription
-                </x-payment.cardCreator>
-            @endif
-        </div>
     </div>
 </section>

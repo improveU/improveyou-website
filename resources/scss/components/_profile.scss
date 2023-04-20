@@ -45,8 +45,7 @@ section#profileCover {
     }
 }
 
-@media only screen and (max-width: 1000px) {
-
+@media only screen and (max-width: 1100px) {
     .c,
     .container {
         justify-content: center !important;
@@ -75,9 +74,59 @@ section#profileContainer {
         background-color: #e5f6f8;
         border-radius: 12px;
         box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-        height: 500px;
+        min-height: 500px;
+        min-width: 120px;
 
-        nav {}
+        nav {
+            position: relative;
+            height: calc(100% - 48px);
+
+            ul {
+                list-style: none;
+
+                li {
+                    position: relative;
+                    color: #00617e;
+                    font-family: "BerlinTypeBold";
+                    cursor: pointer;
+                    transition: .2s all;
+                    padding-left: 10px;
+
+                    &:hover {
+                        padding-left: 20px;
+                        transform: scale(1.1);
+
+                        &::before {
+                            content: url(../svg/arrowRight.svg);
+                            display: block;
+                            width: 12px;
+                            height: 12px;
+                            position: absolute;
+                            left: 0px;
+                            top: 2px;
+                        }
+                    }
+
+                    &.tabOpen {
+                        padding-left: 15px;
+                        transform: scale(1.1);
+                        color: #FF892E;
+                    }
+                }
+            }
+
+            form {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                height: auto;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     section#profileTabs {
@@ -94,134 +143,98 @@ section#profileContainer {
                 position: relative;
                 display: flex;
                 padding: 5px 30px 0 30px;
-                p {
-                    color: #13739bab;
-                    font-family: "BerlinTypeBold";
-                }
-
-                span {
-                    font-size: 20px;
-                    margin-bottom: 5px;
-                }
 
                 .overviewPersonal {
                     width: auto;
                     max-width: 770px;
-                    min-width: 520px;
+                    min-width: 600px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
 
-                    .overviewPerson,
-                    .overviewMail,
-                    .overviewPassword,
-                    .overviewMore {
-                        padding: 0px 0px 20px 60px;
-                        position: relative;
-                        margin-bottom: 20px;
-                        border-bottom: solid 2px #13739b;
-                        display: flex;
-                        gap: 20px;
-
-                        &::before {
-                            display: block;
-                            width: 30px;
-                            height: 30px;
-                            position: absolute;
-                            left: 10px;
-                            top: 5px;
-                        }
-                    }
-
-                    .overviewPerson::before {
-                        content: url(../svg/logoPerson.svg);
-                    }
-
-                    .overviewMail::before {
-                        content: url(../svg/logoMail.svg);
-                    }
-
-                    .overviewPassword::before {
-                        content: url(../svg/logoPassword.svg);
-                    }
-
-                    .overviewMore::before {
-                        content: url(../svg/logoMore.svg);
-                    }
+                    //overview -Person, Mail, Password & More was nestet here
                 }
 
-                .overviewSubscription {
-                    position: absolute;
-                    top: -25px;
-                    right: 50px;
+                .profileBtn {
+                    width: 100%;
                 }
-                .profileBtn{
-                    width: 155px;
-                    height: 50px;
-                    font-family: "BerlinType";
-                    font-size: 21px;
-                }
+            }
+        }
+
+        section#profileEdit {
+            .editContainer {
+                position: relative;
+                display: flex;
+                padding: 5px 30px 0 30px;
+            }
+        }
+
+        section#profileDescription {
+            .descriptionContainer {
+                padding: 5px 30px 0 30px;
             }
         }
     }
 }
 
-
-
-.overview-section {
+.overviewPerson,
+.overviewMail,
+.overviewPassword,
+.overviewMore {
+    padding: 0px 0px 20px 60px;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: solid 2px #13739b;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1450px;
-    min-width: 1450px;
+    gap: 20px;
 
-    .overview-left {
-        padding: 25px;
-        border: solid 2.5px #e0e1e5;
-        background-color: #e5f6f8;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-        height: 500px;
-
-        p {
-            margin-left: 10px;
-        }
-
-        a {
-            text-decoration: none;
-        }
+    &::before {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 10px;
+        top: 5px;
     }
 
-    section {
-        height: 100%;
-        width: 100%;
+    p {
+        color: #00617e;
+        font-family: "BerlinTypeBold";
+    }
 
-        .overview-right {
-            margin-left: 25px;
-            padding: 25px;
-            background-color: #e5f6f8;
-            border: solid 2.5px #e0e1e5;
-            border-radius: 12px;
-            box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-            width: 100%;
+    span {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
 
-            .profile-left {
-                list-style-type: none;
-            }
+}
 
-            .profile-right {
-                list-style-type: none;
-            }
+.overviewSubscription {
+    position: absolute;
+    top: -25px;
+    right: 50px;
+
+    .subscribeCard {
+        button {
+            width: 100% !important;
         }
     }
 }
 
-@media only screen and (max-width: 1500px) {
-    .overview-section {
-        margin-left: 25px !important;
-        margin-right: 25px !important;
-        min-width: 0px !important;
-    }
+.overviewPerson::before {
+    content: url(../svg/logoPerson.svg);
+}
+
+.overviewMail::before {
+    content: url(../svg/logoMail.svg);
+}
+
+.overviewPassword::before {
+    content: url(../svg/logoPassword.svg);
+}
+
+.overviewMore::before {
+    content: url(../svg/logoMore.svg);
 }
 
 section#profilePictureUpload {
@@ -254,6 +267,202 @@ section#profilePictureUpload.open {
             margin-left: 25px;
             margin-right: 25px;
             min-width: 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    section#profileContainer {
+        margin-left: 25px !important;
+        margin-right: 25px !important;
+        min-width: 0px !important;
+
+        section#profileTabs{
+            section#profileOverview{
+                .overviewContainer{
+                    padding: 5px 0px 0 0px !important;
+                    .overviewPersonal{
+                        max-width: 60% !important;
+                        min-width: 50% !important;
+                    }
+                }
+            }
+            section#profileEdit{
+                .editContainer{
+                    padding: 5px 0px 0 0px !important;
+                    form{
+                        max-width: 60% !important;
+                        min-width: 50% !important;
+                    }
+                }
+            }
+            section#profileDescription{
+                .descriptionContainer{
+                    padding: 5px 0px 0 0px !important;
+                }
+            }
+        }
+    }
+
+    .overviewPerson,
+    .overviewMail,
+    .overviewPassword,
+    .overviewMore {
+        flex-direction: column !important;
+    }
+
+    .overviewSubscription{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        position: initial !important;
+        margin-left: 70px !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    section#profileCover{
+        .c, 
+        .container {
+            margin-left: 275px !important;
+            height: 240px !important;
+        }
+    }
+    section#profileContainer {
+        flex-direction: column !important;
+        section#profileNav{
+            min-height: 240px !important;
+            width: calc(220px - 50px) !important;
+            position: absolute !important;
+            left: 25px !important;
+            top: 125px !important;
+            nav{
+                ul {
+                    li {
+                        &:hover {
+                            padding-left: 25px !important;
+                        }
+                        &.tabOpen {
+                            padding-left: 20px !important;
+                        }
+                    }
+                }
+                form{
+                    padding-top: 13px !important;
+                    position: relative !important;
+                }
+            }
+        }
+        section#profileTabs{
+            margin: 0 !important;
+            width: auto !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    section#profileCover{
+        .c, 
+        .container {
+            margin-left: 250px !important;
+            height: 330px !important;
+        }
+    }
+    section#profileContainer {
+        section#profileNav{
+            width: 145px !important;
+            min-height: 330px !important;
+            nav{
+                form{
+                    padding-top: 104px !important;
+                }
+            }
+        }
+        section#profileTabs{
+            section#profileOverview{
+                .overviewContainer{
+                    flex-direction: column !important;
+                    .overviewPersonal{
+                        max-width: 100% !important;
+                        min-width: 100% !important;
+                    }
+                }
+            }
+            section#profileEdit{
+                .editContainer{
+                    flex-direction: column !important;
+                    form{
+                        max-width: 100% !important;
+                        min-width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+    .overviewPerson,
+    .overviewMail,
+    .overviewPassword,
+    .overviewMore {
+        flex-direction: row !important;
+    }
+    .overviewSubscription{
+        margin-left: 0px !important;
+        margin-top: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .overviewPerson,
+    .overviewMail,
+    .overviewPassword,
+    .overviewMore {
+        flex-direction: column !important;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    section#profileCover{
+        .c, 
+        .container {
+            margin-left: 25px !important;
+        }
+    }
+    section#profileContainer {
+        section#profileNav{
+            min-height: 100px !important;
+            width: calc(100% - 55px) !important;
+            position: initial !important;
+            nav{
+                ul {
+                    li {
+                        padding-left: 0px !important;
+
+                        &:hover {
+                            padding-left: 20px !important;
+
+                            &::before {
+                                content: "" !important;
+                            }
+                        }
+                        &.tabOpen {
+                            padding-left: 20px !important;
+                        }
+                    }
+                }
+                form{
+                    padding-top: 0px !important;
+                    position: absolute !important;
+                    right: 0px !important;
+                    bottom: 0px !important;
+                    left: initial !important;
+                    width: 100px;
+                }
+            }
+        }
+        section#profileTabs{
+            margin-top: 25px !important;
+            width: auto !important;
         }
     }
 }

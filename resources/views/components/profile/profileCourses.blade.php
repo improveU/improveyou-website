@@ -1,5 +1,3 @@
-<div class="overview-right">
+<section id="profileCourses" class="hidden">
     <h1>Courses</h1>
-
-    Gids nid du Lappe
-</div>
+</section>

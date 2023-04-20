@@ -106,8 +106,7 @@
                 <div id="editor"></div>
             </div>
             <div class="submitContainerRight">
-                <button class="btn discard" type="submit">Discard</button>
-                <button class="btn" type="submit">Send</button>
+                <button class="btn" type="submit">Create</button>
             </div>
         </div>
     </form>

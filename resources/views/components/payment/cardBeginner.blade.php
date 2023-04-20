@@ -6,6 +6,6 @@
    <p>Monthly invoice with 30 days money back guarantee</p>
     <form action="{{ url('/payment/1') }}" method="post">
         @csrf
-        <button class="btn" id="button" type="submit">{{ $slot }}</button>
+        <button class="btn" onclick="subscriptionButton()">{{ $slot }}</button>
     </form>
 </div>

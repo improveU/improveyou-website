@@ -1912,7 +1912,7 @@ section#profileCover .container h1 {
   font-size: 46px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
   .c,
   .container {
     justify-content: center !important;
@@ -1939,7 +1939,51 @@ section#profileContainer section#profileNav {
   background-color: #e5f6f8;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-  height: 500px;
+  min-height: 500px;
+  min-width: 120px;
+}
+section#profileContainer section#profileNav nav {
+  position: relative;
+  height: calc(100% - 48px);
+}
+section#profileContainer section#profileNav nav ul {
+  list-style: none;
+}
+section#profileContainer section#profileNav nav ul li {
+  position: relative;
+  color: #00617e;
+  font-family: "BerlinTypeBold";
+  cursor: pointer;
+  transition: 0.2s all;
+  padding-left: 10px;
+}
+section#profileContainer section#profileNav nav ul li:hover {
+  padding-left: 20px;
+  transform: scale(1.1);
+}
+section#profileContainer section#profileNav nav ul li:hover::before {
+  content: url(../svg/arrowRight.svg);
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 0px;
+  top: 2px;
+}
+section#profileContainer section#profileNav nav ul li.tabOpen {
+  padding-left: 15px;
+  transform: scale(1.1);
+  color: #FF892E;
+}
+section#profileContainer section#profileNav nav form {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: auto;
+  width: 100%;
+}
+section#profileContainer section#profileNav nav form button {
+  width: 100%;
 }
 section#profileContainer section#profileTabs {
   margin-left: 25px;
@@ -1955,26 +1999,30 @@ section#profileContainer section#profileTabs section#profileOverview .overviewCo
   display: flex;
   padding: 5px 30px 0 30px;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer p {
-  color: rgba(19, 115, 155, 0.6705882353);
-  font-family: "BerlinTypeBold";
-}
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer span {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
 section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal {
   width: auto;
   max-width: 770px;
-  min-width: 520px;
+  min-width: 600px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewPerson,
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewMail,
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewPassword,
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewMore {
+section#profileContainer section#profileTabs section#profileOverview .overviewContainer .profileBtn {
+  width: 100%;
+}
+section#profileContainer section#profileTabs section#profileEdit .editContainer {
+  position: relative;
+  display: flex;
+  padding: 5px 30px 0 30px;
+}
+section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
+  padding: 5px 30px 0 30px;
+}
+
+.overviewPerson,
+.overviewMail,
+.overviewPassword,
+.overviewMore {
   padding: 0px 0px 20px 60px;
   position: relative;
   margin-bottom: 20px;
@@ -1982,10 +2030,10 @@ section#profileContainer section#profileTabs section#profileOverview .overviewCo
   display: flex;
   gap: 20px;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewPerson::before,
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewMail::before,
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewPassword::before,
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewMore::before {
+.overviewPerson::before,
+.overviewMail::before,
+.overviewPassword::before,
+.overviewMore::before {
   display: block;
   width: 30px;
   height: 30px;
@@ -1993,78 +2041,46 @@ section#profileContainer section#profileTabs section#profileOverview .overviewCo
   left: 10px;
   top: 5px;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewPerson::before {
-  content: url(../svg/logoPerson.svg);
+.overviewPerson p,
+.overviewMail p,
+.overviewPassword p,
+.overviewMore p {
+  color: #00617e;
+  font-family: "BerlinTypeBold";
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewMail::before {
-  content: url(../svg/logoMail.svg);
+.overviewPerson span,
+.overviewMail span,
+.overviewPassword span,
+.overviewMore span {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewPassword::before {
-  content: url(../svg/logoPassword.svg);
-}
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .overviewMore::before {
-  content: url(../svg/logoMore.svg);
-}
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewSubscription {
+
+.overviewSubscription {
   position: absolute;
   top: -25px;
   right: 50px;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .profileBtn {
-  width: 155px;
-  height: 50px;
-  font-family: "BerlinType";
-  font-size: 21px;
+.overviewSubscription .subscribeCard button {
+  width: 100% !important;
 }
 
-.overview-section {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1450px;
-  min-width: 1450px;
-}
-.overview-section .overview-left {
-  padding: 25px;
-  border: solid 2.5px #e0e1e5;
-  background-color: #e5f6f8;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-  height: 500px;
-}
-.overview-section .overview-left p {
-  margin-left: 10px;
-}
-.overview-section .overview-left a {
-  text-decoration: none;
-}
-.overview-section section {
-  height: 100%;
-  width: 100%;
-}
-.overview-section section .overview-right {
-  margin-left: 25px;
-  padding: 25px;
-  background-color: #e5f6f8;
-  border: solid 2.5px #e0e1e5;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
-  width: 100%;
-}
-.overview-section section .overview-right .profile-left {
-  list-style-type: none;
-}
-.overview-section section .overview-right .profile-right {
-  list-style-type: none;
+.overviewPerson::before {
+  content: url(../svg/logoPerson.svg);
 }
 
-@media only screen and (max-width: 1500px) {
-  .overview-section {
-    margin-left: 25px !important;
-    margin-right: 25px !important;
-    min-width: 0px !important;
-  }
+.overviewMail::before {
+  content: url(../svg/logoMail.svg);
 }
+
+.overviewPassword::before {
+  content: url(../svg/logoPassword.svg);
+}
+
+.overviewMore::before {
+  content: url(../svg/logoMore.svg);
+}
+
 section#profilePictureUpload {
   display: none;
 }
@@ -2096,6 +2112,156 @@ section#profilePictureUpload.open form .container {
   min-width: 0px;
 }
 
+@media only screen and (max-width: 1500px) {
+  section#profileContainer {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+    min-width: 0px !important;
+  }
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer {
+    padding: 5px 0px 0 0px !important;
+  }
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal {
+    max-width: 60% !important;
+    min-width: 50% !important;
+  }
+  section#profileContainer section#profileTabs section#profileEdit .editContainer {
+    padding: 5px 0px 0 0px !important;
+  }
+  section#profileContainer section#profileTabs section#profileEdit .editContainer form {
+    max-width: 60% !important;
+    min-width: 50% !important;
+  }
+  section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
+    padding: 5px 0px 0 0px !important;
+  }
+  .overviewPerson,
+  .overviewMail,
+  .overviewPassword,
+  .overviewMore {
+    flex-direction: column !important;
+  }
+  .overviewSubscription {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    position: initial !important;
+    margin-left: 70px !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  section#profileCover .c,
+  section#profileCover .container {
+    margin-left: 275px !important;
+    height: 240px !important;
+  }
+  section#profileContainer {
+    flex-direction: column !important;
+  }
+  section#profileContainer section#profileNav {
+    min-height: 240px !important;
+    width: 170px !important;
+    position: absolute !important;
+    left: 25px !important;
+    top: 125px !important;
+  }
+  section#profileContainer section#profileNav nav ul li:hover {
+    padding-left: 25px !important;
+  }
+  section#profileContainer section#profileNav nav ul li.tabOpen {
+    padding-left: 20px !important;
+  }
+  section#profileContainer section#profileNav nav form {
+    padding-top: 13px !important;
+    position: relative !important;
+  }
+  section#profileContainer section#profileTabs {
+    margin: 0 !important;
+    width: auto !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  section#profileCover .c,
+  section#profileCover .container {
+    margin-left: 250px !important;
+    height: 330px !important;
+  }
+  section#profileContainer section#profileNav {
+    width: 145px !important;
+    min-height: 330px !important;
+  }
+  section#profileContainer section#profileNav nav form {
+    padding-top: 104px !important;
+  }
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer {
+    flex-direction: column !important;
+  }
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal {
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+  section#profileContainer section#profileTabs section#profileEdit .editContainer {
+    flex-direction: column !important;
+  }
+  section#profileContainer section#profileTabs section#profileEdit .editContainer form {
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+  .overviewPerson,
+  .overviewMail,
+  .overviewPassword,
+  .overviewMore {
+    flex-direction: row !important;
+  }
+  .overviewSubscription {
+    margin-left: 0px !important;
+    margin-top: 40px !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .overviewPerson,
+  .overviewMail,
+  .overviewPassword,
+  .overviewMore {
+    flex-direction: column !important;
+  }
+}
+@media only screen and (max-width: 700px) {
+  section#profileCover .c,
+  section#profileCover .container {
+    margin-left: 25px !important;
+  }
+  section#profileContainer section#profileNav {
+    min-height: 100px !important;
+    width: calc(100% - 55px) !important;
+    position: initial !important;
+  }
+  section#profileContainer section#profileNav nav ul li {
+    padding-left: 0px !important;
+  }
+  section#profileContainer section#profileNav nav ul li:hover {
+    padding-left: 20px !important;
+  }
+  section#profileContainer section#profileNav nav ul li:hover::before {
+    content: "" !important;
+  }
+  section#profileContainer section#profileNav nav ul li.tabOpen {
+    padding-left: 20px !important;
+  }
+  section#profileContainer section#profileNav nav form {
+    padding-top: 0px !important;
+    position: absolute !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: initial !important;
+    width: 100px;
+  }
+  section#profileContainer section#profileTabs {
+    margin-top: 25px !important;
+    width: auto !important;
+  }
+}
 @media only screen and (max-width: 500px) {
   section#profilePictureUpload.open form {
     width: 100% !important;

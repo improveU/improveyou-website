@@ -3,7 +3,13 @@
 @section('title', 'Profile')
 
 @section('head')
+
+    <script src="{{ asset('js/profileTabs.js') }}" defer></script>
     <script src="{{ asset('js/profilePictureUpload.js') }}" defer></script>
+    <script src="{{ asset('js/toastui-improved.js') }}"></script>
+    <script src="{{ asset('js/formSend.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/toastui-editor-improved.css') }}"/>
+
 @endsection
 
 @section('content')
@@ -25,12 +31,18 @@
     <section id="profileNav">
         <h1>Profile</h1>
         <nav>
-            Overview <br>
-            Edit <br>
-            Subscription <br>
-            Description <br>
-            Courses <br>
-            imges <br>
+            <ul id="profileTabs">
+                <li class="tabOpen">Overview</li>
+                <li>Edit</li>
+                <li>Subscription</li>
+                <li>Description</li>
+
+                @if(auth()->user()->subscription_id == 3)
+                    <li>Courses</li>
+                @endif
+
+            </ul>
+
             <form method="POST" action="{{ url('/logout') }}">
                 @csrf
                 <button type="submit" class="btn danger">Log Out</button>
@@ -40,31 +52,20 @@
 
     <section id="profileTabs">
         <x-profile.profileOverview/>
+        <x-profile.profileEdit/>
+        <x-profile.profileDescription/>
+        <x-profile.profileSubscription/>
+
+        @if(auth()->user()->subscription_id == 3)
+            <x-profile.profileCourses/>
+        @endif
+
     </section>
 
 </section>
-<div class="overview-section hidden">
-    <div class="overview-left">
 
-        <p>Menu</p>
-        <ul>
-            <li><a href="/profile/settings">Settings</a></li>
-            <li><a href="/profile/courses">Courses</a></li>
-            <li><a href="/profile/subscriptions">Subscriptions</a></li>
-        </ul>
-
-    </div>
-
-
-
-    <!--
-        <x-profile.profileCourses/>
-        <x-profile.profileSettings/>
-        <x-profile.profileSubscriptions/>
-    -->
-</div>
 <section id="profilePictureUpload">
-    <form method="POST" class="formWrapper create" id="formSending" action="/updateProfilePicture"
+    <form method="POST" class="formWrapper create" action="/updateProfilePicture"
           enctype="multipart/form-data">
         @csrf
 
@@ -100,5 +101,14 @@
 
 @section('scripts')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        const mdEditor = new toastui.Editor({
+            el: document.querySelector('#editor'),
+            height: '500px',
+            initialValue: '',
+            initialEditType: 'wysiwyg',
+            previewStyle: 'vertical'
+        });
+    </script>
     <script src="{{ asset('js/upload.js') }}"></script>
 @endsection
