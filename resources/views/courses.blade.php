@@ -5,6 +5,6 @@
 @section('content')
     @foreach($courses as $course)
         {{$course->title}} <br>
-        {{$course->title}} <br>
+        {{$course}} <br>
     @endforeach
 @endsection
