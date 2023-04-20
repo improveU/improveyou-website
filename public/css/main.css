@@ -1948,6 +1948,10 @@ section#profileContainer section#profileNav nav {
 }
 section#profileContainer section#profileNav nav ul {
   list-style: none;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 section#profileContainer section#profileNav nav ul li {
   position: relative;
