@@ -18,12 +18,9 @@ listElements.forEach(function(listItem) {
       });
 
       listItem.classList.add('tabOpen');
+      if (previousSection && previousSection !== sectionElement) previousSection.classList.add('hidden');
 
-		if (previousSection && previousSection !== sectionElement) {
-        previousSection.classList.add('hidden');
-      }
-
-		previousSection = sectionElement;
+      previousSection = sectionElement;
     }
   });
 });
@@ -42,14 +39,13 @@ editButton.addEventListener('click', () => {
 });
 
 function subscriptionButton() {
-	document.getElementById('profileOverview')?.classList.add("hidden");
-	document.getElementById('profileEdit')?.classList.add("hidden");
-	document.getElementById('profileDescription')?.classList.add("hidden");
-	document.getElementById('profileCourses')?.classList.add("hidden");
-	document.getElementById('profileSubscription')?.classList.remove("hidden");
+   document.getElementById('profileOverview')?.classList.add("hidden");
+   document.getElementById('profileEdit')?.classList.add("hidden");
+   document.getElementById('profileDescription')?.classList.add("hidden");
+   document.getElementById('profileCourses')?.classList.add("hidden");
+   document.getElementById('profileSubscription')?.classList.remove("hidden");
 
-	document.querySelector('#profileTabs li.tabOpen')?.classList.remove('tabOpen');
-	document.querySelector('#profileTabs li:nth-child(3)')?.classList.add('tabOpen');
-
-	previousSection = document.getElementById('profileSubscription');
+   document.querySelector('#profileTabs li.tabOpen')?.classList.remove('tabOpen');
+   document.querySelector('#profileTabs li:nth-child(3)')?.classList.add('tabOpen');   
+   previousSection = document.getElementById('profileSubscription');
 }
