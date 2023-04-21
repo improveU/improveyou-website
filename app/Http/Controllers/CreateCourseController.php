@@ -37,6 +37,6 @@ class CreateCourseController extends Controller
 
         $course->tag($tags);
 
-        return redirect('/')->with('status', 'Course was created!');
+        return redirect('/')->with('status', 'Course is created!');
     }
 }

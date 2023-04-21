@@ -33,7 +33,7 @@
         <nav>
             <ul id="profileTabs">
                 <li class="tabOpen">Overview</li>
-                <li>Edit</li>
+                <li>Edit profile</li>
                 <li>Subscription</li>
                 <li>Description</li>
 
@@ -57,7 +57,7 @@
         <x-profile.profileSubscription/>
 
         @if(auth()->user()->subscription_id == 3)
-            <x-profile.profileCourses/>
+            <x-profile.profileCourses :courses="$courses"/>
         @endif
 
     </section>
@@ -97,6 +97,7 @@
         </div>
     </form>
 </section>
+
 @endsection
 
 @section('scripts')

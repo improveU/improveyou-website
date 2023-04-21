@@ -367,27 +367,33 @@ section#prices {
         margin-left: 25px;
         margin-right: 25px;
 
-        .favorite {
-            background-color: #FF9966;
-            border-radius: 24px;
-            padding: 4px;
-            color: white;
-            text-transform: uppercase;
-            font-family: "BerlinTypeBold";
-            text-align: center;
-
-            .subscribeFavorite {
-                margin-top: 5px;
-                margin-bottom: 5px;
-                font-size: 20px;
-            }
-
-            .subscribeCard {
-                border: none !important;
-                text-transform: none;
-                background-color: #FFF4EE !important;
+        .subscribeCard{
+            button{
+                width: 100%;
             }
         }
+    }
+}
+
+.favorite {
+    background-color: #FF9966;
+    border-radius: 24px;
+    padding: 4px;
+    color: white;
+    text-transform: uppercase;
+    font-family: "BerlinTypeBold";
+    text-align: center;
+
+    .subscribeFavorite {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
+    .subscribeCard {
+        border: none !important;
+        text-transform: none;
+        background-color: #FFF4EE !important;
     }
 }
 

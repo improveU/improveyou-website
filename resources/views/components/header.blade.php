@@ -5,9 +5,11 @@
             <x-logo/>
         </a>
         <div class="linkWrapper">
+            @auth
             <button>
                 <img src="{{ asset('svg/logoSearch.svg') }}">
             </button>
+            @endauth
             @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 3)
             <a href="{{ url('/create-course') }}">
                 <img src="{{ asset('svg/logoCreate.svg') }}">

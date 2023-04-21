@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 @endsection
 
-@section('title', 'Course')
+@section('title', $course->title)
 
 @section('content')
 

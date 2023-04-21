@@ -7,7 +7,9 @@ let previousSection = document.querySelector('#profileOverview');
 listElements.forEach(function(listItem) {
   listItem.addEventListener('click', function() {
 
-    const sectionId = 'profile' + listItem.textContent;
+    let sectionId = 'profile' + listItem.textContent;
+    if(sectionId == 'profileEdit profile') sectionId = 'profileEdit';
+
     const sectionElement = document.getElementById(sectionId);
 
     if (sectionElement && sectionElement.classList.contains('hidden')) {

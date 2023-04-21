@@ -20,9 +20,9 @@
             @if($id == 2)
                 <x-payment.cardImprover/>
             @endif
-                @if($id == 3)
-                    <x-payment.cardCreator/>
-                @endif
-        </div>
+            @if($id == 3)
+                <x-payment.cardCreator/>
+            @endif
+        </di
     </div>
 @endsection

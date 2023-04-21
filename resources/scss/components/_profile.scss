@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 section#profileCover {
-
+    margin-top: 50px;
     .c,
     .container {
         flex-direction: row;
@@ -86,7 +86,7 @@ section#profileContainer {
                 padding-inline-start: 0px;
                 margin-top: 0px;
                 margin-bottom: 0px;
-                
+
                 li {
                     position: relative;
                     color: #00617e;
@@ -175,6 +175,61 @@ section#profileContainer {
         section#profileDescription {
             .descriptionContainer {
                 padding: 5px 30px 0 30px;
+            }
+        }
+
+        section#profileCourses {
+            .coursesContainer{
+                padding: 20px 30px 0 30px;
+                ul{
+                    list-style: none;
+                    padding-inline-start: 0px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    li{
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        column-gap: 35px;
+                        margin-bottom: 12.5px;
+                        padding-bottom: 12.5px;
+                        border-bottom: solid 2px #13739b;
+    
+                        &:nth-last-child(1){
+                            margin-bottom: 0px;
+                            padding-bottom: 0px;
+                            border-bottom: none;
+                        }
+    
+                        span{
+                            min-width: 40px;
+                            text-align: right;
+                            color: #00617e;
+                            font-family: "BerlinTypeBold";
+                        }
+                        img{
+                            height: 80px;
+                            width: 80px;
+                            object-fit: cover;
+                            border-radius: 12px;
+                        }
+
+                        .title{
+                            width: 300px;
+                            overflow-wrap: anywhere;
+                        }
+                        .introduction{
+                            width: 350px;
+                            overflow-wrap: anywhere;
+                        }
+                        .date{
+                            width: 75px;
+                            color: #00617e;
+                            font-family: "BerlinTypeBold";
+                            font-size: 14px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -304,6 +359,23 @@ section#profilePictureUpload.open {
                     padding: 5px 0px 0 0px !important;
                 }
             }
+            section#profileCourses{
+                .coursesContainer{
+                    padding: 20px 0px 0 0px !important;
+
+                    ul{
+                        li{
+                            column-gap: 20px !important;
+                            .title{
+                                width: 30% !important;
+                            }
+                            .introduction{
+                                width: calc(100% - 35% - 75px - 100px - 40px - 150px ) !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -339,7 +411,7 @@ section#profilePictureUpload.open {
             width: calc(220px - 50px) !important;
             position: absolute !important;
             left: 25px !important;
-            top: 125px !important;
+            top: 150px !important;
             nav{
                 ul {
                     li {
@@ -360,6 +432,19 @@ section#profilePictureUpload.open {
         section#profileTabs{
             margin: 0 !important;
             width: auto !important;
+        }
+        section#profileCourses{
+            .coursesContainer{
+                ul{
+                    li{
+                        column-gap: 20px !important;
+
+                        span{
+                            display: none !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -401,6 +486,17 @@ section#profilePictureUpload.open {
                     }
                 }
             }
+            section#profileCourses{
+                .coursesContainer{
+                    ul{
+                        li{
+                            .introduction{
+                                width: calc(65% - 75px - 100px - 40px - 80px ) !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .overviewPerson,
@@ -415,7 +511,60 @@ section#profilePictureUpload.open {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    section#profileContainer {
+        section#profileTabs{
+            section#profileCourses{
+                .coursesContainer{
+                    ul{
+                        li{
+                            .date{
+                                display: none !important;
+                            }
+                            .introduction{
+                                width: 40% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 800px) {
+    section#profileContainer {
+        section#profileTabs{
+            section#profileCourses{
+                .coursesContainer{
+                    ul{
+                        li{
+                            height: 150px !important;
+                            min-height: 150px !important;
+                            flex-direction: column !important;
+                            flex-wrap: wrap !important;
+                            img{
+                                height: 150px !important;
+                                width: 150px !important;
+                            }
+
+                            .title, 
+                            .introduction {
+                                width: calc(100% - 200px) !important;
+                                margin-bottom: 10px !important;
+                                white-space: nowrap !important;
+                                text-overflow: ellipsis !important;
+                                overflow: hidden !important; 
+                            }
+                            button{
+                                width: calc(100% - 200px) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .overviewPerson,
     .overviewMail,
     .overviewPassword,
@@ -474,6 +623,36 @@ section#profilePictureUpload.open {
     section#profilePictureUpload.open {
         form {
             width: 100% !important;
+        }
+    }
+    section#profileContainer {
+        section#profileTabs{
+            section#profileCourses{
+                .coursesContainer{
+                    ul{
+                        li{
+                            height: 100% !important;
+                            min-height: 100% !important;
+                            flex-wrap: wrap !important;
+                            img{
+                                height: 100% !important;
+                                width: 100% !important;
+                            }
+
+                            .title, 
+                            .introduction {
+                                width:100% !important;
+                                white-space: initial !important;
+                                text-overflow: wrap !important;
+                                overflow: inherit !important; 
+                            }
+                            button{
+                                width: 100% !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

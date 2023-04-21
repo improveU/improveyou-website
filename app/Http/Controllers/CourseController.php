@@ -8,6 +8,19 @@ use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
+    public function root(){
+        if (auth()->user()){
+            if (auth()->user()->subscription_id == 0){
+                return view('paymentOverview');
+            } else {
+                return view('courses', [
+                    'courses' => Course::all(),
+                ]);
+            }
+        } else {
+            return view('index');
+        }
+    }
     public function showCourse($id){
         $course = Course::findorFail($id);
         $course->views += 1;

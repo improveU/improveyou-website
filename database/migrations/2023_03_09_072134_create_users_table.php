@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('profile_picture_path')->default('/profiles/defaultProfilePicture.svg');
             $table->rememberToken();
             $table->timestamps();
-            $table->bigInteger('subscription_id')->nullable(); //TODO
+            $table->bigInteger('subscription_id')->default('0');
             $table->string('session_id')->nullable();
         });
     }

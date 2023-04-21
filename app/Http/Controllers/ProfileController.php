@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -11,10 +12,12 @@ class ProfileController extends Controller
 {
     public function show(){
 
-        $user = User::findOrFail(auth()->user()->id);
+        $user = auth()->user();
+        $courses = Course::where('creator_id', $user->id)->get();
 
         return view('/profile', [
-            'user' => $user
+            'user' => $user,
+            'courses' => $courses,
         ]);
     }
 
@@ -57,7 +60,7 @@ class ProfileController extends Controller
         $user->profile_picture_path = $request->get('profilePicture');
         $user->save();
 
-        return redirect('/profile')->with('status', 'Profile picture updated');
+        return view('/profile')->with('status', 'Profile picture updated');
     }
 
     public function sideMenu($param){

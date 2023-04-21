@@ -136,6 +136,7 @@ section#navLinkTree nav .linkTree a {
   font-size: 20px;
   color: #767882;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -540,6 +541,13 @@ header nav .linkWrapper a img {
 @media only screen and (max-width: 700px) {
   header nav a .logoTitle {
     display: none;
+  }
+}
+@media only screen and (max-width: 450px) {
+  header nav .linkWrapper button,
+  header nav .linkWrapper a {
+    width: 60px !important;
+    margin: 8px !important;
   }
 }
 footer {
@@ -1007,7 +1015,11 @@ section#prices .subscribeWrapper {
   margin-left: 25px;
   margin-right: 25px;
 }
-section#prices .subscribeWrapper .favorite {
+section#prices .subscribeWrapper .subscribeCard button {
+  width: 100%;
+}
+
+.favorite {
   background-color: #FF9966;
   border-radius: 24px;
   padding: 4px;
@@ -1016,12 +1028,12 @@ section#prices .subscribeWrapper .favorite {
   font-family: "BerlinTypeBold";
   text-align: center;
 }
-section#prices .subscribeWrapper .favorite .subscribeFavorite {
+.favorite .subscribeFavorite {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 20px;
 }
-section#prices .subscribeWrapper .favorite .subscribeCard {
+.favorite .subscribeCard {
   border: none !important;
   text-transform: none;
   background-color: #FFF4EE !important;
@@ -1256,6 +1268,16 @@ section#course div.c .courseInfo .views {
     margin-right: 25px;
     min-width: 0px;
   }
+}
+.courseCard {
+  height: 200px;
+  width: 300px;
+}
+.courseCard a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 150px;
+  width: 200px;
 }
 section#faq {
   min-height: calc(100vh - 600px);
@@ -1868,6 +1890,9 @@ section#error .footer-link {
     transform: translate(-50%, -50%) scale(0.5) !important;
   }
 }
+section#profileCover {
+  margin-top: 50px;
+}
 section#profileCover .c,
 section#profileCover .container {
   flex-direction: row;
@@ -2022,6 +2047,58 @@ section#profileContainer section#profileTabs section#profileEdit .editContainer 
 section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
   padding: 5px 30px 0 30px;
 }
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer {
+  padding: 20px 30px 0 30px;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul {
+  list-style: none;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+  margin-bottom: 12.5px;
+  padding-bottom: 12.5px;
+  border-bottom: solid 2px #13739b;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li:nth-last-child(1) {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li span {
+  min-width: 40px;
+  text-align: right;
+  color: #00617e;
+  font-family: "BerlinTypeBold";
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li img {
+  height: 80px;
+  width: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title {
+  width: 300px;
+  overflow-wrap: anywhere;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+  width: 350px;
+  overflow-wrap: anywhere;
+}
+section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .date {
+  width: 75px;
+  color: #00617e;
+  font-family: "BerlinTypeBold";
+  font-size: 14px;
+}
 
 .overviewPerson,
 .overviewMail,
@@ -2139,6 +2216,19 @@ section#profilePictureUpload.open form .container {
   section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
     padding: 5px 0px 0 0px !important;
   }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer {
+    padding: 20px 0px 0 0px !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+    -moz-column-gap: 20px !important;
+         column-gap: 20px !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title {
+    width: 30% !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+    width: calc(65% - 75px - 100px - 40px - 150px) !important;
+  }
   .overviewPerson,
   .overviewMail,
   .overviewPassword,
@@ -2168,7 +2258,7 @@ section#profilePictureUpload.open form .container {
     width: 170px !important;
     position: absolute !important;
     left: 25px !important;
-    top: 125px !important;
+    top: 150px !important;
   }
   section#profileContainer section#profileNav nav ul li:hover {
     padding-left: 25px !important;
@@ -2183,6 +2273,13 @@ section#profilePictureUpload.open form .container {
   section#profileContainer section#profileTabs {
     margin: 0 !important;
     width: auto !important;
+  }
+  section#profileContainer section#profileCourses .coursesContainer ul li {
+    -moz-column-gap: 20px !important;
+         column-gap: 20px !important;
+  }
+  section#profileContainer section#profileCourses .coursesContainer ul li span {
+    display: none !important;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -2212,6 +2309,9 @@ section#profilePictureUpload.open form .container {
     max-width: 100% !important;
     min-width: 100% !important;
   }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+    width: calc(65% - 75px - 100px - 40px - 80px) !important;
+  }
   .overviewPerson,
   .overviewMail,
   .overviewPassword,
@@ -2223,7 +2323,36 @@ section#profilePictureUpload.open form .container {
     margin-top: 40px !important;
   }
 }
+@media only screen and (max-width: 900px) {
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .date {
+    display: none !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+    width: 40% !important;
+  }
+}
 @media only screen and (max-width: 800px) {
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+    height: 150px !important;
+    min-height: 150px !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li img {
+    height: 150px !important;
+    width: 150px !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title,
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+    width: calc(100% - 200px) !important;
+    margin-bottom: 10px !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li button {
+    width: calc(100% - 200px) !important;
+  }
   .overviewPerson,
   .overviewMail,
   .overviewPassword,
@@ -2268,6 +2397,25 @@ section#profilePictureUpload.open form .container {
 }
 @media only screen and (max-width: 500px) {
   section#profilePictureUpload.open form {
+    width: 100% !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+    height: 100% !important;
+    min-height: 100% !important;
+    flex-wrap: wrap !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title,
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+    width: 100% !important;
+    white-space: initial !important;
+    text-overflow: wrap !important;
+    overflow: inherit !important;
+  }
+  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li button {
     width: 100% !important;
   }
 }

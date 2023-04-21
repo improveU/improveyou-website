@@ -3,27 +3,31 @@
 @section('head')
     <script src="{{ asset('js/toastui-improved.js') }}"></script>
     <script src="{{ asset('js/formSend.js') }}" defer></script>
+    <script src="{{ asset('js/formGet.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/toastui-editor-improved.css') }}"/>
+
 @endsection
 
-@section('title', 'Create')
+@section('title', 'Edit')
 
 @section('content')
 
     <section id="navLinkTree">
         <nav>
-            <h1>Create</h1>
+            <h1>Edit: {{ $course->title }}</h1>
             <div class="linkTree">
                 <a href="/">Home / </a>
-                <a href="">Create / </a>
+                <a href="/profile">Profile / </a>
+                <a href="">Edit Course / </a>
+                <a href="">{{ $course->title }}</a>
             </div>
         </nav>
     </section>
 
-    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('create-course') }}" enctype="multipart/form-data">
+    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('edit-course') }}" enctype="multipart/form-data">
         @csrf
 
-        <input type="hidden" name="description" id="formTextarea" value="">
+        <input type="hidden" name="description" id="formTextarea" value="{{ $course->course_description }}">
 
         <div class="c">
             <h2>Title</h2>
@@ -32,7 +36,7 @@
                 <input class="inputField @error('title') is-invalid @enderror"
                        type="text"
                        name="title"
-                       value="{{ old('title') }}"
+                       value="{{ $course->title }}"
                        required
                        autofocus
                 >
@@ -53,7 +57,7 @@
                     </div>
                     <span class="fake-btn"> <strong> Upload files </strong> </span>
                     <span class="file-msg">or drag and drop files here</span>
-                    <input type="file" name="thumbnail" class="file-input @error('thumbnail') is-invalid @enderror">
+                    <input type="file" value="{{ $course->image_path }}" name="thumbnail" class="file-input @error('thumbnail') is-invalid @enderror">
                 </div>
                 @error('thumbnail')
                 <span class="invalidFeedback" role="alert">
@@ -70,7 +74,7 @@
                 <input class="inputField @error('tags') is-invalid @enderror"
                        type="text"
                        name="tags"
-                       value="{{ old('tags') }}"
+                       value="{{ "Demian??? Tags??? Hilfe???" }}"
                        required
                 >
                 @error('tags')
@@ -88,7 +92,7 @@
                 <input class="inputField @error('intro') is-invalid @enderror"
                        type="text"
                        name="intro"
-                       value="{{ old('intro') }}"
+                       value="{{ $course->introduction }}"
                        required
                 >
                 @error('intro')
@@ -106,7 +110,7 @@
                 <div id="editor"></div>
             </div>
             <div class="submitContainerRight">
-                <button class="btn" type="submit">Create</button>
+                <button class="btn" type="submit">Edit</button>
             </div>
         </div>
     </form>
@@ -118,7 +122,7 @@
         const mdEditor = new toastui.Editor({
             el: document.querySelector('#editor'),
             height: '500px',
-            initialValue: '',
+            initialValue: document.getElementById("formTextarea").value,
             initialEditType: 'wysiwyg',
             previewStyle: 'vertical'
         });
