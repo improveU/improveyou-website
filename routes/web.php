@@ -38,7 +38,7 @@ Route::get('/faq', function () {
 });
 
 Route::get('/contact', [ContactController::class, 'show']);
-//TODO POST?????
+Route::post('/contact', [ContactController::class, 'send']);
 
 Route::get('/form', function () {
     return view('form');
