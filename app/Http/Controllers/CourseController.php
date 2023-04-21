@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -24,5 +25,22 @@ class CourseController extends Controller
         return view('courses', [
             'courses' => Course::all(),
         ]);
+    }
+
+    public function search()
+    {
+        if(request('search')){
+            $courses = Course::latest();
+            $creators = User::latest();
+
+            $courses
+                ->where('title', 'like', '%' .request('search'). '%')
+                ->orWhere('course_description', 'like', '%' .request('search'). '%')
+                ->orWhere('introductions', 'like', '%' .request('search'). '%');
+
+            $creators
+                ->where('username', 'like', '%' .request('search'). '%')
+                ->where('subscription_id', 3);
+        }
     }
 }
