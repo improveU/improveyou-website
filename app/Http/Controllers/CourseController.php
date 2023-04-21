@@ -10,12 +10,15 @@ class CourseController extends Controller
 {
     public function showCourse($id){
         $course = Course::findorFail($id);
+        $tags = $course->tagNames();
         $course->views += 1;
         $course->save();
 
+
         return view('courseDetail', [
             'course' => $course,
-            'description' => Str::markdown($course->course_description)
+            'description' => Str::markdown($course->course_description),
+            'tags' => $tags
         ]);
     }
 
