@@ -20,7 +20,7 @@
             <h1 class="courseTitle">{!! $course->title !!}</h1>
             <div class="linkTree">
                 <a href="/">Home / </a>
-                <a href="/courses">Courses / </a>
+                <a href="/">Courses / </a>
                 <a href="">{!! $course->title !!}</a>
             </div>
             <div class="tags">

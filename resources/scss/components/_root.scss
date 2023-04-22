@@ -301,7 +301,7 @@ form {
       }
 
       .inputWrapperFix{
-         height: 100%;
+         height: calc(100% - 290px);
       }
 
       .submitContainer{

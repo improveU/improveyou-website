@@ -64,6 +64,8 @@
 
 </section>
 
+<section id="profileFix"></section>
+
 <section id="profilePictureUpload">
     <form method="POST" class="formWrapper create" action="/updateProfilePicture"
           enctype="multipart/form-data">

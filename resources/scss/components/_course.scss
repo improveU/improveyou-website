@@ -169,11 +169,17 @@ section#course {
 }
 
 section#coursesAll {
-
+   display: flex;
+   flex-wrap: wrap;
+   gap: 25px;
+   justify-content: center;
+   align-items: center;
+   max-width: 1500px;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .courseCard{
-   
    height: 200px;
    width: 300px;
 

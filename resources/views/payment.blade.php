@@ -1,6 +1,7 @@
 @extends('layouts.twoSplit')
 
 @section('head')
+    <script defer src="{{ asset('js/paymentRedirect.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
@@ -11,18 +12,21 @@
 @endsection
 
 @section('splitTwo')
+    <img src="{{ asset('img/cover/ctImprove.webp') }}" alt="">
     <h1>ITS PAYMENT TIME</h1>
-    <div class="fourthContainer">
+
+    <section id="subscribeOverviewCard">
         <div class="subscribeWrapper">
             @if($id == 1)
-                <x-payment.cardBeginner/>
+                <x-payment.pcardBeginner> Change subscription </x-payment.pcardBeginner>
             @endif
             @if($id == 2)
-                <x-payment.cardImprover/>
+                <x-payment.pcardImprover> Change subscription </x-payment.pcardImprover>
             @endif
             @if($id == 3)
-                <x-payment.cardCreator/>
+                <x-payment.pcardCreator> Change subscription </x-payment.pcardCreator>
             @endif
-        </di
-    </div>
+        </div>
+    </section>
+
 @endsection
