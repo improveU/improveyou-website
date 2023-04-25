@@ -74,7 +74,10 @@
                 <input class="inputField @error('tags') is-invalid @enderror"
                        type="text"
                        name="tags"
-                       value="{{ "Demian??? Tags??? Hilfe???" }}"
+                       value="
+@foreach($course->tags as $tag)
+{{ $tag->name . ", "}}
+@endforeach"
                        required
                 >
                 @error('tags')
