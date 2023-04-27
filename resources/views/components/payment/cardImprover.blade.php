@@ -8,9 +8,6 @@
       <h1 class="price">$ 100</h1>
       <p>/year</p>
       <p>Save up to two monthly bills per year guarantee</p>
-       <form action="{{ url('/payment/2') }}" method="get">
-           @csrf
-            <button class="btn">{{ $slot }}</button>
-       </form>
+      <button class="btn" onclick="window.location.href = '/payment/2';">{{ $slot }}</button>
    </div>
 </div>

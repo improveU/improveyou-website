@@ -1,5 +1,5 @@
 <section class="register">
-    <form method="POST" class="formWrapper" action="{{ '/payment' }}">
+    <form method="POST" class="formWrapper" action="{{ '/payment/' . $id }}">
         @csrf
         <div class="inputSplitContainer">
             <div class="inputContainer">

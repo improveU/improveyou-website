@@ -4,8 +4,5 @@
    <h1 class="price">$ 10</h1>
    <p>/month</p>
    <p>Monthly invoice with 30 days money back guarantee</p>
-    <form action="{{ url('/payment/1') }}" method="get">
-        @csrf
-        <button class="btn" onclick="subscriptionButton()">{{ $slot }}</button>
-    </form>
+   <button class="btn" onclick="window.location.href = '/payment/1';">{{ $slot }}</button>
 </div>

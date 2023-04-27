@@ -8,7 +8,7 @@
 @section('title', 'Pay Invoice')
 
 @section('splitOne')
-    <x-formPayment/>
+    <x-formPayment :id="$id"/>
 @endsection
 
 @section('splitTwo')
