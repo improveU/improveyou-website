@@ -1,5 +1,5 @@
 <section>
-    <form method="POST" class="formWrapper" action="{{ url('forgotPassword') }}">
+    <form method="POST" class="formWrapper" action="{{ url('forget-password') }}">
         @csrf
         <div class="inputContainer">
             <label class="inputLabel" for="email">Enter a valid mail to receive a reset link </label>
