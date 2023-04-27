@@ -55,16 +55,21 @@ class CourseController extends Controller
     {
         if (request('search')) {
             $courses = Course::latest();
-            $creators = User::latest();
+            $users = User::latest();
 
             $courses
                 ->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('course_description', 'like', '%' . request('search') . '%')
                 ->orWhere('introductions', 'like', '%' . request('search') . '%');
 
-            $creators
+            $users
                 ->where('username', 'like', '%' . request('search') . '%')
-                ->where('subscription_id', 3);
+                ->orWhere('description', 'like', '%' . request('search') . '%');
+
+            return view('form', [
+                'users' => $users,
+                'courses' => $courses
+            ]);
         }
     }
 

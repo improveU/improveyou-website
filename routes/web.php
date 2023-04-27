@@ -71,6 +71,7 @@ Route::get('/storage/thumbnails/{img}', function () {
     redirect('/');
 });
 
+Route::get('/search', [CourseController::class, 'search']);
 
 Route::get('/forgotPassword', function () {
     return view('forgotPassword');
