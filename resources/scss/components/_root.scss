@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-html{
+html {
    text-rendering: optimizeLegibility;
    scroll-behavior: smooth;
 }
@@ -16,41 +16,49 @@ body {
    background-color: #ffffff;
    color: #1D212F;
 
-   &.overflowHidden{
+   &.overflowHidden {
       overflow: hidden;
    }
 }
 
-.headloader{
+.headloader {
    width: 100%;
    height: 10px;
    box-shadow: rgba(0, 0, 0, 0.1) 0px 45px 50px 0px inset;
    background-color: $headloader;
 }
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
    font-family: "BerlinTypeBold", sans-serif;
 }
-h1,h2{
+
+h1,
+h2 {
    margin-top: 5px;
    margin-bottom: 5px;
 }
 
-section#navLinkTree{
+section#navLinkTree {
    width: 100%;
-   nav{
+
+   nav {
       margin-left: auto;
       margin-right: auto;
       max-width: 1400px;
       min-width: 1400px;
       padding: 15px 0 0px 0;
 
-      h1{
-            font-size: 40px;
+      h1 {
+         font-size: 40px;
       }
-      .linkTree{
+
+      .linkTree {
          padding-bottom: 10px;
-         a{
+
+         a {
             font-size: 20px;
             color: #767882;
             transition: all 0.5s;
@@ -60,9 +68,9 @@ section#navLinkTree{
    }
 }
 
-@media only screen and (max-width: 1500px){
-   section#navLinkTree{
-      nav{
+@media only screen and (max-width: 1500px) {
+   section#navLinkTree {
+      nav {
          margin-left: 25px !important;
          margin-right: 25px !important;
          min-width: 0px !important;
@@ -70,19 +78,19 @@ section#navLinkTree{
    }
 }
 
-p{
+p {
    margin: 0;
 }
 
-.hidden{
+.hidden {
    display: none !important;
 }
 
-.visible{
+.visible {
    display: block !important;
 }
 
-.statusMessage{
+.statusMessage {
    position: absolute;
    top: 125px;
    left: 50%;
@@ -101,7 +109,7 @@ p{
    user-select: none;
 }
 
-.statusMessageVisible{
+.statusMessageVisible {
    opacity: 1;
    filter: blur(0);
    transform: translateY(0) translateX(-50%);
@@ -159,7 +167,7 @@ section.logo {
       background-color: #E64B3B;
    }
 
-   &.authGoogle{
+   &.authGoogle {
       background-color: #15993c;
    }
 
@@ -200,12 +208,14 @@ div.c {
    &.teal {
       background-color: #E5F6F8;
    }
+
    &.orange {
       background-color: #FFF4EE;
    }
 }
 
-@media only screen and (max-width: 1500px){
+@media only screen and (max-width: 1500px) {
+
    div.container,
    div.c {
       margin-left: 25px;
@@ -217,31 +227,31 @@ div.c {
 form {
    height: 100%;
 
-   &.formWrapper{
+   &.formWrapper {
       display: flex;
       flex-direction: column;
       gap: 15px;
 
-      &.create{
+      &.create {
          gap: 0px;
-         
+
          .c,
          .container {
             margin-bottom: 0px;
          }
       }
 
-      .inputSplitContainer{
+      .inputSplitContainer {
          display: flex;
          justify-content: space-between;
          width: 100%;
 
-         .inputContainer{
+         .inputContainer {
             width: 49%;
          }
       }
 
-      .inputContainer{
+      .inputContainer {
          width: 100%;
          height: fit-content;
          display: flex;
@@ -253,7 +263,7 @@ form {
             color: #8B8E98;
             font-weight: 600;
          }
-         
+
          .inputField {
             background-color: white;
             width: auto;
@@ -268,7 +278,7 @@ form {
                border: solid 2.5px #ec6e71;
             }
          }
-         
+
          .inputField:focus {
             border: solid 2.5px #B4E8EE;
             box-shadow: rgb(0 0 0 / 12%) 0px 0px 100px 0px;
@@ -281,59 +291,64 @@ form {
                border: solid 2.5px #ec6e71;
             }
          }
+         select{
+            height: 44px !important;
+            width: 100% !important;
+         }
 
-         span.invalidFeedback{
+
+         span.invalidFeedback {
             font-family: "BerlinType";
             font-size: 12px;
             color: #ec6e71;
          }
 
-         p{
+         p {
             font-size: 14px;
             padding: 5px;
             text-decoration: underline;
             color: $footerHighlight;
 
-            :active{
+            :active {
                color: $footerHighlight
             }
          }
       }
 
-      .inputWrapperFix{
+      .inputWrapperFix {
          height: calc(100% - 290px);
       }
 
-      .submitContainer{
-         p{
+      .submitContainer {
+         p {
             font-size: 14px;
             padding: 5px;
             text-decoration: underline;
             color: $footerHighlight;
 
-            :active{
+            :active {
                color: $footerHighlight
             }
          }
       }
 
-      .submitContainerRight{
+      .submitContainerRight {
          display: flex;
          justify-content: flex-end;
          padding-top: 25px;
 
-         button.btn{
+         button.btn {
             margin-left: 10px;
          }
       }
 
-      .formClose{
+      .formClose {
          position: absolute;
          right: 40px;
          top: 40px;
          cursor: pointer;
 
-         img{
+         img {
             height: 40px;
             width: 40px;
          }
@@ -357,12 +372,13 @@ form {
       background-color: rgba(255, 255, 255, 0.05);
    }
 
-   .cover-svg{
+   .cover-svg {
       width: 100%;
       display: flex;
       margin-bottom: 20px;
       justify-content: center;
-      img{
+
+      img {
          height: 80px;
          width: 80px;
       }
@@ -396,7 +412,7 @@ form {
       cursor: pointer;
       opacity: 0;
 
-      &:focus{
+      &:focus {
 
          transition: 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
          outline: 3px solid #E8EDEB;
