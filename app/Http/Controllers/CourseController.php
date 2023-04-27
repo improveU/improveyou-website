@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class CourseController extends Controller
@@ -69,18 +70,23 @@ class CourseController extends Controller
 
     public function editCourse($courseId)
     {
-        $course = Course::where('id', $courseId);
+        $course = Course::findOrFail($courseId);
+
+        if($course->creator_id !== auth()->user()->id){
+            redirect('/')->with('status', 'This is not your Course');
+        }
+
         $request = request();
         $request->validate([
             'title' => 'required|min:3|max:255',
-            'thumbnail' => 'required|image',
             'intro' => 'required|max:255',
             'description' => 'required|max:16777215'
         ]);
 
+        $tags = explode(',', $request->get('tags'));
+        $course->retag($tags);
 
-
-        //TODO validate + redirect if course->creator_id != auth->user->id
+        $this->saveCourse($request, $course);
 
         return redirect('/course/' . $courseId)->with('status', 'Course is edited!');
     }
@@ -93,7 +99,6 @@ class CourseController extends Controller
             $course = Course::where('id', $courseId)
                 ->where('creator_id', $user->id)
                 ->firstOrFail();
-            //TODO redirect und kein error 404 (firstOrFail();)
 
             return view('editCourse', [
                 'course' => $course
@@ -119,20 +124,33 @@ class CourseController extends Controller
             'description' => 'required|max:16777215'
         ]);
 
-        $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         $tags = explode(',', $request->get('tags'));
 
-        $course->title = $request->get('title');
-        $course->image_path = $request->get('thumbnail');
-        $course->introduction = $request->get('intro');
-        $course->course_description = $request->get('description');
-        $course->views = 0;
-        $course->creator_id = auth()->user()->id;
-        $course->category_id = 1;//$request->get('category');
-        $course->save();
+        $this->saveCourse($request, $course);
 
         $course->tag($tags);
 
         return redirect('/')->with('status', 'Course is created!');
+    }
+
+    public function saveCourse(mixed $request, $course): void
+    {
+        $course->title = $request->get('title');
+        $course->introduction = $request->get('intro');
+        $course->course_description = $request->get('description');
+        $course->views = 0;
+        $course->creator_id = auth()->user()->id;
+
+        //if the request has a new thumbnail
+        if(isset($request->thumbnail)){
+            //store it
+            $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+            //delete the old one
+            Storage::delete($course->image_path);
+            //set the new one
+            $course->image_path = $request->get('thumbnail');
+        }
+
+        $course->save();
     }
 }
