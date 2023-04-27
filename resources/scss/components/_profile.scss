@@ -156,6 +156,9 @@ section#profileContainer {
                     text-overflow: ellipsis;
 
                     //overview -Person, Mail, Password & More was nestet here
+                    .billingTitle{
+                        margin-top: 40px;
+                    }
                 }
 
                 .profileBtn {
@@ -169,6 +172,10 @@ section#profileContainer {
                 position: relative;
                 display: flex;
                 padding: 5px 30px 0 30px;
+
+                form{
+                    width: 600px;
+                }
             }
         }
 
@@ -238,7 +245,10 @@ section#profileContainer {
 .overviewPerson,
 .overviewMail,
 .overviewPassword,
-.overviewMore {
+.overviewMore,
+.overviewBilling,
+.overviewBillingAddress,
+.overviewBillingCity {
     padding: 0px 0px 20px 60px;
     position: relative;
     margin-bottom: 20px;
@@ -264,6 +274,7 @@ section#profileContainer {
         font-size: 20px;
         margin-bottom: 5px;
     }
+
 
 }
 
@@ -293,6 +304,18 @@ section#profileContainer {
 
 .overviewMore::before {
     content: url(../svg/logoMore.svg);
+}
+
+.overviewBilling::before {
+    content: url(../svg/logoBilling.svg);
+}
+
+.overviewBillingAddress::before {
+    content: url(../svg/logoAddress.svg);
+}
+
+.overviewBillingCity::before {
+    content: url(../svg/logoLocation.svg);
 }
 
 section#profilePictureUpload {

@@ -2032,6 +2032,9 @@ section#profileContainer section#profileTabs section#profileOverview .overviewCo
   overflow: hidden;
   text-overflow: ellipsis;
 }
+section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .billingTitle {
+  margin-top: 40px;
+}
 section#profileContainer section#profileTabs section#profileOverview .overviewContainer .profileBtn {
   width: 100%;
 }
@@ -2039,6 +2042,9 @@ section#profileContainer section#profileTabs section#profileEdit .editContainer 
   position: relative;
   display: flex;
   padding: 5px 30px 0 30px;
+}
+section#profileContainer section#profileTabs section#profileEdit .editContainer form {
+  width: 600px;
 }
 section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
   padding: 5px 30px 0 30px;
@@ -2099,7 +2105,10 @@ section#profileContainer section#profileTabs section#profileCourses .coursesCont
 .overviewPerson,
 .overviewMail,
 .overviewPassword,
-.overviewMore {
+.overviewMore,
+.overviewBilling,
+.overviewBillingAddress,
+.overviewBillingCity {
   padding: 0px 0px 20px 60px;
   position: relative;
   margin-bottom: 20px;
@@ -2110,7 +2119,10 @@ section#profileContainer section#profileTabs section#profileCourses .coursesCont
 .overviewPerson::before,
 .overviewMail::before,
 .overviewPassword::before,
-.overviewMore::before {
+.overviewMore::before,
+.overviewBilling::before,
+.overviewBillingAddress::before,
+.overviewBillingCity::before {
   display: block;
   width: 30px;
   height: 30px;
@@ -2121,14 +2133,20 @@ section#profileContainer section#profileTabs section#profileCourses .coursesCont
 .overviewPerson p,
 .overviewMail p,
 .overviewPassword p,
-.overviewMore p {
+.overviewMore p,
+.overviewBilling p,
+.overviewBillingAddress p,
+.overviewBillingCity p {
   color: #00617e;
   font-family: "BerlinTypeBold";
 }
 .overviewPerson span,
 .overviewMail span,
 .overviewPassword span,
-.overviewMore span {
+.overviewMore span,
+.overviewBilling span,
+.overviewBillingAddress span,
+.overviewBillingCity span {
   font-size: 20px;
   margin-bottom: 5px;
 }
@@ -2156,6 +2174,18 @@ section#profileContainer section#profileTabs section#profileCourses .coursesCont
 
 .overviewMore::before {
   content: url(../svg/logoMore.svg);
+}
+
+.overviewBilling::before {
+  content: url(../svg/logoBilling.svg);
+}
+
+.overviewBillingAddress::before {
+  content: url(../svg/logoAddress.svg);
+}
+
+.overviewBillingCity::before {
+  content: url(../svg/logoLocation.svg);
 }
 
 section#profilePictureUpload {

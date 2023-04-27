@@ -5,6 +5,12 @@
             <x-logo/>
         </a>
         <div class="linkWrapper">
+
+            <form id="search-form">
+                <input type="text" id="search-input" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+
             @auth
             <button>
                 <img src="{{ asset('svg/logoSearch.svg') }}">

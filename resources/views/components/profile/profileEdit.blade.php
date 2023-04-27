@@ -5,21 +5,6 @@
             @csrf
 
             <div class="overviewPerson">
-                <div class="inputContainer">
-                    <label for="first_name" class="inputLabel">Firstname</label>
-                    <input type="text" name="first_name" id="first_name" class="inputField" value="{{Auth::user()->first_name}}">
-                    @error('first_name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="inputContainer">
-                    <label for="last_name" class="inputLabel">Lastname</label>
-                    <input type="text" name="last_name" id="last_name" class="inputField" value="{{Auth::user()->last_name}}">
-                    @error('last_name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
 
                 <div class="inputContainer">
                     <label for="username" class="inputLabel">Username</label>
