@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RegisterController;
 use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\ProfileController;
+use \App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 /*
@@ -80,20 +81,10 @@ Route::get('/storage/thumbnails/{img}', function (){
     redirect('/');
 });
 
+ 
 
-
-Route::get('/forgotPassword', function (){
-    return view('forgotPassword');
-    //TODO Xavi
-});
-
-Route::get('/resetPassword', function (){
-    return view('resetPassword');
-    //TODO Xavi
-});
-
-Route::get('/resetPassword/{token}', function (){
-    return view('');
-    //TODO Xavi
-});
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']);
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 

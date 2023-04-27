@@ -23,7 +23,6 @@
                    name="password"
                    value="{{ old('password') }}"
                    required
-
             >
             @error('password')
             <span class="invalidFeedback" role="alert">
@@ -31,7 +30,7 @@
             </span>
             @enderror
             <div>
-                <a href="{{ url('password.request') }}"> <p>Forgot password?</p> </a>
+                <a href="{{ url('forget-password') }}"> <p>Forgot password?</p> </a>
             </div>
         </div>
         <div class="inputWrapperFix"></div>

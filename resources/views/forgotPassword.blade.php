@@ -12,7 +12,4 @@
 
 @section('splitTwo')
     <img src="{{ asset('img/cover/ctImprove.webp') }}" alt="">
-    <h1>
-        Try to remember it <br> this time ;)
-    </h1>
 @endsection
