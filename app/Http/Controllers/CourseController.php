@@ -82,7 +82,7 @@ class CourseController extends Controller
 
         //TODO validate + redirect if course->creator_id != auth->user->id
 
-        return redirect('/course' . $course->id)->with('status', 'Course is edited!');
+        return redirect('/course/' . $courseId)->with('status', 'Course is edited!');
     }
 
     public function selectCourseToEdit($userId, $courseId)
