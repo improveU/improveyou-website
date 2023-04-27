@@ -24,7 +24,7 @@
         </nav>
     </section>
 
-    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('edit-course') }}" enctype="multipart/form-data">
+    <form method="POST" class="formWrapper create" id="formSending" action="{{ '/edit-course/' . $course->id }}" enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="description" id="formTextarea" value="{{ $course->course_description }}">
