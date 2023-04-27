@@ -129,6 +129,7 @@ class CourseController extends Controller
             'description' => 'required|max:16777215'
         ]);
 
+        $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         $tags = explode(',', $request->get('tags'));
 
         $this->saveCourse($request, $course);
@@ -151,11 +152,17 @@ class CourseController extends Controller
             //store it
             $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
             //delete the old one
-            Storage::delete($course->image_path);
+
+            if ($course->image_path !== null) {
+                Storage::delete($course->image_path);
+            }
+
             //set the new one
             $course->image_path = $request->get('thumbnail');
         }
 
+
+        $course->category_id = 0;
         $course->save();
     }
 }

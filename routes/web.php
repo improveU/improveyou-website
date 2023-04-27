@@ -72,10 +72,14 @@ Route::get('/storage/thumbnails/{img}', function () {
     redirect('/');
 });
 
- 
-
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']);
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']); 
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']);
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+
+
+Route::namespace('App\Http\Controllers')->group(function () {
+    // Routes: use the namespace 'App\Http\Controllers'
+    Route::get('/search', 'SearchController@search');
+});

@@ -88,11 +88,11 @@ class DatabaseSeeder extends Seeder
 
         //Create Admin user
         User::create([
-            'first_name' => 'test',
-            'last_name' => 'admin',
-            'username' => 'admin',
-            'email' => 'admin@admin.admin',
-            'password' => 12345678,
+            'first_name' => 'admin@admin',
+            'last_name' => 'admin@admin',
+            'username' => 'admin@admin',
+            'email' => 'admin@admin',
+            'password' => 'admin@admin',
             'subscription_id' => '3'
         ]);
 

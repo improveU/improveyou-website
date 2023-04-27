@@ -10,6 +10,7 @@
                 <input type="text" id="search-input" name="q" placeholder="Search...">
                 <button type="submit">Search</button>
             </form>
+            <ul id="search-results"></ul>
 
             @auth
             <button>

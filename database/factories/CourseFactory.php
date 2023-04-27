@@ -12,7 +12,7 @@ class CourseFactory extends Factory
             'title' => fake()->words(3, true),
             'introduction' => fake()->paragraph(1),
             'course_description' => fake()->paragraph(30),
-            'image_path' => '',
+            'image_path' => 'default',
             'views' => fake()->numberBetween(),
             'creator_id' => fake()->numberBetween(1, 250),
             'category_id' => fake()->numberBetween(1, 9)
