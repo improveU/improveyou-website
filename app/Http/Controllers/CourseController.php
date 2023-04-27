@@ -10,12 +10,15 @@ use Illuminate\Support\Str;
 class CourseController extends Controller
 {
     public function root(){
-        $user = auth()->user();
-
-        return view(
-            $user ? ($user->subscription_id == 0 ? 'paymentOverview' : 'courses') : 'index',
-            ['courses' => Course::all()]
-        );
+        if (auth()->user()){
+            if (auth()->user()->subscription_id == 0){
+                return view('paymentOverview');
+            } else {
+                return $this->listAllCourses();
+            }
+        } else {
+            return view('index');
+        }
     }
 
     public function showCourse($id){
@@ -31,8 +34,16 @@ class CourseController extends Controller
     }
 
     public function listAllCourses(){
+        $courses = Course::all();
+        $latest = collect($courses)->sortBy('created_at', SORT_DESC)->slice(0,4)->toArray();
+        $random = collect($courses)->random(4)->toArray();
+        $popular = collect($courses)->sortBy('views', SORT_DESC)->slice(0,4)->toArray();
+
         return view('courses', [
-            'courses' => Course::all(),
+            'courses' => $courses,
+            'random' => $random,
+            'latest' => $latest,
+            'popular' => $popular
         ]);
     }
 

@@ -63,7 +63,9 @@ Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->midd
 Route::post('/updateProfilePicture', [ProfileController::class, 'updateProfilePicture'])->middleware('auth');
 
 Route::get('/payment', [PaymentController::class, 'show'])->middleware('auth');
-Route::post('/payment/{id}', [PaymentController::class, 'selector'])->middleware('auth');
+Route::get('/payment/{id}', [PaymentController::class, 'selector'])->middleware('auth');
+Route::post('/payment', [PaymentController::class, 'storeData'])->middleware('auth');
+
 
 Route::get('/course/{id}', [CourseController::class, 'showCourse'])->middleware('auth');
 Route::get('/home', [CourseController::class, 'listAllCourses'])->middleware('auth');
