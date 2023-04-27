@@ -67,13 +67,12 @@
             </div>
 
         </div>
-        
-        
-        
+
+
+
         <div class="inputWrapperFix"></div>
         <div class="submitContainer">
             <button class="btn full" type="submit">Pay now</button>
-            
         </div>
     </form>
 

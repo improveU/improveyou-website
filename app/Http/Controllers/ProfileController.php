@@ -42,7 +42,6 @@ class ProfileController extends Controller
     }
 
     public function updateProfilePicture(){
-
         $request = request();
         $request->validate([
             'profilePicture' => 'required|image|max:4096',
@@ -62,15 +61,4 @@ class ProfileController extends Controller
 
         return view('/profile')->with('status', 'Profile picture updated');
     }
-
-    public function sideMenu($param){
-
-        $user = User::findOrFail(auth()->user()->id);
-
-        return view('/profile', [
-            'param' => $param,
-            'user' => $user
-        ]);
-    }
-
 }

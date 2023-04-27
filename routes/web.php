@@ -25,10 +25,6 @@ use \App\Http\Controllers\ProfileController;
 
 Route::get('/', [CourseController::class, 'root']);
 
-//Route::get('/', function () {
-//    return view('index');
-//})->middleware('guest');
-
 Route::get('/about', function () {
     return view('about');
 });
@@ -62,10 +58,6 @@ Route::post('login', [LoginController::class, 'store'])->middleware('guest');
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
-
-Route::get('/profile/{param}', [ProfileController::class, 'sideMenu'])->middleware('auth');
-//kann glaubs entfernt werden?
-
 
 Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->middleware('auth');
 Route::post('/updateProfilePicture', [ProfileController::class, 'updateProfilePicture'])->middleware('auth');

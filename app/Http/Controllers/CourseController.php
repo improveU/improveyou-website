@@ -20,6 +20,7 @@ class CourseController extends Controller
             return view('index');
         }
     }
+
     public function showCourse($id){
         $course = Course::findorFail($id);
         $course->views += 1;
