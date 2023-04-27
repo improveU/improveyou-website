@@ -72,7 +72,7 @@
             </div>
 
             <div class="inputContainer">
-                <label class="inputLabel" for="city">City</label>
+                <label class="inputLabel" for="city">City </label>
                 <input class="inputField @error('city') is-invalid @enderror"
                        type="text"
                        id="city"

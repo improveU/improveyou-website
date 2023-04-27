@@ -2547,10 +2547,6 @@ section#subscribeOverviewCard .subscribeWrapper {
   top: 50px;
   right: 50px;
 }
-section#subscribeOverviewCard .subscribeWrapper .subscribeCard button {
-  width: 100%;
-  height: 50px;
-}
 
 section#paymentOverviewPrices {
   min-height: calc(100vh - 480px);
