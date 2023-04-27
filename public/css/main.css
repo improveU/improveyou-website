@@ -107,11 +107,15 @@ body.overflowHidden {
   background-color: #008083;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "BerlinTypeBold", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -342,6 +346,10 @@ form.formWrapper .inputContainer .inputField:focus {
 }
 form.formWrapper .inputContainer .inputField:focus.is-invalid {
   border: solid 2.5px #ec6e71;
+}
+form.formWrapper .inputContainer select {
+  height: 44px !important;
+  width: 100% !important;
 }
 form.formWrapper .inputContainer span.invalidFeedback {
   font-family: "BerlinType";

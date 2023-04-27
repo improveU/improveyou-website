@@ -17,40 +17,6 @@
             </span>
             @enderror
         </div>
-        <div class="inputSplitContainer">
-            <div class="inputContainer">
-                <label class="inputLabel" for="first_name">First name</label>
-                <input class="inputField @error('first_name') is-invalid @enderror"
-                       type="text"
-                       name="first_name"
-                       value="{{ old('first_name') }}"
-                       autocomplete="first_name"
-                       required
-                >
-                @error('first_name')
-                <span class="invalidFeedback" role="alert">
-                    {{ $message }}
-                </span>
-                @enderror
-            </div>
-
-            <div class="inputContainer">
-                <label class="inputLabel" for="last_name">Last name</label>
-                <input class="inputField @error('last_name') is-invalid @enderror"
-                       type="text"
-                       name="last_name"
-                       value="{{ old('last_name') }}"
-                       autocomplete="family-name"
-                       required
-                >
-                @error('last_name')
-                <span class="invalidFeedback" role="alert">
-                    {{ $message }}
-                </span>
-                @enderror
-            </div>
-
-        </div>
         <div class="inputContainer">
             <label class="inputLabel" for="email">Email</label>
             <input class="inputField @error('email') is-invalid @enderror"
@@ -81,7 +47,7 @@
             @enderror
         </div>
         <div class="inputContainer">
-            <label class="inputLabel" for="password">Password</label>
+            <label class="inputLabel" for="password">Password confirm</label>
             <input class="inputField @error('password_confirmation') is-invalid @enderror"
                    type="password"
                    name="password_confirmation"
