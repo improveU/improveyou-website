@@ -72,29 +72,10 @@ Route::get('/storage/thumbnails/{img}', function () {
     redirect('/');
 });
 
-<<<<<<< HEAD
  
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']);
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']); 
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
-=======
-Route::get('/search', [CourseController::class, 'search']);
-
-Route::get('/forgotPassword', function () {
-    return view('forgotPassword');
-    //TODO Xavi
-});
-
-Route::get('/resetPassword', function () {
-    return view('resetPassword');
-    //TODO Xavi
-});
-
-Route::get('/resetPassword/{token}', function () {
-    return view('');
-    //TODO Xavi
-});
->>>>>>> eefdf0d28ab38bbea9693e5e528f21f1b8b23862
 
