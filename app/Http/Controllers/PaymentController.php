@@ -2,15 +2,45 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function show(){
+    public function showOverview()
+    {
         return view('payment');
     }
 
-    public function selector($id){
+    public function selectModel($id)
+    {
         return view('payment', ['id' => $id]);
+    }
+
+    public function storeData($id)
+    {
+
+        $request = request();
+        $request->validate([
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'city' => 'required',
+            'country' => 'required',
+            'postal_code' => 'required',
+            'address' => 'required',
+        ]);
+
+        $user = User::findOrFail(auth()->user()->id);
+
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->city = $request->get('city');
+        $user->country = $request->get('country');
+        $user->address = $request->get('address');
+        $user->zip_code = $request->get('postal_code');
+        $user->subscription_id = $id;
+
+        $user->save();
+        return redirect('/')->with('status', 'Your subscription is now active');
     }
 }

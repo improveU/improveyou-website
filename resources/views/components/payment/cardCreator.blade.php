@@ -4,8 +4,5 @@
    <h1 class="price">$ 200</h1>
    <p>/year</p>
    <p>Offer for content creators to share there media</p>
-    <form action="{{ url('/payment/3') }}" method="post">
-        @csrf
-        <button class="btn">{{ $slot }}</button>
-    </form>
+   <button class="btn" onclick="window.location.href = '/payment/3';">{{ $slot }}</button>
 </div>

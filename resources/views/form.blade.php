@@ -11,8 +11,31 @@
 </head>
 
 <body>
-
 <x-header/>
+
+<h1>courses</h1>
+@foreach($courses as $course)
+    <div class="courseCard">
+        <a href="/course/{{ $course->id }}">
+            <img src="{{ asset('storage/' . $course->image_path) }}" alt="">
+            <div class="courseInfo">
+                {{ $course->title }} <br>
+                {{ $course->created_at->format('Y-m-d') }} <br>
+                {{ $course->views }} <br>
+            </div>
+        </a>
+    </div>
+@endforeach
+
+<h1>users</h1>
+@foreach($users as $user)
+    <div class="courseCard">
+            <div class="courseInfo">
+                {{ $user->username }} <br>
+            </div>
+    </div>
+@endforeach
+
 
 <div class="c">
     <x-formLogin/>

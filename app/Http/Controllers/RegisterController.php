@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 
-class RegisterController extends Controller{
+class RegisterController extends Controller
+{
     public function show()
     {
         return view('register');
@@ -15,8 +16,6 @@ class RegisterController extends Controller{
     {
         $attributes = request()->validate([
             'username' => 'required|max:255',
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:7|max:255|confirmed',
         ]);
