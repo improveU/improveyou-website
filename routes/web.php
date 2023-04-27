@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\CreateCourseController;
-use App\Http\Controllers\EditCourseController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RegisterController;
@@ -42,12 +40,11 @@ Route::get('/form', function () {
 //kann glaubs entfernt werden?
 
 
+Route::get('create-course', [CourseController::class, 'getCourseCreation'])->middleware('iscreator');
+Route::post('create-course', [CourseController::class, 'createCourse'])->middleware('iscreator');
 
-Route::get('create-course', [CreateCourseController::class, 'get'])->middleware('iscreator');
-Route::post('create-course', [CreateCourseController::class, 'createCourse'])->middleware('iscreator');
-
-Route::get('edit-course/{userId}/{courseId}', [EditCourseController::class, 'show'])->middleware('iscreator');
-Route::post('edit-course/{courseId}', [EditCourseController::class, 'editCourse'])->middleware('iscreator');
+Route::get('edit-course/{userId}/{courseId}', [CourseController::class, 'selectCourseToEdit'])->middleware('iscreator');
+Route::post('edit-course/{courseId}', [CourseController::class, 'editCourse'])->middleware('iscreator');
 
 Route::get('register', [RegisterController::class, 'show'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
@@ -62,31 +59,30 @@ Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->middleware('auth');
 Route::post('/updateProfilePicture', [ProfileController::class, 'updateProfilePicture'])->middleware('auth');
 
-Route::get('/payment', [PaymentController::class, 'show'])->middleware('auth');
-Route::get('/payment/{id}', [PaymentController::class, 'selector'])->middleware('auth');
-Route::post('/payment', [PaymentController::class, 'storeData'])->middleware('auth');
+Route::get('/payment', [PaymentController::class, 'showOverview'])->middleware('auth');
+Route::get('/payment/{id}', [PaymentController::class, 'selectModel'])->middleware('auth');
+Route::post('/payment/{id}', [PaymentController::class, 'storeData'])->middleware('auth');
 
 
 Route::get('/course/{id}', [CourseController::class, 'showCourse'])->middleware('auth');
 Route::get('/home', [CourseController::class, 'listAllCourses'])->middleware('auth');
 
-Route::get('/storage/thumbnails/{img}', function (){
+Route::get('/storage/thumbnails/{img}', function () {
     redirect('/');
 });
 
 
-
-Route::get('/forgotPassword', function (){
+Route::get('/forgotPassword', function () {
     return view('forgotPassword');
     //TODO Xavi
 });
 
-Route::get('/resetPassword', function (){
+Route::get('/resetPassword', function () {
     return view('resetPassword');
     //TODO Xavi
 });
 
-Route::get('/resetPassword/{token}', function (){
+Route::get('/resetPassword/{token}', function () {
     return view('');
     //TODO Xavi
 });

@@ -7,24 +7,27 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function show(){
+    public function showOverview()
+    {
         return view('payment');
     }
 
-    public function selector($id){
+    public function selectModel($id)
+    {
         return view('payment', ['id' => $id]);
     }
 
-    public function storeData(){
-        $request = request()->validate([
+    public function storeData($id)
+    {
+
+        $request = request();
+        $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'city' => 'required',
             'country' => 'required',
-            'zip_code' => 'required',
+            'postal_code' => 'required',
             'address' => 'required',
-            'house_number' => 'required',
-            'subscription_id' => 'required',
         ]);
 
         $user = User::findOrFail(auth()->user()->id);
@@ -34,9 +37,8 @@ class PaymentController extends Controller
         $user->city = $request->get('city');
         $user->country = $request->get('country');
         $user->address = $request->get('address');
-        $user->house_number = $request->get('house_number');
-        $user->zip_code = $request->get('zip_code');
-        $user->subscription_id = $request->get('subscription_id');
+        $user->zip_code = $request->get('postal_code');
+        $user->subscription_id = $id;
 
         $user->save();
         return redirect('/')->with('status', 'Your subscription is now active');

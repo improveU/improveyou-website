@@ -25,7 +25,6 @@ return new class extends Migration {
             $table->mediumText('description')->nullable();
 
             $table->string('address')->nullable();
-            $table->string('house_number')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('zip_code')->nullable();
