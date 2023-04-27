@@ -50,7 +50,6 @@ class ProfileController extends Controller
             'profilePicture' => 'required|image|max:4096',
         ]);
 
-
         $request['profilePicture'] = request()->file('profilePicture')->store('profiles');
 
         $user = User::findOrFail(auth()->user()->id);
