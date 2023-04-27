@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 
-class RegisterController extends Controller{
+class RegisterController extends Controller
+{
     public function show()
     {
         return view('register');

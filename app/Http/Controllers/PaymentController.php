@@ -7,15 +7,18 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function show(){
+    public function showOverview()
+    {
         return view('payment');
     }
 
-    public function selector($id){
+    public function selectModel($id)
+    {
         return view('payment', ['id' => $id]);
     }
 
-    public function storeData($id){
+    public function storeData($id)
+    {
 
         $request = request();
         $request->validate([

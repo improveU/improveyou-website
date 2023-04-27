@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
-    public function show(){
+    public function show()
+    {
 
         $user = auth()->user();
         $courses = Course::where('creator_id', $user->id)->get();
@@ -21,7 +22,8 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function updateProfile(){
+    public function updateProfile()
+    {
         $request = request();
         $request->validate([
             'username' => ['required', 'max:255'],
@@ -41,7 +43,8 @@ class ProfileController extends Controller
         return view('/profile')->with('status', 'Profile updated');
     }
 
-    public function updateProfilePicture(){
+    public function updateProfilePicture()
+    {
         $request = request();
         $request->validate([
             'profilePicture' => 'required|image|max:4096',
@@ -52,7 +55,7 @@ class ProfileController extends Controller
 
         $user = User::findOrFail(auth()->user()->id);
 
-        if ($user->profile_picture_path != '/profiles/defaultProfilePicture.svg'){
+        if ($user->profile_picture_path != '/profiles/defaultProfilePicture.svg') {
             Storage::delete($user->profile_picture_path);
         }
 
