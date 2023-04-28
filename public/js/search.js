@@ -23,7 +23,9 @@ $(function () {
                 results.empty();
 
                 $.each(response, function (index, item) {
-                    results.append("<li>" + item.title + "</li>");
+                    item.forEach((e) => {
+                        results.append("<li>" + e.title + "</li>");
+                    });
                     console.log(item);
                 });
             },

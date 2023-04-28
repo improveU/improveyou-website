@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-    <script defer src="{{ asset('js/homePayment.js') }}"></script>
+
     <script defer src="{{ asset('js/animate.js') }}"></script>
     <script defer src="{{ asset('js/backToTop.js') }}" ></script>
     <script src="{{ asset('js/statusMessage.js') }}"></script>

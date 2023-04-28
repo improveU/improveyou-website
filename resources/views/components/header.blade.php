@@ -6,11 +6,16 @@
         </a>
         <div class="linkWrapper">
 
-            <form id="search-form">
-                <input type="text" id="search-input" name="q" placeholder="Search...">
-                <button type="submit">Search</button>
-            </form>
-            <ul id="search-results"></ul>
+            <section id="searchToggleMenu">
+                <form class="formWrapper" id="search-form">
+
+                    <div class="inputContainer">
+                        <input class="inputField" type="text" id="search-input" name="q" placeholder="Search...">
+                        <button type="submit">Search</button>
+                    </div>
+                <ul id="search-results"></ul>
+                </form>
+            </section>
 
             @auth
             <button>

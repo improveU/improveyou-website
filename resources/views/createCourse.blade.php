@@ -113,7 +113,6 @@
 @endsection
 
 @section('scripts')
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         const mdEditor = new toastui.Editor({
             el: document.querySelector('#editor'),

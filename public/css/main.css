@@ -473,6 +473,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 header nav button {
   width: 90px;
@@ -558,6 +559,16 @@ header nav .linkWrapper a img {
     margin: 8px !important;
   }
 }
+section#searchToggleMenu {
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.8);
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
 footer {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 23px 30px;
   background-color: #29C59A;

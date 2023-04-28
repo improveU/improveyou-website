@@ -21,6 +21,7 @@ header{
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
 
       button{
          width: 90px;
@@ -134,4 +135,14 @@ header{
          }
       }
    }
+}
+
+section#searchToggleMenu {
+   position: absolute;
+   height: 300px;
+   width: 600px;
+   background-color: #ffffffcc;
+   left: 0;
+   top: 0;
+   z-index: 999;
 }

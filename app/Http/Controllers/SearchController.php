@@ -10,10 +10,8 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        // Get the search query from the 'q' parameter in the request
         $searchQuery = $request->input('q');
 
-        // Perform the search on the Course and User models
         $courses = Course::where('title', 'LIKE', "%$searchQuery%")
             ->orWhere('course_description', 'LIKE', "%$searchQuery%")
             ->orWhere('introduction', 'LIKE', "%$searchQuery%")
@@ -25,7 +23,6 @@ class SearchController extends Controller
             ->latest()
             ->get();
 
-        // Return a JSON response with the search results
         return response()->json([
             'courses' => $courses,
             'users' => $users
