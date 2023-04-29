@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RegisterController;
 use \App\Http\Controllers\LoginController;
@@ -56,6 +57,7 @@ Route::post('login', [LoginController::class, 'store'])->middleware('guest');
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
+Route::get('/profile/{id}', [ProfileController::class, 'publicProfile'])->middleware('auth');
 
 Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->middleware('auth');
 Route::post('/updateProfilePicture', [ProfileController::class, 'updateProfilePicture'])->middleware('auth');
@@ -77,9 +79,9 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
-
-
+Route::post('/search-results', [SearchController::class, 'showResults']);
 Route::namespace('App\Http\Controllers')->group(function () {
     // Routes: use the namespace 'App\Http\Controllers'
     Route::get('/search', 'SearchController@search');
 });
+

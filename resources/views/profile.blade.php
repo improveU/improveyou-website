@@ -17,7 +17,7 @@
 <section id="profileCover">
     <div class="c orange">
         <div class="profilePictureWrapper">
-            <img src="{{ asset('storage/' . $user->profile_picture_path) }}" alt="ProfilePic">
+            <img src="{{ asset('storage/' . auth()->user()->profile_picture_path) }}" alt="ProfilePic">
             <div class="profilePictureEdit" id="profilePictureUploadOpen">
                 <img src="{{ asset('svg/logoEdit.svg') }}" alt="">
             </div>

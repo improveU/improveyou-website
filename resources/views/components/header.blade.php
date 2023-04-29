@@ -4,31 +4,20 @@
         <a class="logoLink" href="{{ url('/') }}">
             <x-logo/>
         </a>
+        @auth
+        <div class="searchIndicator" id="searchIndicator">
+            Search
+            <img src="{{ asset('svg/logoSearch.svg') }}">
+        </div>
+        @endauth
         <div class="linkWrapper">
-
-            <section id="searchToggleMenu">
-                <form class="formWrapper" id="search-form">
-
-                    <div class="inputContainer">
-                        <input class="inputField" type="text" id="search-input" name="q" placeholder="Search...">
-                        <button type="submit">Search</button>
-                    </div>
-                <ul id="search-results"></ul>
-                </form>
-            </section>
-
-            @auth
-            <button>
-                <img src="{{ asset('svg/logoSearch.svg') }}">
-            </button>
-            @endauth
             @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 3)
             <a href="{{ url('/create-course') }}">
                 <img src="{{ asset('svg/logoCreate.svg') }}">
             </a>
             @endif
             @auth
-            <a href="{{ url('/profile') }}">
+            <a class="profile" href="{{ url('/profile') }}">
                 <img src="{{ asset('storage/' . auth()->user()->profile_picture_path) }}">
             </a>
             @endauth
@@ -40,3 +29,18 @@
         </div>
     </nav>
 </header>
+
+@auth
+<section id="searchToggleMenu" class="hidden">
+    <form method="POST" class="searchFormWrapper" id="search-form" action="{{ url('search-results') }}">
+        @csrf
+        <div class="searchContainer">
+            <input class="searchField" type="text" id="search-input" name="q" placeholder="Search something" autocomplete="off">
+            <button type="submit">
+                <img src="{{ asset('svg/logoSearch.svg') }}">
+            </button>
+        </div>
+        <ul id="search-results"></ul>
+    </form>
+</section>
+@endauth

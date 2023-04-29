@@ -122,8 +122,8 @@ section.logo {
    align-items: center;
 
    .logoWrapper {
-      height: 55px;
-      width: 70px;
+      height: 50px;
+      width: 65px;
       background-image: url(./../svg/logo.svg);
       background-size: 100%;
       border-radius: 8px;
@@ -134,7 +134,7 @@ section.logo {
       padding-left: 15px;
       font-family: "BerlinTypeBold", sans-serif;
       text-decoration: none;
-      font-size: 26px;
+      font-size: 24px;
       color: $logoBackground;
    }
 }

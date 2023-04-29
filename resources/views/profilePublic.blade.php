@@ -1,4 +1,24 @@
-<section id="profileCourses" class="hidden">
+@extends('layouts.default')
+
+@section('title', $profile->username )
+
+@section('head')
+
+@endsection
+
+@section('content')
+
+<section id="publicProfile">
+
+    {{ $profile->profile_picture_path }}
+    {{ $profile->username }}
+    {{ $profile->description }}
+
+</section>
+
+
+@if (!empty($courses))
+<section id="profileCourses">
     <h1>Courses</h1>
     <div class="coursesContainer">
         <ul>
@@ -15,9 +35,12 @@
                     <div class="date">
                         <p>Created: <br> {{ $course->updated_at->format('Y-m-d') }}</p>
                     </div>
-                    <button class="btn" onclick="window.location.href = '{{ url('edit-course/' . auth()->user()->id . "/" . $course->id )  }}';">Edit</button>
+                    <button class="btn" onclick="window.location.href = '{{ url('course/' . $course->id )  }}';">View</button>
                 </li>
             @endforeach
         </ul>
     </div>
 </section>
+@endif
+
+@endsection

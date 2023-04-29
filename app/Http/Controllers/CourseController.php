@@ -39,9 +39,9 @@ class CourseController extends Controller
     public function listAllCourses()
     {
         $courses = Course::all();
-        $latest = collect($courses)->sortBy('created_at', SORT_DESC)->slice(0, 4)->toArray();
-        $random = collect($courses)->random(4)->toArray();
-        $popular = collect($courses)->sortBy('views', SORT_DESC)->slice(0, 4)->toArray();
+        $latest = collect($courses)->sortByDesc('created_at')->take(4);
+        $random = collect($courses)->random(4);
+        $popular = collect($courses)->sortByDesc('views')->take(4);
 
         return view('courses', [
             'courses' => $courses,
@@ -50,6 +50,7 @@ class CourseController extends Controller
             'popular' => $popular
         ]);
     }
+
 
     public function search()
     {

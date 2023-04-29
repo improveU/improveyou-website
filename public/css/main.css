@@ -195,8 +195,8 @@ section.logo {
   align-items: center;
 }
 section.logo .logoWrapper {
-  height: 55px;
-  width: 70px;
+  height: 50px;
+  width: 65px;
   background-image: url(./../svg/logo.svg);
   background-size: 100%;
   border-radius: 8px;
@@ -206,7 +206,7 @@ section.logo .logoTitle {
   padding-left: 15px;
   font-family: "BerlinTypeBold", sans-serif;
   text-decoration: none;
-  font-size: 26px;
+  font-size: 24px;
   color: #05445e;
 }
 
@@ -467,7 +467,7 @@ header .loader {
 header nav {
   width: 100%;
   max-width: 1540px;
-  height: 90px;
+  height: 80px;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -506,16 +506,32 @@ header nav button img {
 header nav .logoLink {
   padding: 15px 20px 15px 20px;
   text-decoration: none;
+  width: 338px;
+}
+header nav .searchIndicator {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 20px 4px 20px;
+  border-bottom: solid 2px #E5F6F8;
+  color: #005F60;
+  cursor: pointer;
+}
+header nav .searchIndicator img {
+  height: 25px;
+  width: 25px;
 }
 header nav .linkWrapper {
   height: 100%;
+  width: 376px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 header nav .linkWrapper a {
   width: 90px;
-  height: 55px;
+  height: 50px;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -523,6 +539,18 @@ header nav .linkWrapper a {
   background-color: #E5F6F8;
   text-decoration: none;
   margin: 10px;
+}
+header nav .linkWrapper a img {
+  height: 37px;
+  width: 37px;
+  border-radius: 100%;
+}
+header nav .linkWrapper a.profile img {
+  border: 2px solid #9fd3d3;
+  background: #9fd3d3;
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
 }
 header nav .linkWrapper a:nth-last-child(1) {
   margin-right: 20px;
@@ -541,11 +569,6 @@ header nav .linkWrapper a:active {
   border: none;
   outline: none;
 }
-header nav .linkWrapper a img {
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-}
 
 @media only screen and (max-width: 700px) {
   header nav a .logoTitle {
@@ -560,13 +583,114 @@ header nav .linkWrapper a img {
   }
 }
 section#searchToggleMenu {
+  display: block;
   position: absolute;
-  height: 300px;
-  width: 600px;
-  background-color: rgba(255, 255, 255, 0.8);
-  left: 0;
-  top: 0;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(101, 108, 133, 0.25);
+  transform: translate(-50%, -50%);
   z-index: 999;
+}
+section#searchToggleMenu .searchFormWrapper {
+  height: auto;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  background-color: #f7f7f7;
+  padding: 14px;
+  border-radius: 12px;
+}
+section#searchToggleMenu .searchFormWrapper .searchContainer {
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+section#searchToggleMenu .searchFormWrapper .searchContainer button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 87px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E5F6F8;
+  text-decoration: none;
+  border: solid 2.5px #B4E8EE;
+  cursor: pointer;
+}
+section#searchToggleMenu .searchFormWrapper .searchContainer button img {
+  height: 32px;
+  width: 28px;
+}
+section#searchToggleMenu .searchFormWrapper .searchContainer .searchField {
+  background-color: white;
+  width: auto;
+  padding: 8px 12px 8px 12px;
+  border: solid 2.5px #B4E8EE;
+  border-radius: 12px;
+  font-family: "BerlinType";
+  font-size: 1.2rem;
+  margin-right: 100px;
+}
+section#searchToggleMenu .searchFormWrapper .searchContainer .searchField:focus {
+  border: solid 2.5px #B4E8EE;
+  background-color: transparent;
+  background-color: white;
+  outline: 3px solid #E8EDEB;
+}
+section#searchToggleMenu .searchFormWrapper ul {
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  list-style-type: none;
+}
+section#searchToggleMenu .searchFormWrapper ul li.noResults {
+  width: 100%;
+  margin: 20px 0px 10px 0;
+  text-align: center;
+}
+section#searchToggleMenu .searchFormWrapper ul h3 {
+  font-size: 1em;
+  font-family: "BerlinTypeBold", sans-serif;
+  line-height: 32px;
+  margin: 0;
+}
+section#searchToggleMenu .searchFormWrapper ul ul {
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  list-style-type: none;
+}
+section#searchToggleMenu .searchFormWrapper ul ul li {
+  width: 100%;
+}
+section#searchToggleMenu .searchFormWrapper ul ul li a {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 #d4d9e1;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-family: "BerlinTypeBold", sans-serif;
+  text-decoration: none;
+  color: #00617e;
+  transition: 0.2s all;
+}
+section#searchToggleMenu .searchFormWrapper ul ul li a mark {
+  color: #05445e;
+  background-color: transparent;
+}
+section#searchToggleMenu .searchFormWrapper ul ul li a:hover {
+  background-color: #ffebe0;
+  outline: none;
 }
 
 footer {
@@ -1129,6 +1253,7 @@ section#course .cover {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
   max-width: 1450px;
   min-width: 1450px;
   overflow: hidden;
@@ -1227,6 +1352,7 @@ section#course div.c .courseInfo .linkTree a {
   color: #767882;
   transition: all 0.5s;
   text-overflow: ellipsis;
+  text-decoration: none;
 }
 section#course div.c .courseInfo .linkTree a:hover {
   color: #474747;
@@ -1265,7 +1391,10 @@ section#course div.c .courseInfo .views {
     min-width: 0px;
   }
 }
-section#coursesAll {
+section#coursesPopular .courseWrapper,
+section#coursesLatest .courseWrapper,
+section#coursesRandom .courseWrapper,
+section#coursesAll .courseWrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
@@ -2060,17 +2189,18 @@ section#profileContainer section#profileTabs section#profileEdit .editContainer 
 section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
   padding: 5px 30px 0 30px;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer {
+
+section#profileCourses .coursesContainer {
   padding: 20px 30px 0 30px;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul {
+section#profileCourses .coursesContainer ul {
   list-style: none;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+section#profileCourses .coursesContainer ul li {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -2080,33 +2210,33 @@ section#profileContainer section#profileTabs section#profileCourses .coursesCont
   padding-bottom: 12.5px;
   border-bottom: solid 2px #13739b;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li:nth-last-child(1) {
+section#profileCourses .coursesContainer ul li:nth-last-child(1) {
   margin-bottom: 0px;
   padding-bottom: 0px;
   border-bottom: none;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li span {
+section#profileCourses .coursesContainer ul li span {
   min-width: 40px;
   text-align: right;
   color: #00617e;
   font-family: "BerlinTypeBold";
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li img {
+section#profileCourses .coursesContainer ul li img {
   height: 80px;
   width: 80px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 12px;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title {
+section#profileCourses .coursesContainer ul li .title {
   width: 300px;
   overflow-wrap: anywhere;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+section#profileCourses .coursesContainer ul li .introduction {
   width: 350px;
   overflow-wrap: anywhere;
 }
-section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .date {
+section#profileCourses .coursesContainer ul li .date {
   width: 75px;
   color: #00617e;
   font-family: "BerlinTypeBold";
@@ -2210,7 +2340,7 @@ section#profilePictureUpload.open {
   width: 100%;
   top: 50%;
   left: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(101, 108, 133, 0.1);
   transform: translate(-50%, -50%);
   z-index: 999;
 }

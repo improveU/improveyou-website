@@ -5,6 +5,7 @@ section#course {
       box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 50px;
       max-width: 1450px;
       min-width: 1450px;
       overflow: hidden;
@@ -121,6 +122,7 @@ section#course {
                color: #767882;
                transition: all .5s;
                text-overflow: ellipsis;
+               text-decoration: none;
             }
             a:hover{
                color: #474747;
@@ -168,15 +170,21 @@ section#course {
    }
 }
 
+section#coursesPopular,
+section#coursesLatest,
+section#coursesRandom,
 section#coursesAll {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 25px;
-   justify-content: center;
-   align-items: center;
-   max-width: 1500px;
-   margin-left: auto;
-   margin-right: auto;
+
+   .courseWrapper{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+   }
 }
 
 .courseCard{
