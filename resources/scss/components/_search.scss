@@ -10,7 +10,7 @@ section#profilesAll {
    max-width: 1400px;
    min-width: 1400px;
 
-   h2{
+   h2 {
       margin-top: 50px;
       margin-bottom: 25px;
    }
@@ -28,32 +28,35 @@ section#profilesAll {
    }
 }
 
-.courseCard{
+.courseCard {
    height: auto;
    width: 300px;
    border-radius: 10px;
-   a{
+
+   a {
       color: #1D212F;
       text-decoration: none;
-      img{
+
+      img {
          object-fit: cover;
          height: 200px;
          width: 300px;
          border-radius: 15px 15px 0 0;
       }
-      .courseInfo{
+
+      .courseInfo {
          position: relative;
          transform: translateY(-6px);
          background-color: #E5F6F8;
          padding: 10px;
          border-radius: 0 0 15px 15px;
 
-         h2{
+         h2 {
             margin: 5px 0 5px 0 !important;
             font-size: 24px;
          }
 
-         .info{
+         .info {
             display: flex;
             justify-content: space-around;
          }
@@ -61,19 +64,19 @@ section#profilesAll {
    }
 }
 
-.profileCard{
+.profileCard {
    width: 300px;
    height: auto;
    border-radius: 10px;
    background-color: #E5F6F8;
 
-   a{
+   a {
       color: #1D212F;
       text-decoration: none;
       display: flex;
       align-items: center;
 
-      img{
+      img {
          margin: 10px;
          padding: 10px;
          object-fit: cover;
@@ -84,6 +87,7 @@ section#profilesAll {
 }
 
 @media only screen and (max-width: 1500px) {
+
    section#coursesPopular,
    section#coursesLatest,
    section#coursesRandom,
@@ -95,28 +99,30 @@ section#profilesAll {
    }
 }
 
-
-section#publicProfile{
+section#publicProfile {
    margin-top: 50px;
-   .publicProfileCard{
-      img{
+
+   .publicProfileCard {
+      img {
          object-fit: cover;
          height: 140px;
          width: 140px;
       }
-      .head{
+
+      .head {
          display: flex;
          align-items: center;
          margin-bottom: 25px;
          padding-bottom: 25px;
          border-bottom: solid 2px #13739b;
 
-         .person{
+         .person {
             margin-left: 30px;
             color: #00617e;
             font-family: "BerlinTypeBold";
             font-size: 25px;
-            span{
+
+            span {
                font-family: "BerlinType";
                font-size: 1.2rem;
             }
@@ -126,12 +132,13 @@ section#publicProfile{
 }
 
 @media only screen and (max-width: 600px) {
-   section#publicProfile{
-      .publicProfileCard{
-         .head{
+   section#publicProfile {
+      .publicProfileCard {
+         .head {
             flex-direction: column !important;
             align-items: center !important;
-            .person{
+
+            .person {
                margin-top: 25px !important;
                margin-left: 0 !important;
                text-align: center;

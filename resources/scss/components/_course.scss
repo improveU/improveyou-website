@@ -38,7 +38,8 @@ section#course {
          margin-top: 10px;
          margin-bottom: 10px;
       }
-      h1{
+
+      h1 {
          font-size: 30px;
       }
 
@@ -72,23 +73,23 @@ section#course {
          tbody {
             tr {
                td {
-                  border: 2.5px solid rgba(0,0,0,.1);
+                  border: 2.5px solid rgba(0, 0, 0, .1);
                   padding: 5px 14px 5px 12px;
                }
             }
          }
       }
 
-      hr{
+      hr {
          width: 100%;
          border: solid 0.5px #555 !important;
       }
 
-      ul{
+      ul {
          padding-inline-start: 40px;
       }
 
-      blockquote{
+      blockquote {
          color: #767882;
          position: relative;
 
@@ -100,37 +101,42 @@ section#course {
             left: -20px;
             top: -10px;
             background: #e0e1e5;
-          
-        }
+
+         }
       }
 
-      .courseInfo{
+      .courseInfo {
          position: relative;
          padding-bottom: 10px;
          margin-bottom: 15px;
          border-bottom: solid 2.5px #E0E1E5;
-         .courseTitle{
+
+         .courseTitle {
             font-family: "BerlinTypeBold";
             color: #1D212F;
             font-size: 35px;
             padding-right: 80px;
          }
-         .linkTree{
+
+         .linkTree {
             padding-bottom: 10px;
             overflow: auto;
             white-space: nowrap;
-            a{
+
+            a {
                font-size: 20px;
                color: #767882;
                transition: all .5s;
                text-overflow: ellipsis;
                text-decoration: none;
             }
-            a:hover{
+
+            a:hover {
                color: #474747;
             }
          }
-         .tags{
+
+         .tags {
             padding-bottom: 10px;
             display: flex;
             flex-direction: row;
@@ -138,17 +144,19 @@ section#course {
             gap: 10px;
             height: auto;
 
-            div{
+            div {
                font-size: 15px;
                background-color: #FFF4EE;
                border-radius: 10px;
-               padding:  5px 10px;
+               padding: 5px 10px;
             }
          }
-         .introduction{
+
+         .introduction {
             font-family: "BerlinTypeBold";
          }
-         .views{
+
+         .views {
             position: absolute;
             right: 0;
             top: 0;
@@ -162,9 +170,9 @@ section#course {
    }
 }
 
-@media only screen and (max-width: 1500px){
-   section#course{
-      .cover{
+@media only screen and (max-width: 1500px) {
+   section#course {
+      .cover {
          margin-left: 25px;
          margin-right: 25px;
          min-width: 0px;
