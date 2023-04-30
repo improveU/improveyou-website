@@ -3,7 +3,6 @@
 @section('head')
     <script src="{{ asset('js/toastui-improved.js') }}"></script>
     <script src="{{ asset('js/formSend.js') }}" defer></script>
-    <script src="{{ asset('js/formGet.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/toastui-editor-improved.css') }}"/>
 
 @endsection

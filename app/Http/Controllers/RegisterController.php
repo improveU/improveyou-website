@@ -17,10 +17,11 @@ class RegisterController extends Controller
         $attributes = request()->validate([
             'username' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|min:7|max:255|confirmed',
+            'password' => 'required|min:8|max:255|confirmed',
         ]);
 
         User::create($attributes);
+
         if (auth()->attempt($attributes)) {
             session()->regenerate();
 

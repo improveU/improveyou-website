@@ -4,5 +4,5 @@
    <h1 class="price">$ 200</h1>
    <p>/year</p>
    <p>Offer for content creators to share there media</p>
-   <button class="btn" onclick="window.location.href = '/payment/3';">{{ $slot }}</button>
+    <button class="btn profileBtn" onclick="handleTabClick(this)" data-section="profileSubscriptionEdit">{{ $slot }}</button>
 </div>

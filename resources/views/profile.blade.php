@@ -29,18 +29,19 @@
 <section id="profileContainer">
 
     <section id="profileNav">
-        <h1>Profile</h1>
         <nav>
             <ul id="profileTabs">
-                <li class="tabOpen">Overview</li>
-                <li>Edit profile</li>
-                <li>Subscription</li>
-                <li>Description</li>
-
+                <li onclick="handleTabClick(this)" class="tabOpen" data-section="profileOverview">Profile</li>
+                <li onclick="handleTabClick(this)" data-section="profileEdit">Edit</li>
+                <li onclick="handleTabClick(this)" data-section="profileSubscription">Subscription</li>
+                <li onclick="handleTabClick(this)" data-section="profileSubscriptionEdit">Change</li>
+                <li onclick="handleTabClick(this)" data-section="profileBilling">Billing</li>
+                <li onclick="handleTabClick(this)" data-section="profileBillingEdit">Edit</li>
+                <li onclick="handleTabClick(this)" data-section="profileDescription">Description</li>
+                <li onclick="handleTabClick(this)" data-section="profileDescriptionEdit">Edit</li>
                 @if(auth()->user()->subscription_id == 3)
-                    <li>Courses</li>
+                    <li onclick="handleTabClick(this)" data-section="profileCourses">Courses</li>
                 @endif
-
             </ul>
 
             <form method="POST" action="{{ url('/logout') }}">
@@ -51,10 +52,14 @@
     </section>
 
     <section id="profileTabs">
-        <x-profile.profileOverview/>
+        <x-profile.profile/>
         <x-profile.profileEdit/>
-        <x-profile.profileDescription/>
         <x-profile.profileSubscription/>
+        <x-profile.profileSubscriptionEdit/>
+        <x-profile.profileBilling/>
+        <x-profile.profileBillingEdit/>
+        <x-profile.profileDescription/>
+        <x-profile.profileDescriptionEdit/>
 
         @if(auth()->user()->subscription_id == 3)
             <x-profile.profileCourses :courses="$courses"/>
@@ -107,7 +112,7 @@
         const mdEditor = new toastui.Editor({
             el: document.querySelector('#editor'),
             height: '500px',
-            initialValue: '',
+            initialValue: document.getElementById("formTextarea").value,
             initialEditType: 'wysiwyg',
             previewStyle: 'vertical'
         });

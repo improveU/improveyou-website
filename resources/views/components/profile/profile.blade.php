@@ -1,5 +1,5 @@
 <section id="profileOverview">
-    <h1>Overview</h1>
+    <h1>Profile</h1>
     <div class="overviewContainer">
         <div class="overviewPersonal">
 
@@ -35,47 +35,9 @@
                     <span>English</span>
                 </div>
             </div>
-
-            <button class=" btn profileBtn" id="editButton">
+            <button class=" btn profileBtn" onclick="handleTabClick(this)" data-section="profileEdit" >
                 Edit profile
             </button>
-
-            @if(auth()->user()->subscription_id != 0)
-                <h1 class="billingTitle">Billing</h1>
-                <div class="overviewBilling">
-                    <div>
-                        <p>Firstname:</p>
-                        <span>{{auth()->user()->first_name}}</span>
-                    </div>
-                    <div>
-                        <p>Lastname:</p>
-                        <span>{{auth()->user()->last_name}}</span>
-                    </div>
-                </div>
-
-                <div class="overviewBillingAddress">
-                    <div>
-                        <p>Address:</p>
-                        <span>{{auth()->user()->address}}</span>
-                    </div>
-                </div>
-
-                <div class="overviewBillingCity">
-                    <div>
-                        <p>ZIP:</p>
-                        <span>{{auth()->user()->zip_code}}</span>
-                    </div>
-                    <div>
-                        <p>City:</p>
-                        <span>{{auth()->user()->city}}</span>
-                    </div>
-                </div>
-
-                <button class=" btn profileBtn" id="editButton">
-                    Edit billing
-                </button>
-            @endif
-
         </div>
 
         <x-profile.profileOverviewSubscriptionCard/>

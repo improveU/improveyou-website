@@ -15,7 +15,7 @@
                     Company
                 </dt>
                 <dd><a href="{{ url('/about') }}">About Us</a></dd>
-                <dd><a href="{{ url('/') }}">Search</a></dd>
+                <dd><a href="{{ url('/search-results') }}">Search</a></dd>
             </dl>
         </div>
         <div class="thirdparty">

@@ -4,5 +4,5 @@
     <h1 class="price">$ 200</h1>
     <p>/year</p>
     <p>Offer for content creators to share there media</p>
-    <button class="btn" onclick="subscriptionButton()">{{ $slot }}</button>
+    <button class="btn" onclick="subscriptionButton(3)">{{ $slot }}</button>
 </div>

@@ -4,50 +4,62 @@ const sectionElements = document.querySelectorAll('[id^="profile"]');
 
 let previousSection = document.querySelector('#profileOverview');
 
-listElements.forEach(function(listItem) {
-  listItem.addEventListener('click', function() {
-
-    let sectionId = 'profile' + listItem.textContent;
-    if(sectionId == 'profileEdit profile') sectionId = 'profileEdit';
-
-    const sectionElement = document.getElementById(sectionId);
-
-    if (sectionElement && sectionElement.classList.contains('hidden')) {
-      sectionElement.classList.remove('hidden');
-
-      listElements.forEach(function(listItem) {
-        listItem.classList.remove('tabOpen');
-      });
-
-      listItem.classList.add('tabOpen');
-      if (previousSection && previousSection !== sectionElement) previousSection.classList.add('hidden');
-
-      previousSection = sectionElement;
-    }
-  });
-});
-
-const editButton = document.getElementById('editButton');
-
-editButton.addEventListener('click', () => {
-  previousSection = document.getElementById('profileOverview');
-  document.querySelector('#profileTabs li.tabOpen')?.classList.remove('tabOpen');
-  previousSection?.classList.add('hidden');
-
-  document.getElementById('profileEdit')?.classList.remove('hidden');
-  document.querySelector('#profileTabs li:nth-child(2)')?.classList.add('tabOpen');
-
-  previousSection = document.getElementById('profileEdit');
-});
-
-function subscriptionButton() {
-   document.getElementById('profileOverview')?.classList.add("hidden");
-   document.getElementById('profileEdit')?.classList.add("hidden");
-   document.getElementById('profileDescription')?.classList.add("hidden");
-   document.getElementById('profileCourses')?.classList.add("hidden");
-   document.getElementById('profileSubscription')?.classList.remove("hidden");
-
-   document.querySelector('#profileTabs li.tabOpen')?.classList.remove('tabOpen');
-   document.querySelector('#profileTabs li:nth-child(3)')?.classList.add('tabOpen');   
-   previousSection = document.getElementById('profileSubscription');
+function storeActiveTab() {
+  const activeTab = document.querySelector('#profileTabs li.tabOpen');
+  if (activeTab) {
+    sessionStorage.setItem('activeTab', activeTab.textContent.trim());
+  }
 }
+
+function setActiveTab() {
+  const activeTabName = localStorage.getItem('activeTab');
+  const hashTab = document.querySelector(`[data-section="${window.location.hash.slice(1)}"]`);
+
+  if (hashTab) {
+    handleTabClick(hashTab);
+    return;
+  }
+
+  if (activeTabName) {
+    const activeTab = Array.from(listElements).find(
+      (listItem) => listItem.textContent.trim() === activeTabName
+    );
+    if (activeTab) {
+      activeTab.click();
+      return;
+    }
+  }
+
+  const firstTab = listElements[0];
+  firstTab.classList.add('tabOpen');
+  const sectionId = firstTab.dataset.section;
+  const sectionElement = document.getElementById(sectionId);
+  sectionElement.classList.remove('hidden');
+}
+
+function handleTabClick(tab) {
+  const sectionId = tab.dataset.section;
+  const sectionElement = document.getElementById(sectionId);
+
+  if (sectionElement && sectionElement.classList.contains('hidden')) {
+    sectionElement.classList.remove('hidden');
+
+    listElements.forEach(function(listItem) {
+      listItem.classList.remove('tabOpen');
+      if (listItem.dataset.section === sectionId) {
+        listItem.classList.add('tabOpen');
+        window.location.hash = '#' + sectionId;
+      }
+    });
+
+    if (previousSection && previousSection !== sectionElement) {
+      previousSection.classList.add('hidden');
+    }
+
+    previousSection = sectionElement;
+    storeActiveTab();
+  }
+}
+
+
+setActiveTab();

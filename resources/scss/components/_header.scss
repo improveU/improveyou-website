@@ -137,6 +137,37 @@ header{
    }
 }
 
+@media only screen and (max-width: 800px){
+   header{
+      nav{
+         .searchIndicator{
+            justify-content: center;
+            align-items: center;
+            border-bottom: none;
+            width: 90px;
+            height: 50px;
+            border-radius: 8px;
+            background-color: #E5F6F8;
+            padding: 0;
+            margin: 0 10px 0 auto;
+            span{
+               display: none !important;
+            }
+            img{
+               height: 35px;
+               width: 35px;
+            }
+         }
+         .logoLink{
+            width: auto !important;
+         }
+         .linkWrapper{
+            width: auto !important;
+         }
+      }
+   }
+}
+
 @media only screen and (max-width: 700px){
    header{
       nav{
@@ -152,6 +183,10 @@ header{
 @media only screen and (max-width: 450px){
    header{
       nav{
+         .searchIndicator{
+            width: 60px;
+            margin: 0 8px 0 auto;;
+         }
          .linkWrapper{
             button,
             a{
@@ -186,12 +221,13 @@ section#searchToggleMenu {
 
       .searchContainer {
          position: relative;
-         width: 100%;
+         width: calc(100% - 30px);
          height: fit-content;
          display: flex;
          flex-direction: column;
          gap: 5px;
-      
+         margin: 15px;
+         
          button{
             position: absolute;
             top: 0;
@@ -235,7 +271,9 @@ section#searchToggleMenu {
       ul{
          padding-inline-start: 0px;
          list-style-type: none;
-
+         max-height: 480px;
+         overflow-y: scroll;
+         
          li.noResults{
             width: 100%;
             margin: 20px 0px 10px 0;
@@ -273,12 +311,20 @@ section#searchToggleMenu {
                   }
 
                   &:hover {
-                     background-color: #ffebe0;
+                     background-color: #b4e8ee;
                      outline: none;
                   }
                }
             }
          }
+      }
+   }
+}
+
+@media only screen and (max-width: 680px){
+   section#searchToggleMenu{
+      .searchFormWrapper{
+         margin-top: 10px;
       }
    }
 }

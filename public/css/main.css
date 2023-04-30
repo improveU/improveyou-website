@@ -570,12 +570,42 @@ header nav .linkWrapper a:active {
   outline: none;
 }
 
+@media only screen and (max-width: 800px) {
+  header nav .searchIndicator {
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+    width: 90px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #E5F6F8;
+    padding: 0;
+    margin: 0 10px 0 auto;
+  }
+  header nav .searchIndicator span {
+    display: none !important;
+  }
+  header nav .searchIndicator img {
+    height: 35px;
+    width: 35px;
+  }
+  header nav .logoLink {
+    width: auto !important;
+  }
+  header nav .linkWrapper {
+    width: auto !important;
+  }
+}
 @media only screen and (max-width: 700px) {
   header nav a .logoTitle {
     display: none;
   }
 }
 @media only screen and (max-width: 450px) {
+  header nav .searchIndicator {
+    width: 60px;
+    margin: 0 8px 0 auto;
+  }
   header nav .linkWrapper button,
   header nav .linkWrapper a {
     width: 60px !important;
@@ -605,12 +635,13 @@ section#searchToggleMenu .searchFormWrapper {
 }
 section#searchToggleMenu .searchFormWrapper .searchContainer {
   position: relative;
-  width: 100%;
+  width: calc(100% - 30px);
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin: 15px;
 }
 section#searchToggleMenu .searchFormWrapper .searchContainer button {
   position: absolute;
@@ -651,6 +682,8 @@ section#searchToggleMenu .searchFormWrapper ul {
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
   list-style-type: none;
+  max-height: 480px;
+  overflow-y: scroll;
 }
 section#searchToggleMenu .searchFormWrapper ul li.noResults {
   width: 100%;
@@ -689,10 +722,15 @@ section#searchToggleMenu .searchFormWrapper ul ul li a mark {
   background-color: transparent;
 }
 section#searchToggleMenu .searchFormWrapper ul ul li a:hover {
-  background-color: #ffebe0;
+  background-color: #b4e8ee;
   outline: none;
 }
 
+@media only screen and (max-width: 680px) {
+  section#searchToggleMenu .searchFormWrapper {
+    margin-top: 10px;
+  }
+}
 footer {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 23px 30px;
   background-color: #29C59A;
@@ -864,6 +902,7 @@ header.homeHeader header {
   top: 0;
   z-index: 99;
 }
+
 .sectionTitle {
   color: #005F60;
   font-size: 35px;
@@ -1233,6 +1272,146 @@ section#services .serviceWrapper .serviceContainer .description button .iconCorn
     border-radius: 0 0 15px 15px !important;
   }
 }
+section#coursesPopular,
+section#coursesLatest,
+section#coursesRandom,
+section#coursesAll,
+section#profilesAll {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  min-width: 1400px;
+}
+section#coursesPopular h2,
+section#coursesLatest h2,
+section#coursesRandom h2,
+section#coursesAll h2,
+section#profilesAll h2 {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+section#coursesPopular .courseWrapper,
+section#coursesPopular .profileWrapper,
+section#coursesLatest .courseWrapper,
+section#coursesLatest .profileWrapper,
+section#coursesRandom .courseWrapper,
+section#coursesRandom .profileWrapper,
+section#coursesAll .courseWrapper,
+section#coursesAll .profileWrapper,
+section#profilesAll .courseWrapper,
+section#profilesAll .profileWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courseCard {
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+}
+.courseCard a {
+  color: #1D212F;
+  text-decoration: none;
+}
+.courseCard a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 200px;
+  width: 300px;
+  border-radius: 15px 15px 0 0;
+}
+.courseCard a .courseInfo {
+  position: relative;
+  transform: translateY(-6px);
+  background-color: #E5F6F8;
+  padding: 10px;
+  border-radius: 0 0 15px 15px;
+}
+.courseCard a .courseInfo h2 {
+  margin: 5px 0 5px 0 !important;
+  font-size: 24px;
+}
+.courseCard a .courseInfo .info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profileCard {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #E5F6F8;
+}
+.profileCard a {
+  color: #1D212F;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.profileCard a img {
+  margin: 10px;
+  padding: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 1500px) {
+  section#coursesPopular,
+  section#coursesLatest,
+  section#coursesRandom,
+  section#coursesAll,
+  section#profilesAll {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+    min-width: 0px !important;
+  }
+}
+section#publicProfile {
+  margin-top: 50px;
+}
+section#publicProfile .publicProfileCard img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 140px;
+  width: 140px;
+}
+section#publicProfile .publicProfileCard .head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid 2px #13739b;
+}
+section#publicProfile .publicProfileCard .head .person {
+  margin-left: 30px;
+  color: #00617e;
+  font-family: "BerlinTypeBold";
+  font-size: 25px;
+}
+section#publicProfile .publicProfileCard .head .person span {
+  font-family: "BerlinType";
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  section#publicProfile .publicProfileCard .head {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  section#publicProfile .publicProfileCard .head .person {
+    margin-top: 25px !important;
+    margin-left: 0 !important;
+    text-align: center;
+  }
+}
 section#contact {
   padding-top: 50vh;
 }
@@ -1390,30 +1569,6 @@ section#course div.c .courseInfo .views {
     margin-right: 25px;
     min-width: 0px;
   }
-}
-section#coursesPopular .courseWrapper,
-section#coursesLatest .courseWrapper,
-section#coursesRandom .courseWrapper,
-section#coursesAll .courseWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.courseCard {
-  height: 200px;
-  width: 300px;
-}
-.courseCard a img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 150px;
-  width: 200px;
 }
 section#faq {
   min-height: calc(100vh - 600px);
@@ -2105,7 +2260,7 @@ section#profileContainer section#profileNav {
 }
 section#profileContainer section#profileNav nav {
   position: relative;
-  height: calc(100% - 48px);
+  height: 100%;
 }
 section#profileContainer section#profileNav nav ul {
   list-style: none;
@@ -2121,6 +2276,9 @@ section#profileContainer section#profileNav nav ul li {
   cursor: pointer;
   transition: 0.2s all;
   padding-left: 10px;
+}
+section#profileContainer section#profileNav nav ul li:nth-child(2n) {
+  margin-left: 10px;
 }
 section#profileContainer section#profileNav nav ul li:hover {
   padding-left: 20px;
@@ -2159,48 +2317,55 @@ section#profileContainer section#profileTabs {
   box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 100px 50px;
   width: 100%;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer {
+section#profileContainer section#profileTabs section#profileOverview .overviewContainer,
+section#profileContainer section#profileTabs section#profileBilling .overviewContainer,
+section#profileContainer section#profileTabs section#profileSubscription .overviewContainer {
   position: relative;
   display: flex;
   padding: 5px 30px 0 30px;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal {
+section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal,
+section#profileContainer section#profileTabs section#profileBilling .overviewContainer .overviewPersonal,
+section#profileContainer section#profileTabs section#profileSubscription .overviewContainer .overviewPersonal {
   width: auto;
-  max-width: 770px;
+  max-width: 700px;
   min-width: 600px;
-  white-space: nowrap;
+  min-height: 420px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal .billingTitle {
-  margin-top: 40px;
-}
-section#profileContainer section#profileTabs section#profileOverview .overviewContainer .profileBtn {
+section#profileContainer section#profileTabs section#profileOverview .overviewContainer .profileBtn,
+section#profileContainer section#profileTabs section#profileBilling .overviewContainer .profileBtn,
+section#profileContainer section#profileTabs section#profileSubscription .overviewContainer .profileBtn {
   width: 100%;
 }
-section#profileContainer section#profileTabs section#profileEdit .editContainer {
+section#profileContainer section#profileTabs section#profileEdit .editContainer,
+section#profileContainer section#profileTabs section#profileBillingEdit .editContainer,
+section#profileContainer section#profileTabs section#profileSubscription .editContainer {
   position: relative;
   display: flex;
   padding: 5px 30px 0 30px;
 }
-section#profileContainer section#profileTabs section#profileEdit .editContainer form {
+section#profileContainer section#profileTabs section#profileEdit .editContainer form,
+section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form,
+section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
   width: 600px;
 }
 section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
   padding: 5px 30px 0 30px;
 }
 
-section#profileCourses .coursesContainer {
+.coursesContainer {
   padding: 20px 30px 0 30px;
 }
-section#profileCourses .coursesContainer ul {
+.coursesContainer ul {
   list-style: none;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
-section#profileCourses .coursesContainer ul li {
+.coursesContainer ul li {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -2210,33 +2375,33 @@ section#profileCourses .coursesContainer ul li {
   padding-bottom: 12.5px;
   border-bottom: solid 2px #13739b;
 }
-section#profileCourses .coursesContainer ul li:nth-last-child(1) {
+.coursesContainer ul li:nth-last-child(1) {
   margin-bottom: 0px;
   padding-bottom: 0px;
   border-bottom: none;
 }
-section#profileCourses .coursesContainer ul li span {
+.coursesContainer ul li span {
   min-width: 40px;
   text-align: right;
   color: #00617e;
   font-family: "BerlinTypeBold";
 }
-section#profileCourses .coursesContainer ul li img {
+.coursesContainer ul li img {
   height: 80px;
   width: 80px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 12px;
 }
-section#profileCourses .coursesContainer ul li .title {
+.coursesContainer ul li .title {
   width: 300px;
   overflow-wrap: anywhere;
 }
-section#profileCourses .coursesContainer ul li .introduction {
+.coursesContainer ul li .introduction {
   width: 350px;
   overflow-wrap: anywhere;
 }
-section#profileCourses .coursesContainer ul li .date {
+.coursesContainer ul li .date {
   width: 75px;
   color: #00617e;
   font-family: "BerlinTypeBold";
@@ -2366,34 +2531,42 @@ section#profilePictureUpload.open form .container {
     margin-right: 25px !important;
     min-width: 0px !important;
   }
-  section#profileContainer section#profileTabs section#profileOverview .overviewContainer {
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer,
+  section#profileContainer section#profileTabs section#profileBilling .overviewContainer,
+  section#profileContainer section#profileTabs section#profileSubscription .overviewContainer {
     padding: 5px 0px 0 0px !important;
   }
-  section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal {
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal,
+  section#profileContainer section#profileTabs section#profileBilling .overviewContainer .overviewPersonal,
+  section#profileContainer section#profileTabs section#profileSubscription .overviewContainer .overviewPersonal {
     max-width: 60% !important;
     min-width: 50% !important;
   }
-  section#profileContainer section#profileTabs section#profileEdit .editContainer {
+  section#profileContainer section#profileTabs section#profileEdit .editContainer,
+  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer,
+  section#profileContainer section#profileTabs section#profileSubscription .editContainer {
     padding: 5px 0px 0 0px !important;
   }
-  section#profileContainer section#profileTabs section#profileEdit .editContainer form {
+  section#profileContainer section#profileTabs section#profileEdit .editContainer form,
+  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form,
+  section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
     max-width: 60% !important;
     min-width: 50% !important;
   }
   section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
     padding: 5px 0px 0 0px !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer {
+  .coursesContainer {
     padding: 20px 0px 0 0px !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+  .coursesContainer ul li {
     -moz-column-gap: 20px !important;
          column-gap: 20px !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title {
+  .coursesContainer ul li .title {
     width: 30% !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+  .coursesContainer ul li .introduction {
     width: calc(65% - 75px - 100px - 40px - 150px) !important;
   }
   .overviewPerson,
@@ -2415,7 +2588,7 @@ section#profilePictureUpload.open form .container {
   section#profileCover .c,
   section#profileCover .container {
     margin-left: 275px !important;
-    height: 240px !important;
+    height: 280px !important;
   }
   section#profileContainer {
     flex-direction: column !important;
@@ -2425,7 +2598,7 @@ section#profilePictureUpload.open form .container {
     width: 170px !important;
     position: absolute !important;
     left: 25px !important;
-    top: 150px !important;
+    top: 140px !important;
   }
   section#profileContainer section#profileNav nav ul li:hover {
     padding-left: 25px !important;
@@ -2441,11 +2614,11 @@ section#profilePictureUpload.open form .container {
     margin: 0 !important;
     width: auto !important;
   }
-  section#profileContainer section#profileCourses .coursesContainer ul li {
+  .coursesContainer ul li {
     -moz-column-gap: 20px !important;
          column-gap: 20px !important;
   }
-  section#profileContainer section#profileCourses .coursesContainer ul li span {
+  .coursesContainer ul li span {
     display: none !important;
   }
 }
@@ -2460,23 +2633,31 @@ section#profilePictureUpload.open form .container {
     min-height: 330px !important;
   }
   section#profileContainer section#profileNav nav form {
-    padding-top: 104px !important;
+    padding-top: 62px !important;
   }
-  section#profileContainer section#profileTabs section#profileOverview .overviewContainer {
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer,
+  section#profileContainer section#profileTabs section#profileBilling .overviewContainer,
+  section#profileContainer section#profileTabs section#profileSubscription .overviewContainer {
     flex-direction: column !important;
   }
-  section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal {
+  section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal,
+  section#profileContainer section#profileTabs section#profileBilling .overviewContainer .overviewPersonal,
+  section#profileContainer section#profileTabs section#profileSubscription .overviewContainer .overviewPersonal {
     max-width: 100% !important;
     min-width: 100% !important;
   }
-  section#profileContainer section#profileTabs section#profileEdit .editContainer {
+  section#profileContainer section#profileTabs section#profileEdit .editContainer,
+  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer,
+  section#profileContainer section#profileTabs section#profileSubscription .editContainer {
     flex-direction: column !important;
   }
-  section#profileContainer section#profileTabs section#profileEdit .editContainer form {
+  section#profileContainer section#profileTabs section#profileEdit .editContainer form,
+  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form,
+  section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
     max-width: 100% !important;
     min-width: 100% !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+  .coursesContainer ul li .introduction {
     width: calc(65% - 75px - 100px - 40px - 80px) !important;
   }
   .overviewPerson,
@@ -2491,33 +2672,33 @@ section#profilePictureUpload.open form .container {
   }
 }
 @media only screen and (max-width: 900px) {
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .date {
+  .coursesContainer ul li .date {
     display: none !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+  .coursesContainer ul li .introduction {
     width: 40% !important;
   }
 }
 @media only screen and (max-width: 800px) {
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+  .coursesContainer ul li {
     height: 150px !important;
     min-height: 150px !important;
     flex-direction: column !important;
     flex-wrap: wrap !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li img {
+  .coursesContainer ul li img {
     height: 150px !important;
     width: 150px !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title,
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+  .coursesContainer ul li .title,
+  .coursesContainer ul li .introduction {
     width: calc(100% - 200px) !important;
     margin-bottom: 10px !important;
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
     overflow: hidden !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li button {
+  .coursesContainer ul li button {
     width: calc(100% - 200px) !important;
   }
   .overviewPerson,
@@ -2566,23 +2747,23 @@ section#profilePictureUpload.open form .container {
   section#profilePictureUpload.open form {
     width: 100% !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li {
+  .coursesContainer ul li {
     height: 100% !important;
     min-height: 100% !important;
     flex-wrap: wrap !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li img {
+  .coursesContainer ul li img {
     height: 100% !important;
     width: 100% !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .title,
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li .introduction {
+  .coursesContainer ul li .title,
+  .coursesContainer ul li .introduction {
     width: 100% !important;
     white-space: initial !important;
     text-overflow: wrap !important;
     overflow: inherit !important;
   }
-  section#profileContainer section#profileTabs section#profileCourses .coursesContainer ul li button {
+  .coursesContainer ul li button {
     width: 100% !important;
   }
 }

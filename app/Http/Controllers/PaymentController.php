@@ -19,7 +19,6 @@ class PaymentController extends Controller
 
     public function storeData($id)
     {
-
         $request = request();
         $request->validate([
             'first_name' => 'required|max:255',

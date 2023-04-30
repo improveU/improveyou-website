@@ -3,11 +3,17 @@ const UploadCloseBtn = document.getElementById("profilePictureUploadClose");
 const UploadOpenBtn = document.getElementById("profilePictureUploadOpen");
 const body = document.getElementById("body");
 
-function toggleUploadSection() {
+function OpenUploadSection() {
    scroll(0, 0);
-   UploadSection.classList.toggle("open");
-   body.classList.toggle("overflowHidden");
+   UploadSection.classList.add("open");
+   body.classList.add("overflowHidden");
 }
 
-UploadCloseBtn.addEventListener("click", toggleUploadSection);
-UploadOpenBtn.addEventListener("click", toggleUploadSection);
+function CloseUploadSection() {
+   scroll(0, 0);
+   UploadSection.classList.remove("open");
+   body.classList.remove("overflowHidden");
+}
+
+UploadCloseBtn.addEventListener("click", CloseUploadSection);
+UploadOpenBtn.addEventListener("click", OpenUploadSection);

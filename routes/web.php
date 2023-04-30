@@ -36,12 +36,6 @@ Route::get('/faq', function () {
 Route::get('/contact', [ContactController::class, 'show']);
 Route::post('/contact', [ContactController::class, 'send']);
 
-Route::get('/form', function () {
-    return view('form');
-});
-//kann glaubs entfernt werden?
-
-
 Route::get('create-course', [CourseController::class, 'getCourseCreation'])->middleware('iscreator');
 Route::post('create-course', [CourseController::class, 'createCourse'])->middleware('iscreator');
 
@@ -61,6 +55,8 @@ Route::get('/profile/{id}', [ProfileController::class, 'publicProfile'])->middle
 
 Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->middleware('auth');
 Route::post('/updateProfilePicture', [ProfileController::class, 'updateProfilePicture'])->middleware('auth');
+Route::post('/updateProfileDescription', [ProfileController::class, 'updateProfileDescription'])->middleware('auth');
+Route::post('/updateBilling', [ProfileController::class, 'updateBilling'])->middleware('auth');
 
 Route::get('/payment', [PaymentController::class, 'showOverview'])->middleware('auth');
 Route::get('/payment/{id}', [PaymentController::class, 'selectModel'])->middleware('auth');
@@ -79,6 +75,7 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+Route::get('/search-results', [SearchController::class, 'showResults']);
 Route::post('/search-results', [SearchController::class, 'showResults']);
 Route::namespace('App\Http\Controllers')->group(function () {
     // Routes: use the namespace 'App\Http\Controllers'

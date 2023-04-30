@@ -45,11 +45,12 @@ class SearchController extends Controller
             ->get();
         */
 
+        if($query == '') $query = 'All';
+
         return view('search', [
             'query' => $query,
             'courses' => $courses,
             'profiles' => $users
         ]);
     }
-
 }

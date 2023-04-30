@@ -1,19 +1,19 @@
 <div class="overviewSubscription">
     @if(auth()->user()->subscription_id == 1)
-        <x-payment.pCardBeginner>
+        <x-payment.CardBeginner>
             Change subscription
-        </x-payment.pCardBeginner>
+        </x-payment.CardBeginner>
     @elseif(auth()->user()->subscription_id == 2)
-        <x-payment.pCardImprover>
+        <x-payment.CardImprover>
             Change subscription
-        </x-payment.pCardImprover>
+        </x-payment.CardImprover>
     @elseif(auth()->user()->subscription_id == 3)
-        <x-payment.pCardCreator>
+        <x-payment.CardCreator>
             Change subscription
-        </x-payment.pCardCreator>
+        </x-payment.CardCreator>
     @else
-        <x-payment.pCardNone>
+        <x-payment.CardNone>
             Get a subscription
-        </x-payment.pCardNone>
+        </x-payment.CardNone>
     @endif
 </div>

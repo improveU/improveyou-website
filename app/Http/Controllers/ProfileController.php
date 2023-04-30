@@ -11,21 +11,24 @@ use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
         $user = auth()->user();
         $courses = Course::where('creator_id', $user->id)->get();
+        $activeTab = $request->query('tab') ?? session('activeTab');
 
+        session()->put('activeTab', $activeTab);
         session()->put('courses', $courses);
 
         return view('/profile', [
             'courses' => $courses,
+            'activeTab' => $activeTab,
         ]);
     }
 
     public function publicProfile($id)
     {
-        $profile = User::select('id', 'username', 'description', 'profile_picture_path', 'subscription_id')
+        $profile = User::select('id', 'username', 'description', 'email', 'profile_picture_path', 'subscription_id')
             ->where('id', $id)
             ->first();
         if (!$profile) return redirect()->route('home')->with('error', 'User not found.');
@@ -42,29 +45,31 @@ class ProfileController extends Controller
         return view('profilePublic', $data);
     }
 
-
-
     public function updateProfile()
     {
         $request = request();
+
         $request->validate([
             'username' => ['required', 'max:255'],
-            'first_name' => ['required', 'max:255'],
-            'last_name' => ['required', 'max:255'],
-            'email' => ['required', 'email', 'max:255']
+            'email' => ['required', 'email', 'max:255'],
+            'password' => ['nullable', 'confirmed', 'min:8'],
         ]);
 
         $user = User::findOrFail(auth()->user()->id);
 
         $user->username = $request->get('username');
-        $user->first_name = $request->get('first_name');
-        $user->last_name = $request->get('last_name');
         $user->email = $request->get('email');
+
+        if ($request->has('password') && !empty($request->get('password'))) {
+            //TODO password update xavi
+        }
+
         $user->save();
 
         $courses = session()->get('courses');
+        $activeTab = session('activeTab');
 
-        return redirect('/profile')->with([
+        return redirect('/profile#' . $activeTab)->with([
             'status' => 'Profile updated',
             'courses' => $courses,
         ]);
@@ -89,21 +94,82 @@ class ProfileController extends Controller
 
         $path = $request->file('profilePicture')->store('profiles');
 
-        // Add webp extension to the stored image path
         $pathinfo = pathinfo($path);
         $webp_path = $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '.webp';
-        Storage::put($webp_path, (string) $image);
 
-        // Delete the original PNG image
+        Storage::put($webp_path, (string) $image);
         Storage::delete($path);
 
         $user->profile_picture_path = $webp_path;
         $user->save();
 
+        session()->put('activeTab', 'profileBillingEdit');
         $courses = session()->get('courses');
+        $activeTab = session('activeTab');
 
-        return redirect('/profile')->with([
+        return redirect('/profile#' . $activeTab)->with([
             'status' => 'Profile picture updated',
+            'courses' => $courses,
+        ]);
+    }
+    public function updateProfileDescription()
+    {
+        $activeTab = request()->input('activeTab', 'profileOverview');
+
+        $user = Auth::user();
+        $currentDescription = $user->description;
+        $request = request();
+        $request->validate([
+            'description' => 'string|max:3000',
+        ]);
+
+        $newDescription = $request->input('description');
+        $courses = $user->courses;
+        session()->put('activeTab', 'profileDescriptionEdit');
+
+        if ($currentDescription !== $newDescription) {
+            $user->description = $newDescription;
+            $user->save();
+
+            return redirect('/profile#'.$activeTab)->with([
+                'status' => 'Profile description updated',
+                'courses' => $courses,
+            ]);
+        }
+
+        return redirect('/profile#'.$activeTab)->with([
+            'status' => 'No changes detected',
+            'courses' => $courses,
+        ]);
+    }
+
+    public function updateBilling()
+    {
+        $request = request();
+        $request->validate([
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'city' => 'required',
+            'postal_code' => 'required',
+            'address' => 'required',
+        ]);
+
+        $user = auth()->user();
+
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->city = $request->get('city');
+        $user->address = $request->get('address');
+        $user->zip_code = $request->get('postal_code');
+
+        $user->save();
+
+        $activeTab = request()->input('activeTab', 'profileOverview');
+        $courses = $user->courses;
+        session()->put('activeTab', 'profileDescriptionEdit');
+
+        return redirect('/profile#'.$activeTab)->with([
+            'status' => 'Billing updated',
             'courses' => $courses,
         ]);
     }

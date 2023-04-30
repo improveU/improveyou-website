@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
 
 class CourseController extends Controller
@@ -51,29 +52,6 @@ class CourseController extends Controller
         ]);
     }
 
-
-    public function search()
-    {
-        if (request('search')) {
-            $courses = Course::latest();
-            $users = User::latest();
-
-            $courses
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('course_description', 'like', '%' . request('search') . '%')
-                ->orWhere('introductions', 'like', '%' . request('search') . '%');
-
-            $users
-                ->where('username', 'like', '%' . request('search') . '%')
-                ->orWhere('description', 'like', '%' . request('search') . '%');
-
-            return view('form', [
-                'users' => $users,
-                'courses' => $courses
-            ]);
-        }
-    }
-
     public function editCourse($courseId)
     {
         $course = Course::findOrFail($courseId);
@@ -85,6 +63,7 @@ class CourseController extends Controller
         $request = request();
         $request->validate([
             'title' => 'required|min:3|max:255',
+            'thumbnail' => 'image',
             'intro' => 'required|max:255',
             'description' => 'required|max:16777215'
         ]);
@@ -130,7 +109,22 @@ class CourseController extends Controller
             'description' => 'required|max:16777215'
         ]);
 
-        $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        $thumbnail = $request->file('thumbnail');
+        $thumbnail_path = $thumbnail->store('thumbnails');
+
+        $image = Image::make($thumbnail);
+        $image->resize(1000, null, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+        $image->encode('webp', 70);
+        $thumbnail_pathinfo = pathinfo($thumbnail_path);
+        $webp_path = $thumbnail_pathinfo['dirname'] . '/' . $thumbnail_pathinfo['filename'] . '.webp';
+        Storage::put($webp_path, (string) $image);
+        Storage::delete($thumbnail_path);
+
+        $request['thumbnail'] = $webp_path;
+
         $tags = explode(',', $request->get('tags'));
 
         $this->saveCourse($request, $course);
@@ -139,6 +133,7 @@ class CourseController extends Controller
 
         return redirect('/')->with('status', 'Course is created!');
     }
+
 
     public function saveCourse(mixed $request, $course): void
     {

@@ -8,6 +8,6 @@
       <h1 class="price">$ 100</h1>
       <p>/year</p>
       <p>Save up to two monthly bills per year guarantee</p>
-      <button class="btn" onclick="window.location.href = '/payment/2';">{{ $slot }}</button>
+      <button class="btn profileBtn" onclick="handleTabClick(this)" data-section="profileSubscriptionEdit">{{ $slot }}</button>
    </div>
 </div>

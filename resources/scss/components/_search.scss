@@ -1,0 +1,142 @@
+@use "../abstracts" as *;
+
+section#coursesPopular,
+section#coursesLatest,
+section#coursesRandom,
+section#coursesAll,
+section#profilesAll {
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 1400px;
+   min-width: 1400px;
+
+   h2{
+      margin-top: 50px;
+      margin-bottom: 25px;
+   }
+
+   .courseWrapper,
+   .profileWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
+
+.courseCard{
+   height: auto;
+   width: 300px;
+   border-radius: 10px;
+   a{
+      color: #1D212F;
+      text-decoration: none;
+      img{
+         object-fit: cover;
+         height: 200px;
+         width: 300px;
+         border-radius: 15px 15px 0 0;
+      }
+      .courseInfo{
+         position: relative;
+         transform: translateY(-6px);
+         background-color: #E5F6F8;
+         padding: 10px;
+         border-radius: 0 0 15px 15px;
+
+         h2{
+            margin: 5px 0 5px 0 !important;
+            font-size: 24px;
+         }
+
+         .info{
+            display: flex;
+            justify-content: space-around;
+         }
+      }
+   }
+}
+
+.profileCard{
+   width: 300px;
+   height: auto;
+   border-radius: 10px;
+   background-color: #E5F6F8;
+
+   a{
+      color: #1D212F;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      img{
+         margin: 10px;
+         padding: 10px;
+         object-fit: cover;
+         height: 70px;
+         width: 70px;
+      }
+   }
+}
+
+@media only screen and (max-width: 1500px) {
+   section#coursesPopular,
+   section#coursesLatest,
+   section#coursesRandom,
+   section#coursesAll,
+   section#profilesAll {
+      margin-left: 25px !important;
+      margin-right: 25px !important;
+      min-width: 0px !important;
+   }
+}
+
+
+section#publicProfile{
+   margin-top: 50px;
+   .publicProfileCard{
+      img{
+         object-fit: cover;
+         height: 140px;
+         width: 140px;
+      }
+      .head{
+         display: flex;
+         align-items: center;
+         margin-bottom: 25px;
+         padding-bottom: 25px;
+         border-bottom: solid 2px #13739b;
+
+         .person{
+            margin-left: 30px;
+            color: #00617e;
+            font-family: "BerlinTypeBold";
+            font-size: 25px;
+            span{
+               font-family: "BerlinType";
+               font-size: 1.2rem;
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   section#publicProfile{
+      .publicProfileCard{
+         .head{
+            flex-direction: column !important;
+            align-items: center !important;
+            .person{
+               margin-top: 25px !important;
+               margin-left: 0 !important;
+               text-align: center;
+            }
+         }
+      }
+   }
+}

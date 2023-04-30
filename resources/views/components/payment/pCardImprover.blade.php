@@ -8,6 +8,6 @@
         <h1 class="price">$ 100</h1>
         <p>/year</p>
         <p>Save up to two monthly bills per year guarantee</p>
-        <button class="btn" onclick="subscriptionButton()">{{ $slot }}</button>
+        <button class="btn" onclick="subscriptionButton(2)">{{ $slot }}</button>
     </div>
 </div>

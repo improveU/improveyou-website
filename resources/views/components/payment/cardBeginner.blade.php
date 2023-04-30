@@ -4,5 +4,5 @@
    <h1 class="price">$ 10</h1>
    <p>/month</p>
    <p>Monthly invoice with 30 days money back guarantee</p>
-   <button class="btn" onclick="window.location.href = '/payment/1';">{{ $slot }}</button>
+    <button class="btn profileBtn" onclick="handleTabClick(this)" data-section="profileSubscriptionEdit">{{ $slot }}</button>
 </div>

@@ -6,7 +6,7 @@
         </a>
         @auth
         <div class="searchIndicator" id="searchIndicator">
-            Search
+            <span>Search</span>
             <img src="{{ asset('svg/logoSearch.svg') }}">
         </div>
         @endauth
