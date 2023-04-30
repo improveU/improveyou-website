@@ -147,6 +147,5 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
         ]);
         $tags = ['Running', 'Cardio', 'Interval Training', 'Endurance', 'Fitness', 'Advanced'];
         $course03->tag($tags);
-
     }
 }

@@ -396,7 +396,6 @@ section#profilePictureUpload.open {
             }
 
             section#profileEdit,
-            section#profileBillingEdit,
             section#profileSubscription {
                 .editContainer {
                     padding: 5px 0px 0 0px !important;
@@ -411,6 +410,16 @@ section#profilePictureUpload.open {
             section#profileDescription {
                 .descriptionContainer {
                     padding: 5px 0px 0 0px !important;
+                }
+            }
+            section#profileBillingEdit{
+                .editContainer{
+                    padding: 5px 0px 0 0px !important;
+
+                    form{
+                        min-width: 40% !important;
+                        width: auto !important;
+                    }
                 }
             }
         }
@@ -437,7 +446,10 @@ section#profilePictureUpload.open {
     .overviewPerson,
     .overviewMail,
     .overviewPassword,
-    .overviewMore {
+    .overviewMore,
+    .overviewBilling,
+    .overviewBillingAddress,
+    .overviewBillingCity {
         flex-direction: column !important;
     }
 
@@ -575,7 +587,10 @@ section#profilePictureUpload.open {
     .overviewPerson,
     .overviewMail,
     .overviewPassword,
-    .overviewMore {
+    .overviewMore,
+    .overviewBilling,
+    .overviewBillingAddress,
+    .overviewBillingCity {
         flex-direction: row !important;
     }
 
@@ -634,7 +649,10 @@ section#profilePictureUpload.open {
     .overviewPerson,
     .overviewMail,
     .overviewPassword,
-    .overviewMore {
+    .overviewMore,
+    .overviewBilling,
+    .overviewBillingAddress,
+    .overviewBillingCity {
         flex-direction: column !important;
     }
 }

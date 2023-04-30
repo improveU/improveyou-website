@@ -2582,18 +2582,23 @@ section#profilePictureUpload.open form .container {
     min-width: 50% !important;
   }
   section#profileContainer section#profileTabs section#profileEdit .editContainer,
-  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer,
   section#profileContainer section#profileTabs section#profileSubscription .editContainer {
     padding: 5px 0px 0 0px !important;
   }
   section#profileContainer section#profileTabs section#profileEdit .editContainer form,
-  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form,
   section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
     max-width: 60% !important;
     min-width: 50% !important;
   }
   section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
     padding: 5px 0px 0 0px !important;
+  }
+  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer {
+    padding: 5px 0px 0 0px !important;
+  }
+  section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form {
+    min-width: 40% !important;
+    width: auto !important;
   }
   .coursesContainer {
     padding: 20px 0px 0 0px !important;
@@ -2611,7 +2616,10 @@ section#profilePictureUpload.open form .container {
   .overviewPerson,
   .overviewMail,
   .overviewPassword,
-  .overviewMore {
+  .overviewMore,
+  .overviewBilling,
+  .overviewBillingAddress,
+  .overviewBillingCity {
     flex-direction: column !important;
   }
   .overviewSubscription {
@@ -2702,7 +2710,10 @@ section#profilePictureUpload.open form .container {
   .overviewPerson,
   .overviewMail,
   .overviewPassword,
-  .overviewMore {
+  .overviewMore,
+  .overviewBilling,
+  .overviewBillingAddress,
+  .overviewBillingCity {
     flex-direction: row !important;
   }
   .overviewSubscription {
@@ -2743,7 +2754,10 @@ section#profilePictureUpload.open form .container {
   .overviewPerson,
   .overviewMail,
   .overviewPassword,
-  .overviewMore {
+  .overviewMore,
+  .overviewBilling,
+  .overviewBillingAddress,
+  .overviewBillingCity {
     flex-direction: column !important;
   }
 }
