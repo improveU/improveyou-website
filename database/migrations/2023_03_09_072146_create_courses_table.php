@@ -16,7 +16,8 @@ return new class extends Migration {
             $table->string('title');
             $table->tinyText('introduction');
             $table->mediumText('course_description');
-            $table->string('image_path');
+            $table->string('image_thumbnail_path');
+            $table->string('image_cover_path')->nullable();
             $table->unsignedInteger('views');
 
             $table->bigInteger('creator_id');

@@ -37,7 +37,7 @@
                     Edit billing
                 </button>
             @else
-                <h1 class="billingTitle">Billing information missing</h1>
+                <h1 class="billingTitle">information missing</h1>
             @endif
 
         </div>

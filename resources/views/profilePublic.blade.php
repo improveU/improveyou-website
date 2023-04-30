@@ -18,12 +18,16 @@
                     <span>{{ $profile->email }}</span>
                 </div>
             </div>
-            <div class="description">{{ $profile->description }}</div>
+            @if($profile->description == null)
+            <div class="description"> No description yet</div>
+            @else
+            <div class="description">{!! $description !!}</div>
+            @endif
         </div>
     </div>
 </section>
 
-@if (!empty($courses))
+@if ($courses->count() > 0)
 <section id="profileCourses">
     <div class="c">
         <div class="coursesContainer">
@@ -31,7 +35,7 @@
                 @foreach($courses as $index => $course)
                     <li>
                         <span>{{ $index + 1 }}</span>
-                        <img src="{{ asset('storage/' . $course->image_path) }}" alt="">
+                        <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">
                         <div class="title">
                             <h2>{{ $course->title }}</h2>
                         </div>

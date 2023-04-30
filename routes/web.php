@@ -77,6 +77,7 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 Route::get('/search-results', [SearchController::class, 'showResults']);
 Route::post('/search-results', [SearchController::class, 'showResults']);
+
 Route::namespace('App\Http\Controllers')->group(function () {
     // Routes: use the namespace 'App\Http\Controllers'
     Route::get('/search', 'SearchController@search');

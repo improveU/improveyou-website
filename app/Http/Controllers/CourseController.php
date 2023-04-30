@@ -104,36 +104,17 @@ class CourseController extends Controller
         $request = request();
         $request->validate([
             'title' => 'required|min:3|max:255',
-            'thumbnail' => 'required|image',
+            'thumbnail' => 'required|image|max:8192',
             'intro' => 'required|max:255',
             'description' => 'required|max:16777215'
         ]);
 
-        $thumbnail = $request->file('thumbnail');
-        $thumbnail_path = $thumbnail->store('thumbnails');
-
-        $image = Image::make($thumbnail);
-        $image->resize(1000, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
-        $image->encode('webp', 70);
-        $thumbnail_pathinfo = pathinfo($thumbnail_path);
-        $webp_path = $thumbnail_pathinfo['dirname'] . '/' . $thumbnail_pathinfo['filename'] . '.webp';
-        Storage::put($webp_path, (string) $image);
-        Storage::delete($thumbnail_path);
-
-        $request['thumbnail'] = $webp_path;
-
         $tags = explode(',', $request->get('tags'));
-
         $this->saveCourse($request, $course);
-
         $course->tag($tags);
 
         return redirect('/')->with('status', 'Course is created!');
     }
-
 
     public function saveCourse(mixed $request, $course): void
     {
@@ -143,22 +124,43 @@ class CourseController extends Controller
         $course->views = 0;
         $course->creator_id = auth()->user()->id;
 
-        //if the request has a new thumbnail
-        if(isset($request->thumbnail)){
-            //store it
-            $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-            //delete the old one
+        if ($request->has('thumbnail')) {
 
-            if ($course->image_path !== null) {
-                Storage::delete($course->image_path);
-            }
+            $thumbnail = Image::make($request->file('thumbnail'))
+                ->resize(600, null, function ($constraint){
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })
+                ->encode('webp', 90);
 
-            //set the new one
-            $course->image_path = $request->get('thumbnail');
+            $path = $request->file('thumbnail')->store('thumbnails');
+            $pathinfo = pathinfo($path);
+            $webp_path = $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '.webp';
+
+            Storage::put($webp_path, (string) $thumbnail);
+            Storage::delete($path);
+
+            $course->image_thumbnail_path = $webp_path;
+
+            $cover = Image::make($request->file('thumbnail'))
+                ->resize(1600, null, function ($constraint){
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })
+                ->encode('webp', 80);
+
+            $path = $request->file('thumbnail')->store('covers');
+            $pathinfo = pathinfo($path);
+            $webp_path = $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '.webp';
+
+            Storage::put($webp_path, (string) $cover);
+            Storage::delete($path);
+
+            $course->image_cover_path = $webp_path;
         }
-
 
         $course->category_id = 0;
         $course->save();
     }
+
 }

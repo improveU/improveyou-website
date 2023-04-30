@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
-section#course {
+section#course,
+section#publicProfile {
    .cover {
       border: solid 2.5px #E0E1E5;
       border-radius: 12px;
@@ -121,7 +122,6 @@ section#course {
          .linkTree {
             padding-bottom: 10px;
             overflow: auto;
-            white-space: nowrap;
 
             a {
                font-size: 20px;
@@ -166,7 +166,6 @@ section#course {
             width: auto;
          }
       }
-
    }
 }
 

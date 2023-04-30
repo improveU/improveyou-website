@@ -10,13 +10,14 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
+
         $query = $request->input('q');
 
-        $courses = Course::select('id', 'title', 'introduction', 'image_path')
+        $courses = Course::select('id', 'title', 'introduction',) // 'image_thumbnail_path'
             ->where('title', 'LIKE', '%' . $query . '%')
             ->get();
 
-        $users = User::select('id', 'username', 'profile_picture_path')
+        $users = User::select('id', 'username',) // 'profile_picture_path'
             ->where('username', 'LIKE', '%' . $query . '%')
             ->get();
 
@@ -44,8 +45,6 @@ class SearchController extends Controller
             ->where('username', 'LIKE', '%' . $query . '%')
             ->get();
         */
-
-        if($query == '') $query = 'All';
 
         return view('search', [
             'query' => $query,

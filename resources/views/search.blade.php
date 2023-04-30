@@ -37,7 +37,7 @@
             @foreach($courses as $course)
                 <div class="courseCard">
                     <a href="/course/{{ $course->id }}">
-                        <img src="{{ asset('storage/' . $course->image_path) }}" alt="">
+                        <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">
                         <div class="courseInfo">
                             <div class="title">
                                 {{ $course->title }}

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
@@ -22,6 +23,7 @@ class ProfileController extends Controller
 
         return view('/profile', [
             'courses' => $courses,
+            'description' => Str::markdown($user->description),
             'activeTab' => $activeTab,
         ]);
     }
@@ -34,7 +36,8 @@ class ProfileController extends Controller
         if (!$profile) return redirect()->route('home')->with('error', 'User not found.');
 
         $data = [
-            'profile' => $profile
+            'profile' => $profile,
+            'description' => Str::markdown($profile->description),
         ];
 
         if ($profile->subscription_id === 3) {

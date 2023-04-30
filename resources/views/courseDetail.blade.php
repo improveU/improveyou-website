@@ -12,7 +12,7 @@
 <section id="course">
 
     <div class="cover">
-        <img src="{{ asset('storage/' . $course->image_path) }}" alt="">
+        <img src="{{ asset('storage/' . $course->image_cover_path) }}" alt="">
     </div>
 
     <div class="c">

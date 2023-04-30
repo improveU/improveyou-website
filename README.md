@@ -41,6 +41,8 @@ php artisan migrate
 php artisan db:seed
 ```
 
+> php artisan db:seed --class=CourseSeeder
+
 8. Install node modules
 
 ```

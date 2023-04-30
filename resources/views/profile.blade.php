@@ -58,7 +58,7 @@
         <x-profile.profileSubscriptionEdit/>
         <x-profile.profileBilling/>
         <x-profile.profileBillingEdit/>
-        <x-profile.profileDescription/>
+        <x-profile.profileDescription :description="$description"/>
         <x-profile.profileDescriptionEdit/>
 
         @if(auth()->user()->subscription_id == 3)

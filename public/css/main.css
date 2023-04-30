@@ -1426,7 +1426,8 @@ body.contactBackground header {
   background-position: center center;
 }
 
-section#course .cover {
+section#course .cover,
+section#publicProfile .cover {
   border: solid 2.5px #E0E1E5;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
@@ -1439,7 +1440,8 @@ section#course .cover {
   position: relative;
   height: 300px;
 }
-section#course .cover img {
+section#course .cover img,
+section#publicProfile .cover img {
   -o-object-fit: cover;
      object-fit: cover;
   pointer-events: none;
@@ -1448,7 +1450,8 @@ section#course .cover img {
   height: 100%;
   z-index: -1;
 }
-section#course div.c {
+section#course div.c,
+section#publicProfile div.c {
   color: #00617e;
 }
 section#course div.c h1,
@@ -1456,51 +1459,68 @@ section#course div.c h2,
 section#course div.c h3,
 section#course div.c h4,
 section#course div.c h5,
-section#course div.c h6 {
+section#course div.c h6,
+section#publicProfile div.c h1,
+section#publicProfile div.c h2,
+section#publicProfile div.c h3,
+section#publicProfile div.c h4,
+section#publicProfile div.c h5,
+section#publicProfile div.c h6 {
   font-family: "BerlinTypeBold";
   color: #05445E;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-section#course div.c h1 {
+section#course div.c h1,
+section#publicProfile div.c h1 {
   font-size: 30px;
 }
-section#course div.c del {
+section#course div.c del,
+section#publicProfile div.c del {
   color: #ff892e;
 }
-section#course div.c strong {
+section#course div.c strong,
+section#publicProfile div.c strong {
   font-family: "BerlinTypeBold";
 }
-section#course div.c a {
+section#course div.c a,
+section#publicProfile div.c a {
   color: #29bee8;
 }
-section#course div.c table {
+section#course div.c table,
+section#publicProfile div.c table {
   border: 2.5px solid rgba(0, 0, 0, 0.1) !important;
   border-collapse: collapse;
 }
-section#course div.c table thead tr th {
+section#course div.c table thead tr th,
+section#publicProfile div.c table thead tr th {
   background-color: #555;
   color: #fff;
   font-weight: 300;
   padding-top: 6px;
 }
-section#course div.c table tbody tr td {
+section#course div.c table tbody tr td,
+section#publicProfile div.c table tbody tr td {
   border: 2.5px solid rgba(0, 0, 0, 0.1);
   padding: 5px 14px 5px 12px;
 }
-section#course div.c hr {
+section#course div.c hr,
+section#publicProfile div.c hr {
   width: 100%;
   border: solid 0.5px #555 !important;
 }
-section#course div.c ul {
+section#course div.c ul,
+section#publicProfile div.c ul {
   -webkit-padding-start: 40px;
           padding-inline-start: 40px;
 }
-section#course div.c blockquote {
+section#course div.c blockquote,
+section#publicProfile div.c blockquote {
   color: #767882;
   position: relative;
 }
-section#course div.c blockquote::before {
+section#course div.c blockquote::before,
+section#publicProfile div.c blockquote::before {
   content: "";
   position: absolute;
   width: 8px;
@@ -1509,34 +1529,39 @@ section#course div.c blockquote::before {
   top: -10px;
   background: #e0e1e5;
 }
-section#course div.c .courseInfo {
+section#course div.c .courseInfo,
+section#publicProfile div.c .courseInfo {
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 15px;
   border-bottom: solid 2.5px #E0E1E5;
 }
-section#course div.c .courseInfo .courseTitle {
+section#course div.c .courseInfo .courseTitle,
+section#publicProfile div.c .courseInfo .courseTitle {
   font-family: "BerlinTypeBold";
   color: #1D212F;
   font-size: 35px;
   padding-right: 80px;
 }
-section#course div.c .courseInfo .linkTree {
+section#course div.c .courseInfo .linkTree,
+section#publicProfile div.c .courseInfo .linkTree {
   padding-bottom: 10px;
   overflow: auto;
-  white-space: nowrap;
 }
-section#course div.c .courseInfo .linkTree a {
+section#course div.c .courseInfo .linkTree a,
+section#publicProfile div.c .courseInfo .linkTree a {
   font-size: 20px;
   color: #767882;
   transition: all 0.5s;
   text-overflow: ellipsis;
   text-decoration: none;
 }
-section#course div.c .courseInfo .linkTree a:hover {
+section#course div.c .courseInfo .linkTree a:hover,
+section#publicProfile div.c .courseInfo .linkTree a:hover {
   color: #474747;
 }
-section#course div.c .courseInfo .tags {
+section#course div.c .courseInfo .tags,
+section#publicProfile div.c .courseInfo .tags {
   padding-bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -1544,16 +1569,19 @@ section#course div.c .courseInfo .tags {
   gap: 10px;
   height: auto;
 }
-section#course div.c .courseInfo .tags div {
+section#course div.c .courseInfo .tags div,
+section#publicProfile div.c .courseInfo .tags div {
   font-size: 15px;
   background-color: #FFF4EE;
   border-radius: 10px;
   padding: 5px 10px;
 }
-section#course div.c .courseInfo .introduction {
+section#course div.c .courseInfo .introduction,
+section#publicProfile div.c .courseInfo .introduction {
   font-family: "BerlinTypeBold";
 }
-section#course div.c .courseInfo .views {
+section#course div.c .courseInfo .views,
+section#publicProfile div.c .courseInfo .views {
   position: absolute;
   right: 0;
   top: 0;
@@ -2351,8 +2379,19 @@ section#profileContainer section#profileTabs section#profileBillingEdit .editCon
 section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
   width: 600px;
 }
+section#profileContainer section#profileTabs section#profileDescription {
+  position: relative;
+  min-height: 415px;
+  padding-bottom: 80px;
+}
 section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
   padding: 5px 30px 0 30px;
+}
+section#profileContainer section#profileTabs section#profileDescription button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
 }
 
 .coursesContainer {

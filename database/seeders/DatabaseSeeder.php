@@ -17,6 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            CourseSeeder::class,
+        ]);
+
+
         //delete all contents of all tables
         Category::truncate();
         Course::truncate();
@@ -47,58 +52,18 @@ class DatabaseSeeder extends Seeder
             'monthlyPayment' => false,
         ]);
 
-        //Create the nine categories
-        Category::create([
-            'category_name' => 'Calisthenics',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Fitness',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Yoga',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Meditation',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Cardio',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Dancing',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Stretching',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Balance',
-            'image_path' => ''
-        ]);
-        Category::create([
-            'category_name' => 'Additional Weights',
-            'image_path' => ''
-        ]);
-
-
         //Create Admin user
-        User::create([
-            'first_name' => 'admin@admin',
-            'last_name' => 'admin@admin',
-            'username' => 'admin@admin',
-            'email' => 'admin@admin',
-            'password' => 'admin@admin',
-            'subscription_id' => '3'
-        ]);
+        //User::create([
+        //    'first_name' => 'admin@admin',
+        //    'last_name' => 'admin@admin',
+        //    'username' => 'admin@admin',
+        //    'email' => 'admin@admin',
+        //    'password' => 'admin@admin',
+        //    'subscription_id' => '3'
+        //]);
 
         //Seed the rest of the database using factories
-        User::factory(250)->create();
-        Course::factory(50)->create();
-
+        //User::factory(250)->create();
+        //Course::factory(50)->create();
     }
 }

@@ -35,7 +35,6 @@ $(function () {
                 if (courses.length > 0) {
                     courses.forEach((course, index) => {
                         if (coursesList.children().length < maxResultsCourses) {
-                            // Highlight the matching text in the course title
                             var highlightedTitle = course.title.replace(new RegExp(query, "gi"), function(match) {
                                 return "<mark>" + match + "</mark>";
                             });
@@ -49,7 +48,6 @@ $(function () {
                 if (profiles.length > 0) {
                     profiles.forEach((profile, index) => {
                         if (profilesList.children().length < maxResultsProfiles) {
-                            // Highlight the matching text in the profile username
                             var highlightedUsername = profile.username.replace(new RegExp(query, "gi"), function(match) {
                                 return "<mark>" + match + "</mark>";
                             });

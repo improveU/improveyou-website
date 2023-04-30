@@ -22,8 +22,7 @@ return new class extends Migration {
             $table->timestamps();
             $table->bigInteger('subscription_id')->default('0');
             $table->string('session_id')->nullable();
-            $table->mediumText('description')->default('No description yet');
-
+            $table->mediumText('description')->nullable()->default(null);
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();

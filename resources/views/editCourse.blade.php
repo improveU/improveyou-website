@@ -56,7 +56,7 @@
                     </div>
                     <span class="fake-btn"> <strong> Upload files </strong> </span>
                     <span class="file-msg">or drag and drop files here</span>
-                    <input type="file" value="{{ $course->image_path }}" name="thumbnail" class="file-input @error('thumbnail') is-invalid @enderror">
+                    <input type="file" value="" name="thumbnail" class="file-input @error('thumbnail') is-invalid @enderror">
                 </div>
                 @error('thumbnail')
                 <span class="invalidFeedback" role="alert">
