@@ -8,7 +8,7 @@ Used Technologies:
 * Laravel
 * MySQL Database
 
-###Debug it locally
+### Debug it locally
 Execute in Laragon-Console, step for step:
 1. Install [Laragon](https://laragon.org/download/index.html)
 2. Clone this repository to your machine
@@ -51,7 +51,7 @@ php artisan storage:link
 ```
 
 
-Debug on phone:
+### Debug on phone:
 
 First make sure your Phone and Computer are on the same network
 Find the local IP-Address of the Computer
