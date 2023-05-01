@@ -44,6 +44,12 @@ Migrate and seed the database
 ```
 php artisan migrate --seed
 ```
+
+> seed the db with the spesific CourseSeeder 
+>  ```
+>  php artisan db:seed --class=CourseSeeder
+>  ```
+
 Create a link between the public and the storage folder
 
 ```
