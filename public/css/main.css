@@ -359,7 +359,6 @@ form.formWrapper .inputContainer span.invalidFeedback {
 form.formWrapper .inputContainer p {
   font-size: 14px;
   padding: 5px;
-  text-decoration: underline;
   color: #1D212F;
 }
 form.formWrapper .inputContainer p :active {
@@ -1370,6 +1369,7 @@ section#profilesAll .profileWrapper {
      object-fit: cover;
   height: 70px;
   width: 70px;
+  border-radius: 100%;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -1436,7 +1436,8 @@ body.contactBackground header {
 }
 
 section#course .cover,
-section#publicProfile .cover {
+section#publicProfile .cover,
+section#profileDescription .cover {
   border: solid 2.5px #E0E1E5;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
@@ -1450,7 +1451,8 @@ section#publicProfile .cover {
   height: 300px;
 }
 section#course .cover img,
-section#publicProfile .cover img {
+section#publicProfile .cover img,
+section#profileDescription .cover img {
   -o-object-fit: cover;
      object-fit: cover;
   pointer-events: none;
@@ -1460,7 +1462,11 @@ section#publicProfile .cover img {
   z-index: -1;
 }
 section#course div.c,
-section#publicProfile div.c {
+section#course div.descriptionContainer,
+section#publicProfile div.c,
+section#publicProfile div.descriptionContainer,
+section#profileDescription div.c,
+section#profileDescription div.descriptionContainer {
   color: #00617e;
 }
 section#course div.c h1,
@@ -1469,67 +1475,135 @@ section#course div.c h3,
 section#course div.c h4,
 section#course div.c h5,
 section#course div.c h6,
+section#course div.descriptionContainer h1,
+section#course div.descriptionContainer h2,
+section#course div.descriptionContainer h3,
+section#course div.descriptionContainer h4,
+section#course div.descriptionContainer h5,
+section#course div.descriptionContainer h6,
 section#publicProfile div.c h1,
 section#publicProfile div.c h2,
 section#publicProfile div.c h3,
 section#publicProfile div.c h4,
 section#publicProfile div.c h5,
-section#publicProfile div.c h6 {
+section#publicProfile div.c h6,
+section#publicProfile div.descriptionContainer h1,
+section#publicProfile div.descriptionContainer h2,
+section#publicProfile div.descriptionContainer h3,
+section#publicProfile div.descriptionContainer h4,
+section#publicProfile div.descriptionContainer h5,
+section#publicProfile div.descriptionContainer h6,
+section#profileDescription div.c h1,
+section#profileDescription div.c h2,
+section#profileDescription div.c h3,
+section#profileDescription div.c h4,
+section#profileDescription div.c h5,
+section#profileDescription div.c h6,
+section#profileDescription div.descriptionContainer h1,
+section#profileDescription div.descriptionContainer h2,
+section#profileDescription div.descriptionContainer h3,
+section#profileDescription div.descriptionContainer h4,
+section#profileDescription div.descriptionContainer h5,
+section#profileDescription div.descriptionContainer h6 {
   font-family: "BerlinTypeBold";
   color: #05445E;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 section#course div.c h1,
-section#publicProfile div.c h1 {
+section#course div.descriptionContainer h1,
+section#publicProfile div.c h1,
+section#publicProfile div.descriptionContainer h1,
+section#profileDescription div.c h1,
+section#profileDescription div.descriptionContainer h1 {
   font-size: 30px;
 }
 section#course div.c del,
-section#publicProfile div.c del {
+section#course div.descriptionContainer del,
+section#publicProfile div.c del,
+section#publicProfile div.descriptionContainer del,
+section#profileDescription div.c del,
+section#profileDescription div.descriptionContainer del {
   color: #ff892e;
 }
 section#course div.c strong,
-section#publicProfile div.c strong {
+section#course div.descriptionContainer strong,
+section#publicProfile div.c strong,
+section#publicProfile div.descriptionContainer strong,
+section#profileDescription div.c strong,
+section#profileDescription div.descriptionContainer strong {
   font-family: "BerlinTypeBold";
 }
 section#course div.c a,
-section#publicProfile div.c a {
+section#course div.descriptionContainer a,
+section#publicProfile div.c a,
+section#publicProfile div.descriptionContainer a,
+section#profileDescription div.c a,
+section#profileDescription div.descriptionContainer a {
   color: #29bee8;
 }
 section#course div.c table,
-section#publicProfile div.c table {
+section#course div.descriptionContainer table,
+section#publicProfile div.c table,
+section#publicProfile div.descriptionContainer table,
+section#profileDescription div.c table,
+section#profileDescription div.descriptionContainer table {
   border: 2.5px solid rgba(0, 0, 0, 0.1) !important;
   border-collapse: collapse;
 }
 section#course div.c table thead tr th,
-section#publicProfile div.c table thead tr th {
+section#course div.descriptionContainer table thead tr th,
+section#publicProfile div.c table thead tr th,
+section#publicProfile div.descriptionContainer table thead tr th,
+section#profileDescription div.c table thead tr th,
+section#profileDescription div.descriptionContainer table thead tr th {
   background-color: #555;
   color: #fff;
   font-weight: 300;
   padding-top: 6px;
 }
 section#course div.c table tbody tr td,
-section#publicProfile div.c table tbody tr td {
+section#course div.descriptionContainer table tbody tr td,
+section#publicProfile div.c table tbody tr td,
+section#publicProfile div.descriptionContainer table tbody tr td,
+section#profileDescription div.c table tbody tr td,
+section#profileDescription div.descriptionContainer table tbody tr td {
   border: 2.5px solid rgba(0, 0, 0, 0.1);
   padding: 5px 14px 5px 12px;
 }
 section#course div.c hr,
-section#publicProfile div.c hr {
+section#course div.descriptionContainer hr,
+section#publicProfile div.c hr,
+section#publicProfile div.descriptionContainer hr,
+section#profileDescription div.c hr,
+section#profileDescription div.descriptionContainer hr {
   width: 100%;
   border: solid 0.5px #555 !important;
 }
 section#course div.c ul,
-section#publicProfile div.c ul {
+section#course div.descriptionContainer ul,
+section#publicProfile div.c ul,
+section#publicProfile div.descriptionContainer ul,
+section#profileDescription div.c ul,
+section#profileDescription div.descriptionContainer ul {
   -webkit-padding-start: 40px;
           padding-inline-start: 40px;
 }
 section#course div.c blockquote,
-section#publicProfile div.c blockquote {
+section#course div.descriptionContainer blockquote,
+section#publicProfile div.c blockquote,
+section#publicProfile div.descriptionContainer blockquote,
+section#profileDescription div.c blockquote,
+section#profileDescription div.descriptionContainer blockquote {
   color: #767882;
   position: relative;
 }
 section#course div.c blockquote::before,
-section#publicProfile div.c blockquote::before {
+section#course div.descriptionContainer blockquote::before,
+section#publicProfile div.c blockquote::before,
+section#publicProfile div.descriptionContainer blockquote::before,
+section#profileDescription div.c blockquote::before,
+section#profileDescription div.descriptionContainer blockquote::before {
   content: "";
   position: absolute;
   width: 8px;
@@ -1539,26 +1613,42 @@ section#publicProfile div.c blockquote::before {
   background: #e0e1e5;
 }
 section#course div.c .courseInfo,
-section#publicProfile div.c .courseInfo {
+section#course div.descriptionContainer .courseInfo,
+section#publicProfile div.c .courseInfo,
+section#publicProfile div.descriptionContainer .courseInfo,
+section#profileDescription div.c .courseInfo,
+section#profileDescription div.descriptionContainer .courseInfo {
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 15px;
   border-bottom: solid 2.5px #E0E1E5;
 }
 section#course div.c .courseInfo .courseTitle,
-section#publicProfile div.c .courseInfo .courseTitle {
+section#course div.descriptionContainer .courseInfo .courseTitle,
+section#publicProfile div.c .courseInfo .courseTitle,
+section#publicProfile div.descriptionContainer .courseInfo .courseTitle,
+section#profileDescription div.c .courseInfo .courseTitle,
+section#profileDescription div.descriptionContainer .courseInfo .courseTitle {
   font-family: "BerlinTypeBold";
   color: #1D212F;
   font-size: 35px;
   padding-right: 80px;
 }
 section#course div.c .courseInfo .linkTree,
-section#publicProfile div.c .courseInfo .linkTree {
+section#course div.descriptionContainer .courseInfo .linkTree,
+section#publicProfile div.c .courseInfo .linkTree,
+section#publicProfile div.descriptionContainer .courseInfo .linkTree,
+section#profileDescription div.c .courseInfo .linkTree,
+section#profileDescription div.descriptionContainer .courseInfo .linkTree {
   padding-bottom: 10px;
   overflow: auto;
 }
 section#course div.c .courseInfo .linkTree a,
-section#publicProfile div.c .courseInfo .linkTree a {
+section#course div.descriptionContainer .courseInfo .linkTree a,
+section#publicProfile div.c .courseInfo .linkTree a,
+section#publicProfile div.descriptionContainer .courseInfo .linkTree a,
+section#profileDescription div.c .courseInfo .linkTree a,
+section#profileDescription div.descriptionContainer .courseInfo .linkTree a {
   font-size: 20px;
   color: #767882;
   transition: all 0.5s;
@@ -1566,11 +1656,19 @@ section#publicProfile div.c .courseInfo .linkTree a {
   text-decoration: none;
 }
 section#course div.c .courseInfo .linkTree a:hover,
-section#publicProfile div.c .courseInfo .linkTree a:hover {
+section#course div.descriptionContainer .courseInfo .linkTree a:hover,
+section#publicProfile div.c .courseInfo .linkTree a:hover,
+section#publicProfile div.descriptionContainer .courseInfo .linkTree a:hover,
+section#profileDescription div.c .courseInfo .linkTree a:hover,
+section#profileDescription div.descriptionContainer .courseInfo .linkTree a:hover {
   color: #474747;
 }
 section#course div.c .courseInfo .tags,
-section#publicProfile div.c .courseInfo .tags {
+section#course div.descriptionContainer .courseInfo .tags,
+section#publicProfile div.c .courseInfo .tags,
+section#publicProfile div.descriptionContainer .courseInfo .tags,
+section#profileDescription div.c .courseInfo .tags,
+section#profileDescription div.descriptionContainer .courseInfo .tags {
   padding-bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -1579,18 +1677,30 @@ section#publicProfile div.c .courseInfo .tags {
   height: auto;
 }
 section#course div.c .courseInfo .tags div,
-section#publicProfile div.c .courseInfo .tags div {
+section#course div.descriptionContainer .courseInfo .tags div,
+section#publicProfile div.c .courseInfo .tags div,
+section#publicProfile div.descriptionContainer .courseInfo .tags div,
+section#profileDescription div.c .courseInfo .tags div,
+section#profileDescription div.descriptionContainer .courseInfo .tags div {
   font-size: 15px;
   background-color: #FFF4EE;
   border-radius: 10px;
   padding: 5px 10px;
 }
 section#course div.c .courseInfo .introduction,
-section#publicProfile div.c .courseInfo .introduction {
+section#course div.descriptionContainer .courseInfo .introduction,
+section#publicProfile div.c .courseInfo .introduction,
+section#publicProfile div.descriptionContainer .courseInfo .introduction,
+section#profileDescription div.c .courseInfo .introduction,
+section#profileDescription div.descriptionContainer .courseInfo .introduction {
   font-family: "BerlinTypeBold";
 }
 section#course div.c .courseInfo .views,
-section#publicProfile div.c .courseInfo .views {
+section#course div.descriptionContainer .courseInfo .views,
+section#publicProfile div.c .courseInfo .views,
+section#publicProfile div.descriptionContainer .courseInfo .views,
+section#profileDescription div.c .courseInfo .views,
+section#profileDescription div.descriptionContainer .courseInfo .views {
   position: absolute;
   right: 0;
   top: 0;
