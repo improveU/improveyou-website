@@ -1391,6 +1391,7 @@ section#publicProfile .publicProfileCard img {
      object-fit: cover;
   height: 140px;
   width: 140px;
+  border-radius: 100%;
 }
 section#publicProfile .publicProfileCard .head {
   display: flex;
