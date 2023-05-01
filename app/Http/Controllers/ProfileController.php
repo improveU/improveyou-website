@@ -64,7 +64,7 @@ class ProfileController extends Controller
         $user->email = $request->get('email');
 
         if ($request->has('password') && !empty($request->get('password'))) {
-            //TODO password update xavi
+            $user->setPasswordAttribute($request->get('password'));
         }
 
         $user->save();

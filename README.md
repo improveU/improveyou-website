@@ -32,7 +32,7 @@ php artisan key:generate
 6. Migrate the database
 
 ```
-php artisan migrate
+php artisan migrate:
 ```
 
 7. Seed the database
