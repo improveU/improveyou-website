@@ -54,7 +54,9 @@ php artisan storage:link
 ### Debug on phone:
 
 First make sure your Phone and Computer are on the same network
+
 Find the local IP-Address of the Computer
+
 Start hosting the server using your IP
 ```
 php artisan serve --host=192.168.X.X
