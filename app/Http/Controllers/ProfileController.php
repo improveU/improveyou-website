@@ -106,7 +106,7 @@ class ProfileController extends Controller
         $user->profile_picture_path = $webp_path;
         $user->save();
 
-        session()->put('activeTab', 'profileBillingEdit');
+        session()->put('activeTab', 'profile');
         $courses = session()->get('courses');
         $activeTab = session('activeTab');
 

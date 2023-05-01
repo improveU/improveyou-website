@@ -678,6 +678,15 @@ section#searchToggleMenu .searchFormWrapper .searchContainer .searchField:focus 
   background-color: white;
   outline: 3px solid #E8EDEB;
 }
+section#searchToggleMenu .searchFormWrapper #search-loading-spinner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+section#searchToggleMenu .searchFormWrapper #search-loading-spinner img {
+  height: 50px;
+  width: 70px;
+}
 section#searchToggleMenu .searchFormWrapper ul {
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
@@ -718,7 +727,7 @@ section#searchToggleMenu .searchFormWrapper ul ul li a {
   transition: 0.2s all;
 }
 section#searchToggleMenu .searchFormWrapper ul ul li a mark {
-  color: #05445e;
+  color: #46c9ff;
   background-color: transparent;
 }
 section#searchToggleMenu .searchFormWrapper ul ul li a:hover {

@@ -40,6 +40,9 @@
                 <img src="{{ asset('svg/logoSearch.svg') }}">
             </button>
         </div>
+        <div id="search-loading-spinner" style="display: none;">
+            <img src="{{ asset('svg/loadingDots.svg') }}">
+        </div>
         <ul id="search-results"></ul>
     </form>
 </section>
