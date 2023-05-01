@@ -8,71 +8,56 @@ Used Technologies:
 * Laravel
 * MySQL Database
 
+###Debug it locally
 Execute in Laragon-Console, step for step:
+1. Install [Laragon](https://laragon.org/download/index.html)
+2. Clone this repository to your machine
+3. Start Laragon services
+4. Open the integrated Laragon-Terminal (Cmder)
+5. Navigate to the repository
+6. Run the following commands to get it to work
 
-1. Start Laragon services
-2. Install Composer Packages
-
+Install all used composer packages
 ```
 composer install
 ```
-
-3. Copy .env.example to your .env file
-
-```
-cp .env.example .env
-```
-
-4. Generate a Key
-
-```
-php artisan key:generate
-```
-
-6. Migrate the database
-
-```
-php artisan migrate:
-```
-
-7. Seed the database
-
-```
-php artisan db:seed
-```
-
-> php artisan db:seed --class=CourseSeeder
-
-8. Install node modules
+Install node modules
 
 ```
 npm install
 ```
 
-9. Run the node package manager server
+Copy .env.example to your .env file
 
 ```
-npm run dev
+cp .env.example .env
 ```
 
-10. Create a link between the public and the storage folder
+Generate a Key
+
+```
+php artisan key:generate
+```
+
+Migrate and seed the database
+
+```
+php artisan migrate --seed
+```
+Create a link between the public and the storage folder
 
 ```
 php artisan storage:link
 ```
 
-11. Install intervention
 
-```
-composer require intervention/image
-```
+Debug on phone:
 
-
-
-Debugg on handy:
-
+First make sure your Phone and Computer are on the same network
+Find the local IP-Address of the Computer
+Start hosting the server using your IP
 ```
 php artisan serve --host=192.168.X.X
 ````
 
-192.168.1.1 is mostly the router so you need to find your own ip via ipconfig
+Open the address shown on the terminal on your phone
