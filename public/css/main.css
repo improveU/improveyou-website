@@ -689,6 +689,8 @@ section#searchToggleMenu .searchFormWrapper #search-loading-spinner img {
 section#searchToggleMenu .searchFormWrapper ul {
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
   list-style-type: none;
   max-height: 480px;
   overflow-y: scroll;

@@ -21,9 +21,11 @@ class ProfileController extends Controller
         session()->put('activeTab', $activeTab);
         session()->put('courses', $courses);
 
+        $description = $profile->description ?? 'No description yet';
+
         return view('/profile', [
             'courses' => $courses,
-            'description' => Str::markdown($user->description),
+            'description' => Str::markdown($description),
             'activeTab' => $activeTab,
         ]);
     }
@@ -33,11 +35,15 @@ class ProfileController extends Controller
         $profile = User::select('id', 'username', 'description', 'email', 'profile_picture_path', 'subscription_id')
             ->where('id', $id)
             ->first();
-        if (!$profile) return redirect()->route('home')->with('error', 'User not found.');
 
+        if (!$profile) {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
+
+        $description = $profile->description ?? 'No description yet';
         $data = [
             'profile' => $profile,
-            'description' => Str::markdown($profile->description),
+            'description' => Str::markdown($description),
         ];
 
         if ($profile->subscription_id === 3) {
@@ -47,6 +53,7 @@ class ProfileController extends Controller
 
         return view('profilePublic', $data);
     }
+
 
     public function updateProfile()
     {
