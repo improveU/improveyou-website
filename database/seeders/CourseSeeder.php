@@ -147,5 +147,36 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
         ]);
         $tags = ['Running', 'Cardio', 'Interval Training', 'Endurance', 'Fitness', 'Advanced'];
         $course03->tag($tags);
+
+        $course04 = Course::create([
+            'title' => 'Meditation Beginner Course',
+            'introduction' => 'Meditation Course for beginners',
+            'course_description' => "
+            1. Find a quiet place where you won't be disturbed. Sit comfortably on a cushion or a chair, with your back straight and your hands resting on your knees.   
+
+            2. Start with a few deep breaths, inhaling through your nose and exhaling through your mouth. Let go of any tension in your body and relax.  
+            
+            3. Choose a simple meditation technique, such as focusing on your breath or repeating a word or phrase (mantra) to yourself. If you choose to focus on your breath, simply observe the sensation of the air moving in and out of your nostrils.  
+            
+            4. Set a timer for 5-10 minutes. Close your eyes and begin your meditation practice. If your mind wanders, gently bring your attention back to your breath or mantra.  
+            
+            5. Practice regularly, ideally once a day. You can gradually increase the length of your meditation sessions as you become more comfortable with the practice.  
+            
+            6. Be patient with yourself. Meditation is a skill that takes time and practice to develop. Don't worry about 'doing it right' or achieving any particular state of mind. Simply focus on being present in the moment.  
+            
+            7. Consider attending a beginner's meditation class or using a guided meditation app to help you get started.  
+            
+              
+            
+            **Remember** that meditation is a personal practice, and there is no one 'right' way to do it. Experiment with different techniques and find what works best for you. With regular practice, you may begin to notice improvements in your focus, stress levels, and overall sense of well-being. ",
+            
+            'image_thumbnail_path' => '/thumbnails/course04.webp',
+            'image_cover_path' => '/covers/course04.webp',
+            'views' => 12,
+            'category_id' => 1,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Meditation', 'Relax', 'Mindfulness', 'Focus', 'Beginners', 'Mentalhealth'];
+        $course04->tag($tags);
     }
 }
