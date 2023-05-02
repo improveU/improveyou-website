@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
+use function PHPUnit\Framework\throwException;
 
 class CourseController extends Controller
 {
@@ -39,7 +40,7 @@ class CourseController extends Controller
 
     public function listAllCourses()
     {
-        $courses = Course::paginate(16);
+        $courses = Course::all()->take(4);
         $latest = Course::latest()->take(4)->get();
         $random = Course::inRandomOrder()->take(4)->get();
         $popular = Course::orderBy('views', 'desc')->take(4)->get();
@@ -49,6 +50,19 @@ class CourseController extends Controller
             'random' => $random,
             'latest' => $latest,
             'popular' => $popular
+        ]);
+    }
+
+    public function listSpecificCourses($category){
+        if($category === 'all') $output = Course::paginate(16);
+        else if($category === 'popular') $output = Course::orderBy('views', 'desc')->paginate(16);
+        else if($category === 'latest') $output = Course::latest()->paginate(16);
+        else if($category === 'random') $output = Course::inRandomOrder()->paginate(16);
+        else abort(404);
+
+        return view('coursesSpecific', [
+            'courses' => $output,
+            'category' => $category
         ]);
     }
 

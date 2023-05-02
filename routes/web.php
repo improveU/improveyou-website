@@ -24,6 +24,7 @@ use \App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 Route::get('/', [CourseController::class, 'root']);
+Route::get('/courses/{category}', [CourseController::class, 'listSpecificCourses'])->middleware('auth');
 
 Route::get('/about', function () {
     return view('about');
