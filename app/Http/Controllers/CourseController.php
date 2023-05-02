@@ -26,6 +26,8 @@ class CourseController extends Controller
 
     public function showCourse($id)
     {
+        if (auth()->user()->subscription_id == 0) {
+
         $course = Course::findorFail($id);
         $course->views += 1;
         $course->save();
@@ -35,6 +37,9 @@ class CourseController extends Controller
             'course' => $course,
             'description' => Str::markdown($course->course_description),
         ]);
+        } else {
+            return view('/');
+        }
     }
 
     public function listAllCourses()
