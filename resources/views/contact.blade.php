@@ -7,7 +7,7 @@
     <script>
         window.addEventListener("DOMContentLoaded", (event) => {
             document.getElementById("body").classList.add("contactBackground")
-            scroll(0,0)
+            scroll(0, 0)
         });
     </script>
 @endsection
@@ -92,7 +92,8 @@
             <div class="c">
                 <h2>Description</h2>
                 <div class="inputContainer">
-                    <label class="inputLabel" for="editor">Describe the problem and expand on what you put in the reason field. Minimum 200 words.</label>
+                    <label class="inputLabel" for="editor">Describe the problem and expand on what you put in the reason
+                        field. Minimum 200 words.</label>
                     <div id="editor"></div>
                 </div>
                 <div class="submitContainerRight">

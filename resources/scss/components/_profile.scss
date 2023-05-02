@@ -191,10 +191,12 @@ section#profileContainer {
             position: relative;
             min-height: 415px;
             padding-bottom: 80px;
+
             .descriptionContainer {
                 padding: 5px 30px 0 30px;
             }
-            button{
+
+            button {
                 position: absolute;
                 right: 0;
                 bottom: 0;
@@ -412,11 +414,12 @@ section#profilePictureUpload.open {
                     padding: 5px 0px 0 0px !important;
                 }
             }
-            section#profileBillingEdit{
-                .editContainer{
+
+            section#profileBillingEdit {
+                .editContainer {
                     padding: 5px 0px 0 0px !important;
 
-                    form{
+                    form {
                         min-width: 40% !important;
                         width: auto !important;
                     }

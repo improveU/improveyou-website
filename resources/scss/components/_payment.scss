@@ -104,7 +104,7 @@ section.register {
         }
     }
 
-    button{
+    button {
         width: 100%;
         height: 55px;
         font-family: "BerlinType" !important;
@@ -134,21 +134,21 @@ section.register {
         text-transform: none;
         background-color: #FFF4EE !important;
 
-        button{
+        button {
             font-family: "BerlinType" !important;
             font-size: 22px !important;
         }
     }
 }
 
-section#subscribeOverviewCard{
-    .subscribeWrapper{
+section#subscribeOverviewCard {
+    .subscribeWrapper {
         position: absolute;
         top: 50px;
         right: 50px;
     }
 }
 
-section#paymentOverviewPrices{
+section#paymentOverviewPrices {
     min-height: calc(100vh - 480px);
 }

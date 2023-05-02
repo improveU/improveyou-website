@@ -3,46 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class CourseController extends Controller
 {
     public function root()
     {
-        if (auth()->user()) {
-            if (auth()->user()->subscription_id == 0) {
-                return view('paymentOverview');
-            } else {
-                return $this->listAllCourses();
-            }
-        } else {
-            return view('index');
-        }
+        $user = auth()->user();
+
+        if ($user && $user->subscription_id == 0) return redirect('payment');
+
+        return $user ? $this->listAllCourses() : view('index');
     }
+
 
     public function showCourse($id)
     {
-        $course = Course::findorFail($id);
-        $course->views += 1;
-        $course->save();
+        if (auth()->user()->subscription_id != 0) {
+
+            $course = Course::findorFail($id);
+            $course->views += 1;
+            $course->save();
 
 
-        return view('courseDetail', [
-            'course' => $course,
-            'description' => Str::markdown($course->course_description),
-        ]);
+            return view('courseDetail', [
+                'course' => $course,
+                'description' => Str::markdown($course->course_description),
+            ]);
+        } else {
+            return view('/');
+        }
     }
 
     public function listAllCourses()
     {
-        $courses = Course::all();
-        $latest = collect($courses)->sortByDesc('created_at')->take(4);
-        $random = collect($courses)->random(4);
-        $popular = collect($courses)->sortByDesc('views')->take(4);
+        $courses = Course::all()->take(4);
+        $latest = Course::latest()->take(4)->get();
+        $random = Course::inRandomOrder()->take(4)->get();
+        $popular = Course::orderBy('views', 'desc')->take(4)->get();
 
         return view('courses', [
             'courses' => $courses,
@@ -52,11 +52,25 @@ class CourseController extends Controller
         ]);
     }
 
+    public function listSpecificCourses($category)
+    {
+        if ($category === 'all') $output = Course::paginate(16);
+        else if ($category === 'popular') $output = Course::orderBy('views', 'desc')->paginate(16);
+        else if ($category === 'latest') $output = Course::latest()->paginate(16);
+        else if ($category === 'random') $output = Course::inRandomOrder()->paginate(16);
+        else abort(404);
+
+        return view('coursesSpecific', [
+            'courses' => $output,
+            'category' => $category
+        ]);
+    }
+
     public function editCourse($courseId)
     {
         $course = Course::findOrFail($courseId);
 
-        if($course->creator_id !== auth()->user()->id){
+        if ($course->creator_id !== auth()->user()->id) {
             redirect('/')->with('status', 'This is not your Course');
         }
 
@@ -113,7 +127,7 @@ class CourseController extends Controller
         $this->saveCourse($request, $course);
         $course->tag($tags);
 
-        return redirect('/')->with('status', 'Course is created!');
+        return redirect('/')->with('status', 'Course was created!');
     }
 
     public function saveCourse(mixed $request, $course): void
@@ -127,7 +141,7 @@ class CourseController extends Controller
         if ($request->has('thumbnail')) {
 
             $thumbnail = Image::make($request->file('thumbnail'))
-                ->resize(600, null, function ($constraint){
+                ->resize(600, null, function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })
@@ -137,13 +151,13 @@ class CourseController extends Controller
             $pathinfo = pathinfo($path);
             $webp_path = $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '.webp';
 
-            Storage::put($webp_path, (string) $thumbnail);
+            Storage::put($webp_path, (string)$thumbnail);
             Storage::delete($path);
 
             $course->image_thumbnail_path = $webp_path;
 
             $cover = Image::make($request->file('thumbnail'))
-                ->resize(1600, null, function ($constraint){
+                ->resize(1600, null, function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })
@@ -153,7 +167,7 @@ class CourseController extends Controller
             $pathinfo = pathinfo($path);
             $webp_path = $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '.webp';
 
-            Storage::put($webp_path, (string) $cover);
+            Storage::put($webp_path, (string)$cover);
             Storage::delete($path);
 
             $course->image_cover_path = $webp_path;

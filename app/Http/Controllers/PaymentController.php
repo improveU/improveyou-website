@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
     public function showOverview()
     {
-        return view('payment');
+        return view('paymentOverview');
     }
 
     public function selectModel($id)

@@ -5,45 +5,46 @@
             <x-logo/>
         </a>
         @auth
-        <div class="searchIndicator" id="searchIndicator">
-            <span>Search</span>
-            <img src="{{ asset('svg/logoSearch.svg') }}">
-        </div>
+            <div class="searchIndicator" id="searchIndicator">
+                <span>Search</span>
+                <img src="{{ asset('svg/logoSearch.svg') }}">
+            </div>
         @endauth
         <div class="linkWrapper">
             @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 3)
-            <a href="{{ url('/create-course') }}">
-                <img src="{{ asset('svg/logoCreate.svg') }}">
-            </a>
+                <a href="{{ url('/create-course') }}">
+                    <img src="{{ asset('svg/logoCreate.svg') }}">
+                </a>
             @endif
             @auth
-            <a class="profile" href="{{ url('/profile') }}">
-                <img src="{{ asset('storage/' . auth()->user()->profile_picture_path) }}">
-            </a>
+                <a class="profile" href="{{ url('/profile') }}">
+                    <img src="{{ asset('storage/' . auth()->user()->profile_picture_path) }}">
+                </a>
             @endauth
             @guest
-            <a href="{{ url('/login') }}">
-                <img src="{{ asset('svg/logoProfile.svg') }}">
-            </a>
+                <a href="{{ url('/login') }}">
+                    <img src="{{ asset('svg/logoProfile.svg') }}">
+                </a>
             @endguest
         </div>
     </nav>
 </header>
 
 @auth
-<section id="searchToggleMenu" class="hidden">
-    <form method="POST" class="searchFormWrapper" id="search-form" action="{{ url('search-results') }}">
-        @csrf
-        <div class="searchContainer">
-            <input class="searchField" type="text" id="search-input" name="q" placeholder="Search something" autocomplete="off">
-            <button type="submit">
-                <img src="{{ asset('svg/logoSearch.svg') }}">
-            </button>
-        </div>
-        <div id="search-loading-spinner" style="display: none;">
-            <img src="{{ asset('svg/loadingDots.svg') }}">
-        </div>
-        <ul id="search-results"></ul>
-    </form>
-</section>
+    <section id="searchToggleMenu" class="hidden">
+        <form method="POST" class="searchFormWrapper" id="search-form" action="{{ url('search-results') }}">
+            @csrf
+            <div class="searchContainer">
+                <input class="searchField" type="text" id="search-input" name="q" placeholder="Search something"
+                       autocomplete="off">
+                <button type="submit">
+                    <img src="{{ asset('svg/logoSearch.svg') }}">
+                </button>
+            </div>
+            <div id="search-loading-spinner" style="display: none;">
+                <img src="{{ asset('svg/loadingDots.svg') }}">
+            </div>
+            <ul id="search-results"></ul>
+        </form>
+    </section>
 @endauth

@@ -22,8 +22,9 @@
                 </div>
                 <div class="description">
                     <h1>Tim Bernhard</h1>
-                    <p> <span>Project Manager </span><br>
-                        ensures that our projects are delivered on time, within budget, and to the satisfaction of our clients.
+                    <p><span>Project Manager </span><br>
+                        ensures that our projects are delivered on time, within budget, and to the satisfaction of our
+                        clients.
                     </p>
                     <button class="btn" id="button" onclick="location.href='mailto:tim_bernhard@sluz.ch';">
                         Contact
@@ -53,7 +54,8 @@
                 <div class="description">
                     <h1>Demian Flury</h1>
                     <p><span>Backend Developer </span><br>
-                        developing the server-side portion, ensuring that our systems are scalable, efficient, and secure.
+                        developing the server-side portion, ensuring that our systems are scalable, efficient, and
+                        secure.
                     </p>
                     <button class="btn" id="button" onclick="location.href='mailto:demian_flury@sluz.ch';">
                         Contact

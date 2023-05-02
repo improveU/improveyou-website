@@ -1,3 +1,3 @@
-function subscriptionButton(){
-   window.location.href = '/';
+function subscriptionButton() {
+    window.location.href = '/';
 }

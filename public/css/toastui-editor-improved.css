@@ -54,12 +54,12 @@ li.ProseMirror-selectednode:after {
 }
 
 img.ProseMirror-separator {
-    border: none!important;
-    display: inline!important;
-    margin: 0!important
+    border: none !important;
+    display: inline !important;
+    margin: 0 !important
 }
 
-.auto-height,.auto-height .toastui-editor-defaultUI {
+.auto-height, .auto-height .toastui-editor-defaultUI {
     height: auto
 }
 
@@ -67,19 +67,19 @@ img.ProseMirror-separator {
     position: relative
 }
 
-:not(.auto-height)>.toastui-editor-defaultUI,:not(.auto-height)>.toastui-editor-defaultUI>.toastui-editor-main {
+:not(.auto-height) > .toastui-editor-defaultUI, :not(.auto-height) > .toastui-editor-defaultUI > .toastui-editor-main {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column
 }
 
-:not(.auto-height)>.toastui-editor-defaultUI>.toastui-editor-main {
+:not(.auto-height) > .toastui-editor-defaultUI > .toastui-editor-main {
     -ms-flex: 1;
     flex: 1
 }
 
-.toastui-editor-defaultUI-toolbar:after,.toastui-editor-md-container:after {
+.toastui-editor-defaultUI-toolbar:after, .toastui-editor-md-container:after {
     clear: both;
     content: "";
     display: block;
@@ -104,7 +104,7 @@ img.ProseMirror-separator {
     position: relative
 }
 
-.toastui-editor-md-container .toastui-editor,.toastui-editor-md-container .toastui-editor-md-preview {
+.toastui-editor-md-container .toastui-editor, .toastui-editor-md-container .toastui-editor-md-preview {
     box-sizing: border-box;
     height: inherit;
     padding: 0
@@ -116,32 +116,32 @@ img.ProseMirror-separator {
     padding: 0 25px
 }
 
-.toastui-editor-md-container .toastui-editor-md-preview>p:first-child {
-    margin-top: 0!important
+.toastui-editor-md-container .toastui-editor-md-preview > p:first-child {
+    margin-top: 0 !important
 }
 
 .toastui-editor-md-container .toastui-editor-md-preview .toastui-editor-contents {
     padding-top: 8px
 }
 
-.toastui-editor-main .toastui-editor-md-tab-style>.toastui-editor,.toastui-editor-main .toastui-editor-md-tab-style>.toastui-editor-md-preview {
+.toastui-editor-main .toastui-editor-md-tab-style > .toastui-editor, .toastui-editor-main .toastui-editor-md-tab-style > .toastui-editor-md-preview {
     display: none;
     width: 100%
 }
 
-.toastui-editor-main .toastui-editor-md-tab-style>.active {
+.toastui-editor-main .toastui-editor-md-tab-style > .active {
     display: block
 }
 
-.toastui-editor-main .toastui-editor-md-vertical-style>.toastui-editor-tabs {
+.toastui-editor-main .toastui-editor-md-vertical-style > .toastui-editor-tabs {
     display: none
 }
 
-.toastui-editor-main .toastui-editor-md-tab-style>.toastui-editor-tabs {
+.toastui-editor-main .toastui-editor-md-tab-style > .toastui-editor-tabs {
     display: block
 }
 
-.toastui-editor-main .toastui-editor-md-vertical-style .toastui-editor,.toastui-editor-main .toastui-editor-md-vertical-style .toastui-editor-md-preview {
+.toastui-editor-main .toastui-editor-md-vertical-style .toastui-editor, .toastui-editor-main .toastui-editor-md-vertical-style .toastui-editor-md-preview {
     width: 50%
 }
 
@@ -177,7 +177,7 @@ img.ProseMirror-separator {
     width: 100%
 }
 
-.toastui-editor-ww-container>.toastui-editor {
+.toastui-editor-ww-container > .toastui-editor {
     height: inherit;
     position: relative;
     width: 100%
@@ -195,7 +195,7 @@ img.ProseMirror-separator {
     margin: 0
 }
 
-.toastui-editor-md-mode .toastui-editor-md-container,.toastui-editor-ww-mode .toastui-editor-ww-container {
+.toastui-editor-md-mode .toastui-editor-md-container, .toastui-editor-ww-mode .toastui-editor-ww-container {
     display: block;
     z-index: 20
 }
@@ -205,7 +205,7 @@ img.ProseMirror-separator {
     display: flex
 }
 
-.toastui-editor-defaultUI.hidden,.toastui-editor-main.hidden {
+.toastui-editor-defaultUI.hidden, .toastui-editor-main.hidden {
     display: none
 }
 
@@ -280,7 +280,7 @@ img.ProseMirror-separator {
 .toastui-editor-defaultUI .toastui-editor-close-button:focus {
     transition: 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
     outline: 3px solid #E8EDEB;
- }
+}
 
 .toastui-editor-mode-switch {
     background-color: #fff;
@@ -440,7 +440,7 @@ img.ProseMirror-separator {
     transition: .4s
 }
 
-.toastui-editor-defaultUI-toolbar input:checked+.switch {
+.toastui-editor-defaultUI-toolbar input:checked + .switch {
     background-color: #acddfa
 }
 
@@ -457,7 +457,7 @@ img.ProseMirror-separator {
     width: 14px
 }
 
-.toastui-editor-defaultUI-toolbar input:checked+.switch:before {
+.toastui-editor-defaultUI-toolbar input:checked + .switch:before {
     background-color: #00a9ff;
     -webkit-transform: translateX(12px);
     -moz-transform: translateX(12px);
@@ -473,7 +473,7 @@ img.ProseMirror-separator {
     background-color: #f7f9fc;
     border: solid 2.5px #B4E8EE;
     border-radius: 12px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
     display: -ms-flexbox;
     display: flex;
     height: 46px;
@@ -491,7 +491,7 @@ img.ProseMirror-separator {
     background: #fff;
     border: solid 2.5px #B4E8EE;
     border-radius: 12px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
     margin-right: auto;
     position: absolute;
     width: 400px;
@@ -549,11 +549,11 @@ img.ProseMirror-separator {
     width: 1px
 }
 
-.toastui-editor-popup-body input.wrong,.toastui-editor-popup-body span.wrong {
+.toastui-editor-popup-body input.wrong, .toastui-editor-popup-body span.wrong {
     border-color: #fa2828
 }
 
-.toastui-editor-popup-add-image .toastui-editor-popup-body,.toastui-editor-popup-add-link .toastui-editor-popup-body {
+.toastui-editor-popup-add-image .toastui-editor-popup-body, .toastui-editor-popup-add-link .toastui-editor-popup-body {
     padding: 0 20px 20px
 }
 
@@ -650,7 +650,7 @@ img.ProseMirror-separator {
 }
 
 .toastui-editor-popup-add-table .toastui-editor-table-selection-layer {
-    background: rgba(0,169,255,.1);
+    background: rgba(0, 169, 255, .1);
     border: 2.5px solid #00a9ff;
     left: 0;
     position: absolute;
@@ -672,7 +672,7 @@ img.ProseMirror-separator {
     padding: 0
 }
 
-.toastui-editor-popup-add-heading h1,.toastui-editor-popup-add-heading h2,.toastui-editor-popup-add-heading h3,.toastui-editor-popup-add-heading h4,.toastui-editor-popup-add-heading h5,.toastui-editor-popup-add-heading h6,.toastui-editor-popup-add-heading p,.toastui-editor-popup-add-heading ul {
+.toastui-editor-popup-add-heading h1, .toastui-editor-popup-add-heading h2, .toastui-editor-popup-add-heading h3, .toastui-editor-popup-add-heading h4, .toastui-editor-popup-add-heading h5, .toastui-editor-popup-add-heading h6, .toastui-editor-popup-add-heading p, .toastui-editor-popup-add-heading ul {
     margin: 0;
     padding: 0
 }
@@ -719,7 +719,7 @@ img.ProseMirror-separator {
     background-color: #fff;
     border: solid 2.5px #B4E8EE;
     border-radius: 12px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
     color: #333;
     min-width: 197px;
     padding: 5px 0;
@@ -737,7 +737,7 @@ img.ProseMirror-separator {
 }
 
 .toastui-editor-context-menu .menu-group:last-child {
-    border-bottom: none!important
+    border-bottom: none !important
 }
 
 .toastui-editor-context-menu .menu-item {
@@ -846,9 +846,9 @@ img.ProseMirror-separator {
     background-size: 466px 146px
 }
 
-@media only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx) {
-    .toastui-editor-context-menu span:before,.toastui-editor-toolbar-icons {
-        background:url(./../img/toast-ui-icons.png) no-repeat;
+@media only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .toastui-editor-context-menu span:before, .toastui-editor-toolbar-icons {
+        background: url(./../img/toast-ui-icons.png) no-repeat;
         background-size: 466px 146px
     }
 }
@@ -936,7 +936,7 @@ img.ProseMirror-separator {
 
 @media only screen and (max-width: 480px) {
     .toastui-editor-popup {
-        margin-left:-150px;
+        margin-left: -150px;
         max-width: 300px
     }
 
@@ -957,11 +957,11 @@ img.ProseMirror-separator {
     color: #999
 }
 
-.ProseMirror-selectednode,.ProseMirror:focus {
+.ProseMirror-selectednode, .ProseMirror:focus {
     outline: none
 }
 
-.html-block.ProseMirror-selectednode,table.ProseMirror-selectednode {
+.html-block.ProseMirror-selectednode, table.ProseMirror-selectednode {
     border-radius: 2px;
     outline: 2px solid #00a9ff
 }
@@ -978,7 +978,7 @@ img.ProseMirror-separator {
     line-height: 160%
 }
 
-.toastui-editor-contents address,.toastui-editor-contents cite,.toastui-editor-contents dfn,.toastui-editor-contents em,.toastui-editor-contents i,.toastui-editor-contents var {
+.toastui-editor-contents address, .toastui-editor-contents cite, .toastui-editor-contents dfn, .toastui-editor-contents em, .toastui-editor-contents i, .toastui-editor-contents var {
     font-style: italic
 }
 
@@ -991,11 +991,11 @@ img.ProseMirror-separator {
     margin: 10px 0
 }
 
-.toastui-editor-contents>div>div:first-of-type h1,.toastui-editor-contents>h1:first-of-type {
+.toastui-editor-contents > div > div:first-of-type h1, .toastui-editor-contents > h1:first-of-type {
     margin-top: 14px
 }
 
-.toastui-editor-contents h1,.toastui-editor-contents h2,.toastui-editor-contents h3,.toastui-editor-contents h4,.toastui-editor-contents h5,.toastui-editor-contents h6 {
+.toastui-editor-contents h1, .toastui-editor-contents h2, .toastui-editor-contents h3, .toastui-editor-contents h4, .toastui-editor-contents h5, .toastui-editor-contents h6 {
     color: #222;
     font-weight: 700
 }
@@ -1026,7 +1026,7 @@ img.ProseMirror-separator {
     margin: 10px 0 2px
 }
 
-.toastui-editor-contents h3,.toastui-editor-contents h4 {
+.toastui-editor-contents h3, .toastui-editor-contents h4 {
     line-height: 18px
 }
 
@@ -1038,7 +1038,7 @@ img.ProseMirror-separator {
     font-size: 14px
 }
 
-.toastui-editor-contents h5,.toastui-editor-contents h6 {
+.toastui-editor-contents h5, .toastui-editor-contents h6 {
     line-height: 17px;
     margin: 9px 0 -4px
 }
@@ -1054,19 +1054,19 @@ img.ProseMirror-separator {
     padding: 0 16px
 }
 
-.toastui-editor-contents blockquote ol,.toastui-editor-contents blockquote p,.toastui-editor-contents blockquote ul {
+.toastui-editor-contents blockquote ol, .toastui-editor-contents blockquote p, .toastui-editor-contents blockquote ul {
     color: #999
 }
 
-.toastui-editor-contents blockquote>:first-child {
+.toastui-editor-contents blockquote > :first-child {
     margin-top: 0
 }
 
-.toastui-editor-contents blockquote>:last-child {
+.toastui-editor-contents blockquote > :last-child {
     margin-bottom: 0
 }
 
-.toastui-editor-contents code,.toastui-editor-contents pre {
+.toastui-editor-contents code, .toastui-editor-contents pre {
     border: 0;
     border-radius: 0;
 }
@@ -1100,7 +1100,7 @@ img.ProseMirror-separator {
 }
 
 .toastui-editor-contents table {
-    border: 2.5px solid rgba(0,0,0,.1);
+    border: 2.5px solid rgba(0, 0, 0, .1);
     border-collapse: collapse;
     box-sizing: border-box;
     color: #222;
@@ -1108,8 +1108,8 @@ img.ProseMirror-separator {
     width: auto
 }
 
-.toastui-editor-contents table td,.toastui-editor-contents table th {
-    border: 2.5px solid rgba(0,0,0,.1);
+.toastui-editor-contents table td, .toastui-editor-contents table th {
+    border: 2.5px solid rgba(0, 0, 0, .1);
     height: 32px;
     padding: 5px 14px 5px 12px
 }
@@ -1139,7 +1139,7 @@ img.ProseMirror-separator {
     background-color: #908f8f
 }
 
-.toastui-editor-contents dir,.toastui-editor-contents menu,.toastui-editor-contents ol,.toastui-editor-contents ul {
+.toastui-editor-contents dir, .toastui-editor-contents menu, .toastui-editor-contents ol, .toastui-editor-contents ul {
     color: #222;
     display: block;
     list-style-type: none;
@@ -1152,16 +1152,16 @@ img.ProseMirror-separator {
     list-style-type: none
 }
 
-.toastui-editor-contents ol>li {
+.toastui-editor-contents ol > li {
     counter-increment: li
 }
 
-.toastui-editor-contents ol>li:before,.toastui-editor-contents ul>li:before {
+.toastui-editor-contents ol > li:before, .toastui-editor-contents ul > li:before {
     display: inline-block;
     position: absolute
 }
 
-.toastui-editor-contents ul>li:before {
+.toastui-editor-contents ul > li:before {
     background-color: #ccc;
     border-radius: 50%;
     content: "";
@@ -1171,7 +1171,7 @@ img.ProseMirror-separator {
     width: 8px
 }
 
-.toastui-editor-contents ol>li:before {
+.toastui-editor-contents ol > li:before {
     color: #aaa;
     content: "." counter(li);
     direction: rtl;
@@ -1180,16 +1180,16 @@ img.ProseMirror-separator {
     width: 24px
 }
 
-.toastui-editor-contents ol ol,.toastui-editor-contents ol ul,.toastui-editor-contents ul ol,.toastui-editor-contents ul ul {
-    margin-bottom: 0!important;
-    margin-top: 0!important
+.toastui-editor-contents ol ol, .toastui-editor-contents ol ul, .toastui-editor-contents ul ol, .toastui-editor-contents ul ul {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important
 }
 
-.toastui-editor-contents ol li,.toastui-editor-contents ul li {
+.toastui-editor-contents ol li, .toastui-editor-contents ul li {
     position: relative
 }
 
-.toastui-editor-contents ol p,.toastui-editor-contents ul p {
+.toastui-editor-contents ol p, .toastui-editor-contents ul p {
     margin: 0
 }
 
@@ -1216,7 +1216,7 @@ img.ProseMirror-separator {
     background-position: 50%;
     border: solid 2.5px #B4E8EE;
     border-radius: 50%;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
     content: "";
     cursor: pointer;
     height: 30px;
@@ -1382,7 +1382,7 @@ img.ProseMirror-separator {
 }
 
 .toastui-editor-contents .toastui-editor-md-preview-highlight:after {
-    background-color: rgba(255,245,131,.5);
+    background-color: rgba(255, 245, 131, .5);
     border-radius: 12px;
     bottom: -4px;
     content: "";
@@ -1393,16 +1393,16 @@ img.ProseMirror-separator {
     z-index: -1
 }
 
-.toastui-editor-contents h1.toastui-editor-md-preview-highlight:after,.toastui-editor-contents h2.toastui-editor-md-preview-highlight:after {
+.toastui-editor-contents h1.toastui-editor-md-preview-highlight:after, .toastui-editor-contents h2.toastui-editor-md-preview-highlight:after {
     bottom: 0
 }
 
-.toastui-editor-contents td.toastui-editor-md-preview-highlight:after,.toastui-editor-contents th.toastui-editor-md-preview-highlight:after {
+.toastui-editor-contents td.toastui-editor-md-preview-highlight:after, .toastui-editor-contents th.toastui-editor-md-preview-highlight:after {
     display: none
 }
 
-.toastui-editor-contents td.toastui-editor-md-preview-highlight,.toastui-editor-contents th.toastui-editor-md-preview-highlight {
-    background-color: rgba(255,245,131,.5)
+.toastui-editor-contents td.toastui-editor-md-preview-highlight, .toastui-editor-contents th.toastui-editor-md-preview-highlight {
+    background-color: rgba(255, 245, 131, .5)
 }
 
 .toastui-editor-contents th.toastui-editor-md-preview-highlight {
@@ -1437,7 +1437,7 @@ img.ProseMirror-separator {
     line-height: 15px
 }
 
-.toastui-editor-md-heading,.toastui-editor-md-list-item .toastui-editor-md-meta,.toastui-editor-md-list-item-style,.toastui-editor-md-strong {
+.toastui-editor-md-heading, .toastui-editor-md-list-item .toastui-editor-md-meta, .toastui-editor-md-list-item-style, .toastui-editor-md-strong {
     font-weight: 700
 }
 
@@ -1453,7 +1453,7 @@ img.ProseMirror-separator {
     text-decoration: none
 }
 
-.toastui-editor-md-block-quote,.toastui-editor-md-delimiter,.toastui-editor-md-link,.toastui-editor-md-table,.toastui-editor-md-thematic-break {
+.toastui-editor-md-block-quote, .toastui-editor-md-delimiter, .toastui-editor-md-link, .toastui-editor-md-table, .toastui-editor-md-thematic-break {
     color: #ccc
 }
 
@@ -1461,11 +1461,11 @@ img.ProseMirror-separator {
     color: #aaa
 }
 
-.toastui-editor-md-html,.toastui-editor-md-link.toastui-editor-md-link-url.toastui-editor-md-marked-text,.toastui-editor-md-meta {
+.toastui-editor-md-html, .toastui-editor-md-link.toastui-editor-md-link-url.toastui-editor-md-marked-text, .toastui-editor-md-meta {
     color: #999
 }
 
-.toastui-editor-md-block-quote .toastui-editor-md-marked-text,.toastui-editor-md-list-item .toastui-editor-md-meta {
+.toastui-editor-md-block-quote .toastui-editor-md-marked-text, .toastui-editor-md-list-item .toastui-editor-md-meta {
     color: #555
 }
 
@@ -1473,7 +1473,7 @@ img.ProseMirror-separator {
     color: #222
 }
 
-.toastui-editor-md-link.toastui-editor-md-link-desc.toastui-editor-md-marked-text,.toastui-editor-md-list-item-style.toastui-editor-md-list-item-odd {
+.toastui-editor-md-link.toastui-editor-md-link-desc.toastui-editor-md-marked-text, .toastui-editor-md-list-item-style.toastui-editor-md-list-item-odd {
     color: #4b96e6
 }
 
@@ -1486,7 +1486,7 @@ img.ProseMirror-separator {
 }
 
 .toastui-editor-md-code {
-    background-color: rgba(243,229,233,.5);
+    background-color: rgba(243, 229, 233, .5);
     letter-spacing: -.3px;
     padding: 2px 0
 }
@@ -1507,11 +1507,11 @@ img.ProseMirror-separator {
     background-color: #f5f7f8
 }
 
-.toastui-editor-md-code-block-line-background.start,.toastui-editor-md-custom-block-line-background.start {
+.toastui-editor-md-code-block-line-background.start, .toastui-editor-md-custom-block-line-background.start {
     margin-top: 2px
 }
 
-.toastui-editor-md-code,.toastui-editor-md-code-block {
+.toastui-editor-md-code, .toastui-editor-md-code-block {
 }
 
 .toastui-editor-md-custom-block {

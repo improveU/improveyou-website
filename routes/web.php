@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\RegisterController;
-use \App\Http\Controllers\LoginController;
-use \App\Http\Controllers\ProfileController;
-use \App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 /*
@@ -24,6 +24,7 @@ use \App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 Route::get('/', [CourseController::class, 'root']);
+Route::get('/courses/{category}', [CourseController::class, 'listSpecificCourses'])->middleware('auth');
 
 Route::get('/about', function () {
     return view('about');
@@ -67,7 +68,7 @@ Route::get('/course/{id}', [CourseController::class, 'showCourse'])->middleware(
 Route::get('/home', [CourseController::class, 'listAllCourses'])->middleware('auth');
 
 Route::get('/storage/thumbnails/{img}', function () {
-    redirect('/');
+    redirect('/')->with('status', "don't look at my pics bruv");
 });
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']);

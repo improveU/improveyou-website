@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 
     <script defer src="{{ asset('js/animate.js') }}"></script>
-    <script defer src="{{ asset('js/backToTop.js') }}" ></script>
+    <script defer src="{{ asset('js/backToTop.js') }}"></script>
     <script src="{{ asset('js/statusMessage.js') }}"></script>
 
     <title>Home</title>
@@ -119,9 +119,9 @@
 <section id="prices">
     <h1 class="sectionTitle">Prices</h1>
     <div class="subscribeWrapper hiddenAnimation">
-        <x-payment.pcardBeginner> Join now </x-payment.pcardBeginner>
-        <x-payment.pcardImprover> Join now </x-payment.pcardImprover>
-        <x-payment.pcardCreator> Join now </x-payment.pcardCreator>
+        <x-payment.pcardBeginner> Join now</x-payment.pcardBeginner>
+        <x-payment.pcardImprover> Join now</x-payment.pcardImprover>
+        <x-payment.pcardCreator> Join now</x-payment.pcardCreator>
     </div>
 </section>
 
@@ -164,7 +164,8 @@
             </div>
             <div class="description">
                 <h1>Food</h1>
-                <p>Challenge yourself with one of our courses. Our professional and motivated trainers will push you to the max.</p>
+                <p>Challenge yourself with one of our courses. Our professional and motivated trainers will push you to
+                    the max.</p>
                 <button class="btn" id="button" onclick="window.location.href = '/register';">
                     Join now
                 </button>

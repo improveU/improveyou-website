@@ -17,9 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            CourseSeeder::class,
-        ]);
 
 
         //delete all contents of all tables
@@ -28,6 +25,10 @@ class DatabaseSeeder extends Seeder
         Subscription::truncate();
         Tag::truncate();
         User::truncate();
+
+        $this->call([
+            CourseSeeder::class,
+        ]);
 
         //create the three subscriptions models
         Subscription::create([

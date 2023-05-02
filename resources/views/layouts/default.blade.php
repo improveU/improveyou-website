@@ -23,7 +23,7 @@
 
 <x-header/>
 
-    @yield('content')
+@yield('content')
 
 <x-footer/>
 

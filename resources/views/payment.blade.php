@@ -18,13 +18,13 @@
     <section id="subscribeOverviewCard">
         <div class="subscribeWrapper">
             @if($id == 1)
-                <x-payment.pcardBeginner> Change subscription </x-payment.pcardBeginner>
+                <x-payment.pcardBeginner> Change subscription</x-payment.pcardBeginner>
             @endif
             @if($id == 2)
-                <x-payment.pcardImprover> Change subscription </x-payment.pcardImprover>
+                <x-payment.pcardImprover> Change subscription</x-payment.pcardImprover>
             @endif
             @if($id == 3)
-                <x-payment.pcardCreator> Change subscription </x-payment.pcardCreator>
+                <x-payment.pcardCreator> Change subscription</x-payment.pcardCreator>
             @endif
         </div>
     </section>
