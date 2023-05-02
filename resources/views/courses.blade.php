@@ -121,4 +121,5 @@
             </div>
         </section>
     </section>
+    {{$courses->links('pagination')}}
 @endsection

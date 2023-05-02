@@ -9,7 +9,7 @@ class PaymentController extends Controller
 {
     public function showOverview()
     {
-        return view('payment');
+        return view('paymentOverview');
     }
 
     public function selectModel($id)
