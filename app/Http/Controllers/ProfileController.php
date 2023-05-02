@@ -155,32 +155,36 @@ class ProfileController extends Controller
 
     public function updateBilling()
     {
-        $request = request();
-        $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'city' => 'required',
-            'postal_code' => 'required',
-            'address' => 'required',
-        ]);
+        if(auth()->user()->subscription_id != 0){
+            $request = request();
+            $request->validate([
+                'first_name' => 'required|max:255',
+                'last_name' => 'required|max:255',
+                'city' => 'required',
+                'postal_code' => 'required',
+                'address' => 'required',
+            ]);
 
-        $user = auth()->user();
+            $user = auth()->user();
 
-        $user->first_name = $request->get('first_name');
-        $user->last_name = $request->get('last_name');
-        $user->city = $request->get('city');
-        $user->address = $request->get('address');
-        $user->zip_code = $request->get('postal_code');
+            $user->first_name = $request->get('first_name');
+            $user->last_name = $request->get('last_name');
+            $user->city = $request->get('city');
+            $user->address = $request->get('address');
+            $user->zip_code = $request->get('postal_code');
 
-        $user->save();
+            $user->save();
 
-        $activeTab = request()->input('activeTab', 'profileOverview');
-        $courses = $user->courses;
-        session()->put('activeTab', 'profileDescriptionEdit');
+            $activeTab = request()->input('activeTab', 'profileOverview');
+            $courses = $user->courses;
+            session()->put('activeTab', 'profileDescriptionEdit');
 
-        return redirect('/profile#'.$activeTab)->with([
-            'status' => 'Billing updated',
-            'courses' => $courses,
-        ]);
+            return redirect('/profile#'.$activeTab)->with([
+                'status' => 'Billing updated',
+                'courses' => $courses,
+            ]);
+        } else{
+            return redirect('/')->with('status', 'No Subscription selected');
+        }
     }
 }
