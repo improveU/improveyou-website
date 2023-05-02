@@ -268,8 +268,19 @@ section#searchToggleMenu {
          }
       }
 
+      #search-loading-spinner{
+         display: flex;
+         width: 100%;
+         justify-content: center;
+         img {
+            height: 50px;
+            width: 70px;
+         }
+      }
+
       ul{
          padding-inline-start: 0px;
+         margin-block-end: 0;
          list-style-type: none;
          max-height: 480px;
          overflow-y: scroll;
@@ -306,7 +317,7 @@ section#searchToggleMenu {
                   transition: .2s all;
 
                   mark{
-                     color: #05445e;
+                     color: #46c9ff;
                      background-color: transparent;
                   }
 

@@ -1,7 +1,8 @@
 @use "../abstracts" as *;
 
 section#course,
-section#publicProfile {
+section#publicProfile,
+section#profileDescription {
    .cover {
       border: solid 2.5px #E0E1E5;
       border-radius: 12px;
@@ -25,7 +26,8 @@ section#publicProfile {
       }
    }
 
-   div.c {
+   div.c,
+   div.descriptionContainer {
       color: #00617e;
 
       h1,

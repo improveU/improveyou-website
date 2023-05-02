@@ -1,4 +1,14 @@
-# IPT -Im.ProveYou
+<p align="center">
+   <img align="center" src="./public/svg/logo.svg" height="250px">
+</p>
+<h1 align="center">
+   IPT -Im.ProveYou
+</h1>
+<p align="center">
+   Demian, Elija, Tim, Yannic & Xavier
+</p>
+
+
 
 ## 💻Installation
 
@@ -11,7 +21,7 @@ Used Technologies:
 ### Debug it locally
 Execute in Laragon-Console, step for step:
 1. Install [Laragon](https://laragon.org/download/index.html)
-2. Clone this repository to your machine
+2. Clone this repository to your machine (safe it in the laragon folder)
 3. Start Laragon services
 4. Open the integrated Laragon-Terminal (Cmder)
 5. Navigate to the repository
@@ -44,6 +54,12 @@ Migrate and seed the database
 ```
 php artisan migrate --seed
 ```
+
+> seed the db with the spesific CourseSeeder 
+>  ```
+>  php artisan db:seed --class=CourseSeeder
+>  ```
+
 Create a link between the public and the storage folder
 
 ```
