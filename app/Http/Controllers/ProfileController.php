@@ -155,7 +155,7 @@ class ProfileController extends Controller
 
     public function updateBilling()
     {
-        if(auth()->user()->subscription_id == 0){
+        if(auth()->user()->subscription_id != 0){
             $request = request();
             $request->validate([
                 'first_name' => 'required|max:255',

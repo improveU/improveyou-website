@@ -26,7 +26,7 @@ class CourseController extends Controller
 
     public function showCourse($id)
     {
-        if (auth()->user()->subscription_id == 0) {
+        if (auth()->user()->subscription_id != 0) {
 
         $course = Course::findorFail($id);
         $course->views += 1;
