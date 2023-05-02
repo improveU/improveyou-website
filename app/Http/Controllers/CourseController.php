@@ -15,7 +15,7 @@ class CourseController extends Controller
     {
         if (auth()->user()) {
             if (auth()->user()->subscription_id == 0) {
-                return view('paymentOverview');
+                return redirect('payment');
             } else {
                 return $this->listAllCourses();
             }
@@ -44,10 +44,10 @@ class CourseController extends Controller
 
     public function listAllCourses()
     {
-        $courses = Course::all();
-        $latest = collect($courses)->sortByDesc('created_at')->take(4);
-        $random = collect($courses)->random(4);
-        $popular = collect($courses)->sortByDesc('views')->take(4);
+        $courses = Course::paginate(16);
+        $latest = Course::latest()->take(4)->get();
+        $random = Course::inRandomOrder()->take(4)->get();
+        $popular = Course::orderBy('views', 'desc')->take(4)->get();
 
         return view('courses', [
             'courses' => $courses,
@@ -115,8 +115,9 @@ class CourseController extends Controller
         ]);
 
         $tags = explode(',', $request->get('tags'));
-        $this->saveCourse($request, $course);
         $course->tag($tags);
+
+        $this->saveCourse($request, $course);
 
         return redirect('/')->with('status', 'Course is created!');
     }
