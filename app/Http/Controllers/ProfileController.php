@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -107,7 +107,7 @@ class ProfileController extends Controller
         $pathinfo = pathinfo($path);
         $webp_path = $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '.webp';
 
-        Storage::put($webp_path, (string) $image);
+        Storage::put($webp_path, (string)$image);
         Storage::delete($path);
 
         $user->profile_picture_path = $webp_path;
@@ -122,6 +122,7 @@ class ProfileController extends Controller
             'courses' => $courses,
         ]);
     }
+
     public function updateProfileDescription()
     {
         $activeTab = request()->input('activeTab', 'profileOverview');
@@ -141,13 +142,13 @@ class ProfileController extends Controller
             $user->description = $newDescription;
             $user->save();
 
-            return redirect('/profile#'.$activeTab)->with([
+            return redirect('/profile#' . $activeTab)->with([
                 'status' => 'Profile description updated',
                 'courses' => $courses,
             ]);
         }
 
-        return redirect('/profile#'.$activeTab)->with([
+        return redirect('/profile#' . $activeTab)->with([
             'status' => 'No changes detected',
             'courses' => $courses,
         ]);
@@ -155,7 +156,7 @@ class ProfileController extends Controller
 
     public function updateBilling()
     {
-        if(auth()->user()->subscription_id != 0){
+        if (auth()->user()->subscription_id != 0) {
             $request = request();
             $request->validate([
                 'first_name' => 'required|max:255',
@@ -179,11 +180,11 @@ class ProfileController extends Controller
             $courses = $user->courses;
             session()->put('activeTab', 'profileDescriptionEdit');
 
-            return redirect('/profile#'.$activeTab)->with([
+            return redirect('/profile#' . $activeTab)->with([
                 'status' => 'Billing updated',
                 'courses' => $courses,
             ]);
-        } else{
+        } else {
             return redirect('/')->with('status', 'No Subscription selected');
         }
     }

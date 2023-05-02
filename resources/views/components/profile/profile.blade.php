@@ -35,7 +35,7 @@
                     <span>English</span>
                 </div>
             </div>
-            <button class=" btn profileBtn" onclick="handleTabClick(this)" data-section="profileEdit" >
+            <button class=" btn profileBtn" onclick="handleTabClick(this)" data-section="profileEdit">
                 Edit profile
             </button>
         </div>

@@ -1,7 +1,8 @@
 <section id="profileDescriptionEdit" class="hidden">
     <h1>Edit description</h1>
     <div class="descriptionContainer">
-        <form method="POST" class="formWrapper create" id="formSending" action="/updateProfileDescription" enctype="multipart/form-data">
+        <form method="POST" class="formWrapper create" id="formSending" action="/updateProfileDescription"
+              enctype="multipart/form-data">
             @csrf
 
             <input type="hidden" name="activeTab" value="{{ session('activeTab', 'profileOverview') }}">

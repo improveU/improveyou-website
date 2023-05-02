@@ -30,14 +30,14 @@
             </span>
             @enderror
             <div>
-                <a href="{{ url('forget-password') }}"> <p>Forgot password?</p> </a>
+                <a href="{{ url('forget-password') }}"><p>Forgot password?</p></a>
             </div>
         </div>
         <div class="inputWrapperFix"></div>
         <div class="submitContainer">
             <button class="btn full" type="submit">Login</button>
             <div>
-                <a href="{{ url('/register') }}"> <p>Not registered yet?</p> </a>
+                <a href="{{ url('/register') }}"><p>Not registered yet?</p></a>
             </div>
         </div>
     </form>

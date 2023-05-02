@@ -1,167 +1,186 @@
 @use "../abstracts" as *;
 
-footer{
-   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 23px 30px;
-   background-color: $footerDivBackground;
-   margin: 50px 0px 50px 0px;
-   width: 100%;
-   nav{
-      width: 80vw;
-      max-width: 1300px;
-      padding: 30px 10vw 10px 10vw;
-      margin-right: auto;
-      margin-left: auto;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      position: relative;
+footer {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 23px 30px;
+    background-color: $footerDivBackground;
+    margin: 50px 0px 50px 0px;
+    width: 100%;
 
-      dl{
-         dt{
+    nav {
+        width: 80vw;
+        max-width: 1300px;
+        padding: 30px 10vw 10px 10vw;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: relative;
+
+        dl {
+            dt {
+                display: flex;
+                align-items: center;
+                font-family: "BerlinTypeBold", sans-serif;
+                font-size: 1.2rem;
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 15px;
+                }
+            }
+
+            dd {
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                img {
+                    height: 35px;
+                    width: 35px;
+                }
+            }
+        }
+
+        .quicklinks {
             display: flex;
-            align-items: center;
+            justify-content: center;
+
+            dl {
+                &:nth-last-child(1) {
+                    margin-left: 40px;
+                }
+
+                dt {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .thirdparty {
+            dl {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                dt {
+                    color: white;
+                }
+
+                dd {
+                    margin: 0;
+                    display: flex;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        color: $footerHighlight;
+                        margin: 10px;
+                        text-decoration: none;
+
+                        img {
+                            height: 30px;
+                            width: 30px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .socialmedia {
+            dl {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                dt {
+                    color: white;
+                }
+
+                dd {
+                    display: flex;
+                    margin: 0;
+
+                    a {
+                        padding: 5px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .copyright {
             font-family: "BerlinTypeBold", sans-serif;
-            font-size: 1.2rem;
+            width: 100vw;
 
-            img{
-               height: 30px;
-               width: 30px;
-               margin-right: 15px;
+            .copyrightbar {
+                display: flex;
+                justify-content: center;
+                margin: 30px 40px 30px 40px;
             }
-         }
-         dd{
-            a{
-               color: white;
-               text-decoration: none;
-            }
-            img{
-               height: 35px;
-               width: 35px;
-            }
-         }
-      }
-      .quicklinks{
-         display: flex;
-         justify-content: center;
-         
-         dl{
-            &:nth-last-child(1){
-               margin-left: 40px;
-            }
-            dt{
-               text-transform: uppercase;
-            }
-         }
-      }
-      .thirdparty{
-         dl{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            dt{
-               color: white;
-            }
-            dd{
-               margin: 0;
-               display: flex;
-               a{
-                  display: flex;
-                  align-items: center;
-                  color: $footerHighlight;
-                  margin: 10px;
-                  text-decoration: none;
-                  img{
-                     height: 30px;
-                     width: 30px;
-                     margin-right: 10px;
-                  }
-               }
-            }
-         }
-      }
-      .socialmedia{
-         dl{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            dt{
-               color: white;
-            }
-            dd{
-               display: flex;
-               margin: 0;
-               a{
-                  padding: 5px;
-                  text-decoration: none;
-               }
-            }
-         }
-      }
 
-      .copyright{
-         font-family: "BerlinTypeBold", sans-serif;
-         width: 100vw;
+            hr {
+                border: solid 1px #1D212F;
+            }
+        }
+    }
 
-         .copyrightbar{
-            display: flex;
-            justify-content: center;
-            margin: 30px 40px 30px 40px;
-         }
-         hr{
-            border: solid 1px #1D212F;
-         }
-      }
-   }
-   .toTop{
-      position: absolute;
-      bottom: 20px;
-      right: 30px;
-      font-family: "BerlinTypeBold", sans-serif;
-      text-transform: uppercase;
-      padding: 10px 20px 10px 20px;
-      border: none;
-      background-color: $footerHighlight;
-      color: white;
-      cursor: pointer;
+    .toTop {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        font-family: "BerlinTypeBold", sans-serif;
+        text-transform: uppercase;
+        padding: 10px 20px 10px 20px;
+        border: none;
+        background-color: $footerHighlight;
+        color: white;
+        cursor: pointer;
 
-      &:hover {
-         background-color: #1d212fc7;
-         box-shadow: 0px 0px 20px -18px;
-      }
-   }
+        &:hover {
+            background-color: #1d212fc7;
+            box-shadow: 0px 0px 20px -18px;
+        }
+    }
 }
 
-@media only screen and (max-width: 1100px){
-   footer{
-      nav{
-         .quicklinks{
-            width: 40vw;
-         }
-         .thirdparty{
-            width: 40vw;
-         }
-      }
-   }
+@media only screen and (max-width: 1100px) {
+    footer {
+        nav {
+            .quicklinks {
+                width: 40vw;
+            }
+
+            .thirdparty {
+                width: 40vw;
+            }
+        }
+    }
 }
 
-@media only screen and (max-width: 800px){
-   footer{
-      nav{
-         .quicklinks{
-            width: 100%;
-            margin-bottom: 30px;
-         }
-         .thirdparty{
-            width: 100%;
-            margin-bottom: 25px;
-         }
-         .socialmedia{
-            width: 100%;
-            margin-bottom: 20px;
-         }
-      }
-   }
+@media only screen and (max-width: 800px) {
+    footer {
+        nav {
+            .quicklinks {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .thirdparty {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+
+            .socialmedia {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
 }

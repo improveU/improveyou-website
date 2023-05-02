@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\RegisterController;
-use \App\Http\Controllers\LoginController;
-use \App\Http\Controllers\ProfileController;
-use \App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 /*

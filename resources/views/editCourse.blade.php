@@ -23,7 +23,8 @@
         </nav>
     </section>
 
-    <form method="POST" class="formWrapper create" id="formSending" action="{{ '/edit-course/' . $course->id }}" enctype="multipart/form-data">
+    <form method="POST" class="formWrapper create" id="formSending" action="{{ '/edit-course/' . $course->id }}"
+          enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="description" id="formTextarea" value="{{ $course->course_description }}">
@@ -56,7 +57,8 @@
                     </div>
                     <span class="fake-btn"> <strong> Upload files </strong> </span>
                     <span class="file-msg">or drag and drop files here</span>
-                    <input type="file" value="" name="thumbnail" class="file-input @error('thumbnail') is-invalid @enderror">
+                    <input type="file" value="" name="thumbnail"
+                           class="file-input @error('thumbnail') is-invalid @enderror">
                 </div>
                 @error('thumbnail')
                 <span class="invalidFeedback" role="alert">
@@ -90,7 +92,8 @@
         <div class="c">
             <h2>Introduction</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="intro">Introduce the media and expand on what you put in the title. Max 200 words.</label>
+                <label class="inputLabel" for="intro">Introduce the media and expand on what you put in the title. Max
+                    200 words.</label>
                 <input class="inputField @error('intro') is-invalid @enderror"
                        type="text"
                        name="intro"
@@ -108,7 +111,8 @@
         <div class="c">
             <h2>Description</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="editor">Describe the media and expand on what you put in the title. Minimum 200 words.</label>
+                <label class="inputLabel" for="editor">Describe the media and expand on what you put in the title.
+                    Minimum 200 words.</label>
                 <div id="editor"></div>
             </div>
             <div class="submitContainerRight">

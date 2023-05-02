@@ -1,3 +1,3 @@
-function subscriptionButton(){
-   window.location.href = '/register';
+function subscriptionButton() {
+    window.location.href = '/register';
 }

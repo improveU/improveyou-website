@@ -1,20 +1,20 @@
 @use "../abstracts" as *;
 
-section#contact{
-   padding-top: 50vh;
+section#contact {
+    padding-top: 50vh;
 }
 
 
-body{
-   &.contactBackground{
-      header{
-         background-color: white;
-      }
-   }
+body {
+    &.contactBackground {
+        header {
+            background-color: white;
+        }
+    }
 }
 
-.contactBackground{
-   background: center center / cover no-repeat fixed url(./../img/ContactUsMainPic.webp);
-   background-repeat: no-repeat;
-   background-position: center center;
+.contactBackground {
+    background: center center / cover no-repeat fixed url(./../img/ContactUsMainPic.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
 }

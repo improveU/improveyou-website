@@ -64,7 +64,7 @@
         <div class="submitContainer">
             <button class="btn full" type="submit">Register</button>
             <div>
-                <a href="{{ url('/login') }}"> <p>Already have an account?</p> </a>
+                <a href="{{ url('/login') }}"><p>Already have an account?</p></a>
             </div>
         </div>
     </form>

@@ -14,11 +14,11 @@ class SearchController extends Controller
         $query = $request->input('q');
 
         $courses = Course::select('id', 'title', 'introduction',) // 'image_thumbnail_path'
-            ->where('title', 'LIKE', '%' . $query . '%')
+        ->where('title', 'LIKE', '%' . $query . '%')
             ->get();
 
         $users = User::select('id', 'username',) // 'profile_picture_path'
-            ->where('username', 'LIKE', '%' . $query . '%')
+        ->where('username', 'LIKE', '%' . $query . '%')
             ->get();
 
         return response()->json([
@@ -26,6 +26,7 @@ class SearchController extends Controller
             'users' => $users
         ]);
     }
+
     public function showResults(Request $request)
     {
         $query = $request->input('q');
@@ -35,16 +36,6 @@ class SearchController extends Controller
 
         $users = User::where('username', 'LIKE', '%' . $query . '%')
             ->get();
-
-        /*
-        $courses = Course::select('id', 'title', 'introduction', 'image_path')
-            ->where('title', 'LIKE', '%' . $query . '%')
-            ->get();
-
-        $users = User::select('id', 'username', 'profile_picture_path')
-            ->where('username', 'LIKE', '%' . $query . '%')
-            ->get();
-        */
 
         return view('search', [
             'query' => $query,

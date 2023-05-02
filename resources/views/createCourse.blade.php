@@ -20,7 +20,8 @@
         </nav>
     </section>
 
-    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('create-course') }}" enctype="multipart/form-data">
+    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('create-course') }}"
+          enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="description" id="formTextarea" value="">
@@ -84,7 +85,8 @@
         <div class="c">
             <h2>Introduction</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="intro">Introduce the media and expand on what you put in the title. Max 200 words.</label>
+                <label class="inputLabel" for="intro">Introduce the media and expand on what you put in the title. Max
+                    200 words.</label>
                 <input class="inputField @error('intro') is-invalid @enderror"
                        type="text"
                        name="intro"
@@ -102,7 +104,8 @@
         <div class="c">
             <h2>Description</h2>
             <div class="inputContainer">
-                <label class="inputLabel" for="editor">Describe the media and expand on what you put in the title. Minimum 200 words.</label>
+                <label class="inputLabel" for="editor">Describe the media and expand on what you put in the title.
+                    Minimum 200 words.</label>
                 <div id="editor"></div>
             </div>
             <div class="submitContainerRight">

@@ -15,7 +15,10 @@
                     <div class="date">
                         <p>Created: <br> {{ $course->updated_at->format('Y-m-d') }}</p>
                     </div>
-                    <button class="btn" onclick="window.location.href = '{{ url('edit-course/' . auth()->user()->id . "/" . $course->id )  }}';">Edit</button>
+                    <button class="btn"
+                            onclick="window.location.href = '{{ url('edit-course/' . auth()->user()->id . "/" . $course->id )  }}';">
+                        Edit
+                    </button>
                 </li>
             @endforeach
         </ul>

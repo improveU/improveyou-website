@@ -1,8 +1,8 @@
-section#faq{
-    
+section#faq {
+
     min-height: calc(100vh - 600px);
 
-    .faqWrapper{
+    .faqWrapper {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -14,7 +14,7 @@ section#faq{
         padding-top: 25px;
 
 
-        .faqContainer{
+        .faqContainer {
             position: relative;
             box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
             background-color: #ffffff;
@@ -24,20 +24,20 @@ section#faq{
             width: calc(100% - 50px);
             cursor: pointer;
 
-            p.question{
+            p.question {
                 font-family: "BerlinTypeBold";
                 font-size: 22px;
                 padding: 25px 75px 25px 25px;
             }
 
-            p.answer{
+            p.answer {
                 font-size: 17.6px;
                 padding: 0 25px 25px 25px;
                 display: none;
                 cursor: auto;
             }
 
-            &::after{
+            &::after {
                 content: url(./../svg/arrowFAQ.svg);
                 display: inline-block;
                 position: absolute;
@@ -48,11 +48,12 @@ section#faq{
                 transition: .2s;
             }
 
-            &.hiddenAnswer{
-                p.answer{
+            &.hiddenAnswer {
+                p.answer {
                     display: block;
                 }
-                &::after{
+
+                &::after {
                     transform: rotateX(180deg);
                 }
             }
@@ -61,13 +62,13 @@ section#faq{
 }
 
 @media screen and (min-width: 1000px) {
-    .faqWrapper{
+    .faqWrapper {
         flex-wrap: wrap !important;
         flex-direction: row !important;
         justify-content: center !important;
         align-items: flex-start !important;
 
-        .faqContainer{
+        .faqContainer {
             width: calc(50% - 50px) !important;
         }
     }

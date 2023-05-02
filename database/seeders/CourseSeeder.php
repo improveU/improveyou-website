@@ -2,13 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use App\Models\Category;
 use App\Models\Course;
-use App\Models\Subscription;
-use App\Models\Tag;
 use App\Models\User;
+use Illuminate\Database\Seeder;
+
 class CourseSeeder extends Seeder
 {
     /**
@@ -27,7 +24,7 @@ class CourseSeeder extends Seeder
             'country' => '-',
             'zip_code' => '-',
             'description' =>
-"**Welcome to our creator account on! We are a team of passionate content creators who believe in sharing knowledge and empowering individuals to achieve their goals.**
+                "**Welcome to our creator account on! We are a team of passionate content creators who believe in sharing knowledge and empowering individuals to achieve their goals.**
 
 
 
@@ -50,7 +47,7 @@ class CourseSeeder extends Seeder
             'country' => '-',
             'zip_code' => '-',
             'description' =>
-"We are the admin team behind the scenes of this platform, working hard to ensure that everything runs smoothly and that our users have the best possible experience. We are dedicated to providing a safe and inclusive environment for everyone who uses our platform, and we work tirelessly to keep it that way.
+                "We are the admin team behind the scenes of this platform, working hard to ensure that everything runs smoothly and that our users have the best possible experience. We are dedicated to providing a safe and inclusive environment for everyone who uses our platform, and we work tirelessly to keep it that way.
 
 
 As the admin account, we are responsible for managing user accounts, reviewing content, and handling any issues that may arise. We are committed to being transparent and responsive, and we welcome feedback and suggestions from our community.
