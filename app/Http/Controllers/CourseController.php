@@ -129,9 +129,8 @@ class CourseController extends Controller
         ]);
 
         $tags = explode(',', $request->get('tags'));
-        $course->tag($tags);
-
         $this->saveCourse($request, $course);
+        $course->tag($tags);
 
         return redirect('/')->with('status', 'Course is created!');
     }

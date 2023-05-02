@@ -33,6 +33,6 @@
                 @endforeach
             </div>
         </section>
-    {{$courses->links()}}
+    {{$courses->links('pagination')}}
     </section>
 @endsection
