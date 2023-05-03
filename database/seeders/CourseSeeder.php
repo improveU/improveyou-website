@@ -170,20 +170,20 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
             'title' => 'Supplements',
             'introduction' => 'Simple Supplements list',
             'course_description' =>"
-Here are a few commonly recommended supplements: 
+Here are a few commonly recommended supplements:
 
-  
 
-* Multivitamin: A multivitamin can help fill in any nutritional gaps in your diet. 
-            
-* Vitamin D: Many people are deficient in vitamin D, which is important for bone health, immune function, and mood regulation. It's difficult to get enough vitamin D from food alone, so a supplement may be necessary. 
-            
-* Omega-3 fatty acids: Omega-3s are important for brain and heart health, and are found in fatty fish, nuts, and seeds. If you don't eat enough of these foods, a supplement can be helpful. 
-            
-* Probiotics: Probiotics are beneficial bacteria that live in your gut and are important for digestive health and immune function. You can get probiotics from fermented foods like yogurt, kimchi, and sauerkraut, or take a supplement. 
-            
-* Magnesium: Magnesium is important for muscle and nerve function, and is found in leafy greens, nuts, and whole grains. If you don't get enough magnesium from your diet, a supplement may be helpful.  
-            
+
+* Multivitamin: A multivitamin can help fill in any nutritional gaps in your diet.
+
+* Vitamin D: Many people are deficient in vitamin D, which is important for bone health, immune function, and mood regulation. It's difficult to get enough vitamin D from food alone, so a supplement may be necessary.
+
+* Omega-3 fatty acids: Omega-3s are important for brain and heart health, and are found in fatty fish, nuts, and seeds. If you don't eat enough of these foods, a supplement can be helpful.
+
+* Probiotics: Probiotics are beneficial bacteria that live in your gut and are important for digestive health and immune function. You can get probiotics from fermented foods like yogurt, kimchi, and sauerkraut, or take a supplement.
+
+* Magnesium: Magnesium is important for muscle and nerve function, and is found in leafy greens, nuts, and whole grains. If you don't get enough magnesium from your diet, a supplement may be helpful.
+
 Again, **it's important** to talk to a healthcare professional before starting any supplement regimen, as they can advise you on the appropriate dosage and potential interactions with any medications you may be taking. ",
             'image_thumbnail_path' => '/thumbnails/course05.webp',
             'image_cover_path' => '/covers/course05.webp',
@@ -198,20 +198,20 @@ Again, **it's important** to talk to a healthcare professional before starting a
             'title' => 'Skincare Routine',
             'introduction' => 'Simple skincare routine for clean skin',
             'course_description' =>"
-* Cleanser: Start by washing your face with a gentle cleanser to remove any dirt, oil, and makeup. Look for a cleanser that is appropriate for your skin type, whether it's oily, dry, or sensitive. 
+* Cleanser: Start by washing your face with a gentle cleanser to remove any dirt, oil, and makeup. Look for a cleanser that is appropriate for your skin type, whether it's oily, dry, or sensitive.
 
-* Toner: After cleansing, use a toner to help balance your skin's pH and remove any remaining dirt or impurities. Apply the toner to a cotton pad and gently swipe it across your face. 
-            
-* Moisturizer: Apply a moisturizer to your face and neck to help hydrate and protect your skin. Look for a moisturizer that is appropriate for your skin type, whether it's oil-free for oily skin or richer for dry skin. 
-            
-* Sunscreen: If you're going outside during the day, apply a broad-spectrum sunscreen with at least SPF 30 to protect your skin from harmful UV rays. Reapply sunscreen every two hours if you'll be spending a lot of time outside. 
-            
-* Eye cream (optional): If you're concerned about fine lines, puffiness, or dark circles around your eyes, consider using an eye cream. Apply a small amount of eye cream to your ring finger and gently tap it around your eye area. 
-            
-* Exfoliant (optional): Once or twice a week, you can use an exfoliant to help remove dead skin cells and unclog pores. Look for a gentle exfoliant that is appropriate for your skin type, and use it according to the instructions. 
-            
-              
-            
+* Toner: After cleansing, use a toner to help balance your skin's pH and remove any remaining dirt or impurities. Apply the toner to a cotton pad and gently swipe it across your face.
+
+* Moisturizer: Apply a moisturizer to your face and neck to help hydrate and protect your skin. Look for a moisturizer that is appropriate for your skin type, whether it's oil-free for oily skin or richer for dry skin.
+
+* Sunscreen: If you're going outside during the day, apply a broad-spectrum sunscreen with at least SPF 30 to protect your skin from harmful UV rays. Reapply sunscreen every two hours if you'll be spending a lot of time outside.
+
+* Eye cream (optional): If you're concerned about fine lines, puffiness, or dark circles around your eyes, consider using an eye cream. Apply a small amount of eye cream to your ring finger and gently tap it around your eye area.
+
+* Exfoliant (optional): Once or twice a week, you can use an exfoliant to help remove dead skin cells and unclog pores. Look for a gentle exfoliant that is appropriate for your skin type, and use it according to the instructions.
+
+
+
 Remember to also **drink plenty of water**, eat a balanced diet, and get enough sleep to help keep your skin healthy and glowing. ",
             'image_thumbnail_path' => '/thumbnails/course06.webp',
             'image_cover_path' => '/covers/course06.webp',
@@ -226,34 +226,34 @@ Remember to also **drink plenty of water**, eat a balanced diet, and get enough 
             'title' => 'How to dress well',
             'introduction' => 'Course on how to dress well',
             'course_description' =>"
-Determine your personal style: Start by figuring out your personal style. This will help you choose clothes that make you feel confident and comfortable.  
+Determine your personal style: Start by figuring out your personal style. This will help you choose clothes that make you feel confident and comfortable.
 
-  
 
-* Invest in basics: Invest in high-quality, timeless basics that you can mix and match with other pieces in your wardrobe. This can include items like a well-fitting pair of jeans, a white t-shirt, a blazer, and a little black dress.  
-            
-              
-            
-* Choose clothes that fit well: Make sure your clothes fit well and flatter your body shape. Avoid wearing clothes that are too tight or too loose.  
-            
-              
-            
-* Accessorize: Accessories can elevate any outfit. Experiment with jewelry, scarves, hats, and shoes to add some personality to your look.  
-            
-              
-            
-* Play with color and pattern: Don't be afraid to add some color and pattern to your wardrobe. Try mixing and matching different colors and patterns to create unique outfits.  
-            
-              
-            
-* Dress appropriately for the occasion: Make sure you're dressing appropriately for the occasion. If you're not sure what to wear, consider asking the host or doing some research online. 
-            
-            
-            
-* Take care of your clothes: Take care of your clothes by following the care instructions on the label. This will help your clothes last longer and look better.  
-            
-<br> 
-            
+
+* Invest in basics: Invest in high-quality, timeless basics that you can mix and match with other pieces in your wardrobe. This can include items like a well-fitting pair of jeans, a white t-shirt, a blazer, and a little black dress.
+
+
+
+* Choose clothes that fit well: Make sure your clothes fit well and flatter your body shape. Avoid wearing clothes that are too tight or too loose.
+
+
+
+* Accessorize: Accessories can elevate any outfit. Experiment with jewelry, scarves, hats, and shoes to add some personality to your look.
+
+
+
+* Play with color and pattern: Don't be afraid to add some color and pattern to your wardrobe. Try mixing and matching different colors and patterns to create unique outfits.
+
+
+
+* Dress appropriately for the occasion: Make sure you're dressing appropriately for the occasion. If you're not sure what to wear, consider asking the host or doing some research online.
+
+
+
+* Take care of your clothes: Take care of your clothes by following the care instructions on the label. This will help your clothes last longer and look better.
+
+<br>
+
 Remember, fashion is **about expressing yourself** and feeling confident in what you wear. Don't be afraid to experiment and have fun with your style! ",
             'image_thumbnail_path' => '/thumbnails/course07.webp',
             'image_cover_path' => '/covers/course07.webp',
@@ -263,47 +263,5 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
         ]);
         $tags = ['Style', 'Dress well', 'Looks',];
         $course07->tag($tags);
-
-        $course08= Course::create([
-            'title' => 'How to dress well',
-            'introduction' => 'Course on how to dress well',
-            'course_description' =>"
-Determine your personal style: Start by figuring out your personal style. This will help you choose clothes that make you feel confident and comfortable.  
-
-  
-
-* Invest in basics: Invest in high-quality, timeless basics that you can mix and match with other pieces in your wardrobe. This can include items like a well-fitting pair of jeans, a white t-shirt, a blazer, and a little black dress.  
-            
-              
-            
-* Choose clothes that fit well: Make sure your clothes fit well and flatter your body shape. Avoid wearing clothes that are too tight or too loose.  
-            
-              
-            
-* Accessorize: Accessories can elevate any outfit. Experiment with jewelry, scarves, hats, and shoes to add some personality to your look.  
-            
-              
-            
-* Play with color and pattern: Don't be afraid to add some color and pattern to your wardrobe. Try mixing and matching different colors and patterns to create unique outfits.  
-            
-              
-            
-* Dress appropriately for the occasion: Make sure you're dressing appropriately for the occasion. If you're not sure what to wear, consider asking the host or doing some research online. 
-            
-            
-            
-* Take care of your clothes: Take care of your clothes by following the care instructions on the label. This will help your clothes last longer and look better.  
-            
-<br> 
-            
-Remember, fashion is **about expressing yourself** and feeling confident in what you wear. Don't be afraid to experiment and have fun with your style! ",
-            'image_thumbnail_path' => '/thumbnails/course08.webp',
-            'image_cover_path' => '/covers/course08.webp',
-            'views' => 12,
-            'category_id' => 1,
-            'creator_id' => 1,
-        ]);
-        $tags = ['Style', 'Dress well', 'Looks',];
-        $course08->tag($tags);
     }
 }

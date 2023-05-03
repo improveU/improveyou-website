@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
@@ -60,7 +61,7 @@ class ProfileController extends Controller
         $request = request();
 
         $request->validate([
-            'username' => ['required', 'max:255'],
+            'username' => ['required', 'max:255', Rule::unique('users')->ignore(auth()->id())],
             'email' => ['required', 'email', 'max:255'],
             'password' => ['nullable', 'confirmed', 'min:8'],
         ]);
@@ -82,8 +83,9 @@ class ProfileController extends Controller
         return redirect('/profile#' . $activeTab)->with([
             'status' => 'Profile updated',
             'courses' => $courses,
-        ]);
+        ])->withInput();
     }
+
 
     public function updateProfilePicture()
     {

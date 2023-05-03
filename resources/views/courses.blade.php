@@ -16,7 +16,6 @@
     <section id="coursesOverview">
         <section id="coursesPopular">
             <h2>Popular</h2>
-            <a href="/courses/popular">see more</a>
             <div class="courseWrapper">
                 @foreach($popular as $course)
                     <div class="courseCard">
@@ -33,6 +32,7 @@
                     </div>
                 @endforeach
             </div>
+            <a href="/courses/popular" class="btn">more</a>
         </section>
 
         <section id="coursesLatest">

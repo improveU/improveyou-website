@@ -12,7 +12,7 @@
                            class="inputField @error('username') is-invalid @enderror"
                            value="{{auth()->user()->username}}">
                     @error('username')
-                    <span class="alert alert-danger">{{ $message }}</span>
+                    <span class="alert ">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -24,7 +24,7 @@
                     <input type="email" name="email" id="email" class="inputField @error('email') is-invalid @enderror"
                            value="{{auth()->user()->email}}">
                     @error('email')
-                    <span class="alert alert-danger">{{ $message }}</span>
+                    <span class="alert ">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
@@ -36,7 +36,7 @@
                            class="inputField  @error('password') is-invalid @enderror"
                            placeholder="Enter a new password">
                     @error('password')
-                    <span class="alert alert-danger">{{ $message }}</span>
+                    <span class="alert ">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
@@ -48,7 +48,7 @@
                            class="inputField  @error('password_confirmation') is-invalid @enderror"
                            placeholder="Enter the new password again">
                     @error('password_confirmation')
-                    <span class="alert alert-danger">{{ $message }}</span>
+                    <span class="alert ">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
