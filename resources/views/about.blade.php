@@ -18,7 +18,7 @@
         <div class="aboutWrapper">
             <div class="aboutContainer">
                 <div class="picture">
-                    <img src="{{ asset('img/people/tim.webp') }}" alt="">
+                    <img src="{{ asset('img/people/TimBernhard.webp') }}" alt="">
                 </div>
                 <div class="description">
                     <h1>Tim Bernhard</h1>
@@ -34,7 +34,7 @@
 
             <div class="aboutContainer">
                 <div class="picture">
-                    <img src="{{ asset('img/people/yannic.webp') }}" alt="">
+                    <img src="{{ asset('img/people/YannicStuder.webp') }}" alt="">
                 </div>
                 <div class="description">
                     <h1>Yannic Studer</h1>
@@ -49,7 +49,7 @@
 
             <div class="aboutContainer">
                 <div class="picture">
-                    <img src="{{ asset('img/people/demian.webp') }}" alt="">
+                    <img src="{{ asset('img/people/DemianFlury.webp') }}" alt="">
                 </div>
                 <div class="description">
                     <h1>Demian Flury</h1>
@@ -65,7 +65,7 @@
 
             <div class="aboutContainer">
                 <div class="picture">
-                    <img src="{{ asset('img/people/elija.webp') }}" alt="">
+                    <img src="{{ asset('img/people/ElijaZürcher.webp') }}" alt="">
                 </div>
                 <div class="description">
                     <h1>Elija Zürcher</h1>
@@ -80,7 +80,7 @@
 
             <div class="aboutContainer">
                 <div class="picture">
-                    <img src="{{ asset('img/people/xavier.webp') }}" alt="">
+                    <img src="{{ asset('img/people/XavierScherer.webp') }}" alt="">
                 </div>
                 <div class="description">
                     <h1>Xavier Scherer</h1>
