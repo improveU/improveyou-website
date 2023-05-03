@@ -64,14 +64,11 @@ section.splitTwo {
             text-align: end;
         }
     }
-}
 
-@media only screen and (max-width: 850px) {
-    section.splitTwo {
+    @media screen and (max-width: 850px) {
         div.form {
             width: 100%;
         }
-
         div.picture {
             display: none;
         }

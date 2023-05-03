@@ -1,5 +1,11 @@
 @use "../abstracts" as *;
 
+$color-primary: #0F4C75;
+$color-secondary: #3282B8;
+$color-tertiary: #BBE1FA;
+$color-text: #333333;
+$color-bg: #F5F5F5;
+
 section#about {
     padding-top: 25px;
     min-height: calc(100vh - 600px);
@@ -34,17 +40,17 @@ section#about {
             .description {
                 padding: 30px;
                 border-radius: 0 15px 15px 0;
-                background-color: #E5F6F8;
+                background-color: $color-tertiary;
                 position: relative;
 
                 h1 {
                     font-family: "BerlinTypeBold";
-                    color: #05445E;
+                    color: $color-primary;
                     font-size: 30px;
                 }
 
                 p {
-                    color: #005F60;
+                    color: $color-secondary;
 
                     span {
                         font-family: "BerlinTypeBold";
@@ -67,24 +73,24 @@ section#about {
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media screen and (max-width: 750px) {
     .aboutContainer {
-        flex-direction: column !important;
-        height: auto !important;
-        width: 340px !important;
+        flex-direction: column;
+        height: auto;
+        width: 340px;
 
         .picture {
             img {
-                height: auto !important;
-                width: 340px !important;
-                border-radius: 15px 15px 0 0 !important;
-                transform: translateY(8px) !important;
+                height: auto;
+                width: 340px;
+                border-radius: 15px 15px 0 0;
+                transform: translateY(8px);
             }
         }
 
         .description {
-            height: 250px !important;
-            border-radius: 0 0 15px 15px !important;
+            height: 250px;
+            border-radius: 0 0 15px 15px;
         }
     }
 }

@@ -44,17 +44,17 @@ section#profileCover {
             font-size: 46px;
         }
     }
-}
 
-@media only screen and (max-width: 1100px) {
+    @media screen and (max-width: 1100px) {
 
-    .c,
-    .container {
-        justify-content: center !important;
-        flex-wrap: wrap !important;
+        .c,
+        .container {
+            justify-content: center;
+            flex-wrap: wrap;
 
-        h1 {
-            font-size: clamp(1rem, 9vw, 3rem) !important;
+            h1 {
+                font-size: clamp(1rem, 9vw, 3rem);
+            }
         }
     }
 }
@@ -264,7 +264,70 @@ section#profileContainer {
             }
         }
     }
+
+    @media screen and (max-width: 1500px) {
+        padding: 20px 0px 0 0px;
+        ul {
+            li {
+                column-gap: 20px;
+
+                .title {
+                    width: 30%;
+                }
+
+                .introduction {
+                    width: calc(100% - 35% - 75px - 100px - 40px - 150px);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        ul {
+            li {
+                column-gap: 20px;
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 500px) {
+        ul {
+            li {
+                height: 100%;
+                min-height: 100%;
+                flex-wrap: wrap;
+    
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+    
+                .title,
+                .introduction {
+                    width: 100%;
+                    white-space: initial;
+                    text-overflow: wrap;
+                    overflow: inherit;
+                }
+    
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
+
+@media screen and (max-width: 500px) {
+    section#profilePictureUpload.open {
+        form {
+            width: 100%;
+        }
+    }
+}
+
+
 
 .overviewPerson,
 .overviewMail,
@@ -279,6 +342,10 @@ section#profileContainer {
     border-bottom: solid 2px #13739b;
     display: flex;
     gap: 20px;
+
+    @media screen and (max-width: 1500px) {
+        flex-direction: column;
+    }
 
     &::before {
         display: block;
@@ -298,8 +365,6 @@ section#profileContainer {
         font-size: 20px;
         margin-bottom: 5px;
     }
-
-
 }
 
 .overviewSubscription {
@@ -307,12 +372,22 @@ section#profileContainer {
     top: -25px;
     right: 50px;
 
+    @media screen and (max-width: 1500px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: initial;
+        margin-left: 70px;
+    }
+
     .subscribeCard {
         button {
             width: 100% !important;
         }
     }
 }
+
 
 .overviewPerson::before {
     content: url(../svg/logoPerson.svg);
@@ -366,7 +441,6 @@ section#profilePictureUpload.open {
         height: 500px;
         z-index: 9999;
 
-
         .c,
         .container {
             margin-left: 25px;
@@ -376,11 +450,11 @@ section#profilePictureUpload.open {
     }
 }
 
-@media only screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
     section#profileContainer {
-        margin-left: 25px !important;
-        margin-right: 25px !important;
-        min-width: 0px !important;
+        margin-left: 25px;
+        margin-right: 25px;
+        min-width: 0px;
 
         section#profileTabs {
 
@@ -388,11 +462,11 @@ section#profilePictureUpload.open {
             section#profileBilling,
             section#profileSubscription {
                 .overviewContainer {
-                    padding: 5px 0px 0 0px !important;
+                    padding: 5px 0px 0 0px;
 
                     .overviewPersonal {
-                        max-width: 60% !important;
-                        min-width: 50% !important;
+                        max-width: 60%;
+                        min-width: 50%;
                     }
                 }
             }
@@ -400,149 +474,100 @@ section#profilePictureUpload.open {
             section#profileEdit,
             section#profileSubscription {
                 .editContainer {
-                    padding: 5px 0px 0 0px !important;
+                    padding: 5px 0px 0 0px;
 
                     form {
-                        max-width: 60% !important;
-                        min-width: 50% !important;
+                        max-width: 60%;
+                        min-width: 50%;
                     }
                 }
             }
 
             section#profileDescription {
                 .descriptionContainer {
-                    padding: 5px 0px 0 0px !important;
+                    padding: 5px 0px 0 0px;
                 }
             }
 
             section#profileBillingEdit {
                 .editContainer {
-                    padding: 5px 0px 0 0px !important;
+                    padding: 5px 0px 0 0px;
 
                     form {
-                        min-width: 40% !important;
-                        width: auto !important;
+                        min-width: 40%;
+                        width: auto;
                     }
                 }
             }
         }
     }
-
-    .coursesContainer {
-        padding: 20px 0px 0 0px !important;
-
-        ul {
-            li {
-                column-gap: 20px !important;
-
-                .title {
-                    width: 30% !important;
-                }
-
-                .introduction {
-                    width: calc(100% - 35% - 75px - 100px - 40px - 150px) !important;
-                }
-            }
-        }
-    }
-
-    .overviewPerson,
-    .overviewMail,
-    .overviewPassword,
-    .overviewMore,
-    .overviewBilling,
-    .overviewBillingAddress,
-    .overviewBillingCity {
-        flex-direction: column !important;
-    }
-
-    .overviewSubscription {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        position: initial !important;
-        margin-left: 70px !important;
-    }
 }
 
-@media only screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     section#profileCover {
 
         .c,
         .container {
-            margin-left: 275px !important;
-            height: 280px !important;
+            margin-left: 275px;
+            height: 280px;
         }
     }
 
     section#profileContainer {
-        flex-direction: column !important;
+        flex-direction: column;
 
         section#profileNav {
-            min-height: 240px !important;
-            width: calc(220px - 50px) !important;
-            position: absolute !important;
-            left: 25px !important;
-            top: 140px !important;
+            min-height: 240px;
+            width: calc(220px - 50px);
+            position: absolute;
+            left: 25px;
+            top: 140px;
 
             nav {
                 ul {
                     li {
                         &:hover {
-                            padding-left: 25px !important;
+                            padding-left: 25px;
                         }
 
                         &.tabOpen {
-                            padding-left: 20px !important;
+                            padding-left: 20px;
                         }
                     }
                 }
 
                 form {
-                    padding-top: 13px !important;
-                    position: relative !important;
+                    padding-top: 13px;
+                    position: relative;
                 }
             }
         }
 
         section#profileTabs {
-            margin: 0 !important;
-            width: auto !important;
-        }
-    }
-
-    .coursesContainer {
-        ul {
-            li {
-                column-gap: 20px !important;
-
-                span {
-                    display: none !important;
-                }
-            }
+            margin: 0;
+            width: auto;
         }
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     section#profileCover {
 
         .c,
         .container {
-            margin-left: 250px !important;
-            height: 330px !important;
+            margin-left: 250px;
+            height: 330px;
         }
     }
 
     section#profileContainer {
         section#profileNav {
-            width: 145px !important;
-            min-height: 330px !important;
+            width: 145px;
+            min-height: 330px;
 
             nav {
                 form {
-                    padding-top: 62px !important;
+                    padding-top: 62px;
                 }
             }
         }
@@ -553,11 +578,11 @@ section#profilePictureUpload.open {
             section#profileBilling,
             section#profileSubscription {
                 .overviewContainer {
-                    flex-direction: column !important;
+                    flex-direction: column;
 
                     .overviewPersonal {
-                        max-width: 100% !important;
-                        min-width: 100% !important;
+                        max-width: 100%;
+                        min-width: 100%;
                     }
                 }
             }
@@ -566,11 +591,11 @@ section#profilePictureUpload.open {
             section#profileBillingEdit,
             section#profileSubscription {
                 .editContainer {
-                    flex-direction: column !important;
+                    flex-direction: column;
 
                     form {
-                        max-width: 100% !important;
-                        min-width: 100% !important;
+                        max-width: 100%;
+                        min-width: 100%;
                     }
                 }
             }
@@ -581,7 +606,7 @@ section#profilePictureUpload.open {
         ul {
             li {
                 .introduction {
-                    width: calc(65% - 75px - 100px - 40px - 80px) !important;
+                    width: calc(65% - 75px - 100px - 40px - 80px);
                 }
             }
         }
@@ -594,56 +619,56 @@ section#profilePictureUpload.open {
     .overviewBilling,
     .overviewBillingAddress,
     .overviewBillingCity {
-        flex-direction: row !important;
+        flex-direction: row;
     }
 
     .overviewSubscription {
-        margin-left: 0px !important;
-        margin-top: 40px !important;
+        margin-left: 0px;
+        margin-top: 40px;
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .coursesContainer {
         ul {
             li {
                 .date {
-                    display: none !important;
+                    display: none;
                 }
 
                 .introduction {
-                    width: 40% !important;
+                    width: 40%;
                 }
             }
         }
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .coursesContainer {
         ul {
             li {
-                height: 150px !important;
-                min-height: 150px !important;
-                flex-direction: column !important;
-                flex-wrap: wrap !important;
+                height: 150px;
+                min-height: 150px;
+                flex-direction: column;
+                flex-wrap: wrap;
 
                 img {
-                    height: 150px !important;
-                    width: 150px !important;
+                    height: 150px;
+                    width: 150px;
                 }
 
                 .title,
                 .introduction {
-                    width: calc(100% - 200px) !important;
-                    margin-bottom: 10px !important;
-                    white-space: nowrap !important;
-                    text-overflow: ellipsis !important;
-                    overflow: hidden !important;
+                    width: calc(100% - 200px);
+                    margin-bottom: 10px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                 }
 
                 button {
-                    width: calc(100% - 200px) !important;
+                    width: calc(100% - 200px);
                 }
             }
         }
@@ -656,93 +681,58 @@ section#profilePictureUpload.open {
     .overviewBilling,
     .overviewBillingAddress,
     .overviewBillingCity {
-        flex-direction: column !important;
+        flex-direction: column;
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     section#profileCover {
 
         .c,
         .container {
-            margin-left: 25px !important;
+            margin-left: 25px;
         }
     }
 
     section#profileContainer {
         section#profileNav {
-            min-height: 100px !important;
-            width: calc(100% - 55px) !important;
-            position: initial !important;
+            min-height: 100px;
+            width: calc(100% - 55px);
+            position: initial;
 
             nav {
                 ul {
                     li {
-                        padding-left: 0px !important;
+                        padding-left: 0px;
 
                         &:hover {
-                            padding-left: 20px !important;
+                            padding-left: 20px;
 
                             &::before {
-                                content: "" !important;
+                                content: "";
                             }
                         }
 
                         &.tabOpen {
-                            padding-left: 20px !important;
+                            padding-left: 20px;
                         }
                     }
                 }
 
                 form {
-                    padding-top: 0px !important;
-                    position: absolute !important;
-                    right: 0px !important;
-                    bottom: 0px !important;
-                    left: initial !important;
+                    padding-top: 0px;
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0px;
+                    left: initial;
                     width: 100px;
                 }
             }
         }
 
         section#profileTabs {
-            margin-top: 25px !important;
-            width: auto !important;
-        }
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    section#profilePictureUpload.open {
-        form {
-            width: 100% !important;
-        }
-    }
-
-    .coursesContainer {
-        ul {
-            li {
-                height: 100% !important;
-                min-height: 100% !important;
-                flex-wrap: wrap !important;
-
-                img {
-                    height: 100% !important;
-                    width: 100% !important;
-                }
-
-                .title,
-                .introduction {
-                    width: 100% !important;
-                    white-space: initial !important;
-                    text-overflow: wrap !important;
-                    overflow: inherit !important;
-                }
-
-                button {
-                    width: 100% !important;
-                }
-            }
+            margin-top: 25px;
+            width: auto;
         }
     }
 }

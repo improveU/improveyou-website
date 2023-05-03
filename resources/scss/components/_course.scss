@@ -15,6 +15,12 @@ section#profileDescription {
         overflow: hidden;
         position: relative;
         height: 300px;
+        
+        @media screen and (max-width: 1500px) {
+            margin-left: 25px;
+            margin-right: 25px;
+            min-width: 0px;
+        }
 
         img {
             object-fit: cover;
@@ -166,16 +172,6 @@ section#profileDescription {
                 padding: 5px 10px;
                 width: auto;
             }
-        }
-    }
-}
-
-@media only screen and (max-width: 1500px) {
-    section#course {
-        .cover {
-            margin-left: 25px;
-            margin-right: 25px;
-            min-width: 0px;
         }
     }
 }

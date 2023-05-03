@@ -71,8 +71,7 @@ section.splitTwo div.picture > h1 {
   width: calc(100% - 440px);
   text-align: end;
 }
-
-@media only screen and (max-width: 850px) {
+@media screen and (max-width: 850px) {
   section.splitTwo div.form {
     width: 100%;
   }
@@ -80,6 +79,7 @@ section.splitTwo div.picture > h1 {
     display: none;
   }
 }
+
 html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
@@ -142,14 +142,14 @@ section#navLinkTree nav .linkTree a {
   transition: all 0.5s;
   text-decoration: none;
 }
-
-@media only screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
   section#navLinkTree nav {
-    margin-left: 25px !important;
-    margin-right: 25px !important;
-    min-width: 0px !important;
+    margin-left: 25px;
+    margin-right: 25px;
+    min-width: 0px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -283,8 +283,7 @@ div.container.orange,
 div.c.orange {
   background-color: #FFF4EE;
 }
-
-@media only screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
   div.container,
   div.c {
     margin-left: 25px;
@@ -292,6 +291,7 @@ div.c.orange {
     min-width: 0px;
   }
 }
+
 form {
   height: 100%;
 }
@@ -573,8 +573,7 @@ header nav .linkWrapper a:active {
   border: none;
   outline: none;
 }
-
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   header nav .searchIndicator {
     justify-content: center;
     align-items: center;
@@ -587,35 +586,36 @@ header nav .linkWrapper a:active {
     margin: 0 10px 0 auto;
   }
   header nav .searchIndicator span {
-    display: none !important;
+    display: none;
   }
   header nav .searchIndicator img {
     height: 35px;
     width: 35px;
   }
   header nav .logoLink {
-    width: auto !important;
+    width: auto;
   }
   header nav .linkWrapper {
-    width: auto !important;
+    width: auto;
   }
 }
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
   header nav a .logoTitle {
     display: none;
   }
 }
-@media only screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   header nav .searchIndicator {
     width: 60px;
     margin: 0 8px 0 auto;
   }
   header nav .linkWrapper button,
   header nav .linkWrapper a {
-    width: 60px !important;
-    margin: 8px !important;
+    width: 60px;
+    margin: 8px;
   }
 }
+
 section#searchToggleMenu {
   display: block;
   position: absolute;
@@ -636,6 +636,11 @@ section#searchToggleMenu .searchFormWrapper {
   background-color: #f7f7f7;
   padding: 14px;
   border-radius: 12px;
+}
+@media screen and (max-width: 680px) {
+  section#searchToggleMenu .searchFormWrapper {
+    margin-top: 10px;
+  }
 }
 section#searchToggleMenu .searchFormWrapper .searchContainer {
   position: relative;
@@ -741,11 +746,6 @@ section#searchToggleMenu .searchFormWrapper ul ul li a:hover {
   outline: none;
 }
 
-@media only screen and (max-width: 680px) {
-  section#searchToggleMenu .searchFormWrapper {
-    margin-top: 10px;
-  }
-}
 footer {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 23px 30px;
   background-color: #29C59A;
@@ -764,6 +764,28 @@ footer nav {
   justify-content: space-around;
   flex-wrap: wrap;
   position: relative;
+}
+@media screen and (max-width: 1100px) {
+  footer nav .quicklinks {
+    width: 40vw;
+  }
+  footer nav .thirdparty {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  footer nav .quicklinks {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  footer nav .thirdparty {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  footer nav .socialmedia {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 footer nav dl dt {
   display: flex;
@@ -864,28 +886,6 @@ footer .toTop:hover {
   box-shadow: 0px 0px 20px -18px;
 }
 
-@media only screen and (max-width: 1100px) {
-  footer nav .quicklinks {
-    width: 40vw;
-  }
-  footer nav .thirdparty {
-    width: 40vw;
-  }
-}
-@media only screen and (max-width: 800px) {
-  footer nav .quicklinks {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  footer nav .thirdparty {
-    width: 100%;
-    margin-bottom: 25px;
-  }
-  footer nav .socialmedia {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
 ::-webkit-scrollbar {
   width: 16px;
 }
@@ -904,6 +904,14 @@ footer .toTop:hover {
 
 ::-webkit-scrollbar-track-piece {
   background: transparent;
+}
+
+::-moz-selection {
+  background: rgba(45, 150, 196, 0.5607843137);
+}
+
+::selection {
+  background: rgba(45, 150, 196, 0.5607843137);
 }
 
 header.homeHeader {
@@ -927,14 +935,14 @@ header.homeHeader header {
   max-width: 1300px;
   min-width: 1300px;
 }
-
-@media only screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
   .sectionTitle {
-    margin-left: 25px !important;
-    margin-right: 25px !important;
-    min-width: 0px !important;
+    margin-left: 25px;
+    margin-right: 25px;
+    min-width: 0px;
   }
 }
+
 .hiddenAnimation {
   opacity: 0;
   filter: blur(5px);
@@ -1011,21 +1019,21 @@ section#cover .linkDiscord a {
 section#cover .linkDiscord a:hover {
   background-color: rgba(255, 255, 255, 0.35);
 }
-
-@media only screen and (max-width: 720px) {
-  .linkDiscord {
+@media screen and (max-width: 720px) {
+  section#cover .linkDiscord {
     bottom: 120px !important;
     left: 50% !important;
     transform: translate(-50%) !important;
     width: 205px !important;
   }
-  .linkDiscord a {
+  section#cover .linkDiscord a {
     background-color: rgba(255, 255, 255, 0.35) !important;
   }
-  .catch h1 {
+  section#cover .catch h1 {
     font-size: 50px !important;
   }
 }
+
 section#phrases .phrasesWrapper {
   display: flex;
   flex-direction: row;
@@ -1075,24 +1083,24 @@ section#phrases .phrasesWrapper .phrasesContainer .phrase.second img {
   width: 16px;
   fill: #FFF4EE;
 }
-
-@media only screen and (max-width: 1050px) {
-  .phrasesWrapper {
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
+@media screen and (max-width: 1050px) {
+  section#phrases .phrasesWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .phrasesWrapper .phrasesContainer {
-    width: 100% !important;
+  section#phrases .phrasesWrapper .phrasesContainer {
+    width: 100%;
   }
-  .phrasesWrapper .phrasesContainer:nth-child(2) {
-    width: 100% !important;
+  section#phrases .phrasesWrapper .phrasesContainer:nth-child(2) {
+    width: 100%;
   }
-  .phrasesWrapper .phrasesContainer .phrase {
-    width: 100% !important;
-    padding: 40px 40px 40px 40px !important;
+  section#phrases .phrasesWrapper .phrasesContainer .phrase {
+    width: 100%;
+    padding: 40px 40px 40px 40px;
   }
 }
+
 section#categories {
   position: relative;
 }
@@ -1109,6 +1117,21 @@ section#categories .categoryWrapper .categoryContainer {
        column-gap: 50px;
   width: auto;
   height: auto;
+}
+@media screen and (max-width: 1079px) {
+  section#categories .categoryWrapper .categoryContainer {
+    grid-template-columns: 300px 300px;
+  }
+}
+@media screen and (max-width: 1079px) {
+  section#categories .categoryWrapper .categoryContainer {
+    grid-template-columns: 300px 300px;
+  }
+}
+@media screen and (max-width: 779px) {
+  section#categories .categoryWrapper .categoryContainer {
+    grid-template-columns: 300px;
+  }
 }
 section#categories .categoryWrapper .categoryContainer div {
   height: 300px;
@@ -1186,21 +1209,6 @@ section#categories .categoryWrapper .categoryContainer :nth-child(9) {
   transition-delay: 600ms;
 }
 
-@media only screen and (max-width: 1079px) {
-  .categoryContainer {
-    grid-template-columns: 300px 300px !important;
-  }
-}
-@media only screen and (max-width: 1079px) {
-  .categoryContainer {
-    grid-template-columns: 300px 300px !important;
-  }
-}
-@media only screen and (max-width: 779px) {
-  .categoryContainer {
-    grid-template-columns: 300px !important;
-  }
-}
 section#prices .subscribeWrapper {
   width: calc(100% - 50px);
   gap: 80px;
@@ -1213,12 +1221,12 @@ section#prices .subscribeWrapper {
   margin-right: 25px;
 }
 
-@media only screen and (max-width: 1299px) {
+@media screen and (max-width: 1299px) {
   .favorite {
     order: 1;
   }
 }
-@media only screen and (max-width: 871px) {
+@media screen and (max-width: 871px) {
   .favorite {
     order: -2;
   }
@@ -1269,24 +1277,24 @@ section#services .serviceWrapper .serviceContainer .description button .iconCorn
   width: 15px;
   height: 15px;
 }
-
-@media only screen and (max-width: 750px) {
-  .serviceContainer {
-    flex-direction: column !important;
-    height: auto !important;
-    width: 340px !important;
+@media screen and (max-width: 750px) {
+  section#services .serviceWrapper .serviceContainer {
+    flex-direction: column;
+    height: auto;
+    width: 340px;
   }
-  .serviceContainer .picture img {
-    height: auto !important;
-    width: 340px !important;
-    border-radius: 15px 15px 0 0 !important;
-    transform: translateY(8px) !important;
+  section#services .serviceWrapper .serviceContainer .picture img {
+    height: auto;
+    width: 340px;
+    border-radius: 15px 15px 0 0;
+    transform: translateY(8px);
   }
-  .serviceContainer .description {
-    height: 250px !important;
-    border-radius: 0 0 15px 15px !important;
+  section#services .serviceWrapper .serviceContainer .description {
+    height: 250px;
+    border-radius: 0 0 15px 15px;
   }
 }
+
 section#coursesPopular,
 section#coursesLatest,
 section#coursesRandom,
@@ -1332,6 +1340,17 @@ section#profilesAll a.btn {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 1500px) {
+  section#coursesPopular,
+  section#coursesLatest,
+  section#coursesRandom,
+  section#coursesAll,
+  section#profilesAll {
+    margin-left: 25px;
+    margin-right: 25px;
+    min-width: 0;
+  }
+}
 
 .courseCard {
   height: auto;
@@ -1339,7 +1358,7 @@ section#profilesAll a.btn {
   border-radius: 10px;
 }
 .courseCard a {
-  color: #1D212F;
+  color: #1d212f;
   text-decoration: none;
 }
 .courseCard a img {
@@ -1352,7 +1371,7 @@ section#profilesAll a.btn {
 .courseCard a .courseInfo {
   position: relative;
   transform: translateY(-6px);
-  background-color: #E5F6F8;
+  background-color: #e5f6f8;
   padding: 10px;
   border-radius: 0 0 15px 15px;
 }
@@ -1377,10 +1396,10 @@ section#profilesAll a.btn {
   width: 300px;
   height: auto;
   border-radius: 10px;
-  background-color: #E5F6F8;
+  background-color: #e5f6f8;
 }
 .profileCard a {
-  color: #1D212F;
+  color: #1d212f;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1395,17 +1414,6 @@ section#profilesAll a.btn {
   border-radius: 100%;
 }
 
-@media only screen and (max-width: 1500px) {
-  section#coursesPopular,
-  section#coursesLatest,
-  section#coursesRandom,
-  section#coursesAll,
-  section#profilesAll {
-    margin-left: 25px !important;
-    margin-right: 25px !important;
-    min-width: 0px !important;
-  }
-}
 section#publicProfile {
   margin-top: 50px;
 }
@@ -1425,7 +1433,7 @@ section#publicProfile .publicProfileCard .head {
 }
 section#publicProfile .publicProfileCard .head .person {
   margin-left: 30px;
-  color: #00617e;
+  color: #13739b;
   font-family: "BerlinTypeBold";
   font-size: 25px;
 }
@@ -1433,18 +1441,18 @@ section#publicProfile .publicProfileCard .head .person span {
   font-family: "BerlinType";
   font-size: 1.2rem;
 }
-
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   section#publicProfile .publicProfileCard .head {
-    flex-direction: column !important;
-    align-items: center !important;
+    flex-direction: column;
+    align-items: center;
   }
   section#publicProfile .publicProfileCard .head .person {
-    margin-top: 25px !important;
-    margin-left: 0 !important;
+    margin-top: 25px;
+    margin-left: 0;
     text-align: center;
   }
 }
+
 section#contact {
   padding-top: 50vh;
 }
@@ -1473,6 +1481,15 @@ section#profileDescription .cover {
   overflow: hidden;
   position: relative;
   height: 300px;
+}
+@media screen and (max-width: 1500px) {
+  section#course .cover,
+  section#publicProfile .cover,
+  section#profileDescription .cover {
+    margin-left: 25px;
+    margin-right: 25px;
+    min-width: 0px;
+  }
 }
 section#course .cover img,
 section#publicProfile .cover img,
@@ -1734,13 +1751,6 @@ section#profileDescription div.descriptionContainer .courseInfo .views {
   width: auto;
 }
 
-@media only screen and (max-width: 1500px) {
-  section#course .cover {
-    margin-left: 25px;
-    margin-right: 25px;
-    min-width: 0px;
-  }
-}
 section#faq {
   min-height: calc(100vh - 600px);
 }
@@ -1793,17 +1803,6 @@ section#faq .faqWrapper .faqContainer.hiddenAnswer::after {
   transform: rotateX(180deg);
 }
 
-@media screen and (min-width: 1000px) {
-  .faqWrapper {
-    flex-wrap: wrap !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-  }
-  .faqWrapper .faqContainer {
-    width: calc(50% - 50px) !important;
-  }
-}
 section#about {
   padding-top: 25px;
   min-height: calc(100vh - 600px);
@@ -1835,16 +1834,16 @@ section#about .aboutWrapper .aboutContainer .picture img {
 section#about .aboutWrapper .aboutContainer .description {
   padding: 30px;
   border-radius: 0 15px 15px 0;
-  background-color: #E5F6F8;
+  background-color: #BBE1FA;
   position: relative;
 }
 section#about .aboutWrapper .aboutContainer .description h1 {
   font-family: "BerlinTypeBold";
-  color: #05445E;
+  color: #0F4C75;
   font-size: 30px;
 }
 section#about .aboutWrapper .aboutContainer .description p {
-  color: #005F60;
+  color: #3282B8;
 }
 section#about .aboutWrapper .aboutContainer .description p span {
   font-family: "BerlinTypeBold";
@@ -1860,21 +1859,21 @@ section#about .aboutWrapper .aboutContainer .description button .iconCorner {
   height: 15px;
 }
 
-@media only screen and (max-width: 750px) {
+@media screen and (max-width: 750px) {
   .aboutContainer {
-    flex-direction: column !important;
-    height: auto !important;
-    width: 340px !important;
+    flex-direction: column;
+    height: auto;
+    width: 340px;
   }
   .aboutContainer .picture img {
-    height: auto !important;
-    width: 340px !important;
-    border-radius: 15px 15px 0 0 !important;
-    transform: translateY(8px) !important;
+    height: auto;
+    width: 340px;
+    border-radius: 15px 15px 0 0;
+    transform: translateY(8px);
   }
   .aboutContainer .description {
-    height: 250px !important;
-    border-radius: 0 0 15px 15px !important;
+    height: 250px;
+    border-radius: 0 0 15px 15px;
   }
 }
 section#error .logoForError {
@@ -2333,7 +2332,7 @@ section#error .footer-link {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   section#error .text {
     font-size: 50vw !important;
   }
@@ -2341,7 +2340,7 @@ section#error .footer-link {
     transform: translate(-50%, -50%) scale(0.7) !important;
   }
 }
-@media only screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
   section#error {
     overflow: hidden;
   }
@@ -2398,18 +2397,18 @@ section#profileCover .container h1 {
   text-align: center;
   font-size: 46px;
 }
-
-@media only screen and (max-width: 1100px) {
-  .c,
-  .container {
-    justify-content: center !important;
-    flex-wrap: wrap !important;
+@media screen and (max-width: 1100px) {
+  section#profileCover .c,
+  section#profileCover .container {
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  .c h1,
-  .container h1 {
-    font-size: clamp(1rem, 9vw, 3rem) !important;
+  section#profileCover .c h1,
+  section#profileCover .container h1 {
+    font-size: clamp(1rem, 9vw, 3rem);
   }
 }
+
 section#profileContainer {
   display: flex;
   margin-left: auto;
@@ -2589,7 +2588,57 @@ section#profileContainer section#profileTabs section#profileDescription button {
   font-family: "BerlinTypeBold";
   font-size: 14px;
 }
+@media screen and (max-width: 1500px) {
+  .coursesContainer {
+    padding: 20px 0px 0 0px;
+  }
+  .coursesContainer ul li {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .coursesContainer ul li .title {
+    width: 30%;
+  }
+  .coursesContainer ul li .introduction {
+    width: calc(65% - 75px - 100px - 40px - 150px);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .coursesContainer ul li {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .coursesContainer ul li span {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .coursesContainer ul li {
+    height: 100%;
+    min-height: 100%;
+    flex-wrap: wrap;
+  }
+  .coursesContainer ul li img {
+    height: 100%;
+    width: 100%;
+  }
+  .coursesContainer ul li .title,
+  .coursesContainer ul li .introduction {
+    width: 100%;
+    white-space: initial;
+    text-overflow: wrap;
+    overflow: inherit;
+  }
+  .coursesContainer ul li button {
+    width: 100%;
+  }
+}
 
+@media screen and (max-width: 500px) {
+  section#profilePictureUpload.open form {
+    width: 100%;
+  }
+}
 .overviewPerson,
 .overviewMail,
 .overviewPassword,
@@ -2603,6 +2652,17 @@ section#profileContainer section#profileTabs section#profileDescription button {
   border-bottom: solid 2px #13739b;
   display: flex;
   gap: 20px;
+}
+@media screen and (max-width: 1500px) {
+  .overviewPerson,
+  .overviewMail,
+  .overviewPassword,
+  .overviewMore,
+  .overviewBilling,
+  .overviewBillingAddress,
+  .overviewBillingCity {
+    flex-direction: column;
+  }
 }
 .overviewPerson::before,
 .overviewMail::before,
@@ -2643,6 +2703,16 @@ section#profileContainer section#profileTabs section#profileDescription button {
   position: absolute;
   top: -25px;
   right: 50px;
+}
+@media screen and (max-width: 1500px) {
+  .overviewSubscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: initial;
+    margin-left: 70px;
+  }
 }
 .overviewSubscription .subscribeCard button {
   width: 100% !important;
@@ -2707,148 +2777,111 @@ section#profilePictureUpload.open form .container {
   min-width: 0px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
   section#profileContainer {
-    margin-left: 25px !important;
-    margin-right: 25px !important;
-    min-width: 0px !important;
+    margin-left: 25px;
+    margin-right: 25px;
+    min-width: 0px;
   }
   section#profileContainer section#profileTabs section#profileOverview .overviewContainer,
   section#profileContainer section#profileTabs section#profileBilling .overviewContainer,
   section#profileContainer section#profileTabs section#profileSubscription .overviewContainer {
-    padding: 5px 0px 0 0px !important;
+    padding: 5px 0px 0 0px;
   }
   section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal,
   section#profileContainer section#profileTabs section#profileBilling .overviewContainer .overviewPersonal,
   section#profileContainer section#profileTabs section#profileSubscription .overviewContainer .overviewPersonal {
-    max-width: 60% !important;
-    min-width: 50% !important;
+    max-width: 60%;
+    min-width: 50%;
   }
   section#profileContainer section#profileTabs section#profileEdit .editContainer,
   section#profileContainer section#profileTabs section#profileSubscription .editContainer {
-    padding: 5px 0px 0 0px !important;
+    padding: 5px 0px 0 0px;
   }
   section#profileContainer section#profileTabs section#profileEdit .editContainer form,
   section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
-    max-width: 60% !important;
-    min-width: 50% !important;
+    max-width: 60%;
+    min-width: 50%;
   }
   section#profileContainer section#profileTabs section#profileDescription .descriptionContainer {
-    padding: 5px 0px 0 0px !important;
+    padding: 5px 0px 0 0px;
   }
   section#profileContainer section#profileTabs section#profileBillingEdit .editContainer {
-    padding: 5px 0px 0 0px !important;
+    padding: 5px 0px 0 0px;
   }
   section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form {
-    min-width: 40% !important;
-    width: auto !important;
-  }
-  .coursesContainer {
-    padding: 20px 0px 0 0px !important;
-  }
-  .coursesContainer ul li {
-    -moz-column-gap: 20px !important;
-         column-gap: 20px !important;
-  }
-  .coursesContainer ul li .title {
-    width: 30% !important;
-  }
-  .coursesContainer ul li .introduction {
-    width: calc(65% - 75px - 100px - 40px - 150px) !important;
-  }
-  .overviewPerson,
-  .overviewMail,
-  .overviewPassword,
-  .overviewMore,
-  .overviewBilling,
-  .overviewBillingAddress,
-  .overviewBillingCity {
-    flex-direction: column !important;
-  }
-  .overviewSubscription {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    position: initial !important;
-    margin-left: 70px !important;
+    min-width: 40%;
+    width: auto;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   section#profileCover .c,
   section#profileCover .container {
-    margin-left: 275px !important;
-    height: 280px !important;
+    margin-left: 275px;
+    height: 280px;
   }
   section#profileContainer {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   section#profileContainer section#profileNav {
-    min-height: 240px !important;
-    width: 170px !important;
-    position: absolute !important;
-    left: 25px !important;
-    top: 140px !important;
+    min-height: 240px;
+    width: 170px;
+    position: absolute;
+    left: 25px;
+    top: 140px;
   }
   section#profileContainer section#profileNav nav ul li:hover {
-    padding-left: 25px !important;
+    padding-left: 25px;
   }
   section#profileContainer section#profileNav nav ul li.tabOpen {
-    padding-left: 20px !important;
+    padding-left: 20px;
   }
   section#profileContainer section#profileNav nav form {
-    padding-top: 13px !important;
-    position: relative !important;
+    padding-top: 13px;
+    position: relative;
   }
   section#profileContainer section#profileTabs {
-    margin: 0 !important;
-    width: auto !important;
-  }
-  .coursesContainer ul li {
-    -moz-column-gap: 20px !important;
-         column-gap: 20px !important;
-  }
-  .coursesContainer ul li span {
-    display: none !important;
+    margin: 0;
+    width: auto;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   section#profileCover .c,
   section#profileCover .container {
-    margin-left: 250px !important;
-    height: 330px !important;
+    margin-left: 250px;
+    height: 330px;
   }
   section#profileContainer section#profileNav {
-    width: 145px !important;
-    min-height: 330px !important;
+    width: 145px;
+    min-height: 330px;
   }
   section#profileContainer section#profileNav nav form {
-    padding-top: 62px !important;
+    padding-top: 62px;
   }
   section#profileContainer section#profileTabs section#profileOverview .overviewContainer,
   section#profileContainer section#profileTabs section#profileBilling .overviewContainer,
   section#profileContainer section#profileTabs section#profileSubscription .overviewContainer {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   section#profileContainer section#profileTabs section#profileOverview .overviewContainer .overviewPersonal,
   section#profileContainer section#profileTabs section#profileBilling .overviewContainer .overviewPersonal,
   section#profileContainer section#profileTabs section#profileSubscription .overviewContainer .overviewPersonal {
-    max-width: 100% !important;
-    min-width: 100% !important;
+    max-width: 100%;
+    min-width: 100%;
   }
   section#profileContainer section#profileTabs section#profileEdit .editContainer,
   section#profileContainer section#profileTabs section#profileBillingEdit .editContainer,
   section#profileContainer section#profileTabs section#profileSubscription .editContainer {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   section#profileContainer section#profileTabs section#profileEdit .editContainer form,
   section#profileContainer section#profileTabs section#profileBillingEdit .editContainer form,
   section#profileContainer section#profileTabs section#profileSubscription .editContainer form {
-    max-width: 100% !important;
-    min-width: 100% !important;
+    max-width: 100%;
+    min-width: 100%;
   }
   .coursesContainer ul li .introduction {
-    width: calc(65% - 75px - 100px - 40px - 80px) !important;
+    width: calc(65% - 75px - 100px - 40px - 80px);
   }
   .overviewPerson,
   .overviewMail,
@@ -2857,42 +2890,42 @@ section#profilePictureUpload.open form .container {
   .overviewBilling,
   .overviewBillingAddress,
   .overviewBillingCity {
-    flex-direction: row !important;
+    flex-direction: row;
   }
   .overviewSubscription {
-    margin-left: 0px !important;
-    margin-top: 40px !important;
+    margin-left: 0px;
+    margin-top: 40px;
   }
 }
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .coursesContainer ul li .date {
-    display: none !important;
+    display: none;
   }
   .coursesContainer ul li .introduction {
-    width: 40% !important;
+    width: 40%;
   }
 }
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .coursesContainer ul li {
-    height: 150px !important;
-    min-height: 150px !important;
-    flex-direction: column !important;
-    flex-wrap: wrap !important;
+    height: 150px;
+    min-height: 150px;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
   .coursesContainer ul li img {
-    height: 150px !important;
-    width: 150px !important;
+    height: 150px;
+    width: 150px;
   }
   .coursesContainer ul li .title,
   .coursesContainer ul li .introduction {
-    width: calc(100% - 200px) !important;
-    margin-bottom: 10px !important;
-    white-space: nowrap !important;
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
+    width: calc(100% - 200px);
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .coursesContainer ul li button {
-    width: calc(100% - 200px) !important;
+    width: calc(100% - 200px);
   }
   .overviewPerson,
   .overviewMail,
@@ -2901,66 +2934,42 @@ section#profilePictureUpload.open form .container {
   .overviewBilling,
   .overviewBillingAddress,
   .overviewBillingCity {
-    flex-direction: column !important;
+    flex-direction: column;
   }
 }
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
   section#profileCover .c,
   section#profileCover .container {
-    margin-left: 25px !important;
+    margin-left: 25px;
   }
   section#profileContainer section#profileNav {
-    min-height: 100px !important;
-    width: calc(100% - 55px) !important;
-    position: initial !important;
+    min-height: 100px;
+    width: calc(100% - 55px);
+    position: initial;
   }
   section#profileContainer section#profileNav nav ul li {
-    padding-left: 0px !important;
+    padding-left: 0px;
   }
   section#profileContainer section#profileNav nav ul li:hover {
-    padding-left: 20px !important;
+    padding-left: 20px;
   }
   section#profileContainer section#profileNav nav ul li:hover::before {
-    content: "" !important;
+    content: "";
   }
   section#profileContainer section#profileNav nav ul li.tabOpen {
-    padding-left: 20px !important;
+    padding-left: 20px;
   }
   section#profileContainer section#profileNav nav form {
-    padding-top: 0px !important;
-    position: absolute !important;
-    right: 0px !important;
-    bottom: 0px !important;
-    left: initial !important;
+    padding-top: 0px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: initial;
     width: 100px;
   }
   section#profileContainer section#profileTabs {
-    margin-top: 25px !important;
-    width: auto !important;
-  }
-}
-@media only screen and (max-width: 500px) {
-  section#profilePictureUpload.open form {
-    width: 100% !important;
-  }
-  .coursesContainer ul li {
-    height: 100% !important;
-    min-height: 100% !important;
-    flex-wrap: wrap !important;
-  }
-  .coursesContainer ul li img {
-    height: 100% !important;
-    width: 100% !important;
-  }
-  .coursesContainer ul li .title,
-  .coursesContainer ul li .introduction {
-    width: 100% !important;
-    white-space: initial !important;
-    text-overflow: wrap !important;
-    overflow: inherit !important;
-  }
-  .coursesContainer ul li button {
-    width: 100% !important;
+    margin-top: 25px;
+    width: auto;
   }
 }
 section#profileFix {

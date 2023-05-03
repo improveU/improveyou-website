@@ -60,16 +60,3 @@ section#faq {
         }
     }
 }
-
-@media screen and (min-width: 1000px) {
-    .faqWrapper {
-        flex-wrap: wrap !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: flex-start !important;
-
-        .faqContainer {
-            width: calc(50% - 50px) !important;
-        }
-    }
-}

@@ -554,7 +554,7 @@ section#error {
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     section#error {
         .text {
             font-size: 50vw !important;
@@ -566,7 +566,7 @@ section#error {
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
     section#error {
         overflow: hidden;
 

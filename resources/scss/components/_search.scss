@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+$color-blue: #13739b;
+$color-dark: #1d212f;
+$color-light: #e5f6f8;
+
 section#coursesPopular,
 section#coursesLatest,
 section#coursesRandom,
@@ -26,9 +30,16 @@ section#profilesAll {
         margin-left: auto;
         margin-right: auto;
     }
-    a.btn{
+
+    a.btn {
         display: flex;
         align-items: center;
+    }
+
+    @media screen and (max-width: 1500px) {
+        margin-left: 25px;
+        margin-right: 25px;
+        min-width: 0;
     }
 }
 
@@ -38,7 +49,7 @@ section#profilesAll {
     border-radius: 10px;
 
     a {
-        color: #1D212F;
+        color: $color-dark;
         text-decoration: none;
 
         img {
@@ -51,7 +62,7 @@ section#profilesAll {
         .courseInfo {
             position: relative;
             transform: translateY(-6px);
-            background-color: #E5F6F8;
+            background-color: $color-light;
             padding: 10px;
             border-radius: 0 0 15px 15px;
 
@@ -82,10 +93,10 @@ section#profilesAll {
     width: 300px;
     height: auto;
     border-radius: 10px;
-    background-color: #E5F6F8;
+    background-color: $color-light;
 
     a {
-        color: #1D212F;
+        color: $color-dark;
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -98,19 +109,6 @@ section#profilesAll {
             width: 70px;
             border-radius: 100%;
         }
-    }
-}
-
-@media only screen and (max-width: 1500px) {
-
-    section#coursesPopular,
-    section#coursesLatest,
-    section#coursesRandom,
-    section#coursesAll,
-    section#profilesAll {
-        margin-left: 25px !important;
-        margin-right: 25px !important;
-        min-width: 0px !important;
     }
 }
 
@@ -130,11 +128,11 @@ section#publicProfile {
             align-items: center;
             margin-bottom: 25px;
             padding-bottom: 25px;
-            border-bottom: solid 2px #13739b;
+            border-bottom: solid 2px $color-blue;
 
             .person {
                 margin-left: 30px;
-                color: #00617e;
+                color: $color-blue;
                 font-family: "BerlinTypeBold";
                 font-size: 25px;
 
@@ -144,19 +142,15 @@ section#publicProfile {
                 }
             }
         }
-    }
-}
 
-@media only screen and (max-width: 600px) {
-    section#publicProfile {
-        .publicProfileCard {
+        @media screen and (max-width: 600px) {
             .head {
-                flex-direction: column !important;
-                align-items: center !important;
+                flex-direction: column;
+                align-items: center;
 
                 .person {
-                    margin-top: 25px !important;
-                    margin-left: 0 !important;
+                    margin-top: 25px;
+                    margin-left: 0;
                     text-align: center;
                 }
             }

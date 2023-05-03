@@ -137,12 +137,8 @@ header {
                 }
             }
         }
-    }
-}
 
-@media only screen and (max-width: 800px) {
-    header {
-        nav {
+        @media screen and (max-width: 800px) {
             .searchIndicator {
                 justify-content: center;
                 align-items: center;
@@ -151,55 +147,44 @@ header {
                 height: 50px;
                 border-radius: 8px;
                 background-color: #E5F6F8;
-                padding: 0;
+                padding: 0; 
                 margin: 0 10px 0 auto;
 
                 span {
-                    display: none !important;
+                    display: none;
                 }
-
                 img {
                     height: 35px;
                     width: 35px;
                 }
             }
-
             .logoLink {
-                width: auto !important;
+                width: auto;
             }
-
             .linkWrapper {
-                width: auto !important;
+                width: auto;
             }
         }
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    header {
-        nav {
+        
+        @media screen and (max-width: 700px) {
             a {
                 .logoTitle {
                     display: none;
                 }
             }
         }
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    header {
-        nav {
+        
+        @media screen and (max-width: 450px) {
             .searchIndicator {
                 width: 60px;
-                margin: 0 8px 0 auto;;
+                margin: 0 8px 0 auto;
             }
 
             .linkWrapper {
                 button,
                 a {
-                    width: 60px !important;
-                    margin: 8px !important;
+                    width: 60px;
+                    margin: 8px;
                 }
             }
         }
@@ -226,6 +211,10 @@ section#searchToggleMenu {
         background-color: #f7f7f7;
         padding: 14px;
         border-radius: 12px;
+
+        @media screen and (max-width: 680px) {
+            margin-top: 10px;
+        }
 
         .searchContainer {
             position: relative;
@@ -339,14 +328,6 @@ section#searchToggleMenu {
                     }
                 }
             }
-        }
-    }
-}
-
-@media only screen and (max-width: 680px) {
-    section#searchToggleMenu {
-        .searchFormWrapper {
-            margin-top: 10px;
         }
     }
 }
