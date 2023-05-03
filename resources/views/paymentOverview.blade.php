@@ -12,9 +12,9 @@
         <section id="prices">
             <h1 class="sectionTitle">Prices</h1>
             <div class="subscribeWrapper">
-                <x-payment.pcardBeginner> Subscribe now</x-payment.pcardBeginner>
-                <x-payment.pcardImprover> Subscribe now</x-payment.pcardImprover>
-                <x-payment.pcardCreator> Subscribe now</x-payment.pcardCreator>
+                <x-payment.pCardBeginner> Subscribe now</x-payment.pCardBeginner>
+                <x-payment.pCardImprover> Subscribe now</x-payment.pCardImprover>
+                <x-payment.pCardCreator> Subscribe now</x-payment.pCardCreator>
             </div>
         </section>
     </section>

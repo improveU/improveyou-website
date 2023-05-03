@@ -119,9 +119,9 @@
 <section id="prices">
     <h1 class="sectionTitle">Prices</h1>
     <div class="subscribeWrapper hiddenAnimation">
-        <x-payment.pcardBeginner> Join now</x-payment.pcardBeginner>
-        <x-payment.pcardImprover> Join now</x-payment.pcardImprover>
-        <x-payment.pcardCreator> Join now</x-payment.pcardCreator>
+        <x-payment.pCardBeginner> Join now</x-payment.pCardBeginner>
+        <x-payment.pCardImprover> Join now</x-payment.pCardImprover>
+        <x-payment.pCardCreator> Join now</x-payment.pCardCreator>
     </div>
 </section>
 
