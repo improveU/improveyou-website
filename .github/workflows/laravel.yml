@@ -35,7 +35,5 @@ jobs:
         DB_CONNECTION: mysql
         DB_DATABASE: database/improveyou_inf20s.mysql
       run: vendor/bin/phpunit
-    - name: Migrate DB
-      run: php artisan migrate
     - name: Create Link btw public and storage folder
       run: php artisan storage:link
