@@ -11,29 +11,20 @@ jobs:
 
     runs-on: ubuntu-latest
     services:
-      # mysql-service Label used to access the service container
-      mysql-service:
-        # Docker Hub image (also with version)
-        image: mysql:8.0.30
+      mysql:
+        image: mysql:8.0
         env:
-          ## Accessing to Github secrets, where you can store your configuration
           MYSQL_ROOT_PASSWORD: sml@12345!
           MYSQL_DATABASE: improveyou_inf20s
-        ## map the "external" 33306 port with the "internal" 3306
         ports:
-          - 33306:3306
-        # Set health checks to wait until mysql database has started (it takes some seconds to start)
-        options: >-
-          --health-cmd="mysqladmin ping"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
+          - 3306:3306
           
     steps:
+    - uses: actions/checkout@v3
+    - name: Setup PHP
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
         php-version: '8.2.5'
-    - uses: actions/checkout@v3
     - name: Copy .env
       run: cp .env.example .env
     - name: Install Composer
@@ -42,14 +33,13 @@ jobs:
       run: npm install
     - name: Generate key
       run: php artisan key:generate
-    - name: Directory Permissions
-      run: chmod -R 777 storage bootstrap/cache
     - name: Create Link btw public and storage folder
       run: php artisan storage:link
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
+    - name: Run database migrations
       env:
         DB_HOST: mysql
+      run: php artisan migrate --force
+    - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: |
-        php artisan migrate
         vendor/phpunit/phpunit/phpunit
 
