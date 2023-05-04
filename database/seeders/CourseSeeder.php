@@ -60,7 +60,7 @@ Thank you for choosing our platform, and please don't hesitate to contact us if 
         ]);
 
         $course00 = Course::create([
-            'title' => 'Home Workout with body weight',
+            'title' => 'Body weight home workout',
             'introduction' => '6 Effective Exercises to Get Fit',
             'course_description' => '1. Squats - 3 sets of 12-15 repetitions
 2. Push-ups - 3 sets of 10-12 repetitions

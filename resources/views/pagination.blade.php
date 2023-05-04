@@ -3,11 +3,11 @@
         <ul class="pagination">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                <li class="arrow left disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
                     <img src="{{ asset('svg/arrowLeft.svg') }}" alt="arrow-left" class="disabled">
                 </li>
             @else
-                <li>
+                <li class="arrow left">
                     <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">
                         <img src="{{ asset('svg/arrowLeft.svg') }}" alt="arrow-left">
                     </a>
@@ -35,14 +35,14 @@
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
-                <li>
+                <li class="arrow right">
                     <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">
-                        <img src="{{ asset('svg/arrowRight.svg') }}" alt="arrow-right" class="disabled">
+                        <img src="{{ asset('svg/arrowRight.svg') }}" alt="arrow-right">
                     </a>
                 </li>
             @else
-                <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
-                    <img src="{{ asset('svg/arrowRight.svg') }}" alt="arrow-right">
+                <li class="arrow right disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+                    <img src="{{ asset('svg/arrowRight.svg') }}" alt="arrow-right" class="disabled">
                 </li>
             @endif
         </ul>

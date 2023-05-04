@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         User::truncate();
 
         $this->call([
-            //CourseSeeder::class,
+            CourseSeeder::class,
         ]);
 
         //create the three subscriptions models
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
         //]);
 
         //Seed the rest of the database using factories
-        User::factory(250)->create();
-        Course::factory(50)->create();
+        //User::factory(250)->create();
+        //Course::factory(50)->create();
     }
 }

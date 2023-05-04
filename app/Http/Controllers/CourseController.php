@@ -62,7 +62,7 @@ class CourseController extends Controller
 
         return view('coursesSpecific', [
             'courses' => $output,
-            'category' => $category
+            'category' => ucfirst($category)
         ]);
     }
 

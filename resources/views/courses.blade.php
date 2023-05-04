@@ -23,6 +23,14 @@
                             <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">
                             <div class="courseInfo">
                                 <h2>{{ $course->title }}</h2>
+                                <div class="introduction">
+                                    {{ $course->introduction }}
+                                </div>
+                                <div class="tags">
+                                    @foreach($course->tags as $tag)
+                                        <div> {{$tag->name}} </div>
+                                    @endforeach
+                                </div>
                                 <div class="info">
                                     <div>{{ $course->views }} views</div>
                                     <div>{{ $course->created_at->format('Y-m-d') }}</div>

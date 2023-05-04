@@ -1298,6 +1298,10 @@ section#services .serviceWrapper .serviceContainer .description button .iconCorn
   }
 }
 
+section#coursesAll {
+  min-height: calc(100vh - 546px);
+}
+
 section#coursesPopular,
 section#coursesLatest,
 section#coursesRandom,
@@ -1359,6 +1363,7 @@ section#profilesAll a.btn {
   height: auto;
   width: 300px;
   border-radius: 10px;
+  transition: 0.3s all;
 }
 .courseCard a {
   color: #1d212f;
@@ -1379,20 +1384,50 @@ section#profilesAll a.btn {
   border-radius: 0 0 15px 15px;
 }
 .courseCard a .courseInfo h2 {
-  margin: 5px 0 5px 0 !important;
-  font-size: 24px;
-  line-clamp: 2;
-  box-orient: vertical;
+  margin: 0 !important;
+  font-size: 22px;
   word-wrap: break-word;
-  display: block;
-  height: 60px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: grid;
+  align-items: end;
+  height: 30px;
   overflow: hidden;
-  line-height: 1.1em;
+  line-height: 1.2em;
   word-break: break-word;
+}
+.courseCard a .courseInfo .introduction {
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: grid;
+  align-items: start;
+  height: 45px;
+  overflow: hidden;
+  line-height: 1.2em;
+  word-break: break-word;
+  margin-bottom: 10px;
+}
+.courseCard a .courseInfo .tags {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: auto;
+}
+.courseCard a .courseInfo .tags div {
+  font-size: 15px;
+  background-color: rgba(255, 173, 95, 0.8);
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 .courseCard a .courseInfo .info {
   display: flex;
   justify-content: space-around;
+}
+.courseCard:hover {
+  transform: scale(1.1);
 }
 
 .profileCard {
@@ -1766,14 +1801,17 @@ section#coursePages nav ul.pagination {
   justify-content: center;
 }
 section#coursePages nav ul.pagination li {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   background-color: #E5F6F8;
-  margin: 0 10px;
+  border-radius: 8px;
+  margin: 0 6px;
   padding: auto;
+  font-family: "BerlinTypeBold";
+  font-size: 20px;
+  transition: 0.5s all;
 }
-section#coursePages nav ul.pagination li a,
-section#coursePages nav ul.pagination li span {
+section#coursePages nav ul.pagination li a, section#coursePages nav ul.pagination li span {
   text-decoration: none;
   text-align: center;
   align-items: center;
@@ -1781,6 +1819,55 @@ section#coursePages nav ul.pagination li span {
   height: 100%;
   width: 100%;
 }
+section#coursePages nav ul.pagination li a {
+  color: #13739b;
+}
+section#coursePages nav ul.pagination li span {
+  color: #fff;
+}
+section#coursePages nav ul.pagination li.arrow {
+  background-color: transparent;
+  text-align: center;
+  align-items: center;
+  display: grid;
+  width: auto;
+}
+section#coursePages nav ul.pagination li.arrow.right {
+  padding-left: 10px;
+  justify-content: start;
+  transition: 0.5s all;
+}
+section#coursePages nav ul.pagination li.arrow.right:hover {
+  transform: translateX(5px);
+}
+section#coursePages nav ul.pagination li.arrow.left {
+  padding-right: 10px;
+  justify-content: end;
+  transition: 0.5s all;
+}
+section#coursePages nav ul.pagination li.arrow.left:hover {
+  transform: translateX(-5px);
+}
+section#coursePages nav ul.pagination li.arrow.disabled {
+  filter: grayscale(1) opacity(0.2);
+}
+section#coursePages nav ul.pagination li.arrow.disabled:hover {
+  transform: translateX(0);
+}
+section#coursePages nav ul.pagination li.arrow img {
+  height: 40px;
+}
+section#coursePages nav ul.pagination li:hover {
+  transform: scale(1.1);
+}
+section#coursePages nav ul.pagination li.active {
+  background-color: #f78104;
+  color: #fff;
+}
+section#coursePages nav ul.pagination li.active:hover {
+  transform: scale(1);
+}
+
 section#faq {
   min-height: calc(100vh - 600px);
 }
