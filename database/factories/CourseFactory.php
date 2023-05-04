@@ -16,7 +16,6 @@ class CourseFactory extends Factory
             'image_cover_path' => '/covers/course01.webp',
             'views' => fake()->numberBetween(),
             'creator_id' => fake()->numberBetween(1, 250),
-            'category_id' => fake()->numberBetween(1, 9)
         ];
     }
 }

@@ -21,7 +21,6 @@ return new class extends Migration {
             $table->unsignedInteger('views');
 
             $table->bigInteger('creator_id');
-            $table->bigInteger('category_id');
 
         });
     }

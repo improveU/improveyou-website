@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Category;
 use App\Models\Course;
 use App\Models\Subscription;
 use App\Models\Tag;
@@ -17,17 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
-
         //delete all contents of all tables
-        Category::truncate();
         Course::truncate();
         Subscription::truncate();
         Tag::truncate();
         User::truncate();
 
         $this->call([
-            //CourseSeeder::class,
+            CourseSeeder::class,
         ]);
 
         //create the three subscriptions models
@@ -53,18 +49,8 @@ class DatabaseSeeder extends Seeder
             'monthlyPayment' => false,
         ]);
 
-        //Create Admin user
-        //User::create([
-        //    'first_name' => 'admin@admin',
-        //    'last_name' => 'admin@admin',
-        //    'username' => 'admin@admin',
-        //    'email' => 'admin@admin',
-        //    'password' => 'admin@admin',
-        //    'subscription_id' => '3'
-        //]);
-
         //Seed the rest of the database using factories
-        User::factory(250)->create();
-        Course::factory(50)->create();
+        //User::factory(250)->create();
+        //Course::factory(50)->create();
     }
 }
