@@ -47,6 +47,8 @@ jobs:
     - name: Create Link btw public and storage folder
       run: php artisan storage:link
     - name: Execute tests (Unit and Feature tests) via PHPUnit
+      env:
+        DB_HOST: mysql
       run: |
         php artisan migrate
         vendor/phpunit/phpunit/phpunit
