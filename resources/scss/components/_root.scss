@@ -294,7 +294,6 @@ form {
                 width: 100% !important;
             }
 
-
             span.invalidFeedback {
                 font-family: "BerlinType";
                 font-size: 12px;
@@ -310,10 +309,19 @@ form {
                     color: $footerHighlight
                 }
             }
+
+            div{
+                a{
+                    p{
+                        text-decoration: underline;
+                        color: #1D212F;
+                    }
+                }
+            }
         }
 
         .inputWrapperFix {
-            height: calc(100% - 290px);
+            height: 100%;
         }
 
         .submitContainer {

@@ -26,25 +26,29 @@ class ForgotPasswordController extends Controller
         ]);
 
         $token = Str::random(64);
+        $email = $request->email;
+
+        $oldToken = DB::table('password_reset_tokens')->where('email', $email)->first();
+        if ($oldToken) DB::table('password_reset_tokens')->where('email', $email)->delete();
 
         DB::table('password_reset_tokens')->insert([
-            'email' => $request->email,
+            'email' => $email,
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
 
-
-        Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
-            $message->to($request->email);
+        Mail::send('email.forgetPassword', ['token' => $token], function($message) use($email){
+            $message->to($email);
             $message->subject('Reset Password');
         });
 
-        return back()->with('message', 'We have e-mailed your password reset link!');
+        return back()->with('status', 'We have e-mailed your password reset link!');
     }
+
 
     public function showResetPasswordForm($token)
     {
-        return view('forgetPasswordLink', ['token' => $token]);
+        return view('resetPassword', ['token' => $token]);
     }
 
 
@@ -60,18 +64,13 @@ class ForgotPasswordController extends Controller
             ->where([
                 'email' => $request->email,
                 'token' => $request->token
-            ])
-            ->first();
+            ])->first();
 
-        if (!$updatePassword) {
-            return back()->withInput()->with('error', 'Invalid token!');
-        }
-
-        $user = User::where('email', $request->email)
-            ->update(['password' => Hash::make($request->password)]);
+        if (!$updatePassword) return back()->withInput()->with('error', 'Invalid token!');
+        $user = User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
 
         DB::table('password_reset_tokens')->where(['email' => $request->email])->delete();
 
-        return redirect('/login')->with('message', 'Your password has been changed!');
+        return redirect('/login')->with('status', 'Your password has been changed!');
     }
 }

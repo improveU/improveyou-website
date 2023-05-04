@@ -369,8 +369,12 @@ form.formWrapper .inputContainer p {
 form.formWrapper .inputContainer p :active {
   color: #1D212F;
 }
+form.formWrapper .inputContainer div a p {
+  text-decoration: underline;
+  color: #1D212F;
+}
 form.formWrapper .inputWrapperFix {
-  height: calc(100% - 290px);
+  height: 100%;
 }
 form.formWrapper .submitContainer p {
   font-size: 14px;
@@ -1344,8 +1348,11 @@ section#coursesLatest a.btn,
 section#coursesRandom a.btn,
 section#coursesAll a.btn,
 section#profilesAll a.btn {
+  text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1500px) {
   section#coursesPopular,
@@ -1414,11 +1421,12 @@ section#profilesAll a.btn {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  height: auto;
+  height: 30px;
+  overflow: hidden;
 }
 .courseCard a .courseInfo .tags div {
   font-size: 15px;
-  background-color: rgba(255, 173, 95, 0.8);
+  background-color: #ffcfb5;
   border-radius: 10px;
   padding: 5px 10px;
 }

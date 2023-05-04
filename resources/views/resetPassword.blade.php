@@ -7,7 +7,7 @@
 @section('title', 'Reset Password')
 
 @section('splitOne')
-    <x-formResetPassword/>
+    <x-formResetPassword :token="$token" />
 @endsection
 
 @section('splitTwo')

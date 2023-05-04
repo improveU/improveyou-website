@@ -36,8 +36,11 @@ section#profilesAll {
     }
 
     a.btn {
+        text-decoration: none;
         display: flex;
         align-items: center;
+        justify-content: center;
+        margin: 0 auto;
     }
 
     @media screen and (max-width: 1500px) {
@@ -105,11 +108,12 @@ section#profilesAll {
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 10px;
-                height: auto;
+                height: 30px;
+                overflow: hidden;
 
                 div {
                     font-size: 15px;
-                    background-color: #ffad5fcc;
+                    background-color: #ffcfb5;
                     border-radius: 10px;
                     padding: 5px 10px;
                 }

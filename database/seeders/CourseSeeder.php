@@ -46,8 +46,7 @@ class CourseSeeder extends Seeder
             'city' => '-',
             'country' => '-',
             'zip_code' => '-',
-            'description' =>
-                "We are the admin team behind the scenes of this platform, working hard to ensure that everything runs smoothly and that our users have the best possible experience. We are dedicated to providing a safe and inclusive environment for everyone who uses our platform, and we work tirelessly to keep it that way.
+            'description' => "We are the admin team behind the scenes of this platform, working hard to ensure that everything runs smoothly and that our users have the best possible experience. We are dedicated to providing a safe and inclusive environment for everyone who uses our platform, and we work tirelessly to keep it that way.
 
 
 As the admin account, we are responsible for managing user accounts, reviewing content, and handling any issues that may arise. We are committed to being transparent and responsive, and we welcome feedback and suggestions from our community.
@@ -76,7 +75,7 @@ Start with 3 sets of squats, 12-15 repetitions each, to target your lower body. 
 Remember to take a day off between workouts, and customize the workout to suit your needs by adding other exercises or adjusting the repetitions. Get started with this effective home workout today and see the results!',
             'image_thumbnail_path' => '/thumbnails/course00.webp',
             'image_cover_path' => '/covers/course00.webp',
-            'views' => 3,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Bodyweight', 'Home workout', 'Fitness', 'Exercises', 'Push-ups'];
@@ -97,7 +96,7 @@ Remember to take a day off between workouts, and customize the workout to suit y
 Remember to stretch after your workout to help prevent injury and reduce muscle soreness. Aim to do this workout 2-3 times per week, with at least one day of rest in between workouts.',
             'image_thumbnail_path' => '/thumbnails/course01.webp',
             'image_cover_path' => '/covers/course01.webp',
-            'views' => 8,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Fitness', 'Gym', 'Strength Training', 'Beginner', 'Full Body Workout'];
@@ -115,7 +114,7 @@ Remember to stretch after your workout to help prevent injury and reduce muscle 
 Repeat each stretch 2-3 times on each side. Breathe deeply in and out and hold each position for at least 30 seconds. Avoid jerky movements and pay attention to your body. If you feel pain, stop the stretch and seek medical attention.',
             'image_thumbnail_path' => '/thumbnails/course02.webp',
             'image_cover_path' => '/covers/course02.webp',
-            'views' => 2,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Flexibility', 'Stretching', 'Mobility', 'Beginner', 'Exercise', 'Wellness'];
@@ -135,7 +134,7 @@ Whether you're training for a race or simply looking to improve your health and 
 Remember to wear appropriate running shoes and stay hydrated throughout your workout. Adjust the pace and intensity of the intervals based on your fitness level and comfort level. You can also vary the terrain by running uphill or on a soft surface like grass or sand to challenge your muscles in different ways. With regular practice, this workout can help improve your endurance, speed, and overall cardiovascular health.",
             'image_thumbnail_path' => '/thumbnails/course03.webp',
             'image_cover_path' => '/covers/course03.webp',
-            'views' => 12,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Running', 'Cardio', 'Interval Training', 'Endurance', 'Fitness', 'Advanced'];
@@ -155,7 +154,7 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
 **Remember** that meditation is a personal practice, and there is no one 'right' way to do it. Experiment with different techniques and find what works best for you. With regular practice, you may begin to notice improvements in your focus, stress levels, and overall sense of well-being.",
             'image_thumbnail_path' => '/thumbnails/course04.webp',
             'image_cover_path' => '/covers/course04.webp',
-            'views' => 12,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Meditation', 'Relax', 'Mindfulness', 'Focus', 'Beginners', 'Mentalhealth'];
@@ -182,7 +181,7 @@ Here are a few commonly recommended supplements:
 Again, **it's important** to talk to a healthcare professional before starting any supplement regimen, as they can advise you on the appropriate dosage and potential interactions with any medications you may be taking. ",
             'image_thumbnail_path' => '/thumbnails/course05.webp',
             'image_cover_path' => '/covers/course05.webp',
-            'views' => 12,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Supplements', 'Nutrition', 'Health', 'Vitamins'];
@@ -209,7 +208,7 @@ Again, **it's important** to talk to a healthcare professional before starting a
 Remember to also **drink plenty of water**, eat a balanced diet, and get enough sleep to help keep your skin healthy and glowing. ",
             'image_thumbnail_path' => '/thumbnails/course06.webp',
             'image_cover_path' => '/covers/course06.webp',
-            'views' => 12,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Skincare', 'Health', 'Skin',];
@@ -250,7 +249,7 @@ Determine your personal style: Start by figuring out your personal style. This w
 Remember, fashion is **about expressing yourself** and feeling confident in what you wear. Don't be afraid to experiment and have fun with your style! ",
             'image_thumbnail_path' => '/thumbnails/course07.webp',
             'image_cover_path' => '/covers/course07.webp',
-            'views' => 12,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Style', 'Dress well', 'Looks',];
@@ -259,35 +258,30 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
         $course08= Course::create([
             'title' => 'Get more confidence',
             'introduction' => 'Confidence Booster: Quick Strategies for Greater Self-Assurance',
-            'course_description' =>"
-            This course will provide you with quick and practical strategies for boosting your confidence. You will learn to identify and overcome self-doubt, manage fear and anxiety, and build a positive self-image. You will also learn techniques for setting and achieving goals, developing social skills, and asserting yourself in professional situations.
+            'course_description' =>"This course will provide you with quick and practical strategies for boosting your confidence. You will learn to identify and overcome self-doubt, manage fear and anxiety, and build a positive self-image. You will also learn techniques for setting and achieving goals, developing social skills, and asserting yourself in professional situations.
 
+* Understand what confidence is and how it can benefit your life.
 
+* Identify and overcome self-doubt using positive self-talk and affirmations.
 
-            * Understand what confidence is and how it can benefit your life.
-            
-            * Identify and overcome self-doubt using positive self-talk and affirmations.
-            
-            * Manage fear and anxiety using techniques like deep breathing and visualization.
-            
-            * Develop a positive self-image by recognizing your strengths and weaknesses.
-            
-            * Set achievable goals to build momentum and create positive habits.
-            
-            * Develop social skills and build confidence in social situations.
-            
-            * Assert yourself in professional situations using effective communication techniques.
-            
-            * Practice self-care and maintain a healthy lifestyle to support confidence.
-            
-            * Cultivate resilience and learn to bounce back from setbacks.
-            
-            * Build a support system of positive influences to maintain confidence and motivation.",
+* Manage fear and anxiety using techniques like deep breathing and visualization.
 
+* Develop a positive self-image by recognizing your strengths and weaknesses.
+
+* Set achievable goals to build momentum and create positive habits.
+
+* Develop social skills and build confidence in social situations.
+
+* Assert yourself in professional situations using effective communication techniques.
+
+* Practice self-care and maintain a healthy lifestyle to support confidence.
+
+* Cultivate resilience and learn to bounce back from setbacks.
+
+* Build a support system of positive influences to maintain confidence and motivation.",
             'image_thumbnail_path' => '/thumbnails/course08.webp',
             'image_cover_path' => '/covers/course08.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Confidence', 'Mental Health', 'people',];
@@ -296,32 +290,28 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
         $course09= Course::create([
             'title' => 'Shadow Boxing',
             'introduction' => 'Shadow Boxing 101: Mastering the Fundamentals',
+            'course_description' =>"1. Introduction to Shadow Boxing: Understanding the Benefits and Basics
 
-            'course_description' =>"
-            1. Introduction to Shadow Boxing: Understanding the Benefits and Basics
+2. Proper Stance and Footwork: Techniques for Stability and Mobility
 
-            2. Proper Stance and Footwork: Techniques for Stability and Mobility
-            
-            3. Jab and Cross: Correct Execution and Common Mistakes
-            
-            4. Hooks and Uppercuts: Adding Power to Your Punches
-            
-            5. Defense Techniques: Slips, Rolls, and Blocks
-            
-            6. Footwork Drills: Enhancing Agility and Coordination
-            
-            7. Combinations: Putting It All Together for Effective Attack and Defense
-            
-            8. Shadow Boxing with Weights: Building Endurance and Strength
-            
-            9. Shadow Sparring: Simulating a Fight Scenario for Realistic Practice
-            
-            10. Incorporating Shadow Boxing into Your Training Routine: Tips for Practice and Improvement",
+3. Jab and Cross: Correct Execution and Common Mistakes
 
+4. Hooks and Uppercuts: Adding Power to Your Punches
+
+5. Defense Techniques: Slips, Rolls, and Blocks
+
+6. Footwork Drills: Enhancing Agility and Coordination
+
+7. Combinations: Putting It All Together for Effective Attack and Defense
+
+8. Shadow Boxing with Weights: Building Endurance and Strength
+
+9. Shadow Sparring: Simulating a Fight Scenario for Realistic Practice
+
+10. Incorporating Shadow Boxing into Your Training Routine: Tips for Practice and Improvement",
             'image_thumbnail_path' => '/thumbnails/course09.webp',
             'image_cover_path' => '/covers/course09.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Boxing', 'Selfdefense', 'meanace',];
@@ -330,7 +320,7 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
         $course10= Course::create([
             'title' => 'Drink more water',
             'introduction' => 'More water will change your life',
-            
+
             'course_description' =>"
             Step 1: Set a Daily Water Intake Goal
 
@@ -374,8 +364,7 @@ Pay attention to your body's thirst cues and drink water accordingly. If you fee
 
             'image_thumbnail_path' => '/thumbnails/course10.webp',
             'image_cover_path' => '/covers/course10.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Health', 'Water', 'Habbits',];
@@ -418,8 +407,7 @@ Finally, remember why you started in the first place. Revisit your goal and remi
 
             'image_thumbnail_path' => '/thumbnails/course11.webp',
             'image_cover_path' => '/covers/course11.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Gym', 'Motivation', 'Villainarc',];
@@ -432,38 +420,37 @@ Finally, remember why you started in the first place. Revisit your goal and remi
             'course_description' =>"
  Step 1: Set a Goal
  Setting a specific weight loss goal is crucial to staying motivated. Decide how much weight you want to lose and set a realistic timeframe for achieving it.
-            
+
   Step 2: Track Your Caloric Intake
   To lose weight, you need to create a calorie deficit by burning more calories than you consume. Use a food tracking app or journal to track your caloric intake and make sure you are consuming fewer calories than you burn each day.
-            
+
     Step 3: Incorporate Physical Activity
 Regular physical activity is important for weight loss and overall health. Aim for at least 30 minutes of moderate-intensity exercise most days of the week. This can include activities like walking, jogging, cycling, or strength training.
-            
+
 Step 4: Eat a Balanced Diet
 Eating a balanced diet with plenty of fruits, vegetables, whole grains, and lean protein can help you lose weight and improve your overall health. Avoid processed foods, sugary drinks, and high-fat foods.
-            
+
 Step 5: Drink Plenty of Water
 Drinking plenty of water can help you feel full and reduce your caloric intake. Aim for at least 8 glasses of water per day.
-            
+
 Step 6: Get Enough Sleep
 Getting enough sleep is important for weight loss and overall health. Aim for 7-9 hours of sleep per night.
-            
+
 Step 7: Reduce Stress
 Stress can lead to overeating and weight gain. Practice stress-reducing techniques such as meditation, yoga, or deep breathing exercises.
-            
+
 Step 8: Monitor Your Progress
 Track your weight loss progress by taking measurements or photos, and regularly assessing how you feel. Celebrate small milestones along the way to stay motivated.
-            
+
 Step 9: Stay Accountable
 Hold yourself accountable for your weight loss goals by checking in with yourself regularly. You can also share your progress with friends or family members to help keep you motivated and accountable.
-            
+
 Step 10: Be Patient and Consistent
 Weight loss is a gradual process, so be patient and consistent with your efforts. Focus on making sustainable lifestyle changes rather than quick fixes or fad diets.",
 
     'image_thumbnail_path' => '/thumbnails/course12.webp',
     'image_cover_path' => '/covers/course12.webp',
-    'views' => 12,
-    'category_id' => 1,
+    'views' => fake()->numberBetween(1, 250),
         'creator_id' => 1,
         ]);
         $tags = ['weightlose', 'fitness', 'health',];
@@ -506,8 +493,7 @@ Weight gain is a gradual process, so be patient and consistent with your efforts
 
             'image_thumbnail_path' => '/thumbnails/course13.webp',
             'image_cover_path' => '/covers/course13.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['gain weight', 'fitness', 'gym',];
@@ -520,38 +506,37 @@ Weight gain is a gradual process, so be patient and consistent with your efforts
             'course_description' =>"
 Step 1: Set a Goal
 Setting a specific muscle-building goal is crucial to staying motivated. Decide what muscle groups you want to focus on and set a realistic timeframe for achieving your goal.
-            
+
 Step 2: Strength Training
 Strength training is the most effective way to build muscle. Incorporate weightlifting or bodyweight exercises into your workout routine at least 2-3 times per week. Focus on compound exercises that work multiple muscle groups at once, such as squats, deadlifts, and bench presses.
-            
+
 Step 3: Progressive Overload
 Progressive overload is the key to building muscle. Continuously increase the weight or resistance of your exercises to challenge your muscles and stimulate growth.
-            
+
 Step 4: Eat a Balanced Diet
 Eating a balanced diet with plenty of whole foods, lean protein, healthy fats, and complex carbohydrates can help you build muscle. Focus on consuming nutrient-dense foods rather than empty calories from sugary or processed foods.
-            
+
 Step 5: Eat More Protein
 Protein is essential for muscle growth and repair. Aim to consume at least 1 gram of protein per pound of body weight each day.
-            
+
 Step 6: Get Enough Rest
 Rest is crucial for muscle growth. Aim for at least 7-9 hours of sleep per night, and avoid overtraining by taking rest days.
-            
+
 Step 7: Stay Hydrated
 Staying hydrated is important for muscle growth and overall health. Aim to drink at least 8 glasses of water per day.
-            
+
 Step 8: Monitor Your Progress
 Track your muscle-building progress by taking measurements or photos, and regularly assessing how you feel. Celebrate small milestones along the way to stay motivated.
-            
+
 Step 9: Be Patient and Consistent
 Building muscle is a gradual process, so be patient and consistent with your efforts. Focus on making sustainable lifestyle changes rather than relying on quick fixes or unhealthy supplements.
-            
+
 Step 10: Seek Professional Help
 If you are new to strength training or have a pre-existing condition, consult with a healthcare professional or certified trainer to help create a safe and effective workout plan.",
 
             'image_thumbnail_path' => '/thumbnails/course14.webp',
             'image_cover_path' => '/covers/course14.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['gain weight', 'fitness', 'gym',];
@@ -564,28 +549,28 @@ If you are new to strength training or have a pre-existing condition, consult wi
             'course_description' =>"
 Step 1: Acknowledge and Accept Your Anxiety
 Acknowledge that you have social anxiety and accept it as a part of who you are. Avoiding or denying your anxiety can make it worse.
-            
+
 Step 2: Identify Triggers
 Identify situations that trigger your social anxiety. Make a list of these triggers and try to gradually expose yourself to them.
-            
+
 Step 3: Practice Relaxation Techniques
 Practice relaxation techniques such as deep breathing, meditation, or progressive muscle relaxation to help calm your mind and body when you feel anxious.
-            
+
 Step 4: Challenge Negative Thoughts
 Challenge negative thoughts and beliefs that contribute to your social anxiety. Try to replace them with more positive and realistic thoughts.
-            
+
 Step 5: Seek Support
 Talk to someone you trust about your social anxiety or seek professional help from a therapist or counselor. Joining a support group can also provide a sense of community and understanding.
-            
+
 Step 6: Practice Social Skills
 Practice social skills such as active listening, assertiveness, and positive body language. Take small steps towards interacting with others, such as saying hello or asking someone how their day is going.
-            
+
 Step 7: Expose Yourself to Social Situations
 Gradually expose yourself to social situations that make you anxious. Start with less challenging situations and work your way up.
-            
+
 Step 8: Set Realistic Goals
 Set realistic goals for yourself and celebrate small accomplishments along the way. Avoid setting unrealistic expectations that can lead to disappointment and increased anxiety.
-            
+
 Step 9: Take Care of Yourself
 Take care of yourself by eating a healthy diet, exercising regularly, getting enough sleep, and managing stress. These healthy habits can help reduce anxiety overall.
 
@@ -594,8 +579,7 @@ Reducing social anxiety is a gradual process, so be patient and persistent with 
 
             'image_thumbnail_path' => '/thumbnails/course15.webp',
             'image_cover_path' => '/covers/course15.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['mentalhealth', 'social', 'people',];
@@ -608,38 +592,37 @@ Reducing social anxiety is a gradual process, so be patient and persistent with 
             'course_description' =>"
 Step 1: Practice Gratitude
 Start each day by thinking of three things you are grateful for. This can help shift your focus to the positive aspects of your life.
-            
+
 Step 2: Challenge Negative Thoughts
 Challenge negative thoughts and beliefs that contribute to negative thinking. Try to replace them with more positive and realistic thoughts.
-            
+
 Step 3: Surround Yourself with Positivity
 Surround yourself with positive people and environments that uplift you. Limit time spent with negative influences.
-            
+
 Step 4: Focus on Solutions
 Focus on finding solutions instead of dwelling on problems. Look for opportunities and possibilities, rather than obstacles.
-            
+
 Step 5: Practice Self-Compassion
 Practice self-compassion by being kind to yourself and treating yourself with the same care and understanding that you would offer to a friend.
-            
+
 Step 6: Practice Mindfulness
 Practice mindfulness by staying present in the moment and focusing on your senses. This can help reduce worry and anxiety.
-            
+
 Step 7: Visualize Success
 Visualize yourself succeeding and achieving your goals. This can help build confidence and a positive mindset.
-            
+
 Step 8: Laugh and Have Fun
 Make time to laugh and have fun. Surround yourself with humor and positivity, and engage in activities that bring you joy.
-            
+
 Step 9: Engage in Positive Self-Talk
 Engage in positive self-talk by using affirmations and positive statements about yourself. This can help build self-esteem and a positive self-image.
-            
+
 Step 10: Be Patient and Persistent
 Thinking more positively is a gradual process, so be patient and persistent with your efforts. Focus on making sustainable lifestyle changes and seek professional help if needed.",
 
             'image_thumbnail_path' => '/thumbnails/course16.webp',
             'image_cover_path' => '/covers/course16.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['mentalhealth', 'happy', 'positive',];
@@ -652,38 +635,37 @@ Thinking more positively is a gradual process, so be patient and persistent with
             'course_description' =>"
 Step 1: Spend Time in Nature
 Make time to spend in nature, whether it's a local park, forest, beach, or mountain trail. Try to disconnect from technology and focus on the sights, sounds, and smells of nature.
-            
+
 Step 2: Learn About Local Plants and Wildlife
 Take the time to learn about the local plants and wildlife in your area. Consider joining a local nature group or taking a nature walk with a guide.
-            
+
 Step 3: Reduce Your Impact
 Reduce your impact on the environment by being mindful of your consumption and waste. Use reusable bags, water bottles, and containers, and recycle whenever possible.
-            
+
 Step 4: Practice Mindfulness
 Practice mindfulness by staying present in the moment and focusing on your senses. This can help you feel more connected to the natural world around you.
-            
+
 Step 5: Engage in Outdoor Activities
 Engage in outdoor activities such as hiking, camping, kayaking, or bird watching. These activities can help you deepen your connection with nature.
-            
+
 Step 6: Garden
 Consider starting a garden or growing your own herbs, fruits, or vegetables. This can help you connect with the natural cycles of the earth and the changing seasons.
-            
+
 Step 7: Connect with Local Farms and Farmers
 Connect with local farms and farmers to learn about sustainable agriculture practices and to support local food systems.
-            
+
 Step 8: Consider Sustainable Transportation
 Consider sustainable transportation options such as biking, walking, or carpooling to reduce your carbon footprint and impact on the environment.
-            
+
 Step 9: Educate Others
 Share your knowledge and enthusiasm for nature with others. Encourage friends and family to join you in outdoor activities and to take steps to reduce their impact on the environment.
-            
+
 Step 10: Be Patient and Persistent
 Developing a deeper connection with nature is a gradual process, so be patient and persistent with your efforts. Focus on making sustainable lifestyle changes and seek guidance from nature experts or environmental organizations.",
 
             'image_thumbnail_path' => '/thumbnails/course17.webp',
             'image_cover_path' => '/covers/course17.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['mentalhealth', 'happy', 'positive',];
@@ -696,38 +678,37 @@ Developing a deeper connection with nature is a gradual process, so be patient a
             'course_description' =>"
 Step 1: Start Small
 Start with short walks around your neighborhood, even if it's just for a few minutes at a time. Gradually increase the length and frequency of your walks as you feel more comfortable.
-            
+
 Step 2: Schedule Walks Into Your Day
 Schedule walks into your daily routine, whether it's in the morning before work, during your lunch break, or after dinner. This can help make walking a regular habit.
-            
+
 Step 3: Find a Walking Buddy
 Find a walking buddy or group to join to help keep you motivated and accountable. Walking with others can also make the experience more enjoyable.
-            
+
 Step 4: Set Goals
 Set goals for yourself, such as walking a certain number of steps or miles each day or week. Use a fitness tracker or pedometer to track your progress.
-            
+
 Step 5: Make it Enjoyable
 Make walking enjoyable by listening to music or podcasts, exploring new routes, or taking nature walks.
-            
+
 Step 6: Dress Comfortably
 Wear comfortable and supportive shoes and clothing that allows you to move freely. This can help reduce the risk of injury and make walking more enjoyable.
-            
+
 Step 7: Take Walking Breaks
 Take short walking breaks during the day, such as walking around the office or taking the stairs instead of the elevator. This can help break up long periods of sitting and improve circulation.
-            
+
 Step 8: Make it a Family Activity
 Make walking a family activity by taking walks with your partner, children, or pets. This can help you spend quality time together while also improving your health.
-            
+
 Step 9: Explore Your Community
 Explore your community by walking to local shops, parks, or cafes. This can help you discover new places and support local businesses.
-            
+
 Step 10: Be Consistent
 Consistency is key to making walking a part of your daily routine. Make it a priority to walk regularly and don't let excuses or obstacles get in the way.",
 
             'image_thumbnail_path' => '/thumbnails/course18.webp',
             'image_cover_path' => '/covers/course18.webp',
-            'views' => 12,
-            'category_id' => 1,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['mentalhealth', 'happy', 'positive',];
@@ -758,7 +739,7 @@ Here are some exercises that are included in BodyPump training:
 It is important to follow the proper technique and form and adjust the weight to avoid overloading or injury. These exercises are just a small selection of what can be included in a BodyPump training session.',
             'image_thumbnail_path' => '/thumbnails/course19.webp',
             'image_cover_path' => '/covers/course19.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['BodyPump', 'Strength Training', 'barbells'];
@@ -791,7 +772,7 @@ It is important to listen to your body, modify poses as needed, and breathe deep
             ',
             'image_thumbnail_path' => '/thumbnails/course20.webp',
             'image_cover_path' => '/covers/course20.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Yoga', 'yoga poses', 'Flexibility'];
@@ -823,7 +804,7 @@ It is important to push yourself during the intense intervals, but also listen t
             ',
             'image_thumbnail_path' => '/thumbnails/course21.webp',
             'image_cover_path' => '/covers/course21.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['HIIT', 'Cardio', 'Full-Body Workout'];
@@ -855,7 +836,7 @@ It is important to focus on proper form and breathing, and modify exercises as n
             ',
             'image_thumbnail_path' => '/thumbnails/course22.webp',
             'image_cover_path' => '/covers/course22.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Core Strength', 'Stability Training', 'Balance Improvement'];
@@ -887,7 +868,7 @@ It is important to focus on proper form and breathing during each stretch. These
             ',
             'image_thumbnail_path' => '/thumbnails/course23.webp',
             'image_cover_path' => '/covers/course23.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Flexibility', 'Stretching', 'Injury Prevention'];
@@ -919,7 +900,7 @@ It is important to focus on proper form and breathing during each exercise, and 
             ',
             'image_thumbnail_path' => '/thumbnails/course24.webp',
             'image_cover_path' => '/covers/course24.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Cardio Workout', 'Kickboxing', 'Martial Arts'];
@@ -952,7 +933,7 @@ It is important to find a meditation practice that works for you and to make it 
             ',
             'image_thumbnail_path' => '/thumbnails/course25.webp',
             'image_cover_path' => '/covers/course25.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Mindfulness', 'Meditation', 'Stress Reduction'];
@@ -984,7 +965,7 @@ It is important to focus on proper form and breathing during each exercise, and 
             ',
             'image_thumbnail_path' => '/thumbnails/course26.webp',
             'image_cover_path' => '/covers/course26.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Pilates', 'Strength Training', 'Flexibility'];
@@ -1016,7 +997,7 @@ It is important to remember that healthy eating is not about deprivation, but ab
             ',
             'image_thumbnail_path' => '/thumbnails/course27.webp',
             'image_cover_path' => '/covers/course27.webp',
-            'views' => 0,
+            'views' => fake()->numberBetween(1, 250),
             'creator_id' => 1,
         ]);
         $tags = ['Nutrition', 'Healthy Eating', 'Diet Plan'];
