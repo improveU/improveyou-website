@@ -173,7 +173,6 @@ class CourseController extends Controller
             $course->image_cover_path = $webp_path;
         }
 
-        $course->category_id = 0;
         $course->save();
     }
 

@@ -77,7 +77,6 @@ Remember to take a day off between workouts, and customize the workout to suit y
             'image_thumbnail_path' => '/thumbnails/course00.webp',
             'image_cover_path' => '/covers/course00.webp',
             'views' => 3,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Bodyweight', 'Home workout', 'Fitness', 'Exercises', 'Push-ups'];
@@ -99,7 +98,6 @@ Remember to stretch after your workout to help prevent injury and reduce muscle 
             'image_thumbnail_path' => '/thumbnails/course01.webp',
             'image_cover_path' => '/covers/course01.webp',
             'views' => 8,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Fitness', 'Gym', 'Strength Training', 'Beginner', 'Full Body Workout'];
@@ -118,7 +116,6 @@ Repeat each stretch 2-3 times on each side. Breathe deeply in and out and hold e
             'image_thumbnail_path' => '/thumbnails/course02.webp',
             'image_cover_path' => '/covers/course02.webp',
             'views' => 2,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Flexibility', 'Stretching', 'Mobility', 'Beginner', 'Exercise', 'Wellness'];
@@ -139,7 +136,6 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
             'image_thumbnail_path' => '/thumbnails/course03.webp',
             'image_cover_path' => '/covers/course03.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Running', 'Cardio', 'Interval Training', 'Endurance', 'Fitness', 'Advanced'];
@@ -160,7 +156,6 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
             'image_thumbnail_path' => '/thumbnails/course04.webp',
             'image_cover_path' => '/covers/course04.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Meditation', 'Relax', 'Mindfulness', 'Focus', 'Beginners', 'Mentalhealth'];
@@ -188,7 +183,6 @@ Again, **it's important** to talk to a healthcare professional before starting a
             'image_thumbnail_path' => '/thumbnails/course05.webp',
             'image_cover_path' => '/covers/course05.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Supplements', 'Nutrition', 'Health', 'Vitamins'];
@@ -216,7 +210,6 @@ Remember to also **drink plenty of water**, eat a balanced diet, and get enough 
             'image_thumbnail_path' => '/thumbnails/course06.webp',
             'image_cover_path' => '/covers/course06.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Skincare', 'Health', 'Skin',];
@@ -258,7 +251,6 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
             'image_thumbnail_path' => '/thumbnails/course07.webp',
             'image_cover_path' => '/covers/course07.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Style', 'Dress well', 'Looks',];
@@ -290,7 +282,6 @@ It is important to follow the proper technique and form and adjust the weight to
             'image_thumbnail_path' => '/thumbnails/course19.webp',
             'image_cover_path' => '/covers/course19.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['BodyPump', 'Strength Training', 'barbells'];
@@ -324,7 +315,6 @@ It is important to listen to your body, modify poses as needed, and breathe deep
             'image_thumbnail_path' => '/thumbnails/course20.webp',
             'image_cover_path' => '/covers/course20.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Yoga', 'yoga poses', 'Flexibility'];
@@ -357,7 +347,6 @@ It is important to push yourself during the intense intervals, but also listen t
             'image_thumbnail_path' => '/thumbnails/course21.webp',
             'image_cover_path' => '/covers/course21.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['HIIT', 'Cardio', 'Full-Body Workout'];
@@ -390,7 +379,6 @@ It is important to focus on proper form and breathing, and modify exercises as n
             'image_thumbnail_path' => '/thumbnails/course22.webp',
             'image_cover_path' => '/covers/course22.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Core Strength', 'Stability Training', 'Balance Improvement'];
@@ -423,7 +411,6 @@ It is important to focus on proper form and breathing during each stretch. These
             'image_thumbnail_path' => '/thumbnails/course23.webp',
             'image_cover_path' => '/covers/course23.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Flexibility', 'Stretching', 'Injury Prevention'];
@@ -456,7 +443,6 @@ It is important to focus on proper form and breathing during each exercise, and 
             'image_thumbnail_path' => '/thumbnails/course24.webp',
             'image_cover_path' => '/covers/course24.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Cardio Workout', 'Kickboxing', 'Martial Arts'];
@@ -490,7 +476,6 @@ It is important to find a meditation practice that works for you and to make it 
             'image_thumbnail_path' => '/thumbnails/course25.webp',
             'image_cover_path' => '/covers/course25.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Mindfulness', 'Meditation', 'Stress Reduction'];
@@ -523,7 +508,6 @@ It is important to focus on proper form and breathing during each exercise, and 
             'image_thumbnail_path' => '/thumbnails/course26.webp',
             'image_cover_path' => '/covers/course26.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Pilates', 'Strength Training', 'Flexibility'];
@@ -556,7 +540,6 @@ It is important to remember that healthy eating is not about deprivation, but ab
             'image_thumbnail_path' => '/thumbnails/course27.webp',
             'image_cover_path' => '/covers/course27.webp',
             'views' => 0,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Nutrition', 'Healthy Eating', 'Diet Plan'];
