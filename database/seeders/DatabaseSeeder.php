@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Category;
 use App\Models\Course;
 use App\Models\Subscription;
 use App\Models\Tag;
