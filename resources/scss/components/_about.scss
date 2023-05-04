@@ -1,11 +1,4 @@
 @use "../abstracts" as *;
-
-$color-primary: #0F4C75;
-$color-secondary: #3282B8;
-$color-tertiary: #BBE1FA;
-$color-text: #333333;
-$color-bg: #F5F5F5;
-
 section#about {
     padding-top: 25px;
     min-height: calc(100vh - 600px);
@@ -34,23 +27,24 @@ section#about {
                     height: 300px;
                     width: 240px;
                     object-fit: cover;
+                    background: #ff892e94;
                 }
             }
 
             .description {
                 padding: 30px;
                 border-radius: 0 15px 15px 0;
-                background-color: $color-tertiary;
+                background-color: #E5F6F8;
                 position: relative;
 
                 h1 {
                     font-family: "BerlinTypeBold";
-                    color: $color-primary;
+                    color: #05445E;
                     font-size: 30px;
                 }
 
                 p {
-                    color: $color-secondary;
+                    color: #005F60;
 
                     span {
                         font-family: "BerlinTypeBold";
@@ -69,28 +63,25 @@ section#about {
                     }
                 }
             }
-        }
-    }
-}
 
-@media screen and (max-width: 750px) {
-    .aboutContainer {
-        flex-direction: column;
-        height: auto;
-        width: 340px;
-
-        .picture {
-            img {
+            @media screen and (max-width: 750px) {
+                flex-direction: column;
                 height: auto;
                 width: 340px;
-                border-radius: 15px 15px 0 0;
-                transform: translateY(8px);
+        
+                .picture {
+                    img {
+                        width: 340px;
+                        border-radius: 15px 15px 0 0;
+                        transform: translateY(8px);
+                    }
+                }
+        
+                .description {
+                    height: 250px;
+                    border-radius: 0 0 15px 15px;
+                }
             }
-        }
-
-        .description {
-            height: 250px;
-            border-radius: 0 0 15px 15px;
         }
     }
 }

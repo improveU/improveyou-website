@@ -175,3 +175,46 @@ section#profileDescription {
         }
     }
 }
+
+
+section#coursePages{
+    nav{
+
+        ul.pagination{
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+            list-style-type: none;
+
+            display: flex;
+            justify-content: center;
+
+            li{
+                width: 50px;
+                height: 50px;
+                background-color: #E5F6F8;
+                margin: 0 10px;
+                padding: auto;
+
+                a,
+                span {
+                    text-decoration: none;
+                    text-align: center;
+                    align-items: center;
+                    display: grid;
+                    height: 100%;
+                    width: 100%;
+
+
+                }
+
+                &.disabled{
+
+                }
+                &.active{
+
+                }
+            }
+        }
+    }
+}

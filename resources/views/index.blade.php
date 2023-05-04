@@ -10,6 +10,7 @@
 
     <script defer src="{{ asset('js/animate.js') }}"></script>
     <script defer src="{{ asset('js/backToTop.js') }}"></script>
+    <script defer src="{{ asset('js/rootPayment.js') }}"></script>
     <script src="{{ asset('js/statusMessage.js') }}"></script>
 
     <title>Home</title>
