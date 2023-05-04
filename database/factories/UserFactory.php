@@ -19,12 +19,17 @@ class UserFactory extends Factory
     {
         return [
             'first_name' => fake()->firstName(),
-            'last_name' => fake()->lastName,
-            'email' => fake()->unique()->safeEmail(),
-            'password' => '12345678', // password
-            'remember_token' => Str::random(10),
+            'last_name' => fake()->lastName(),
             'username' => fake()->name(),
-            'profile_picture_path' => '',
+            'email' => fake()->unique()->safeEmail(),
+            'password' => '12345678',
+            'address' => fake()->address(),
+            'city' => fake()->city(),
+            'country' => fake()->countryCode(),
+            'zip_code' => fake()->postcode(),
+            'description' => fake()->paragraph(),
+            'remember_token' => Str::random(10),
+            'profile_picture_path' => 'profiles/defaultProfilePicture.svg',
             'subscription_id' => fake()->numberBetween(1, 3)
         ];
     }

@@ -77,7 +77,6 @@ Remember to take a day off between workouts, and customize the workout to suit y
             'image_thumbnail_path' => '/thumbnails/course00.webp',
             'image_cover_path' => '/covers/course00.webp',
             'views' => 3,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Bodyweight', 'Home workout', 'Fitness', 'Exercises', 'Push-ups'];
@@ -99,7 +98,6 @@ Remember to stretch after your workout to help prevent injury and reduce muscle 
             'image_thumbnail_path' => '/thumbnails/course01.webp',
             'image_cover_path' => '/covers/course01.webp',
             'views' => 8,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Fitness', 'Gym', 'Strength Training', 'Beginner', 'Full Body Workout'];
@@ -118,7 +116,6 @@ Repeat each stretch 2-3 times on each side. Breathe deeply in and out and hold e
             'image_thumbnail_path' => '/thumbnails/course02.webp',
             'image_cover_path' => '/covers/course02.webp',
             'views' => 2,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Flexibility', 'Stretching', 'Mobility', 'Beginner', 'Exercise', 'Wellness'];
@@ -139,7 +136,6 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
             'image_thumbnail_path' => '/thumbnails/course03.webp',
             'image_cover_path' => '/covers/course03.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Running', 'Cardio', 'Interval Training', 'Endurance', 'Fitness', 'Advanced'];
@@ -160,7 +156,6 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
             'image_thumbnail_path' => '/thumbnails/course04.webp',
             'image_cover_path' => '/covers/course04.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Meditation', 'Relax', 'Mindfulness', 'Focus', 'Beginners', 'Mentalhealth'];
@@ -188,7 +183,6 @@ Again, **it's important** to talk to a healthcare professional before starting a
             'image_thumbnail_path' => '/thumbnails/course05.webp',
             'image_cover_path' => '/covers/course05.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Supplements', 'Nutrition', 'Health', 'Vitamins'];
@@ -216,7 +210,6 @@ Remember to also **drink plenty of water**, eat a balanced diet, and get enough 
             'image_thumbnail_path' => '/thumbnails/course06.webp',
             'image_cover_path' => '/covers/course06.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Skincare', 'Health', 'Skin',];
@@ -258,10 +251,299 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
             'image_thumbnail_path' => '/thumbnails/course07.webp',
             'image_cover_path' => '/covers/course07.webp',
             'views' => 12,
-            'category_id' => 1,
             'creator_id' => 1,
         ]);
         $tags = ['Style', 'Dress well', 'Looks',];
         $course07->tag($tags);
+
+        $course19 = Course::create([
+            'title' => 'BodyPump Basics',
+            'introduction' => 'Strength and endurance with barbells.',
+            'course_description' => '### Course Instructions
+Suitable for beginners and advanced learners. Focus on technique and form.
+
+1. Get a barbell and weights suitable for your fitness level.
+2. Follow the exercises in the course and pay attention to proper technique and form.
+3. Choose the appropriate weight for each exercise to avoid overloading or injury.
+4. Repeat each exercise for 10-15 repetitions and do 2-3 sets.
+5. Increase the weight as you make progress and feel stronger.
+6. Remember to warm up before and stretch after the training. Have fun!
+
+### Exercises
+Here are some exercises that are included in BodyPump training:
+
+- Squats
+- Chest Press
+- Deadlifts
+- Lunges
+- Clean and Press
+
+It is important to follow the proper technique and form and adjust the weight to avoid overloading or injury. These exercises are just a small selection of what can be included in a BodyPump training session.',
+            'image_thumbnail_path' => '/thumbnails/course19.webp',
+            'image_cover_path' => '/covers/course19.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['BodyPump', 'Strength Training', 'barbells'];
+        $course19->tag($tags);
+
+
+        $course20 = Course::create([
+            'title' => 'Yoga Fundamentals',
+            'introduction' => 'Learn basic yoga poses for flexibility.',
+            'course_description' => '### Course Instructions
+Ideal for beginners and those with experience. Develop flexibility, balance, and strength through yoga.
+
+1. Find a quiet, comfortable space and a yoga mat.
+2. Follow the poses in the course, focusing on proper form and breathing.
+3. Start with 10-15 minutes a day and gradually increase your practice time.
+4. Listen to your body and modify poses as needed.
+5. Remember to warm up and cool down before and after each session.
+6. Enjoy the relaxation and stress relief that comes with regular yoga practice.
+
+### Poses
+Here are some basic yoga poses included in this course:
+
+- Mountain Pose
+- Downward Facing Dog
+- Warrior I
+- Triangle Pose
+- Child Pose
+
+It is important to listen to your body, modify poses as needed, and breathe deeply to get the most out of your yoga practice. These poses are just a small selection of what can be included in a yoga practice.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course20.webp',
+            'image_cover_path' => '/covers/course20.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Yoga', 'yoga poses', 'Flexibility'];
+        $course20->tag($tags);
+
+        $course21 = Course::create([
+            'title' => 'HIIT Cardio Blast',
+            'introduction' => 'Burn calories and boost your metabolism.',
+            'course_description' => '### Course Instructions
+Suitable for all fitness levels. High-intensity interval training (HIIT) combines cardio and strength exercises to give you a full-body workout in a short amount of time.
+
+1. Find a space to move and a timer.
+2. Follow the exercises in the course and pay attention to proper form and breathing.
+3. Start with 20-30 seconds of intense exercise followed by 10-15 seconds of rest.
+4. Repeat each exercise for 3-4 sets and take a 1-minute break between sets.
+5. Combine exercises to create your own HIIT routine.
+6. Cool down and stretch after the workout.
+
+### Exercises
+Here are some HIIT exercises included in this course:
+
+- Burpees
+- Jumping Jacks
+- Squat Jumps
+- Mountain Climbers
+- High Knees
+
+It is important to push yourself during the intense intervals, but also listen to your body and take breaks as needed. These exercises are just a small selection of what can be included in a HIIT workout.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course21.webp',
+            'image_cover_path' => '/covers/course21.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['HIIT', 'Cardio', 'Full-Body Workout'];
+        $course21->tag($tags);
+
+        $course22 = Course::create([
+            'title' => 'Core Strength Basics',
+            'introduction' => 'Strengthen your core for better balance.',
+            'course_description' => '### Course Instructions
+Suitable for beginners and those with experience. Develop core strength and stability through a series of exercises.
+
+1. Find a comfortable space and a mat or towel.
+2. Follow the exercises in the course, focusing on proper form and breathing.
+3. Start with 10-15 minutes a day and gradually increase your practice time.
+4. Listen to your body and modify exercises as needed.
+5. Remember to warm up and cool down before and after each session.
+6. Enjoy the benefits of a strong and stable core, including better balance and posture.
+
+### Exercises
+Here are some exercises included in this course:
+
+- Plank
+- Bicycle Crunches
+- Russian Twists
+- Leg Raises
+- Bridge
+
+It is important to focus on proper form and breathing, and modify exercises as needed to avoid injury. These exercises are just a small selection of what can be included in a core strength workout.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course22.webp',
+            'image_cover_path' => '/covers/course22.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Core Strength', 'Stability Training', 'Balance Improvement'];
+        $course22->tag($tags);
+
+        $course23 = Course::create([
+            'title' => 'Flexibility Foundations',
+            'introduction' => 'Improve your flexibility and prevent injury.',
+            'course_description' => '### Course Instructions
+Suitable for all fitness levels. Learn how to stretch safely and effectively to increase your range of motion and prevent injury.
+
+1. Find a comfortable space and a mat or towel.
+2. Follow the exercises in the course, paying attention to proper form and breathing.
+3. Hold each stretch for 15-30 seconds and repeat 2-3 times.
+4. Do not push yourself beyond your limits, and avoid bouncing or jerking movements.
+5. Stretch regularly to see improvements in flexibility and mobility.
+6. Remember to warm up before stretching and cool down after.
+
+### Exercises
+Here are some stretches included in this course:
+
+- Forward Fold
+- Quad Stretch
+- Hamstring Stretch
+- Shoulder Stretch
+- Child Pose
+
+It is important to focus on proper form and breathing during each stretch. These exercises are just a small selection of what can be included in a flexibility training routine.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course23.webp',
+            'image_cover_path' => '/covers/course23.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Flexibility', 'Stretching', 'Injury Prevention'];
+        $course23->tag($tags);
+
+        $course24 = Course::create([
+            'title' => 'Cardio Kickboxing Basics',
+            'introduction' => 'Punch and kick your way to fitness.',
+            'course_description' => '### Course Instructions
+Suitable for beginners and experienced individuals. This course will introduce you to the basic moves of cardio kickboxing and help you develop your technique.
+
+1. Find a comfortable space and wear appropriate workout clothes and shoes.
+2. Follow the exercises in the course, paying attention to proper form and breathing.
+3. Start with a warm-up to get your heart rate up and loosen up your muscles.
+4. Learn the basic punches and kicks, and gradually build up to combinations.
+5. Take breaks as needed, and hydrate during and after your workout.
+6. Enjoy the benefits of a fun and challenging cardio workout.
+
+### Exercises
+Here are some exercises included in this course:
+
+- Jab
+- Cross
+- Front Kick
+- Roundhouse Kick
+- Uppercut
+
+It is important to focus on proper form and breathing during each exercise, and to modify as needed to avoid injury. These exercises are just a small selection of what can be included in a cardio kickboxing routine.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course24.webp',
+            'image_cover_path' => '/covers/course24.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Cardio Workout', 'Kickboxing', 'Martial Arts'];
+        $course24->tag($tags);
+
+
+        $course25 = Course::create([
+            'title' => 'Mindful Meditation Practice',
+            'introduction' => 'Relax your mind and reduce stress.',
+            'course_description' => '### Course Instructions
+Suitable for all levels. Learn how to meditate mindfully to cultivate a sense of calm and focus in your daily life.
+
+1. Find a quiet and comfortable place to sit or lie down.
+2. Follow the guided meditation exercises in the course, paying attention to your breath and bodily sensations.
+3. Start with short sessions of 5-10 minutes and gradually increase the duration as you become more comfortable.
+4. Practice regularly to see the benefits of reduced stress, improved focus, and a greater sense of well-being.
+5. Do not worry if your mind wanders during the meditation - simply acknowledge your thoughts and return your focus to your breath.
+6. Experiment with different types of meditation to find what works best for you.
+
+### Exercises
+Here are some meditation exercises included in this course:
+
+- Breathing Meditation
+- Body Scan Meditation
+- Loving-Kindness Meditation
+- Walking Meditation
+- Mindful Eating
+
+It is important to find a meditation practice that works for you and to make it a regular habit. These exercises are just a small selection of what can be included in a mindful meditation routine.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course25.webp',
+            'image_cover_path' => '/covers/course25.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Mindfulness', 'Meditation', 'Stress Reduction'];
+        $course25->tag($tags);
+
+        $course26 = Course::create([
+            'title' => 'Pilates for Beginners',
+            'introduction' => 'Improve your strength and flexibility.',
+            'course_description' => '### Course Instructions
+Ideal for beginners, this course will introduce you to the principles of Pilates and help you build a strong foundation for your practice.
+
+1. Find a comfortable and quiet space to practice in.
+2. Wear comfortable clothes that allow you to move freely.
+3. Follow the exercises in the course, paying attention to proper form and breathing.
+4. Start with basic Pilates exercises, and gradually build up to more challenging moves.
+5. Take breaks as needed, and hydrate during and after your workout.
+6. Practice regularly to see the benefits of improved posture, core strength, and flexibility.
+
+### Exercises
+Here are some exercises included in this course:
+
+- The Hundred
+- Roll-Up
+- Single Leg Circles
+- Spine Stretch Forward
+- Swan
+
+It is important to focus on proper form and breathing during each exercise, and to modify as needed to avoid injury. These exercises are just a small selection of what can be included in a Pilates routine.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course26.webp',
+            'image_cover_path' => '/covers/course26.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Pilates', 'Strength Training', 'Flexibility'];
+        $course26->tag($tags);
+
+        $course27 = Course::create([
+            'title' => 'Healthy Eating Habits',
+            'introduction' => 'Improve your health with better nutrition.',
+            'course_description' => '### Course Instructions
+Suitable for anyone interested in improving their eating habits, this course will help you learn how to make healthier food choices and develop a sustainable diet plan.
+
+1. Learn about the different food groups and how they can contribute to a balanced diet.
+2. Track your food intake and identify areas for improvement.
+3. Experiment with new recipes and cooking methods to make healthy eating enjoyable.
+4. Gradually make small changes to your diet and lifestyle that can lead to long-term success.
+5. Be mindful of portion sizes and avoid restrictive diets that can be unsustainable.
+6. Seek support from a healthcare provider or nutritionist if needed.
+
+### Topics Covered
+Here are some topics covered in this course:
+
+- Macronutrients and micronutrients
+- Meal planning and preparation
+- Healthy cooking techniques
+- Eating out and social situations
+- Mindful eating and portion control
+
+It is important to remember that healthy eating is not about deprivation, but about making informed choices that support your overall health and well-being.
+            ',
+            'image_thumbnail_path' => '/thumbnails/course27.webp',
+            'image_cover_path' => '/covers/course27.webp',
+            'views' => 0,
+            'creator_id' => 1,
+        ]);
+        $tags = ['Nutrition', 'Healthy Eating', 'Diet Plan'];
+        $course27->tag($tags);
     }
+
 }

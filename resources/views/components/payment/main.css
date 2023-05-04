@@ -1021,19 +1021,16 @@ section#cover .linkDiscord a:hover {
 }
 @media screen and (max-width: 720px) {
   section#cover .linkDiscord {
-    bottom: 120px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 205px;
+    bottom: 120px !important;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+    width: 205px !important;
   }
   section#cover .linkDiscord a {
-    background-color: rgba(255, 255, 255, 0.35);
-  }
-  section#cover .catch {
-    width: 100%;
+    background-color: rgba(255, 255, 255, 0.35) !important;
   }
   section#cover .catch h1 {
-    font-size: 50px;
+    font-size: 50px !important;
   }
 }
 
@@ -1754,33 +1751,6 @@ section#profileDescription div.descriptionContainer .courseInfo .views {
   width: auto;
 }
 
-section#coursePages nav ul.pagination {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-}
-section#coursePages nav ul.pagination li {
-  width: 50px;
-  height: 50px;
-  background-color: #E5F6F8;
-  margin: 0 10px;
-  padding: auto;
-}
-section#coursePages nav ul.pagination li a,
-section#coursePages nav ul.pagination li span {
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
-  display: grid;
-  height: 100%;
-  width: 100%;
-}
 section#faq {
   min-height: calc(100vh - 600px);
 }
@@ -1860,21 +1830,20 @@ section#about .aboutWrapper .aboutContainer .picture img {
   width: 240px;
   -o-object-fit: cover;
      object-fit: cover;
-  background: rgba(255, 137, 46, 0.5803921569);
 }
 section#about .aboutWrapper .aboutContainer .description {
   padding: 30px;
   border-radius: 0 15px 15px 0;
-  background-color: #E5F6F8;
+  background-color: #BBE1FA;
   position: relative;
 }
 section#about .aboutWrapper .aboutContainer .description h1 {
   font-family: "BerlinTypeBold";
-  color: #05445E;
+  color: #0F4C75;
   font-size: 30px;
 }
 section#about .aboutWrapper .aboutContainer .description p {
-  color: #005F60;
+  color: #3282B8;
 }
 section#about .aboutWrapper .aboutContainer .description p span {
   font-family: "BerlinTypeBold";
@@ -1889,23 +1858,24 @@ section#about .aboutWrapper .aboutContainer .description button .iconCorner {
   width: 15px;
   height: 15px;
 }
+
 @media screen and (max-width: 750px) {
-  section#about .aboutWrapper .aboutContainer {
+  .aboutContainer {
     flex-direction: column;
     height: auto;
     width: 340px;
   }
-  section#about .aboutWrapper .aboutContainer .picture img {
+  .aboutContainer .picture img {
+    height: auto;
     width: 340px;
     border-radius: 15px 15px 0 0;
     transform: translateY(8px);
   }
-  section#about .aboutWrapper .aboutContainer .description {
+  .aboutContainer .description {
     height: 250px;
     border-radius: 0 0 15px 15px;
   }
 }
-
 section#error .logoForError {
   padding: 28px 20px;
 }
@@ -2644,25 +2614,23 @@ section#profileContainer section#profileTabs section#profileDescription button {
 }
 @media screen and (max-width: 500px) {
   .coursesContainer ul li {
-    height: 100% !important;
-    min-height: 100% !important;
-    flex-wrap: wrap !important;
-    margin-bottom: 40px !important;
-    padding-bottom: 40px !important;
+    height: 100%;
+    min-height: 100%;
+    flex-wrap: wrap;
   }
   .coursesContainer ul li img {
-    height: 250px !important;
-    width: 100% !important;
+    height: 100%;
+    width: 100%;
   }
   .coursesContainer ul li .title,
   .coursesContainer ul li .introduction {
-    width: 100% !important;
-    white-space: initial !important;
-    text-overflow: wrap !important;
-    overflow: inherit !important;
+    width: 100%;
+    white-space: initial;
+    text-overflow: wrap;
+    overflow: inherit;
   }
   .coursesContainer ul li button {
-    width: 100% !important;
+    width: 100%;
   }
 }
 
