@@ -48,7 +48,7 @@ jobs:
       run: php artisan storage:link
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
-        DB_HOST: mysql
+        DB_HOST: 127.0.0.1
       run: |
         php artisan migrate
         vendor/phpunit/phpunit/phpunit
