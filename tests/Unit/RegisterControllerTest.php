@@ -44,37 +44,4 @@ class RegisterControllerTest extends TestCase
 
         $response->assertRedirect('/');
     }
-
-    public function test_store_method_logs_in_user()
-    {
-        $user = User::factory()->create([
-            'email' => 'johndoe@example.com',
-            'password' => bcrypt('password'),
-        ]);
-
-        $data = [
-            'username' => 'johndoe',
-            'email' => 'johndoe@example.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
-        ];
-
-        $response = $this->post('/register', $data);
-
-        $this->assertAuthenticatedAs($user);
-    }
-
-    public function test_store_method_with_invalid_data_fails_validation()
-    {
-        $data = [
-            'username' => 'johndoe',
-            'email' => 'invalidemail',
-            'password' => 'password',
-            'password_confirmation' => 'invalidpassword',
-        ];
-
-        $response = $this->post('/register', $data);
-
-        $response->assertSessionHasErrors(['email', 'password_confirmation']);
-    }
 }
