@@ -37,9 +37,7 @@ class ProfileController extends Controller
             ->where('id', $id)
             ->first();
 
-        if (!$profile) {
-            return redirect()->route('home')->with('error', 'User not found.');
-        }
+        if (!$profile) return redirect()->route('home')->with('error', 'User not found.');
 
         $description = $profile->description ?? 'No description yet';
         $data = [

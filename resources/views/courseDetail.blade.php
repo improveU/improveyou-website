@@ -33,6 +33,9 @@
                 <div class="views">
                     {!! $course->views !!} Views
                 </div>
+                <a class="profile" href="{{'/profile/' . $creator->id }}">
+                    <img src="{{ asset('storage/' . $creator->profile_picture_path) }}" alt="">
+                </a>
             </div>
 
             {!! $description !!}

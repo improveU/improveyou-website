@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Course;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -18,22 +19,22 @@ class CourseController extends Controller
         return $user ? $this->listAllCourses() : view('index');
     }
 
-
     public function showCourse($id)
     {
         if (auth()->user()->subscription_id != 0) {
-
             $course = Course::findorFail($id);
             $course->views += 1;
             $course->save();
 
+            $creator = User::where('id', $course->creator_id)->first();
 
             return view('courseDetail', [
                 'course' => $course,
                 'description' => Str::markdown($course->course_description),
+                'creator' => $creator,
             ]);
         } else {
-            return view('/');
+            return redirect('/');
         }
     }
 
@@ -54,10 +55,10 @@ class CourseController extends Controller
 
     public function listSpecificCourses($category)
     {
-        if ($category === 'all') $output = Course::paginate(16);
-        else if ($category === 'popular') $output = Course::orderBy('views', 'desc')->paginate(16);
-        else if ($category === 'latest') $output = Course::latest()->paginate(16);
-        else if ($category === 'random') $output = Course::inRandomOrder()->paginate(16);
+        if ($category === 'all') $output = Course::paginate(12);
+        else if ($category === 'popular') $output = Course::orderBy('views', 'desc')->paginate(12);
+        else if ($category === 'latest') $output = Course::latest()->paginate(12);
+        else if ($category === 'random') $output = Course::inRandomOrder()->paginate(12);
         else abort(404);
 
         return view('coursesSpecific', [
@@ -102,9 +103,9 @@ class CourseController extends Controller
             return view('editCourse', [
                 'course' => $course
             ]);
+        } else {
+            return redirect('/profile')->with('status', 'This is not your course!');
         }
-
-        return redirect('/profile')->with('status', 'This is not your course!');
     }
 
     public function getCourseCreation()

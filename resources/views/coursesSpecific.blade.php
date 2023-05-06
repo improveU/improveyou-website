@@ -17,6 +17,11 @@
                                 <div class="introduction">
                                     {{ $course->introduction }}
                                 </div>
+                                <div class="tags">
+                                    @foreach($course->tags as $tag)
+                                        <div> {{$tag->name}} </div>
+                                    @endforeach
+                                </div>
                                 <div class="info">
                                     <div>{{ $course->views }} views</div>
                                     <div>{{ $course->created_at->format('Y-m-d') }}</div>
@@ -27,8 +32,10 @@
                 @endforeach
             </div>
         </section>
+
         <section id="coursePages">
             {{$courses->links('pagination')}}
         </section>
+
     </section>
 @endsection

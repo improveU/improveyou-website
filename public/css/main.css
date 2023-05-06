@@ -1340,8 +1340,7 @@ section#profilesAll .profileWrapper {
   justify-content: center;
   align-items: center;
   max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 60px auto;
 }
 section#coursesPopular a.btn,
 section#coursesLatest a.btn,
@@ -1789,12 +1788,45 @@ section#publicProfile div.descriptionContainer .courseInfo .views,
 section#profileDescription div.c .courseInfo .views,
 section#profileDescription div.descriptionContainer .courseInfo .views {
   position: absolute;
-  right: 0;
+  right: 58px;
   top: 0;
   border: solid 2.5px #E0E1E5;
   border-radius: 12px;
   padding: 5px 10px;
   width: auto;
+}
+section#course div.c .courseInfo a.profile,
+section#course div.descriptionContainer .courseInfo a.profile,
+section#publicProfile div.c .courseInfo a.profile,
+section#publicProfile div.descriptionContainer .courseInfo a.profile,
+section#profileDescription div.c .courseInfo a.profile,
+section#profileDescription div.descriptionContainer .courseInfo a.profile {
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+section#course div.c .courseInfo a.profile img,
+section#course div.descriptionContainer .courseInfo a.profile img,
+section#publicProfile div.c .courseInfo a.profile img,
+section#publicProfile div.descriptionContainer .courseInfo a.profile img,
+section#profileDescription div.c .courseInfo a.profile img,
+section#profileDescription div.descriptionContainer .courseInfo a.profile img {
+  height: 38px;
+  width: 38px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+@media screen and (max-width: 1000px) {
+  section#course div.c .courseInfo,
+  section#course div.descriptionContainer .courseInfo,
+  section#publicProfile div.c .courseInfo,
+  section#publicProfile div.descriptionContainer .courseInfo,
+  section#profileDescription div.c .courseInfo,
+  section#profileDescription div.descriptionContainer .courseInfo {
+    padding-top: 50px;
+  }
 }
 
 section#coursePages nav ul.pagination {
@@ -2704,11 +2736,11 @@ section#profileContainer section#profileTabs section#profileDescription button {
   overflow-wrap: anywhere;
 }
 .coursesContainer ul li .introduction {
-  width: 350px;
+  width: calc(100% - 800px);
   overflow-wrap: anywhere;
 }
 .coursesContainer ul li .date {
-  width: 75px;
+  width: 100px;
   color: #00617e;
   font-family: "BerlinTypeBold";
   font-size: 14px;

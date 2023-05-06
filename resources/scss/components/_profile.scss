@@ -252,12 +252,12 @@ section#profileContainer {
             }
 
             .introduction {
-                width: 350px;
+                width: calc( 100% - 800px);
                 overflow-wrap: anywhere;
             }
 
             .date {
-                width: 75px;
+                width: 100px;
                 color: #00617e;
                 font-family: "BerlinTypeBold";
                 font-size: 14px;
