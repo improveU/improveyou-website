@@ -27,7 +27,7 @@
         </div>
     </section>
 
-    @if ($courses->count() > 0)
+    @if (isset($courses) && $courses->count() > 0)
         <section id="profileCourses">
             <div class="c">
                 <div class="coursesContainer">
