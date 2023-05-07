@@ -34,7 +34,7 @@
         </section>
 
         <section id="coursePages">
-            {{$courses->links('pagination')}}
+            {{$courses->links('user.pagination')}}
         </section>
 
     </section>

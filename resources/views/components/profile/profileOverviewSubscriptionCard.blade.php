@@ -11,6 +11,8 @@
         <x-payment.cardCreator>
             Change subscription
         </x-payment.cardCreator>
+    @elseif(auth()->user()->subscription_id == 4)
+        <x-payment.cardRoot/>
     @else
         <x-payment.cardNone>
             Get a subscription

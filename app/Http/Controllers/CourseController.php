@@ -7,6 +7,7 @@ use App\Models\Course;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use App\Models\ReportQuick;
 
 class CourseController extends Controller
 {
@@ -28,7 +29,7 @@ class CourseController extends Controller
 
             $creator = User::where('id', $course->creator_id)->first();
 
-            return view('courseDetail', [
+            return view('user.courseDetail', [
                 'course' => $course,
                 'description' => Str::markdown($course->course_description),
                 'creator' => $creator,
@@ -45,7 +46,7 @@ class CourseController extends Controller
         $random = Course::inRandomOrder()->take(4)->get();
         $popular = Course::orderBy('views', 'desc')->take(4)->get();
 
-        return view('courses', [
+        return view('user.courses', [
             'courses' => $courses,
             'random' => $random,
             'latest' => $latest,
@@ -61,7 +62,7 @@ class CourseController extends Controller
         else if ($category === 'random') $output = Course::inRandomOrder()->paginate(12);
         else abort(404);
 
-        return view('coursesSpecific', [
+        return view('user.coursesSpecific', [
             'courses' => $output,
             'category' => ucfirst($category)
         ]);
@@ -70,10 +71,6 @@ class CourseController extends Controller
     public function editCourse($courseId)
     {
         $course = Course::findOrFail($courseId);
-
-        if ($course->creator_id !== auth()->user()->id) {
-            redirect('/')->with('status', 'This is not your Course');
-        }
 
         $request = request();
         $request->validate([
@@ -91,16 +88,25 @@ class CourseController extends Controller
         return redirect('/course/' . $courseId)->with('status', 'Course is edited!');
     }
 
+    public function deleteCourse($courseId)
+    {
+        $course = Course::findOrFail($courseId);
+        $course->delete();
+
+        ReportQuick::where('course_id', $courseId)->delete();
+
+        return redirect('/')->with('status', 'Course deleted!');
+    }
+
     public function selectCourseToEdit($userId, $courseId)
     {
         $user = auth()->user();
+        if ($userId == $user->id || $user->subscription_id == 4) {
+            $course = Course::where('id', $courseId)->firstOrFail();
+            if($course->description == null) $course->description = 'Error';
+            $course->description = Str::markdown($course->description);
 
-        if ($user && $userId == $user->id) {
-            $course = Course::where('id', $courseId)
-                ->where('creator_id', $user->id)
-                ->firstOrFail();
-
-            return view('editCourse', [
+            return view('user.editCourse', [
                 'course' => $course
             ]);
         } else {
@@ -108,9 +114,10 @@ class CourseController extends Controller
         }
     }
 
+
     public function getCourseCreation()
     {
-        return view('createCourse');
+        return view('user.createCourse');
     }
 
     public function createCourse()

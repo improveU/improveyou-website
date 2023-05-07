@@ -55,7 +55,7 @@ Thank you for choosing our platform, and please don't hesitate to contact us if 
 <br>
 
 `break ;)`",
-            'subscription_id' => '3'
+            'subscription_id' => '4'
         ]);
 
         $course00 = Course::create([

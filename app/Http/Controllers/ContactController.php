@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
+use App\Models\Report;
 
 class ContactController extends Controller
 {
@@ -21,6 +21,13 @@ class ContactController extends Controller
             'description' => 'required'
         ]);
 
-        //send email
+        $report = new Report();
+        $report->name = $request->input('name');
+        $report->email = $request->input('email');
+        $report->reason = $request->input('reason');
+        $report->description = $request->input('description');
+        $report->save();
+
+        return redirect()->back()->with('status', 'Report submitted successfully.');
     }
 }

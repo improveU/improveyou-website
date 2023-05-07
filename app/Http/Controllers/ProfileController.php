@@ -24,7 +24,7 @@ class ProfileController extends Controller
 
         $description = $profile->description ?? 'No description yet';
 
-        return view('/profile', [
+        return view('user.profile', [
             'courses' => $courses,
             'description' => Str::markdown($description),
             'activeTab' => $activeTab,
@@ -50,7 +50,7 @@ class ProfileController extends Controller
             $data['courses'] = $courses;
         }
 
-        return view('profilePublic', $data);
+        return view('user.profilePublic', $data);
     }
 
 

@@ -39,19 +39,18 @@
                     <a href="/course/{{ $course->id }}">
                         <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">
                         <div class="courseInfo">
-                            <div class="title">
-                                {{ $course->title }}
-                            </div>
+                            <h2>{{ $course->title }}</h2>
                             <div class="introduction">
                                 {{ $course->introduction }}
                             </div>
+                            <div class="tags">
+                                @foreach($course->tags as $tag)
+                                    <div> {{$tag->name}} </div>
+                                @endforeach
+                            </div>
                             <div class="info">
-                                <div class="views">
-                                    {{ $course->views }} views
-                                </div>
-                                <div class="date">
-                                    {{ $course->created_at->format('Y-m-d') }}
-                                </div>
+                                <div>{{ $course->views }} views</div>
+                                <div>{{ $course->created_at->format('Y-m-d') }}</div>
                             </div>
                         </div>
                     </a>

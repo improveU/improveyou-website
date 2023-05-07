@@ -8,7 +8,7 @@ class PaymentController extends Controller
 {
     public function showOverview()
     {
-        return view('paymentOverview');
+        return view('user.paymentOverview');
     }
 
     public function selectModel($id)

@@ -2,7 +2,8 @@
 
 section#course,
 section#publicProfile,
-section#profileDescription {
+section#profileDescription,
+section#reportOverview {
     .cover {
         border: solid 2.5px #E0E1E5;
         border-radius: 12px;
@@ -123,7 +124,7 @@ section#profileDescription {
                 font-family: "BerlinTypeBold";
                 color: #1D212F;
                 font-size: 35px;
-                padding-right: 80px;
+                padding-right: 210px;
             }
 
             .linkTree {
@@ -165,11 +166,12 @@ section#profileDescription {
 
             .views {
                 position: absolute;
-                right: 58px;
+                right: 118px;
                 top: 0;
                 border: solid 2.5px #E0E1E5;
                 border-radius: 12px;
                 padding: 5px 10px;
+                height: 26px;
                 width: auto;
             }
 
@@ -187,10 +189,35 @@ section#profileDescription {
                 }
             }
 
+            a.btn{
+                position: absolute;
+                right: 0;
+                top: -125px;
+                color: #FFFFFF;
+                padding: 12px;
+                min-width: 60px;
+                height: auto;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            form{
+                position: absolute;
+                right: 58px;
+                top: 0;
+
+                button.quickReport{
+                    background-image: url(./../svg/logoReport.svg) !important;
+                    background-color: transparent;
+                    border: none;
+                    height: 40px;
+                    width: 40px;
+                    cursor: pointer;
+                }
+            }
+
             @media screen and (max-width: 1000px) {
                 padding-top: 50px;
-
-
             }
         }
     }

@@ -17,7 +17,7 @@ class IsCreator
     {
         $user = $request->user();
 
-        if ($user && $user->subscription_id == 3) {
+        if ($user && $user->subscription_id == 3 || $user->subscription_id == 4) {
             return $next($request);
         }
 

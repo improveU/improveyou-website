@@ -11,9 +11,14 @@
             </div>
         @endauth
         <div class="linkWrapper">
-            @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 3)
-                <a href="{{ url('/create-course') }}">
+            @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 3 || auth()->user()->subscription_id == 4)
+                <a href="{{ url('/createCourse') }}">
                     <img src="{{ asset('svg/logoCreate.svg') }}">
+                </a>
+            @endif
+            @if (isset(auth()->user()->subscription_id) && auth()->user()->subscription_id == 4)
+                <a href="{{ url('/dashboard') }}">
+                    <img src="{{ asset('svg/logoDashboard.svg') }}">
                 </a>
             @endif
             @auth

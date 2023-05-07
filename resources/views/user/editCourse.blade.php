@@ -23,7 +23,7 @@
         </nav>
     </section>
 
-    <form method="POST" class="formWrapper create" id="formSending" action="{{ '/edit-course/' . $course->id }}"
+    <form method="POST" class="formWrapper create" id="formSending" action="{{ '/editCourse/' . $course->id }}"
           enctype="multipart/form-data">
         @csrf
 
@@ -120,6 +120,12 @@
             </div>
         </div>
     </form>
+
+    <form id="delete" action="{{'/deleteCourse/' . $course->id }}" method="post">
+        @csrf
+        <button class="btn danger" type="submit">Delete</button>
+    </form>
+
 @endsection
 
 @section('scripts')

@@ -361,6 +361,14 @@ form {
     }
 }
 
+form#delete{
+    width: 100%;
+    display: flex;
+    button{
+        margin: 50px auto 20px auto;
+    }
+}
+
 .file-drop-area {
     position: relative;
     display: flex;

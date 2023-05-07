@@ -20,7 +20,7 @@
         </nav>
     </section>
 
-    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('create-course') }}"
+    <form method="POST" class="formWrapper create" id="formSending" action="{{ url('createCourse') }}"
           enctype="multipart/form-data">
         @csrf
 

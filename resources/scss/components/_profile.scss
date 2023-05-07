@@ -326,7 +326,7 @@ section#profileContainer {
 @media screen and (max-width: 500px) {
     section#profilePictureUpload.open {
         form {
-            width: 100%;
+            width: 100% !important;
         }
     }
 }
@@ -521,7 +521,7 @@ section#profilePictureUpload.open {
         flex-direction: column;
 
         section#profileNav {
-            min-height: 240px;
+            min-height: 280px;
             width: calc(220px - 50px);
             position: absolute;
             left: 25px;

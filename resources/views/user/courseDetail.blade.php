@@ -36,6 +36,15 @@
                 <a class="profile" href="{{'/profile/' . $creator->id }}">
                     <img src="{{ asset('storage/' . $creator->profile_picture_path) }}" alt="">
                 </a>
+                <form action="{{ url('/report/' . $course->id) }}" method="post">
+                    @csrf
+                    <button class="quickReport" type="submit"></button>
+                </form>
+                @if(auth()->user()->subscription_id == 4 || auth()->user()->id == $course->creator_id)
+                    <a class="btn" href="{{ '/editCourse/' . auth()->user()->id . '/' . $course->id }}">
+                        Edit
+                    </a>
+                @endif
             </div>
 
             {!! $description !!}
