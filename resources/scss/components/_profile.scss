@@ -204,6 +204,12 @@ section#profileContainer {
             }
         }
 
+        section#profileSubscriptionEdit{
+            h1{
+                margin-bottom: 30px;
+            }
+        }
+
         // section#profileCourses was inserted here
     }
 }
@@ -329,6 +335,15 @@ section#profileContainer {
             width: 100% !important;
         }
     }
+    section#profileSubscriptionEdit{
+        .subscribeWrapper{
+            .favorite{
+                .subscribeCard{
+                    width: auto;
+                }
+            }
+        }
+    }
 }
 
 
@@ -421,11 +436,13 @@ section#profileContainer {
     content: url(../svg/logoLocation.svg);
 }
 
-section#profilePictureUpload {
+section#profilePictureUpload,
+section#profileCancelSubscription {
     display: none;
 }
 
-section#profilePictureUpload.open {
+section#profilePictureUpload.open,
+section#profileCancelSubscription.open {
     display: block;
     position: absolute;
     height: 200%;

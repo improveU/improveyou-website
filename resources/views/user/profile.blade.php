@@ -5,6 +5,7 @@
 @section('head')
 
     <script src="{{ asset('js/profileTabs.js') }}" defer></script>
+    <script src="{{ asset('js/profilePayment.js') }}" defer></script>
     <script src="{{ asset('js/profilePictureUpload.js') }}" defer></script>
     <script src="{{ asset('js/toastui-improved.js') }}"></script>
     <script src="{{ asset('js/formSend.js') }}" defer></script>
@@ -99,6 +100,24 @@
                     <button class="btn" type="submit">Send</button>
                 </div>
                 <div class="formClose" id="profilePictureUploadClose">
+                    <img src="{{ asset('svg/logoClose.svg') }}" alt="">
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="profileCancelSubscription">
+        <form method="POST" class="formWrapper create" action="/cancelSubscription">
+            @csrf
+            <div class="c">
+                <h2>Confirmation</h2>
+                <p>Do you really want to cancel your subscription?</p>
+                <div class="submitContainerRight">
+                    <button class="btn">
+                        Yes
+                    </button>
+                </div>
+                <div class="formClose" id="profileCancelSubscriptionClose">
                     <img src="{{ asset('svg/logoClose.svg') }}" alt="">
                 </div>
             </div>

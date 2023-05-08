@@ -41,4 +41,13 @@ class PaymentController extends Controller
         $user->save();
         return redirect('/')->with('status', 'Your subscription is now active');
     }
+
+    public function cancelSubscription()
+    {
+        $user = User::findOrFail(auth()->user()->id);
+        $user->subscription_id = 0;
+        $user->save();
+        return redirect('/')->with('status', 'Your subscription is now active');
+    }
+
 }

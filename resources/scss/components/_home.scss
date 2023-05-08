@@ -341,7 +341,8 @@ section#categories {
     }
 }
 
-section#prices {
+section#prices,
+section#profileSubscriptionEdit {
     .subscribeWrapper {
         width: calc(100% - 50px);
         gap: 80px;

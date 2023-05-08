@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+section#dashboard{
+   min-height: 691px;
+}
+
 section#reports,
 section#reportsQuick {
 

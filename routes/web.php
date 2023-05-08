@@ -72,6 +72,7 @@ Route::post('/updateBilling', [ProfileController::class, 'updateBilling'])->midd
 Route::get('/payment', [PaymentController::class, 'showOverview'])->middleware('auth');
 Route::get('/payment/{id}', [PaymentController::class, 'selectModel'])->middleware('auth');
 Route::post('/payment/{id}', [PaymentController::class, 'storeData'])->middleware('auth');
+Route::post('/cancelSubscription', [PaymentController::class, 'cancelSubscription'])->middleware('auth');
 
 Route::get('/course/{id}', [CourseController::class, 'showCourse'])->middleware('auth');
 Route::get('/home', [CourseController::class, 'listAllCourses'])->middleware('auth');

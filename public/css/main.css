@@ -1224,7 +1224,8 @@ section#categories .categoryWrapper .categoryContainer :nth-child(9) {
   transition-delay: 600ms;
 }
 
-section#prices .subscribeWrapper {
+section#prices .subscribeWrapper,
+section#profileSubscriptionEdit .subscribeWrapper {
   width: calc(100% - 50px);
   gap: 80px;
   display: flex;
@@ -2809,6 +2810,9 @@ section#profileContainer section#profileTabs section#profileDescription button {
   bottom: 0;
   width: 200px;
 }
+section#profileContainer section#profileTabs section#profileSubscriptionEdit h1 {
+  margin-bottom: 30px;
+}
 
 .coursesContainer {
   padding: 20px 30px 0 30px;
@@ -2913,6 +2917,9 @@ section#profileContainer section#profileTabs section#profileDescription button {
 @media screen and (max-width: 500px) {
   section#profilePictureUpload.open form {
     width: 100% !important;
+  }
+  section#profileSubscriptionEdit .subscribeWrapper .favorite .subscribeCard {
+    width: auto;
   }
 }
 .overviewPerson,
@@ -3022,11 +3029,13 @@ section#profileContainer section#profileTabs section#profileDescription button {
   content: url(../svg/logoLocation.svg);
 }
 
-section#profilePictureUpload {
+section#profilePictureUpload,
+section#profileCancelSubscription {
   display: none;
 }
 
-section#profilePictureUpload.open {
+section#profilePictureUpload.open,
+section#profileCancelSubscription.open {
   display: block;
   position: absolute;
   height: 200%;
@@ -3037,7 +3046,8 @@ section#profilePictureUpload.open {
   transform: translate(-50%, -50%);
   z-index: 999;
 }
-section#profilePictureUpload.open form {
+section#profilePictureUpload.open form,
+section#profileCancelSubscription.open form {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -3047,7 +3057,9 @@ section#profilePictureUpload.open form {
   z-index: 9999;
 }
 section#profilePictureUpload.open form .c,
-section#profilePictureUpload.open form .container {
+section#profilePictureUpload.open form .container,
+section#profileCancelSubscription.open form .c,
+section#profileCancelSubscription.open form .container {
   margin-left: 25px;
   margin-right: 25px;
   min-width: 0px;
@@ -3250,6 +3262,10 @@ section#profilePictureUpload.open form .container {
 }
 section#profileFix {
   height: calc(100vh - 1495px);
+}
+
+section#dashboard {
+  min-height: 691px;
 }
 
 section#reports .noResults,
