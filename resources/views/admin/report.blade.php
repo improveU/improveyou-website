@@ -20,12 +20,12 @@
         <div class="c">
             <div>
                 <h1>Name</h1>
-                {!! $report->name !!}}
+                {!! $report->name !!}
                 <br>
             </div>
             <div>
                 <h1>Mail</h1>
-                {!! $report->email !!}}
+                {!! $report->email !!}
                 <br>
             </div>
             <div>
