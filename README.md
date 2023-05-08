@@ -8,6 +8,10 @@
    Demian, Elija, Tim, Yannic & Xavier
 </p>
 
+## Status
+
+[![Laravel](https://github.com/improveU/improveyou-website/actions/workflows/laravel.yml/badge.svg?branch=main)](https://github.com/improveU/improveyou-website/actions/workflows/laravel.yml)
+
 ## 💻Installation
 
 Used Technologies:
