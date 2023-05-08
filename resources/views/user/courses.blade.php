@@ -46,7 +46,7 @@
         <section id="coursesLatest">
             <h2>Latest</h2>
             <div class="courseWrapper">
-                @foreach($popular as $course)
+                @foreach($latest as $course)
                     <div class="courseCard">
                         <a href="/course/{{ $course->id }}">
                             <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">
@@ -75,7 +75,7 @@
         <section id="coursesRandom">
             <h2>Random</h2>
             <div class="courseWrapper">
-                @foreach($popular as $course)
+                @foreach($random as $course)
                     <div class="courseCard">
                         <a href="/course/{{ $course->id }}">
                             <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">
@@ -104,7 +104,7 @@
         <section id="coursesAll">
             <h2>All</h2>
             <div class="courseWrapper">
-                @foreach($popular as $course)
+                @foreach($courses as $course)
                     <div class="courseCard">
                         <a href="/course/{{ $course->id }}">
                             <img src="{{ asset('storage/' . $course->image_thumbnail_path) }}" alt="">

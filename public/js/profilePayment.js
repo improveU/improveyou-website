@@ -8,18 +8,18 @@ function subscriptionButton(param) {
 
 const profileCancel = document.getElementById("profileCancelSubscription");
 const profileCancelClose = document.getElementById("profileCancelSubscriptionClose");
-const body = document.getElementById("body");
+const bodyCancel = document.getElementById("body");
 
 function OpenUploadSection() {
     scroll(0, 0);
     profileCancel.classList.add("open");
-    body.classList.add("overflowHidden");
+    bodyCancel.classList.add("overflowHidden");
 }
 
 function CloseUploadSection() {
     scroll(0, 0);
     profileCancel.classList.remove("open");
-    body.classList.remove("overflowHidden");
+    bodyCancel.classList.remove("overflowHidden");
 }
 
 profileCancelClose.addEventListener("click", CloseUploadSection);
