@@ -14,7 +14,7 @@ Used Technologies:
 
 * Laragon
 * Laravel
-* MySQL Database
+* MySQL Database on Laragon
 
 ### Debug it locally
 
@@ -58,9 +58,10 @@ php artisan migrate --seed
 ```
 
 > seed the db with the spesific CourseSeeder
->  ```
->  php artisan db:seed --class=CourseSeeder
->  ```
+>
+> ```
+> php artisan db:seed --class=CourseSeeder
+> ```
 
 Create a link between the public and the storage folder
 
