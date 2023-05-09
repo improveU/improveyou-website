@@ -1188,7 +1188,7 @@ section#categories .categoryWrapper .categoryContainer div div.category-text.dar
   color: #1D212F;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(1) {
-  background: no-repeat center url(../img/categories/yoga.webp);
+  background: no-repeat center url(../img/categories/body-weight.webp);
   transition-delay: 200ms;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(2) {
@@ -1200,7 +1200,7 @@ section#categories .categoryWrapper .categoryContainer :nth-child(3) {
   transition-delay: 200ms;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(4) {
-  background: no-repeat center url(../img/categories/aerobic.webp);
+  background: no-repeat center url(../img/categories/yoga.webp);
   transition-delay: 400ms;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(5) {
@@ -1212,15 +1212,15 @@ section#categories .categoryWrapper .categoryContainer :nth-child(6) {
   transition-delay: 400ms;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(7) {
-  background: no-repeat center url(../img/categories/body-weight.webp);
+  background: no-repeat center url(../img/categories/supplements.webp);
   transition-delay: 600ms;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(8) {
-  background: no-repeat center url(../img/categories/fitness.webp);
+  background: no-repeat center url(../img/categories/meditation.webp);
   transition-delay: 600ms;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(9) {
-  background: no-repeat center url(../img/categories/elastic-bands.webp);
+  background: no-repeat center url(../img/categories/vegetables.webp);
   transition-delay: 600ms;
 }
 
