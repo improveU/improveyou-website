@@ -32,8 +32,8 @@
             <dl>
                 <dt>More inspiration from us</dt>
                 <dd>
-                    <a href="{{ url('/') }}"><img src="{{ asset('svg/logoDiscord.svg') }}"></a>
-                    <a href="{{ url('/') }}"><img src="{{ asset('svg/logoTwitter.svg') }}"></a>x
+                    <a href="https://discord.gg/QHnc2gCYgw"><img src="{{ asset('svg/logoDiscord.svg') }}"></a>
+                    <a href="https://twitter.com/im_proveyou"><img src="{{ asset('svg/logoTwitter.svg') }}"></a>
                 </dd>
             </dl>
         </div>
