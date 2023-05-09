@@ -7,13 +7,8 @@ use App\Models\Report;
 
 class ContactControllerTest extends TestCase
 {
-    use RefreshDatabase; // This trait will reset the database after each test.
+    use RefreshDatabase; 
 
-    /**
-     * Test the show method of ContactController.
-     *
-     * @return void
-     */
     public function testShow()
     {
         $response = $this->get('/contact');
@@ -22,11 +17,6 @@ class ContactControllerTest extends TestCase
         $response->assertViewIs('contact');
     }
 
-    /**
-     * Test the send method of ContactController.
-     *
-     * @return void
-     */
     public function testSend()
     {
         $data = [

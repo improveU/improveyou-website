@@ -87,7 +87,7 @@
     <div class="categoryWrapper">
         <div class="categoryContainer">
             <div class="hiddenAnimation">
-                <div class="category-text rightBottom">Yoga</div>
+                <div class="category-text rightBottom">Body Weight</div>
             </div>
             <div class="hiddenAnimation">
                 <div class="category-text rightTop dark">Add. Weights</div>
@@ -96,7 +96,7 @@
                 <div class="category-text leftBottom">Dancing</div>
             </div>
             <div class="hiddenAnimation">
-                <div class="category-text leftTop dark">Aerobic</div>
+                <div class="category-text leftTop dark">Yoga</div>
             </div>
             <div class="hiddenAnimation">
                 <div class="category-text rightBottom">Balance</div>
@@ -105,13 +105,13 @@
                 <div class="category-text rightTop dark">Stretching</div>
             </div>
             <div class="hiddenAnimation">
-                <div class="category-text leftBottom">Body Weight</div>
+                <div class="category-text leftBottom">Supplements</div>
             </div>
             <div class="hiddenAnimation">
-                <div class="category-text leftTop dark">Fitness</div>
+                <div class="category-text leftTop dark">Meditation</div>
             </div>
             <div class="hiddenAnimation">
-                <div class="category-text leftBottom">Elastic Bands</div>
+                <div class="category-text leftBottom">Healthy Eating</div>
             </div>
         </div>
     </div>
@@ -135,10 +135,8 @@
                 <img src="{{ asset('img/ourservice/gymweights.webp') }}" alt="">
             </div>
             <div class="description">
-                <h1>Strength</h1>
-                <p>Whatever goal you have set yourself: Muscle building, strengthening your back, a six-pack or powerful
-                    legs - in our strength training section you'll find everything you need to successfully reach your
-                    goal.</p>
+                <h1>Courses</h1>
+                <p>Online courses created to improve your life offer endless opportunities for growth and self-improvement. Embrace the journey and unlock your full potential today.</p>
                 <button class="btn" id="button" onclick="window.location.href = '/register';">
                     Join now
                 </button>
@@ -151,36 +149,7 @@
             </div>
             <div class="description">
                 <h1>Creators</h1>
-                <p>Challenge yourself with one of our courses. Our professional and motivated trainers will push you to
-                    the max.</p>
-                <button class="btn" id="button" onclick="window.location.href = '/register';">
-                    Join now
-                </button>
-            </div>
-        </div>
-
-        <div class="serviceContainer">
-            <div class="picture">
-                <img src="{{ asset('img/ourservice/vegetables.webp') }}" alt="">
-            </div>
-            <div class="description">
-                <h1>Food</h1>
-                <p>Challenge yourself with one of our courses. Our professional and motivated trainers will push you to
-                    the max.</p>
-                <button class="btn" id="button" onclick="window.location.href = '/register';">
-                    Join now
-                </button>
-            </div>
-        </div>
-
-        <div class="serviceContainer">
-            <div class="picture">
-                <img src="{{ asset('img/ourservice/supplements.webp') }}" alt="">
-            </div>
-            <div class="description">
-                <h1>Supplements</h1>
-                <p>Go all out with creatine during your short, explosive training sessions and high-intensity exercises.
-                    It could be the perfect supplement for you!</p>
+                <p>Creating courses to improve your life on a website empowers both you and your audience. Share your knowledge, deepen your understanding and transform lives today.</p>
                 <button class="btn" id="button" onclick="window.location.href = '/register';">
                     Join now
                 </button>
