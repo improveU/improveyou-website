@@ -414,11 +414,7 @@ Finally, remember why you started in the first place. Revisit your goal and remi
         $course11->tag($tags);
 
         $course12= Course::create([
-<<<<<<< HEAD
-            'title' => 'How to loose weight',
-=======
             'title' => 'How to lose weight',
->>>>>>> 78def0700792a6e8b2e2f159261b4de3447c8396
             'introduction' => 'Step-by-step guide on how to lose weight',
 
             'course_description' =>"
@@ -676,11 +672,7 @@ Developing a deeper connection with nature is a gradual process, so be patient a
         $course17->tag($tags);
 
         $course18= Course::create([
-<<<<<<< HEAD
-            'title' => 'Benefits of walking',
-=======
             'title' => 'Walk more, it has many benefits',
->>>>>>> 78def0700792a6e8b2e2f159261b4de3447c8396
             'introduction' => 'Step-by-step guide on how to include walks in your day',
 
             'course_description' =>"
