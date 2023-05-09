@@ -188,7 +188,7 @@ Again, **it's important** to talk to a healthcare professional before starting a
         $course05->tag($tags);
 
         $course06= Course::create([
-            'title' => 'Skincare Routine',
+            'title' => 'Beginner Skincare Routine',
             'introduction' => 'Simple skincare routine for clean skin',
             'course_description' =>"
 * Cleanser: Start by washing your face with a gentle cleanser to remove any dirt, oil, and makeup. Look for a cleanser that is appropriate for your skin type, whether it's oily, dry, or sensitive.
@@ -288,7 +288,7 @@ Remember, fashion is **about expressing yourself** and feeling confident in what
         $course08->tag($tags);
 
         $course09= Course::create([
-            'title' => 'Shadow Boxing',
+            'title' => 'Shadow Boxing Basics',
             'introduction' => 'Shadow Boxing 101: Mastering the Fundamentals',
             'course_description' =>"1. Introduction to Shadow Boxing: Understanding the Benefits and Basics
 
@@ -371,7 +371,7 @@ Pay attention to your body's thirst cues and drink water accordingly. If you fee
         $course10->tag($tags);
 
         $course11= Course::create([
-            'title' => 'how to motivate yourself to go to the gym',
+            'title' => 'Guide on motivation',
             'introduction' => 'step-by-step guide on how to motivate yourself to go to the gym',
 
             'course_description' =>"
@@ -414,7 +414,7 @@ Finally, remember why you started in the first place. Revisit your goal and remi
         $course11->tag($tags);
 
         $course12= Course::create([
-            'title' => 'How to loose weight and look good',
+            'title' => 'How to loose weight',
             'introduction' => 'Step-by-step guide on how to lose weight',
 
             'course_description' =>"
@@ -457,7 +457,7 @@ Weight loss is a gradual process, so be patient and consistent with your efforts
         $course12->tag($tags);
 
         $course13= Course::create([
-            'title' => 'How to gain weight in the gym',
+            'title' => 'How to gain weight',
             'introduction' => 'Step-by-step guide on how to gain weight',
 
             'course_description' =>"
@@ -629,7 +629,7 @@ Thinking more positively is a gradual process, so be patient and persistent with
         $course16->tag($tags);
 
         $course17= Course::create([
-            'title' => 'Nature is something wonderful',
+            'title' => 'Nature is amazing',
             'introduction' => 'Step-by-step guide on how to be more in tune with nature',
 
             'course_description' =>"
@@ -672,7 +672,7 @@ Developing a deeper connection with nature is a gradual process, so be patient a
         $course17->tag($tags);
 
         $course18= Course::create([
-            'title' => 'Walk more it has many benefits',
+            'title' => 'Benefits of walking',
             'introduction' => 'Step-by-step guide on how to include walks in your day',
 
             'course_description' =>"
