@@ -20,10 +20,11 @@
         </div>
         <div class="thirdparty">
             <dl>
-                <dt>Sign in with Apple & Google</dt>
+                <dt>Disclaimer</dt>
                 <dd>
-                    <a href="https://about.google/"><img src="{{ asset('svg/logoGoogle.svg') }}">Google</a>
-                    <a href="https://www.apple.com/"><img src="{{ asset('svg/logoApple.svg') }}">Apple</a>
+                    Für diese Webseite sind die Lernenden Tim Bernhard, Demian Flury, Xavier Scherer, Yannic Studer und Elija Zürcher
+                    des BBZW Sursee verantwortlich. Es handelt sich hierbei um eine Testversion.
+                    Weder die Lernenden noch andere Personen oder Organisationen übernehmen irgendeine Haftung für die Webseite, Inhalte oder Downloads.
                 </dd>
             </dl>
         </div>
@@ -32,9 +33,7 @@
                 <dt>More inspiration from us</dt>
                 <dd>
                     <a href="{{ url('/') }}"><img src="{{ asset('svg/logoDiscord.svg') }}"></a>
-                    <a href="{{ url('/') }}"><img src="{{ asset('svg/logoTwitter.svg') }}"></a>
-                    <a href="{{ url('/') }}"><img src="{{ asset('svg/logoInstagram.svg') }}"></a>
-                    <a href="{{ url('/') }}"><img src="{{ asset('svg/logoFacebook.svg') }}"></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('svg/logoTwitter.svg') }}"></a>x
                 </dd>
             </dl>
         </div>
