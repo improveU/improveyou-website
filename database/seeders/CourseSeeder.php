@@ -141,7 +141,7 @@ Remember to wear appropriate running shoes and stay hydrated throughout your wor
         $course03->tag($tags);
 
         $course04 = Course::create([
-            'title' => 'Meditation Beginner Course',
+            'title' => 'Meditation for beginners',
             'introduction' => 'Meditation Course for beginners',
             'course_description' =>"1. Find a quiet place where you won't be disturbed. Sit comfortably on a cushion or a chair, with your back straight and your hands resting on your knees.
 2. Start with a few deep breaths, inhaling through your nose and exhaling through your mouth. Let go of any tension in your body and relax.
@@ -414,7 +414,11 @@ Finally, remember why you started in the first place. Revisit your goal and remi
         $course11->tag($tags);
 
         $course12= Course::create([
+<<<<<<< HEAD
             'title' => 'How to loose weight',
+=======
+            'title' => 'How to lose weight',
+>>>>>>> 78def0700792a6e8b2e2f159261b4de3447c8396
             'introduction' => 'Step-by-step guide on how to lose weight',
 
             'course_description' =>"
@@ -543,8 +547,8 @@ If you are new to strength training or have a pre-existing condition, consult wi
         $course14->tag($tags);
 
         $course15= Course::create([
-            'title' => 'How to loose social anxiety',
-            'introduction' => 'Step-by-step guide on how to loose social anxiety',
+            'title' => 'How to lose social anxiety',
+            'introduction' => 'Step-by-step guide on how to lose social anxiety',
 
             'course_description' =>"
 Step 1: Acknowledge and Accept Your Anxiety
@@ -672,7 +676,11 @@ Developing a deeper connection with nature is a gradual process, so be patient a
         $course17->tag($tags);
 
         $course18= Course::create([
+<<<<<<< HEAD
             'title' => 'Benefits of walking',
+=======
+            'title' => 'Walk more, it has many benefits',
+>>>>>>> 78def0700792a6e8b2e2f159261b4de3447c8396
             'introduction' => 'Step-by-step guide on how to include walks in your day',
 
             'course_description' =>"
