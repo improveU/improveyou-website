@@ -1,3 +1,4 @@
+<?php
 
 use App\Models\Course;
 use App\Models\Report;
@@ -8,134 +9,99 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Database\Factories\ReportFactory;
+
 
 class DashboardControllerTest extends TestCase
 {
     use RefreshDatabase;
-
     public function testShow()
     {
-        // Case: Authenticated user with subscription_id = 4
-        $user = User::create([
-            'subscription_id' => 4,
-            'first_name' => fake()->firstName(),
-            'last_name' => fake()->lastName(),
-            'username' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'password' => '12345678',
-            'address' => fake()->address(),
-            'city' => fake()->city(),
-            'country' => fake()->countryCode(),
-            'zip_code' => fake()->postcode(),
-            'description' => fake()->paragraph(),
-            'remember_token' => Str::random(10),
-            'profile_picture_path' => 'profiles/defaultProfilePicture.svg',
-            // Add other required attributes for the user
-        ]);
-
-        Auth::login($user); // Manually log in the user
-
-        // Create dummy reports and report quicks
-        $reports = [];
-        for ($i = 0; $i < 3; $i++) {
-            $reports[] = Report::create([
-                'title' => 'Report ' . ($i + 1),
-                'name' => 'Name' . ($i + 1),
-                'description' => 'Description ' . ($i + 1),
-                'email' => fake()->unique()->safeEmail(),
-                'reason' => fake()->name(),
-            ]);
-        }
-
-        $reportsQuick = [];
-        for ($i = 0; $i < 2; $i++) {
-            $reportsQuick[] = ReportQuick::create([
-                'title' => 'Report Quick ' . ($i + 1),
-                'name' => 'Quick Name' . ($i + 1),
-                'description' => 'Quick Description ' . ($i + 1),
-            ]);
-        }
-
-        $response = $this->get('/dashboard');
-
+        $this->withoutExceptionHandling();
+    
+        $user = User::factory()->create();
+        $user->subscription_id = 4;
+        $user->save();
+    
+        Report::factory()->create(); // Create a sample report
+    
+        $response = $this->actingAs($user)->get('/dashboard');
+    
         $response->assertViewIs('admin.dashboard');
-        $response->assertViewHas('reports', $reports);
-        $response->assertViewHas('reportsQuick', $reportsQuick);
-        $response->assertStatus(200);
+        $response->assertViewHas('reports');
+        $response->assertViewHas('reportsQuick');
+    
+        $response->assertSee('Dashboard');
     }
+    
+    public function testShowAuthorizedUser()
+{
+    $user = User::factory()->create();
+    $user->subscription_id = 4;
+    $user->save();
 
-    public function testShowUnauthorizedAccess()
-    {
-        // Case: Authenticated user with subscription_id other than 4
-        $user = User::create([
-            'subscription_id' => 3,
-            // Add other required attributes for the user
-        ]);
-        $this->actingAs($user);
+    $reports = Report::factory()->count(3)->create();
+    $reportsQuick = ReportQuick::factory()->count(2)->create();
 
-        $response = $this->get('/dashboard');
+    $response = $this->actingAs($user)->get('/dashboard');
 
-        $response->assertRedirect('/');
-        $response->assertSessionHas('status', 'Unauthorized access');
-        $response->assertStatus(302);
-    }
+    $response->assertStatus(200);
+    $response->assertViewHas('reports', $reports);
+    $response->assertViewHas('reportsQuick', $reportsQuick);
+}
+public function testShowUnauthorizedUser()
+{
+    $user = User::factory()->create();
+    $user->subscription_id = 3; // Non-matching subscription ID
+    $user->save();
 
-    public function testShowReport()
-    {
-        // Case: Authenticated user with subscription_id = 4
-        $user = User::create([
-            'subscription_id' => 4,
-            // Add other required attributes for the user
-        ]);
-        $this->actingAs($user);
+    $response = $this->actingAs($user)->get('/dashboard');
 
-        $report = Report::create([
-            // Add required attributes for the report
-        ]);
+    $response->assertRedirect('/home');
+    $response->assertSessionHas('status', 'Unauthorized access');
+}
+public function testShowReportAuthorizedUser()
+{
+    $user = User::factory()->create();
+    $user->subscription_id = 4;
+    $user->save();
 
-        $response = $this->get('/report/' . $report->id);
+    $report = Report::factory()->create();
 
-        $response->assertViewIs('admin.report');
-        $response->assertViewHas('report', $report);
-        $response->assertStatus(200);
-    }
+    $response = $this->actingAs($user)->get('/report/' . $report->id);
 
-    public function testShowReportUnauthorizedAccess()
-    {
-        // Case: Authenticated user with subscription_id other than 4
-        $user = User::create([
-            'subscription_id' => 3,
-            // Add other required attributes for the user
-        ]);
-        $this->actingAs($user);
+    $response->assertStatus(200);
+    $response->assertViewHas('report', $report);
+}
+public function testShowReportUnauthorizedUser()
+{
+    $user = User::factory()->create();
+    $user->subscription_id = 3; // Non-matching subscription ID
+    $user->save();
 
-        $report = Report::create([
-            // Add required attributes for the report
-        ]);
+    $report = Report::factory()->create();
 
-        $response = $this->get('/report/' . $report->id);
+    $response = $this->actingAs($user)->get('/report/' . $report->id);
 
-        $response->assertRedirect('/');
-        $response->assertSessionHas('status', 'Unauthorized access');
-        $response->assertStatus(302);
-    }
+    $response->assertRedirect('/home');
+    $response->assertSessionHas('status', 'Unauthorized access');
+}
+public function testSend()
+{
+    $user = User::factory()->create();
+    $courseId = 123; // Replace with an actual course ID
 
-    public function testSend()
-    {
-        // Case: Authenticated user
-        $user = User::create([
-            // Add required attributes for the user
-        ]);
-        $this->actingAs($user);
+    $response = $this->actingAs($user)->post('/send/' . $courseId);
 
-        $course = Course::create([
-            // Add required attributes for the course
-        ]);
+    $response->assertRedirect();
+    $response->assertSessionHas('status', 'Course has been reported');
 
-        $response = $this->post('/send/' . $course->id);
+    // Additional assertions to check if the report was created in the database
+    $this->assertDatabaseHas('report_quicks', [
+        'course_id' => $courseId,
+        'reporter_id' => $user->id,
+    ]);
+}
 
-        $response->assertRedirect('/');
-        $response->assertSessionHas('status', 'Course has been reported');
-        $response->assertStatus(302);
-    }
+    
 }

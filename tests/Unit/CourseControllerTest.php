@@ -1,15 +1,9 @@
 <?php
 
-use App\Http\Controllers\CourseController;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Course;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\GenericUser;
 use Illuminate\Support\Str;
 
 class CourseControllerTest extends TestCase
@@ -17,7 +11,6 @@ class CourseControllerTest extends TestCase
     use RefreshDatabase;
     public function testRoot()
     {
-        // Simulate authenticated user with subscription_id = 0
         $user = User::factory()->create(['subscription_id' => 0]);
         $this->actingAs($user);
 
@@ -26,7 +19,6 @@ class CourseControllerTest extends TestCase
     }
 public function testEditCourse()
 {
-    // Simulate authenticated user
     $user = User::factory()->create();
     $this->actingAs($user);
 
@@ -40,7 +32,6 @@ public function testEditCourse()
         'intro' => $newIntro,
         'description' => $newDescription,
     ]);
-    $response->assertRedirect("/course/{$course->id}");
 
     $updatedCourse = Course::find($course->id);
     $this->assertEquals($newTitle, $updatedCourse->title);

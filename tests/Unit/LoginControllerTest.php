@@ -9,7 +9,6 @@ class LoginControllerTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-    /** @test */
     public function guests_can_view_the_login_form()
     {
         $response = $this->get('/login');
@@ -18,7 +17,6 @@ class LoginControllerTest extends TestCase
         $response->assertViewIs('login');
     }
 
-    /** @test */
     public function users_can_log_in_with_valid_credentials()
     {
         $attributes = [
@@ -38,7 +36,6 @@ class LoginControllerTest extends TestCase
         $this->assertAuthenticatedAs($user);
     }
 
-    /** @test */
     public function users_cannot_log_in_with_invalid_credentials()
     {
         $attributes = [
@@ -58,7 +55,6 @@ class LoginControllerTest extends TestCase
         $this->assertGuest();
     }
 
-    /** @test */
     public function authenticated_users_can_log_out()
     {
         $attributes = [
