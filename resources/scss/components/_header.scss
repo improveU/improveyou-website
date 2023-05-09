@@ -174,7 +174,7 @@ header {
             }
         }
         
-        @media screen and (max-width: 450px) {
+        @media screen and (max-width: 500px) {
             .searchIndicator {
                 width: 60px;
                 margin: 0 8px 0 auto;
@@ -184,6 +184,20 @@ header {
                 button,
                 a {
                     width: 60px;
+                    margin: 8px;
+                }
+            }
+        }
+        @media screen and (max-width: 390px) {
+            .searchIndicator {
+                width: 50px;
+                margin: 0 8px 0 auto;
+            }
+
+            .linkWrapper {
+                button,
+                a {
+                    width: 50px;
                     margin: 8px;
                 }
             }

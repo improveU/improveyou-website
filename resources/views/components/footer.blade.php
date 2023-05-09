@@ -1,5 +1,8 @@
 <footer>
     <nav>
+        <div class="logo">
+            <x-logo/>
+        </div>
         <div class="quicklinks">
             <dl>
                 <dt>
@@ -29,6 +32,7 @@
         </div>
         <div class="thirdparty">
             <dl>
+                <hr>
                 <dt>Disclaimer</dt>
                 <dd>
                     Für diese Webseite sind die Lernenden Tim Bernhard, Demian Flury, Xavier Scherer, Yannic Studer und Elija Zürcher
@@ -38,7 +42,6 @@
             </dl>
         </div>
         <div class="copyright">
-            <hr>
             <div class="copyrightbar">
                 © Copyright 2023. All Rights Reserved.
             </div>

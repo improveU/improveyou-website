@@ -23,9 +23,6 @@ footer {
             .quicklinks {
                 width: 40vw;
             }
-            .thirdparty {
-                width: 40vw;
-            }
         }
         
         @media screen and (max-width: 800px) {
@@ -40,6 +37,9 @@ footer {
             .socialmedia {
                 width: 100%;
                 margin-bottom: 20px;
+            }
+            .logo{
+                margin-bottom: 30px !important;
             }
         }
 
@@ -70,6 +70,10 @@ footer {
             }
         }
 
+        .logo{
+            margin: 20px;
+        }
+
         .quicklinks {
             display: flex;
             justify-content: center;
@@ -91,6 +95,11 @@ footer {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
+                hr {
+                    border: solid 1px #1D212F;
+                    width: 100%;
+                }
 
                 dt {
                     color: white;
@@ -147,10 +156,6 @@ footer {
                 display: flex;
                 justify-content: center;
                 margin: 30px 40px 30px 40px;
-            }
-
-            hr {
-                border: solid 1px #1D212F;
             }
         }
     }
