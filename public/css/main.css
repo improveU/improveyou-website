@@ -830,7 +830,7 @@ footer nav dl dd img {
   width: 35px;
 }
 footer nav .logo {
-  margin: 20px;
+  margin: 20px 0;
 }
 footer nav .quicklinks {
   display: flex;
