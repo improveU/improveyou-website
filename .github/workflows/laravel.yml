@@ -30,6 +30,8 @@ jobs:
         run: php artisan storage:link
       - name: Set up environment file
         run: echo "DB_HOST=${{ env.DB_HOST }}" >> .env
+      - name: Cache clear
+        run: php artisan config:clear
       - name: Run database migrations
         run: php artisan migrate:fresh --seed --force
       - name: Execute tests (Unit and Feature tests) via PHPUnit
