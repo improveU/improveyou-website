@@ -25,10 +25,10 @@ Used Technologies:
 Execute in Laragon-Console, step for step:
 
 1. Install [Laragon](https://laragon.org/download/index.html)
-2. Clone this repository to your machine (save it in the laragon folder)
+2. Clone this repository to your machine (save it in the laragon/www folder)
 3. Start Laragon services
 4. Open the integrated Laragon-Terminal (Cmder)
-5. Navigate to the repository
+5. Navigate to the repository via cd command
 6. Run the following commands to get it to work
 
 Install all used composer packages
@@ -80,12 +80,6 @@ Migrate and seed the database
 ```
 php artisan migrate --seed
 ```
-
-> seed the db with the spesific CourseSeeder
->
-> ```
-> php artisan db:seed --class=CourseSeeder
-> ```
 
 Create a link between the public and the storage folder
 
