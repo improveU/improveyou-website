@@ -19,21 +19,22 @@ class CourseControllerTest extends TestCase
     }
 public function testEditCourse()
 {
-    $user = User::factory()->create();
+    $user = User::factory()->create(['subscription_id' => 3]);
     $this->actingAs($user);
-
+    
     $course = Course::factory()->create();
     $newTitle = 'New Course Title';
     $newIntro = 'New Course Introduction';
     $newDescription = 'New Course Description';
 
-    $response = $this->post("/editCourse/{$course->id}", [
+    $this->post("/editCourse/{$course->id}", [
         'title' => $newTitle,
         'intro' => $newIntro,
         'description' => $newDescription,
     ]);
 
-    $updatedCourse = Course::find($course->id);
+    $updatedCourse = Course::findorFail($course->id);
+
     $this->assertEquals($newTitle, $updatedCourse->title);
     $this->assertEquals($newIntro, $updatedCourse->introduction);
     $this->assertEquals($newDescription, $updatedCourse->course_description);

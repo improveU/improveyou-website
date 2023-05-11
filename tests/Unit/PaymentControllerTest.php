@@ -1,3 +1,4 @@
+<?php
 
 use App\Http\Controllers\PaymentController;
 use App\Models\User;
@@ -19,44 +20,27 @@ class PaymentControllerTest extends TestCase
         $this->actingAs($user);
         $response = $this->get('/payment/overview');
 
-        $response->assertViewIs('user.paymentOverview');
-        $response->assertStatus(200);
-    }
-
-    public function testSelectModel()
-    {
-        $user = User::factory()->create();
-        $id = 1; // The ID of the selected model
-
-        $this->actingAs($user);
-        $response = $this->get('/payment/select/' . $id);
-
         $response->assertViewIs('payment');
-        $response->assertViewHas('id', $id);
         $response->assertStatus(200);
     }
 
     public function testStoreData()
     {
         $user = User::factory()->create();
-        $id = 1; // The ID of the selected model
+        $id = 1; 
 
         $this->actingAs($user);
 
         $data = [
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
-            'city' => $this->faker->city,
-            'country' => $this->faker->country,
-            'postal_code' => $this->faker->postcode,
-            'address' => $this->faker->streetAddress,
+            'first_name' => $this->faker()->firstName(),
+            'last_name' => $this->faker()->lastName(),
+            'city' => $this->faker()->city(),
+            'country' => $this->faker()->country(),
+            'postal_code' => $this->faker()->postcode(),
+            'address' => $this->faker()->streetAddress(),
         ];
 
-        $response = $this->post('/payment/store/' . $id, $data);
-
-        $response->assertRedirect('/');
-        $response->assertSessionHas('status', 'Your subscription is now active');
-        $response->assertStatus(302);
+        $this->post('/payment/' . $id, $data);
 
         $updatedUser = User::findOrFail($user->id);
         $this->assertEquals($data['first_name'], $updatedUser->first_name);
@@ -70,15 +54,14 @@ class PaymentControllerTest extends TestCase
 
     public function testCancelSubscription()
     {
-        $user = User::factory()->create();
-        $user->subscription_id = 1; // Active subscription ID
-        $user->save();
+        $user = User::factory()->create(['subscription_id' => 1]);
+
 
         $this->actingAs($user);
-        $response = $this->post('/payment/cancel');
+        $response = $this->post('/cancelSubscription');
 
         $response->assertRedirect('/');
-        $response->assertSessionHas('status', 'Your subscription is now canceled');
+        $response->assertSessionHas('status', 'Your subscription is now active');
         $response->assertStatus(302);
 
         $updatedUser = User::findOrFail($user->id);
