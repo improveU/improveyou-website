@@ -12,7 +12,7 @@
             <div class="overviewMore">
                 <p>
                     Contact: If you have any questions or concerns about your subscription, please don't hesitate to
-                    contact our customer support team. We're here to help!
+                    contact our customer support team via Discord or email. We're here to help!
                     <br>
                 </p>
             </div>
