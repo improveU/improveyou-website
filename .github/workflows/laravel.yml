@@ -23,12 +23,12 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-ansi --no-progress --no-scripts
 
-      - name: Copy .env file
-        run: cp .env.example .env
-
-	    - name: Storage link
+      - name: Storage link
         run: php artisan storage:link
 
+      - name: Copy .env file
+        run: cp .env.example .env
+	
       - name: Set up database
         run: php artisan migrate:fresh --seed --force
         env:
