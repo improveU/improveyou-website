@@ -21,18 +21,20 @@ jobs:
         uses: shivammathur/setup-php@v1
         with:
           php-version: '8.0'
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Copy .env
         run: cp .env.example .env
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-ansi --no-progress --no-scripts
       - name: Generate key
         run: php artisan key:generate
+      - name: Storage link
+        run: php artisan storage:link
       - name: Set up MySQL
-        run: |
+        run: 
           sudo service mysql start
           mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USERNAME -p$DB_PASSWORD
       - name: Run database migrations
-        run: php artisan migrate --force
+        run: php artisan migrate:fresh --seed
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
