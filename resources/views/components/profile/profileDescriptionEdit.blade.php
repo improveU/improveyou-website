@@ -13,7 +13,7 @@
                 <div id="editor"></div>
             </div>
             <div class="submitContainerRight">
-                <button class="btn" type="submit">Safe</button>
+                <button class="btn" type="submit">Save</button>
             </div>
         </form>
     </div>

@@ -25,7 +25,7 @@ Used Technologies:
 Execute in Laragon-Console, step for step:
 
 1. Install [Laragon](https://laragon.org/download/index.html)
-2. Clone this repository to your machine (safe it in the laragon folder)
+2. Clone this repository to your machine (save it in the laragon folder)
 3. Start Laragon services
 4. Open the integrated Laragon-Terminal (Cmder)
 5. Navigate to the repository
