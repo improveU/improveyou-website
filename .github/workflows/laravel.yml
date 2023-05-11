@@ -2,40 +2,45 @@ name: Laravel
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-    env:
-      APP_DEBUG: true
-      APP_ENV: local
-      DB_DATABASE: improveyou_inf20s
-      DB_USERNAME: "data_exchange"
-      DB_PASSWORD: "sml@12345!"
-      DB_CONNECTION: mysql
-      DB_HOST: mysql
-      DB_PORT: 3306
+
     steps:
-      - name: Setup PHP
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
         uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
           php-version: '8.2.5'
-      - uses: actions/checkout@v3
+
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-ansi --no-progress --no-scripts
+
+      - name: Copy .env file
+        run: cp .env.example .env
+
+      - name: Generate application key
+        run: php artisan key:generate
+        
       - name: Storage link
         run: php artisan storage:link
-      - name: Set up environment file
-        run: echo "DB_HOST=${{ env.DB_HOST }}" >> .env
-      - name: Modify database configuration
-        run: sed -i "s/'mysql' => \[/'mysql' => \['host' => env('DB_HOST', '${{ env.DB_HOST }}'),/" config/database.php
-      - name: Cache clear
-        run: php artisan config:clear
-      - name: Run database migrations
+
+      - name: Set up database
         run: php artisan migrate:fresh --seed --force
-      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: improveyou_inf20s
+          DB_USERNAME: "data_exchange"
+          DB_PASSWORD: "sml@12345!"
+          
+      - name: Run tests
         run: vendor/bin/phpunit
