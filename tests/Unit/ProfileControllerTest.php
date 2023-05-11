@@ -12,32 +12,32 @@ use Illuminate\Foundation\Testing\WithFaker;
 class ProfileControllerTest extends TestCase
 {
     use RefreshDatabase;
-   
+
     public function testUpdateProfile()
     {
         $user = User::factory()->create(['username' => 'Hans']);
         $this->actingAs($user);
 
         $data = [
-            
             'username' => 'new_username',
             'email' => 'new_email@example.com',
         ];
         $response = $this->post('/updateProfile', $data);
-        
+
+        $user = User::findOrFail(auth()->user()->id);
         $this->assertEquals($data['username'], $user->username);
         $this->assertEquals($data['email'], $user->email);
 
-        $response->assertRedirect('/profile/'.$user->id);
+        $response->assertRedirect('/profile#');
         $response->assertSessionHas('status', 'Profile updated');
     }
-    
+
     public function testUpdateProfileDescription()
     {
         $user = User::factory()->create();
         $this->actingAs($user);
 
-        
+
         $data = [
             'description' => 'New profile description',
             'activeTab' => 'profileOverview',
@@ -64,7 +64,7 @@ class ProfileControllerTest extends TestCase
             'address' => '123 Main St',
             'activeTab' => 'profileOverview',
         ];
-        
+
         $response = $this->post('/updateBilling', $data);
 
         $this->assertEquals('John', $user->first_name);
@@ -76,4 +76,3 @@ class ProfileControllerTest extends TestCase
         $response->assertSessionHas('status', 'Billing updated');
     }
         }
-        
