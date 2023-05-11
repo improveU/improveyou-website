@@ -126,6 +126,16 @@
     </div>
 </section>
 
+<section id="md">
+    <h1 class="sectionTitle">Create</h1>
+    <div class="editor">
+        <img class="hiddenAnimation" src="{{ asset('img/md-editor.webp') }}" alt="">
+        <div class="catch hiddenAnimation">
+            Create courses and earn money for views as a creator, be our partner to improve this platform
+        </div>
+    </div>
+</section>
+
 <section id="services">
     <h1 class="sectionTitle">Services</h1>
     <div class="serviceWrapper hiddenAnimation">

@@ -616,7 +616,7 @@ header nav .linkWrapper a:active {
     display: none;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   header nav .searchIndicator {
     width: 60px;
     margin: 0 8px 0 auto;
@@ -624,6 +624,17 @@ header nav .linkWrapper a:active {
   header nav .linkWrapper button,
   header nav .linkWrapper a {
     width: 60px;
+    margin: 8px;
+  }
+}
+@media screen and (max-width: 390px) {
+  header nav .searchIndicator {
+    width: 50px;
+    margin: 0 8px 0 auto;
+  }
+  header nav .linkWrapper button,
+  header nav .linkWrapper a {
+    width: 50px;
     margin: 8px;
   }
 }
@@ -781,9 +792,6 @@ footer nav {
   footer nav .quicklinks {
     width: 40vw;
   }
-  footer nav .thirdparty {
-    width: 40vw;
-  }
 }
 @media screen and (max-width: 800px) {
   footer nav .quicklinks {
@@ -797,6 +805,9 @@ footer nav {
   footer nav .socialmedia {
     width: 100%;
     margin-bottom: 20px;
+  }
+  footer nav .logo {
+    margin-bottom: 30px !important;
   }
 }
 footer nav dl dt {
@@ -818,6 +829,9 @@ footer nav dl dd img {
   height: 35px;
   width: 35px;
 }
+footer nav .logo {
+  margin: 20px 0;
+}
 footer nav .quicklinks {
   display: flex;
   justify-content: center;
@@ -833,6 +847,10 @@ footer nav .thirdparty dl {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+footer nav .thirdparty dl hr {
+  border: solid 1px #1D212F;
+  width: 100%;
 }
 footer nav .thirdparty dl dt {
   color: white;
@@ -877,9 +895,6 @@ footer nav .copyright .copyrightbar {
   display: flex;
   justify-content: center;
   margin: 30px 40px 30px 40px;
-}
-footer nav .copyright hr {
-  border: solid 1px #1D212F;
 }
 footer .toTop {
   position: absolute;
@@ -1206,6 +1221,7 @@ section#categories .categoryWrapper .categoryContainer :nth-child(4) {
 section#categories .categoryWrapper .categoryContainer :nth-child(5) {
   background: no-repeat center url(../img/categories/balance.webp);
   transition-delay: 400ms;
+  background-size: cover !important;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(6) {
   background: no-repeat center url(../img/categories/stretching.webp);
@@ -1214,14 +1230,62 @@ section#categories .categoryWrapper .categoryContainer :nth-child(6) {
 section#categories .categoryWrapper .categoryContainer :nth-child(7) {
   background: no-repeat center url(../img/categories/supplements.webp);
   transition-delay: 600ms;
+  background-size: cover !important;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(8) {
   background: no-repeat center url(../img/categories/meditation.webp);
   transition-delay: 600ms;
+  background-size: cover !important;
 }
 section#categories .categoryWrapper .categoryContainer :nth-child(9) {
   background: no-repeat center url(../img/categories/vegetables.webp);
   transition-delay: 600ms;
+  background-size: cover !important;
+}
+
+section#md .editor {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+section#md .editor img {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
+  border-radius: 12px;
+  border: 3.5px solid #b4e8ee;
+  margin: 50px auto;
+  width: clamp(40rem, 70vw, 50rem);
+}
+section#md .editor .catch {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(30%, 0%);
+  width: clamp(18rem, 70vw, 50rem);
+  color: #13739b;
+  background-color: #E5F6F8;
+  border: solid 3px #E0E1E5;
+  border-radius: 20px;
+  font-family: "BerlinTypeBold";
+  padding: 20px;
+  max-width: 300px;
+  transition-delay: 200ms;
+}
+@media screen and (max-width: 900px) {
+  section#md .editor {
+    overflow: hidden;
+    padding-bottom: 150px;
+  }
+  section#md .editor img {
+    box-shadow: none;
+    overflow: hidden;
+    width: clamp(50rem, 70vw, 50rem);
+    transform: translateX(40%) scale(1.2);
+  }
+  section#md .editor .catch {
+    transform: translate(-50%, 60%);
+  }
 }
 
 section#prices .subscribeWrapper,

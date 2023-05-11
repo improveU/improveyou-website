@@ -86,11 +86,11 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
-Route::get('/search-results', [SearchController::class, 'showResults']);
-Route::post('/search-results', [SearchController::class, 'showResults']);
+Route::get('/search-results', [SearchController::class, 'showResults'])->middleware('auth');
+Route::post('/search-results', [SearchController::class, 'showResults'])->middleware('auth');
 
 Route::namespace('App\Http\Controllers')->group(function () {
     // Routes: use the namespace 'App\Http\Controllers'
-    Route::get('/search', 'SearchController@search');
+    Route::get('/search', 'SearchController@search')->middleware('auth');
 });
 

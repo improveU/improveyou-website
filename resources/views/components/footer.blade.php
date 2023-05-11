@@ -1,5 +1,8 @@
 <footer>
     <nav>
+        <div class="logo">
+            <x-logo/>
+        </div>
         <div class="quicklinks">
             <dl>
                 <dt>
@@ -18,16 +21,6 @@
                 <dd><a href="{{ url('/search-results') }}">Search</a></dd>
             </dl>
         </div>
-        <div class="thirdparty">
-            <dl>
-                <dt>Disclaimer</dt>
-                <dd>
-                    Für diese Webseite sind die Lernenden Tim Bernhard, Demian Flury, Xavier Scherer, Yannic Studer und Elija Zürcher
-                    des BBZW Sursee verantwortlich. Es handelt sich hierbei um eine Testversion.
-                    Weder die Lernenden noch andere Personen oder Organisationen übernehmen irgendeine Haftung für die Webseite, Inhalte oder Downloads.
-                </dd>
-            </dl>
-        </div>
         <div class="socialmedia">
             <dl>
                 <dt>More inspiration from us</dt>
@@ -37,8 +30,18 @@
                 </dd>
             </dl>
         </div>
+        <div class="thirdparty">
+            <dl>
+                <hr>
+                <dt>Disclaimer</dt>
+                <dd>
+                    Für diese Webseite sind die Lernenden Tim Bernhard, Demian Flury, Xavier Scherer, Yannic Studer und Elija Zürcher
+                    des BBZW Sursee verantwortlich. Es handelt sich hierbei um eine Testversion.
+                    Weder die Lernenden noch andere Personen oder Organisationen übernehmen irgendeine Haftung für die Webseite, Inhalte oder Downloads.
+                </dd>
+            </dl>
+        </div>
         <div class="copyright">
-            <hr>
             <div class="copyrightbar">
                 © Copyright 2023. All Rights Reserved.
             </div>

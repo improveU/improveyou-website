@@ -94,7 +94,6 @@ section#cover {
                 width: 30px;
             }
         }
-
     }
 
     .linkDiscord {
@@ -316,6 +315,7 @@ section#categories {
             :nth-child(5) {
                 background: no-repeat center url(../img/categories/balance.webp);
                 transition-delay: 400ms;
+                background-size: cover !important;
             }
 
             :nth-child(6) {
@@ -326,17 +326,67 @@ section#categories {
             :nth-child(7) {
                 background: no-repeat center url(../img/categories/supplements.webp);
                 transition-delay: 600ms;
+                background-size: cover !important;
             }
 
             :nth-child(8) {
                 background: no-repeat center url(../img/categories/meditation.webp);
                 transition-delay: 600ms;
+                background-size: cover !important;
             }
 
             :nth-child(9) {
                 background: no-repeat center url(../img/categories/vegetables.webp);
                 transition-delay: 600ms;
+                background-size: cover !important;
             }
+        }
+    }
+}
+
+section#md{
+    .editor{
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        img{
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 100px 50px;
+            border-radius: 12px;
+            border: 3.5px solid #b4e8ee;
+            margin: 50px auto;
+            width: clamp(40rem, 70vw, 50rem)
+        }
+
+        .catch{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(30%, 0%);
+            width: clamp(18rem, 70vw, 50rem);
+            color: #13739b;
+            background-color: #E5F6F8;
+            border: solid 3px #E0E1E5;
+            border-radius: 20px;
+            font-family: "BerlinTypeBold";
+            padding: 20px;
+            max-width: 300px;
+            transition-delay: 200ms;
+        }
+        @media screen and (max-width: 900px) {
+            img{
+                box-shadow: none;
+                overflow: hidden;
+                width: clamp(50rem, 70vw, 50rem);
+                transform: translateX(40%) scale(1.2);
+            }
+            .catch{
+                transform: translate(-50%, 60%);
+            }
+            overflow: hidden;
+            padding-bottom: 150px;
         }
     }
 }
