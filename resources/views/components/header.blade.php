@@ -4,7 +4,7 @@
         <a class="logoLink" href="{{ url('/') }}">
             <x-logo/>
         </a>
-        @if(Auth::check() && isset(auth()->user()->subscription_id) && (auth()->user()->subscription_id == 3))
+        @if(Auth::check() && isset(auth()->user()->subscription_id) && (auth()->user()->subscription_id != 0))
             <div class="searchIndicator" id="searchIndicator">
                 <span>Search</span>
                 <img src="{{ asset('svg/logoSearch.svg') }}">
