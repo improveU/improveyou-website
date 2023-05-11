@@ -1436,6 +1436,29 @@ section#profilesAll a.btn {
     margin-right: 25px;
     min-width: 0;
   }
+  section#coursesPopular .courseWrapper :nth-child(4),
+  section#coursesLatest .courseWrapper :nth-child(4),
+  section#coursesRandom .courseWrapper :nth-child(4),
+  section#coursesAll .courseWrapper :nth-child(4),
+  section#profilesAll .courseWrapper :nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  section#coursesPopular .courseWrapper .courseCard,
+  section#coursesLatest .courseWrapper .courseCard,
+  section#coursesRandom .courseWrapper .courseCard,
+  section#coursesAll .courseWrapper .courseCard,
+  section#profilesAll .courseWrapper .courseCard {
+    display: initial;
+  }
+  section#coursesPopular .courseWrapper .courseCard :nth-child(4),
+  section#coursesLatest .courseWrapper .courseCard :nth-child(4),
+  section#coursesRandom .courseWrapper .courseCard :nth-child(4),
+  section#coursesAll .courseWrapper .courseCard :nth-child(4),
+  section#profilesAll .courseWrapper .courseCard :nth-child(4) {
+    display: none;
+  }
 }
 
 .courseCard {
