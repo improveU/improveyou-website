@@ -16,7 +16,7 @@
             >
             @error('email')
             <span class="invalidFeedback" role="alert">
-                {{ $message }}
+                {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
             </span>
             @enderror
         </div>
@@ -30,7 +30,7 @@
             >
             @error('password')
             <span class="invalidFeedback" role="alert">
-                {{ $message }}
+                {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
             </span>
             @enderror
         </div>
@@ -44,7 +44,7 @@
             >
             @error('password_confirmation')
             <span class="invalidFeedback" role="alert">
-                {{ $message }}
+                {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
             </span>
             @enderror
         </div>

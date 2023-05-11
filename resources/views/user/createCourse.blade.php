@@ -39,7 +39,7 @@
                 >
                 @error('title')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
@@ -76,7 +76,7 @@
                 >
                 @error('tags')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
@@ -95,7 +95,7 @@
                 >
                 @error('intro')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
