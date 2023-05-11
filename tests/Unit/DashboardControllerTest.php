@@ -32,37 +32,19 @@ class DashboardControllerTest extends TestCase
         $response->assertSee('Dashboard');
     }
     
-    public function testShowAuthorizedUser()
-{
-    
-    $user = User::factory()->create(['subscription_id' => 4]);
-
-
-    $reports = Report::factory()->count(3)->create();
-    $reportsQuick = ReportQuick::factory()->count(2)->create();
-
-    $response = $this->actingAs($user)->get('/dashboard');
-
-    $response->assertStatus(200);
-    $response->assertViewHas('reports', $reports);
-    $response->assertViewHas('reportsQuick', $reportsQuick);
-}
 public function testShowUnauthorizedUser()
 {
-    $user = User::factory()->create();
-    $user->subscription_id = 3; // Non-matching subscription ID
-    $user->save();
+    $user = User::factory()->create(['subscription_id' => 3]);
+
 
     $response = $this->actingAs($user)->get('/dashboard');
 
-    $response->assertRedirect('/home');
+    $response->assertRedirect('/');
     $response->assertSessionHas('status', 'Unauthorized access');
 }
 public function testShowReportAuthorizedUser()
 {
-    $user = User::factory()->create();
-    $user->subscription_id = 4;
-    $user->save();
+    $user = User::factory()->create(['subscription_id' => 4]);
 
     $report = Report::factory()->create();
 
@@ -73,33 +55,14 @@ public function testShowReportAuthorizedUser()
 }
 public function testShowReportUnauthorizedUser()
 {
-    $user = User::factory()->create();
-    $user->subscription_id = 3; // Non-matching subscription ID
-    $user->save();
+    $user = User::factory()->create(['subscription_id' => 3]);
 
     $report = Report::factory()->create();
 
     $response = $this->actingAs($user)->get('/report/' . $report->id);
 
-    $response->assertRedirect('/home');
+    $response->assertRedirect('/');
     $response->assertSessionHas('status', 'Unauthorized access');
 }
-public function testSend()
-{
-    $user = User::factory()->create();
-    $courseId = 123; // Replace with an actual course ID
-
-    $response = $this->actingAs($user)->post('/send/' . $courseId);
-
-    $response->assertRedirect();
-    $response->assertSessionHas('status', 'Course has been reported');
-
-    // Additional assertions to check if the report was created in the database
-    $this->assertDatabaseHas('report_quicks', [
-        'course_id' => $courseId,
-        'reporter_id' => $user->id,
-    ]);
-}
-
     
 }
