@@ -15,7 +15,7 @@
                 >
                 @error('first_name')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
@@ -32,7 +32,7 @@
                 >
                 @error('last_name')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
@@ -49,7 +49,7 @@
             >
             @error('address')
             <span class="invalidFeedback" role="alert">
-                {{ $message }}
+                {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
             </span>
             @enderror
         </div>
@@ -66,7 +66,7 @@
                 >
                 @error('postal_code')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
@@ -83,7 +83,7 @@
                 >
                 @error('city')
                 <span class="invalidFeedback" role="alert">
-                    {{ $message }}
+                    {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
                 </span>
                 @enderror
             </div>
@@ -349,7 +349,7 @@
             </select>
             @error('country')
             <span class="invalidFeedback" role="alert">
-                {{ $message }}
+                {{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}
             </span>
             @enderror
         </div>

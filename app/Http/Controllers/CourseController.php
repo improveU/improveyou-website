@@ -74,10 +74,11 @@ class CourseController extends Controller
 
         $request = request();
         $request->validate([
-            'title' => 'required|min:3|max:255',
+            'title' => 'required|min:3|max:255|profanity',
             'thumbnail' => 'image',
-            'intro' => 'required|max:255',
-            'description' => 'required|max:16777215'
+            'intro' => 'required|max:255|profanity',
+            'description' => 'required|max:16777215|profanity',
+            'tags' => 'profanity'
         ]);
 
         $tags = explode(',', $request->get('tags'));
@@ -125,10 +126,11 @@ class CourseController extends Controller
         $course = new Course();
         $request = request();
         $request->validate([
-            'title' => 'required|min:3|max:255',
+            'title' => 'required|min:3|max:255|profanity',
             'thumbnail' => 'required|image|max:8192',
-            'intro' => 'required|max:255',
-            'description' => 'required|max:16777215'
+            'intro' => 'required|max:255|profanity',
+            'description' => 'required|max:16777215|profanity',
+            'tags' => 'profanity'
         ]);
 
         $tags = explode(',', $request->get('tags'));

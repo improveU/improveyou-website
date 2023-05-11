@@ -78,7 +78,7 @@ Route::get('/course/{id}', [CourseController::class, 'showCourse'])->middleware(
 Route::get('/home', [CourseController::class, 'listAllCourses'])->middleware('auth');
 
 Route::get('/storage/thumbnails/{img}', function () {
-    redirect('/')->with('status', "don't look at my pics bruh");
+    redirect('/');
 });
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']);
@@ -87,10 +87,10 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 Route::get('/search-results', [SearchController::class, 'showResults'])->middleware('auth');
-Route::post('/search-results', [SearchController::class, 'showResults'])->middleware('auth');
+Route::post('/search-results', [SearchController::class, 'showResults'])->middleware('issubscribed');
 
 Route::namespace('App\Http\Controllers')->group(function () {
     // Routes: use the namespace 'App\Http\Controllers'
-    Route::get('/search', 'SearchController@search')->middleware('auth');
+    Route::get('/search', 'SearchController@search')->middleware('issubscribed');
 });
 

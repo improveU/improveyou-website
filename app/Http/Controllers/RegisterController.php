@@ -15,9 +15,9 @@ class RegisterController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'username' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|min:8|max:255|confirmed',
+            'username' => 'required|max:255|profanity',
+            'email' => 'required|email|max:255|unique:users,email|profanity',
+            'password' => 'required|min:8|max:255|confirmed|profanity',
         ]);
 
         User::create($attributes);

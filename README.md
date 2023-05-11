@@ -25,7 +25,7 @@ Used Technologies:
 Execute in Laragon-Console, step for step:
 
 1. Install [Laragon](https://laragon.org/download/index.html)
-2. Clone this repository to your machine (safe it in the laragon folder)
+2. Clone this repository to your machine (save it in the laragon folder)
 3. Start Laragon services
 4. Open the integrated Laragon-Terminal (Cmder)
 5. Navigate to the repository
@@ -43,11 +43,31 @@ Install node modules
 npm install
 ```
 
-Copy .env.example to your .env file
+Enter your own database and mail-credentials
 
-```
-cp .env.example .env
-```
+Database:
+
+````
+DB_CONNECTION= mysql
+DB_HOST= 127.0.0.1
+DB_PORT= 3306
+DB_DATABASE= YourDB
+DB_USERNAME= YourUsername
+DB_PASSWORD= YourPW
+````
+
+Mail-Service:
+
+````
+MAIL_MAILER= smtp
+MAIL_HOST= YourMailHost
+MAIL_PORT= YourMailPort
+MAIL_USERNAME= YourMailUsername
+MAIL_PASSWORD= YourMailPW
+MAIL_ENCRYPTION= null
+MAIL_FROM_ADDRESS= "YourMailAdress"
+MAIL_FROM_NAME= "${APP_NAME}"
+````
 
 Generate a Key
 
