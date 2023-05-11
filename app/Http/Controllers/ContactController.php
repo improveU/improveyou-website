@@ -15,10 +15,10 @@ class ContactController extends Controller
     {
         $request = request();
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'reason' => 'required',
-            'description' => 'required'
+            'name' => 'required|profanity',
+            'email' => 'required|email|profanity',
+            'reason' => 'required|profanity',
+            'description' => 'required|profanity'
         ]);
 
         $report = new Report();

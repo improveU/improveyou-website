@@ -59,8 +59,8 @@ class ProfileController extends Controller
         $request = request();
 
         $request->validate([
-            'username' => ['required', 'max:255', Rule::unique('users')->ignore(auth()->id())],
-            'email' => ['required', 'email', 'max:255'],
+            'username' => ['required', 'max:255', Rule::unique('users')->ignore(auth()->id()), 'profanity'],
+            'email' => ['required', 'email', 'max:255', 'profanity'],
             'password' => ['nullable', 'confirmed', 'min:8'],
         ]);
 
@@ -131,7 +131,7 @@ class ProfileController extends Controller
         $currentDescription = $user->description;
         $request = request();
         $request->validate([
-            'description' => 'string|max:3000',
+            'description' => 'string|max:3000|profanity',
         ]);
 
         $newDescription = $request->input('description');
