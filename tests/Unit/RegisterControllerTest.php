@@ -17,8 +17,8 @@ class RegisterControllerTest extends TestCase
     public function test_store_method_creates_new_user()
     {
         $data = [
-            'username' => 'johndoe',
-            'email' => 'johndoe@example.com',
+            'username' => 'john',
+            'email' => 'john@example.com',
             'password' => 'password',
             'password_confirmation' => 'password',
         ];
@@ -26,16 +26,16 @@ class RegisterControllerTest extends TestCase
         $this->post('/register', $data);
 
         $this->assertDatabaseHas('users', [
-            'username' => 'johndoe',
-            'email' => 'johndoe@example.com',
+            'username' => 'john',
+            'email' => 'john@example.com',
         ]);
     }
 
     public function test_store_method_redirects_to_home()
     {
         $data = [
-            'username' => 'johndoe',
-            'email' => 'johndoe@example.com',
+            'username' => 'john',
+            'email' => 'john@example.com',
             'password' => 'password',
             'password_confirmation' => 'password',
         ];

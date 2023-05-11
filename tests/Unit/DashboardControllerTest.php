@@ -1,15 +1,10 @@
 <?php
 
-use App\Models\Course;
 use App\Models\Report;
-use App\Models\ReportQuick;
 use App\Models\User;
-use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
-use Database\Factories\ReportFactory;
+
 
 
 class DashboardControllerTest extends TestCase

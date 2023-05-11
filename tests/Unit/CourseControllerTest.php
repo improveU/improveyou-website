@@ -23,9 +23,9 @@ public function testEditCourse()
     $this->actingAs($user);
     
     $course = Course::factory()->create();
-    $newTitle = 'New Course Title';
-    $newIntro = 'New Course Introduction';
-    $newDescription = 'New Course Description';
+    $newTitle = 'Hallo';
+    $newIntro = 'Bein';
+    $newDescription = 'Stras';
 
     $this->post("/editCourse/{$course->id}", [
         'title' => $newTitle,
