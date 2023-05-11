@@ -22,7 +22,7 @@ class ProfileController extends Controller
         session()->put('activeTab', $activeTab);
         session()->put('courses', $courses);
 
-        $description = $profile->description ?? 'No description yet';
+        $description = $user->description ?? 'No description yet';
 
         return view('user.profile', [
             'courses' => $courses,
