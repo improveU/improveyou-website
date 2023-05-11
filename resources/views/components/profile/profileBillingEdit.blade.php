@@ -15,7 +15,7 @@
                            required
                     >
                     @error('first_name')
-                    <span class="invalidFeedback" role="alert">{{ $message }}</span>
+                    <span class="invalidFeedback" role="alert">{{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}</span>
                     @enderror
                 </div>
                 <div class="inputContainer">
@@ -29,7 +29,7 @@
                            required
                     >
                     @error('last_name')
-                    <span class="invalidFeedback" role="alert">{{ $message }}</span>
+                    <span class="invalidFeedback" role="alert">{{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}</span>
                     @enderror
                 </div>
             </div>
@@ -44,7 +44,7 @@
                            required
                     >
                     @error('address')
-                    <span class="invalidFeedback" role="alert">{{ $message }}</span>
+                    <span class="invalidFeedback" role="alert">{{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}</span>
                     @enderror
                 </div>
             </div>
@@ -60,7 +60,7 @@
                            required
                     >
                     @error('postal_code')
-                    <span class="invalidFeedback" role="alert">{{ $message }}</span>
+                    <span class="invalidFeedback" role="alert">{{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}</span>
                     @enderror
                 </div>
                 <div class="inputContainer">
@@ -74,7 +74,7 @@
                            required
                     >
                     @error('city')
-                    <span class="invalidFeedback" role="alert">{{ $message }}</span>
+                    <span class="invalidFeedback" role="alert">{{ $message == 'validation.profanity' ? $message = "Please don't use profanity" : $message}}</span>
                     @enderror
                 </div>
             </div>
