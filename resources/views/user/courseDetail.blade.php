@@ -16,11 +16,11 @@
 
         <div class="c">
             <div class="courseInfo">
-                <h1 class="courseTitle">{!! $course->title !!}</h1>
+                <h1 class="courseTitle">{{ $course->title }}</h1>
                 <div class="linkTree">
                     <a href="/">Home / </a>
                     <a href="/">Courses / </a>
-                    <a href="">{!! $course->title !!}</a>
+                    <a href="">{{ $course->title }}</a>
                 </div>
                 <div class="tags">
                     @foreach($course->tags as $tag)
@@ -28,10 +28,10 @@
                     @endforeach
                 </div>
                 <p class="introduction">
-                    {!! $course->introduction !!}
+                    {{ $course->introduction }}
                 </p>
                 <div class="views">
-                    {!! $course->views !!} Views
+                    {{ $course->views }} Views
                 </div>
                 <a class="profile" href="{{'/profile/' . $creator->id }}">
                     <img src="{{ asset('storage/' . $creator->profile_picture_path) }}" alt="">

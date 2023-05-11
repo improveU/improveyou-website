@@ -16,15 +16,16 @@
 
 @section('content')
 
-    <section id="navLinkTree">
-        <nav>
-            <h1>Contact</h1>
-            <div class="linkTree">
-                <a href="/">Home / </a>
-                <a href="">Contact / </a>
-            </div>
-        </nav>
-    </section>
+        <section id="navLinkTree">
+            <nav>
+                <h1><span>Contact</span></h1>
+                <div class="linkTree">
+                    <a href="/">Home / </a>
+                    <a href="">Contact / </a>
+                </div>
+            </nav>
+        </section>
+
 
     <section id="contact">
         <form method="POST" id="formSending" class="formWrapper create" action="{{ url('contact') }}">
