@@ -19,9 +19,7 @@ class DashboardControllerTest extends TestCase
     {
         $this->withoutExceptionHandling();
     
-        $user = User::factory()->create();
-        $user->subscription_id = 4;
-        $user->save();
+        $user = User::factory()->create(['subscription_id' => 4]);
     
         Report::factory()->create(); // Create a sample report
     
@@ -36,9 +34,9 @@ class DashboardControllerTest extends TestCase
     
     public function testShowAuthorizedUser()
 {
-    $user = User::factory()->create();
-    $user->subscription_id = 4;
-    $user->save();
+    
+    $user = User::factory()->create(['subscription_id' => 4]);
+
 
     $reports = Report::factory()->count(3)->create();
     $reportsQuick = ReportQuick::factory()->count(2)->create();
