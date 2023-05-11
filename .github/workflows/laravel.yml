@@ -31,6 +31,8 @@ jobs:
         run: php artisan storage:link
       - name: Set up environment file
         run: echo "DB_HOST=${{ env.DB_HOST }}" >> .env
+      - name: Modify database configuration
+        run: sed -i "s/'mysql' => \[/'mysql' => \['host' => env('DB_HOST', '${{ env.DB_HOST }}'),/" config/database.php
       - name: Cache clear
         run: php artisan config:clear
       - name: Run database migrations
