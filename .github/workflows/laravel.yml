@@ -18,12 +18,10 @@ jobs:
       DB_PORT: 3306
     steps:
       - name: Setup PHP
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
-          php-version: '8.0'
+          php-version: '8.2.5'
       - uses: actions/checkout@v3
-      - name: Copy .env
-        run: cp .env.example .env
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-ansi --no-progress --no-scripts
       - name: Generate key
