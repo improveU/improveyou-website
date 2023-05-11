@@ -25,9 +25,6 @@ jobs:
 
       - name: Storage link
         run: php artisan storage:link
-
-      - name: Copy .env file
-        run: cp .env.example .env
 	
       - name: Set up database
         run: php artisan migrate:fresh --seed --force
