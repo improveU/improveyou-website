@@ -33,6 +33,6 @@ jobs:
           sudo service mysql start
           mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USERNAME -p$DB_PASSWORD
       - name: Run database migrations
-        run: php artisan migrate:fresh --seed
+        run: php artisan migrate:fresh --seed --force
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
