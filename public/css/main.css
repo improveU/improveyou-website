@@ -133,6 +133,9 @@ section#navLinkTree nav {
 section#navLinkTree nav h1 {
   font-size: 40px;
 }
+section#navLinkTree nav h1 span {
+  color: #ffffff;
+}
 section#navLinkTree nav .linkTree {
   padding-bottom: 10px;
 }

@@ -4,12 +4,12 @@
         <a class="logoLink" href="{{ url('/') }}">
             <x-logo/>
         </a>
-        @auth
+        @if(Auth::check() && isset(auth()->user()->subscription_id) && (auth()->user()->subscription_id == 3))
             <div class="searchIndicator" id="searchIndicator">
                 <span>Search</span>
                 <img src="{{ asset('svg/logoSearch.svg') }}">
             </div>
-        @endauth
+        @endif
         <div class="linkWrapper">
             @if (Auth::check() && isset(auth()->user()->subscription_id) && (auth()->user()->subscription_id == 3 || auth()->user()->subscription_id == 4))
                 <a href="{{ url('/createCourse') }}">
