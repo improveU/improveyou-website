@@ -5,8 +5,7 @@
             <div class="overviewBilling">
                 <p>
                     Billing: Your billing cycle is monthly, and you will be charged at the end of each month for your
-                    subscription. You can view your billing history and update your payment information in your account
-                    settings.
+                    subscription. You can update your payment information in your account settings.
                     <br>
                 </p>
             </div>
