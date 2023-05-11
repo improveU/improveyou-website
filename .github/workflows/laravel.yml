@@ -28,10 +28,10 @@ jobs:
         run: composer install --no-interaction --no-ansi --no-progress --no-scripts
       - name: Storage link
         run: php artisan storage:link
-      - name: Set up MySQL
-        run: 
-          sudo service mysql start
-          mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USERNAME -p$DB_PASSWORD
+      - name: Set up environment file
+        run: echo "DB_HOST=${{ env.DB_HOST }}" >> .env
+      - name: Create database
+        run: php artisan db:create
       - name: Run database migrations
         run: php artisan migrate:fresh --seed --force
       - name: Execute tests (Unit and Feature tests) via PHPUnit
