@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      APP_DEBUG: false
+      APP_DEBUG: true
       DB_DATABASE: improveyou_inf20s
       DB_USERNAME: data_exchange
       DB_PASSWORD: sml@12345!
@@ -32,6 +32,6 @@ jobs:
           sudo service mysql start
           mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USERNAME -p$DB_PASSWORD
       - name: Run database migrations
-        run: php artisan migrate:fresh --seed --force
+        run: php artisan migrate:fresh --seed
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
