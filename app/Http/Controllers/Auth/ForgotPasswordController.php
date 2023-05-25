@@ -42,7 +42,7 @@ class ForgotPasswordController extends Controller
             $message->subject('Reset Password');
         });
 
-        return back()->with('status', 'We have e-mailed your password reset link!');
+        return redirect('/login')->with('status', 'We have e-mailed your password reset link!');
     }
 
 

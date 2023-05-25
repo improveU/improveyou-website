@@ -28,6 +28,8 @@ class PaymentController extends Controller
             'address' => 'required',
         ]);
 
+        if($id == 4) return redirect('/')->with('status', 'forbidden');
+
         $user = User::findOrFail(auth()->user()->id);
 
         $user->first_name = $request->get('first_name');
@@ -49,5 +51,4 @@ class PaymentController extends Controller
         $user->save();
         return redirect('/')->with('status', 'Your subscription is now active');
     }
-
 }
