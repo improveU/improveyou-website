@@ -8,9 +8,9 @@
    Demian, Elija, Tim, Yannic & Xavier
 </p>
 
-## Status
+## Online Preview
 
-[![Laravel](https://github.com/improveU/improveyou-website/actions/workflows/laravel.yml/badge.svg?branch=main)](https://github.com/improveU/improveyou-website/actions/workflows/laravel.yml)
+[im-proveyou-inf20s.bbzwinf.ch](https://im-proveyou-inf20s.bbzwinf.ch/)
 
 ## 💻Installation
 
